@@ -1,0 +1,21 @@
+uuid: 68e09a13-c1b5-478d-8a29-a5f4927bd4f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.file_download_unit
+  module:
+    - text
+id: paragraph.file_download_unit.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: file_download_unit
+label: Description
+description: 'Optional description of upto 225 char can be added'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

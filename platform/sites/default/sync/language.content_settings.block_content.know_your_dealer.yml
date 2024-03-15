@@ -1,0 +1,18 @@
+uuid: af7021fc-df9a-434a-86dd-7ed650176cd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.know_your_dealer
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.know_your_dealer
+target_entity_type_id: block_content
+target_bundle: know_your_dealer
+default_langcode: site_default
+language_alterable: true

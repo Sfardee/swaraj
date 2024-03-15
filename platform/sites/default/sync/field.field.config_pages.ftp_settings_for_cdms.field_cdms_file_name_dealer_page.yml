@@ -1,0 +1,21 @@
+uuid: ea586d8a-b9c3-46b1-bce5-2b2d86c77699
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_cdms_file_name_dealer_page
+id: config_pages.ftp_settings_for_cdms.field_cdms_file_name_dealer_page
+field_name: field_cdms_file_name_dealer_page
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'CDMS File Name - Dealer Pages Contact us report'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: SampleFlatFileDealer-<date>.xlsx
+default_value_callback: ''
+settings: {  }
+field_type: string

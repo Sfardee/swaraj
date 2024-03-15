@@ -1,0 +1,18 @@
+uuid: 8f433336-8d2f-4a38-9b96-1036e3abd052
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.features_implements
+id: node.features_implements.changed
+field_name: changed
+entity_type: node
+bundle: features_implements
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

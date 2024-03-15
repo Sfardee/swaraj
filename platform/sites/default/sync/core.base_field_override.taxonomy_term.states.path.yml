@@ -1,0 +1,20 @@
+uuid: d2af222e-0956-4197-8b5a-365b446bed3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.states
+  module:
+    - path
+id: taxonomy_term.states.path
+field_name: path
+entity_type: taxonomy_term
+bundle: states
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,19 @@
+uuid: 62e11b9d-59dd-4bac-b976-303294260fc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pto_hp
+    - node.type.implements
+id: node.implements.field_pto_hp
+field_name: field_pto_hp
+entity_type: node
+bundle: implements
+label: 'No. of Blades'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

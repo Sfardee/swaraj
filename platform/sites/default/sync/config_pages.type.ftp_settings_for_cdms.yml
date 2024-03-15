@@ -1,0 +1,17 @@
+uuid: d8fb1385-f95d-4551-989a-9d6f6f81da39
+langcode: en
+status: true
+dependencies: {  }
+id: ftp_settings_for_cdms
+label: 'FTP Settings for CDMS'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/swaraj-settings/cdms-ftp-settings
+  weight: 0
+  description: ''
+token: false

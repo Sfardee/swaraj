@@ -1,0 +1,10 @@
+uuid: 87cbbf76-5cec-437b-b354-61c3b9c1a2e4
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
+id: footer
+label: Footer
+description: 'Site information links - TnC + Privacy policy'
+locked: true

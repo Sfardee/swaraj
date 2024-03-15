@@ -1,0 +1,73 @@
+uuid: 56eb836d-26cc-4df7-b497-e883fea5c3ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dealer_page_services_offered
+    - field.storage.block_content.field_services_offered
+    - paragraphs.paragraphs_type.about_us
+  module:
+    - entity_reference_revisions
+id: block_content.dealer_page_services_offered.field_services_offered
+field_name: field_services_offered
+entity_type: block_content
+bundle: dealer_page_services_offered
+label: 'Services Offered'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      about_us: about_us
+    target_bundles_drag_drop:
+      about_us:
+        enabled: true
+        weight: 16
+      banner:
+        weight: 17
+        enabled: false
+      breadcrumbs:
+        weight: 18
+        enabled: false
+      commitment:
+        weight: 19
+        enabled: false
+      contact_us_mail_recipient:
+        weight: 20
+        enabled: false
+      contact_us_state_wise_mail_recip:
+        weight: 21
+        enabled: false
+      customers:
+        weight: 22
+        enabled: false
+      gallery:
+        weight: 23
+        enabled: false
+      milestone:
+        weight: 24
+        enabled: false
+      product_banner:
+        weight: 25
+        enabled: false
+      product_item:
+        weight: 26
+        enabled: false
+      product_list_item:
+        weight: 27
+        enabled: false
+      quick_tools:
+        weight: 28
+        enabled: false
+      specification:
+        weight: 29
+        enabled: false
+      zigzag:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,52 @@
+uuid: 5268d4fe-7b98-4cac-be49-c614222bb5be
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.commitment
+    - field.storage.block_content.field_commitment
+    - paragraphs.paragraphs_type.commitment
+  module:
+    - entity_reference_revisions
+id: block_content.commitment.field_commitment
+field_name: field_commitment
+entity_type: block_content
+bundle: commitment
+label: 'Video Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      commitment: commitment
+    target_bundles_drag_drop:
+      about_us:
+        weight: 9
+        enabled: false
+      banner:
+        weight: 10
+        enabled: false
+      commitment:
+        enabled: true
+        weight: 11
+      customers:
+        weight: 12
+        enabled: false
+      milestone:
+        weight: 13
+        enabled: false
+      product_banner:
+        weight: 14
+        enabled: false
+      quick_tools:
+        weight: 15
+        enabled: false
+      specification:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

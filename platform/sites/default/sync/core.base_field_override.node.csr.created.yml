@@ -1,0 +1,18 @@
+uuid: 46e0d1d7-44ea-40b5-9521-9e069924fddb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.csr
+id: node.csr.created
+field_name: created
+entity_type: node
+bundle: csr
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

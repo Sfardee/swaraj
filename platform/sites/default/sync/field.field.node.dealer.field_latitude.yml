@@ -1,0 +1,19 @@
+uuid: 40530e68-0974-46e8-88cc-7c7d05d044f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latitude
+    - node.type.dealer
+id: node.dealer.field_latitude
+field_name: field_latitude
+entity_type: node
+bundle: dealer
+label: Latitude
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

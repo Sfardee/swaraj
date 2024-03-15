@@ -1,0 +1,21 @@
+uuid: 6e4d73eb-6c57-445c-bf79-34f899622c85
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dealer_banner_with_contact_form
+    - field.storage.block_content.field_subtitle
+id: block_content.dealer_banner_with_contact_form.field_subtitle
+field_name: field_subtitle
+entity_type: block_content
+bundle: dealer_banner_with_contact_form
+label: 'Contact Form Subtitle'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 'Enter your details and we will get back to you shortly'
+default_value_callback: ''
+settings: {  }
+field_type: string

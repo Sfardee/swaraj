@@ -1,0 +1,21 @@
+uuid: a05713d9-345a-4bc1-b266-60ad6d2c2c60
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_cdms_file_name
+id: config_pages.ftp_settings_for_cdms.field_cdms_file_name
+field_name: field_cdms_file_name
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'CDMS File Name - Main Website Contact us report'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: SampleFlatFile-<date>.xlsx
+default_value_callback: ''
+settings: {  }
+field_type: string

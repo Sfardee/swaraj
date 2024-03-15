@@ -1,0 +1,21 @@
+uuid: 09eda232-3a38-4831-aef8-de68bca6195e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.milestone
+  module:
+    - metatag
+id: node.milestone.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: milestone
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

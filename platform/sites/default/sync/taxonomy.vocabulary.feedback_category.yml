@@ -1,0 +1,8 @@
+uuid: aad37197-51e4-4f2b-98e0-393bc6d3c3bb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Feedback Category'
+vid: feedback_category
+description: ''
+weight: 0

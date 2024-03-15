@@ -1,0 +1,19 @@
+uuid: 71e2ad5a-c2db-4300-adfc-1f4e4e1a3bb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_wheel_drive
+    - node.type.product
+id: node.product.field_wheel_drive
+field_name: field_wheel_drive
+entity_type: node
+bundle: product
+label: 'Wheel Drive'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 64fe3e64-dd00-402b-96ac-6ee997b4dccd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.team_hierarchy
+id: taxonomy_term.team_hierarchy.metatag
+field_name: metatag
+entity_type: taxonomy_term
+bundle: team_hierarchy
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: map

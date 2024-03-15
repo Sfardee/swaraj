@@ -1,0 +1,51 @@
+uuid: af25e974-f871-4b74-9df1-b9b33a19d805
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_us.field_customer_hover_image
+    - field.field.paragraph.about_us.field_customer_image
+    - field.field.paragraph.about_us.field_model_name
+    - field.field.paragraph.about_us.field_name
+    - paragraphs.paragraphs_type.about_us
+  module:
+    - file
+    - text
+id: paragraph.about_us.default
+targetEntityType: paragraph
+bundle: about_us
+mode: default
+content:
+  field_customer_hover_image:
+    weight: 3
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_customer_image:
+    weight: 0
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_model_name:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

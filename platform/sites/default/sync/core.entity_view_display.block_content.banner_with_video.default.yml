@@ -1,0 +1,26 @@
+uuid: 2b2dd704-0084-402f-97aa-ff2b0694958f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner_with_video
+    - field.field.block_content.banner_with_video.field_banner_with_video
+  module:
+    - entity_reference_revisions
+id: block_content.banner_with_video.default
+targetEntityType: block_content
+bundle: banner_with_video
+mode: default
+content:
+  field_banner_with_video:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

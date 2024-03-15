@@ -1,0 +1,18 @@
+uuid: 461ddf6c-bcf8-4309-becd-207840eaf840
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.features_implements
+id: node.features_implements.created
+field_name: created
+entity_type: node
+bundle: features_implements
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

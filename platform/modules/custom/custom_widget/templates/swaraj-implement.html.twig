@@ -1,0 +1,31 @@
+<section class="features-box implements" id="implements">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>{{ data.title }}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-carousel owl-carousel green">
+        {% for val in data.result %}
+          <div class="os-animation" data-os-animation-delay=".5s" data-os-animation="fadeInUp">
+            <div class="home-card">
+              <figure>
+                <a><img alt="" src="{{ val.image }}"></a>
+              </figure>
+            </div>
+            <div class="info">
+              <h5 class="card-title">
+                <a>{{ val.title }}</a>
+              </h5>
+              {{ val.desc|raw }}
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

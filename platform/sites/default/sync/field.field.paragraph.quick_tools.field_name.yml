@@ -1,0 +1,19 @@
+uuid: 80c33c24-f0d1-45a6-98f8-a9893cd2bdb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - paragraphs.paragraphs_type.quick_tools
+id: paragraph.quick_tools.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: quick_tools
+label: Name
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

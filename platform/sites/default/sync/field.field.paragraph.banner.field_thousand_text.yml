@@ -1,0 +1,19 @@
+uuid: cb7695c4-3e4f-41b9-ae14-907277277030
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_thousand_text
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_thousand_text
+field_name: field_thousand_text
+entity_type: paragraph
+bundle: banner
+label: 'Video Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+uuid: 4e12351a-91f8-494a-a195-6eaf4a4bc33a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Team member'
+type: team_member
+description: 'Use this content type to create data for team member'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

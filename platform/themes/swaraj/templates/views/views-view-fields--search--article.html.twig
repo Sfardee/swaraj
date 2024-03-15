@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+<div class="col-md-12">
+{% if fields.counter.content|last % 2 == 1 %}
+  <div class="home-card search-card">
+  {% else %}
+  <div class="home-card search-card white">
+  {% endif %}
+    <div class="card-info-box">
+      <p class="card-tags">{{ fields.type.content }}</p>
+      <hr>
+
+      <h5 class="card-title">
+        {% if fields.field_video.content %}
+          <a data-toggle="modal" href="#myModalVideo{{ fields.nid.content }}">
+        {% elseif fields.field_cta.content %}
+          <a href="{{ fields.field_cta.content }}" {% if fields.field_target.content %}target={{ fields.field_target.content }}{% endif %}>
+        {% else %}
+          <a href="{{ path('entity.node.canonical', {'node': fields.nid.content}) }}">
+        {% endif %}
+          {% if fields.type.content == 'Article' %}
+            {{ fields.field_author.content }}
+          {% else %}
+            {{ fields.title.content }}
+          {% endif %}
+        </a>
+      </h5>
+      {# <p class="card-date">{{ fields.created.content }}</p> #}
+      <p class="card-description">{{ fields.field_short_description.content }}</p>
+      <p>
+      {% if fields.field_video.content %}
+       <a class="btn btn-default green" data-toggle="modal" href="#myModalVideo{{ fields.nid.content }}">{% trans %}Watch Video{% endtrans %}</a>
+      {% elseif fields.field_cta.content %}
+        <a class="btn btn-default green" href="{{ fields.field_cta.content }}" {% if fields.field_target.content %}target={{ fields.field_target.content }}{% endif %}>{% trans %}Read More{% endtrans %}</a>
+      {% else %}
+        <a class="btn btn-default green" href="{{ path('entity.node.canonical', {'node': fields.nid.content}) }}">{% trans %}Read More{% endtrans %}</a>
+      {% endif %}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+uuid: 1b147223-a2cc-4d53-ba20-d99e2bdae1ac
+langcode: en
+status: true
+dependencies: {  }
+id: zigzag
+label: Zigzag
+revision: 0
+description: 'Zigzag Articles'

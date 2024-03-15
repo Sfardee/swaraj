@@ -1,0 +1,23 @@
+uuid: f1c1d007-7736-4803-8f44-b8145b1087e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.know_your_dealer
+    - field.field.block_content.know_your_dealer.field_title
+id: block_content.know_your_dealer.default
+targetEntityType: block_content
+bundle: know_your_dealer
+mode: default
+content:
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

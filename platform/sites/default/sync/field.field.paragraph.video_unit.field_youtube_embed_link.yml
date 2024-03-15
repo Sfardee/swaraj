@@ -1,0 +1,19 @@
+uuid: 0811dbe3-35d3-42dc-9114-ff62ce6f4e22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_youtube_embed_link
+    - paragraphs.paragraphs_type.video_unit
+id: paragraph.video_unit.field_youtube_embed_link
+field_name: field_youtube_embed_link
+entity_type: paragraph
+bundle: video_unit
+label: 'Youtube Embed link'
+description: 'Use YouTube embed link of the format - https://www.youtube.com/embed/YE7VzlLtp-4'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

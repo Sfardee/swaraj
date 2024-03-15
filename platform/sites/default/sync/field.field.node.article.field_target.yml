@@ -1,0 +1,21 @@
+uuid: dbd83aef-d224-4765-ad46-0d1ab6788b44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_target
+    - node.type.article
+  module:
+    - options
+id: node.article.field_target
+field_name: field_target
+entity_type: node
+bundle: article
+label: Target
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

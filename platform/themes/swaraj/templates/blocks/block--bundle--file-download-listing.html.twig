@@ -1,0 +1,65 @@
+{% block blockcontent %}
+  {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+  {% set nodes = [] %}
+  {% for file_unit in full_content.field_file_download_unit %}
+    {% if file_unit['#paragraph'] %}
+      {% set nodes = nodes | merge([file_unit['#paragraph']]) %}
+    {% endif %}
+  {% endfor %}
+  <div data-block-id="{{ uuid }}">
+    <section class="listing-section-1">
+      <div class="container os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+          <div class="row">
+              <div class="col-md-12 CTR">
+                  <h4>{{ block_content.field_title.value }}</h4>
+                  {{ block_content.body.value|raw }}
+              </div>
+          </div>
+          <div class="row">
+              {% for values in nodes %}
+              <div class="col-md-4 col-sm-6 MT30">
+                  <div class="home-card">
+                      <figure><img class="lozad" src="" data-src="{{ file_url(values.field_model_image.entity.field_media_image.entity.fileuri) }}" alt="{{ values.field_model_image.entity.field_media_image.alt }}"></figure>
+                      <div class="card-info-box">
+                          <h5 class="card-title">
+                              <img src="{{ image_path }}pdf-icon.png" alt="">
+                              <span>
+                                  {% if values.field_name.value | length > 45 %}
+                                    {{ values.field_name.value | slice(0, 45) }} ...
+                                  {% else %}
+                                    {{ values.field_name.value }}
+                                  {% endif %}
+                                  {% if values.field_info.value %}<em>
+                                  {% if values.field_info.value | length > 25 %}
+                                    {{ values.field_info.value | slice(0, 25) }} ...
+                                  {% else %}
+                                    {{ values.field_info.value }}
+                                  {% endif %}
+                                  </em>{% endif %}
+                              </span>
+                          </h5>
+                          {% if values.field_description.value %}
+                            <p class="card-description">
+                            {% if values.field_description.value | length > 225 %}
+                                {{ values.field_description.value | slice(0, 225) }} ...
+                            {% else %}
+                                {{ values.field_description.value }}
+                            {% endif %}
+                            </p>
+                          {% endif %}
+                          <p><a href="{{ file_url(values.field_file_download.entity.uri.value) }}" target="_blank" class="btn btn-default green">
+                            {% if block_content.field_file_download_cta_text.value | length > 20 %}
+                                {{ block_content.field_file_download_cta_text.value | slice(0, 20) }} ...
+                            {% else %}
+                                {{ block_content.field_file_download_cta_text.value }}
+                            {% endif %}
+                          </a></p>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

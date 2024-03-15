@@ -1,0 +1,10 @@
+services:
+  disable_page_slash_node.route_subscriber:
+    class: 'Drupal\disable_page_slash_node\EventSubscriber\DisablePageNodeRouteSubscriber'
+    tags:
+      - { name: event_subscriber }
+  disable_page_slash_node.redirect_route:
+    class: 'Drupal\disable_page_slash_node\EventSubscriber\RedirectNodeRouteSubscriber'
+    tags:
+      - { name: event_subscriber }
+    autowire: true

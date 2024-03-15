@@ -1,0 +1,8 @@
+uuid: 4d717af7-7cc6-4c99-a268-3ad7b37cf1b5
+langcode: en
+status: true
+dependencies: {  }
+id: faq_block
+label: 'FAQ Block'
+revision: 0
+description: 'Use this block to have FAQ section on product details page'

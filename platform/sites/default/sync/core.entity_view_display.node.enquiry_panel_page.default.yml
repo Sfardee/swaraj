@@ -1,0 +1,65 @@
+uuid: 3fc930af-2453-466f-8387-b241dfa8ddeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.enquiry_panel_page.field_h1_title
+    - field.field.node.enquiry_panel_page.field_meta_tags
+    - field.field.node.enquiry_panel_page.panelizer
+    - node.type.enquiry_panel_page
+  module:
+    - metatag
+    - panelizer
+    - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: true
+    allow: true
+    default: default
+    displays:
+      default:
+        blocks: {  }
+        id: panels_variant
+        label: Default
+        uuid: f32b2429-a4f9-48e7-8d64-111194708dde
+        weight: 0
+        layout: layout_onecol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:page:default:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.enquiry_panel_page.default
+targetEntityType: node
+bundle: enquiry_panel_page
+mode: default
+content:
+  field_h1_title:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_meta_tags:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  links:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

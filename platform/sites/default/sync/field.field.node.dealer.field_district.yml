@@ -1,0 +1,19 @@
+uuid: 7206b3fb-75b5-403e-9e80-c7d27d8a7942
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_district
+    - node.type.dealer
+id: node.dealer.field_district
+field_name: field_district
+entity_type: node
+bundle: dealer
+label: District
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

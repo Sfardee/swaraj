@@ -1,0 +1,21 @@
+uuid: 6886b9bb-7719-469a-bfd9-f15a1b12d83e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_model_name
+    - paragraphs.paragraphs_type.about_us
+  module:
+    - text
+id: paragraph.about_us.field_model_name
+field_name: field_model_name
+entity_type: paragraph
+bundle: about_us
+label: Subtext
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

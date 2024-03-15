@@ -1,0 +1,26 @@
+uuid: 41727564-7169-45f1-befe-761ff45f452c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.zigzag
+    - field.field.block_content.zigzag.field_zigzag
+  module:
+    - entity_reference_revisions
+id: block_content.zigzag.default
+targetEntityType: block_content
+bundle: zigzag
+mode: default
+content:
+  field_zigzag:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

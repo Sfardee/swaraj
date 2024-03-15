@@ -1,0 +1,21 @@
+uuid: f78130fe-4a42-4faa-bf5d-45d9484c0d0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_ftp_host_ip
+field_name: field_ftp_host_ip
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

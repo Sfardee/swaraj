@@ -1,0 +1,94 @@
+uuid: 30c362c7-6c5b-4876-bdf9-3462fa6a91e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.zigzag
+    - field.storage.block_content.field_zigzag
+    - paragraphs.paragraphs_type.zigzag
+  module:
+    - entity_reference_revisions
+id: block_content.zigzag.field_zigzag
+field_name: field_zigzag
+entity_type: block_content
+bundle: zigzag
+label: Zigzag
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      zigzag: zigzag
+    target_bundles_drag_drop:
+      about_us:
+        weight: 10
+        enabled: false
+      banner:
+        weight: 11
+        enabled: false
+      breadcrumbs:
+        weight: 25
+        enabled: false
+      commitment:
+        weight: 12
+        enabled: false
+      contact_us_mail_recipient:
+        weight: 27
+        enabled: false
+      contact_us_state_wise_mail_recip:
+        weight: 28
+        enabled: false
+      customers:
+        weight: 13
+        enabled: false
+      faq_unit:
+        weight: 30
+        enabled: false
+      file_download_unit:
+        weight: 31
+        enabled: false
+      gallery:
+        weight: 32
+        enabled: false
+      gallery_image_unit:
+        weight: 33
+        enabled: false
+      gallery_video_unit:
+        weight: 34
+        enabled: false
+      image_unit:
+        weight: 35
+        enabled: false
+      milestone:
+        weight: 14
+        enabled: false
+      new_contact_us_mail_recipient:
+        weight: 37
+        enabled: false
+      product_banner:
+        weight: 15
+        enabled: false
+      product_item:
+        weight: 39
+        enabled: false
+      product_list_item:
+        weight: 40
+        enabled: false
+      quick_tools:
+        weight: 16
+        enabled: false
+      specification:
+        weight: 17
+        enabled: false
+      video_unit:
+        weight: 43
+        enabled: false
+      zigzag:
+        enabled: true
+        weight: 18
+field_type: entity_reference_revisions

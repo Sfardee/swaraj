@@ -1,0 +1,17 @@
+uuid: 2a6959b2-fbd9-411e-854f-3da1f8cabfa4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Gallery
+type: gallery
+description: 'Use this content type to create an album of image or a single video'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

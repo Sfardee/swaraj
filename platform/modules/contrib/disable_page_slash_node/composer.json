@@ -1,0 +1,19 @@
+{
+  "name": "drupal/disable_page_slash_node",
+  "description": "Provides a user-friendly interface to redirect /node to Home page.",
+  "type": "drupal-module",
+  "keywords": ["Drupal", "Disable","Page","Node"],
+  "homepage": "http://drupal.org/project/disable_page_slash_node",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Said EL fazni (fazni)",
+      "homepage": "https://www.drupal.org/u/fazni",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/disable_page_slash_node",
+    "source": "https://git.drupalcode.org/project/disable_page_slash_node"
+  }
+}

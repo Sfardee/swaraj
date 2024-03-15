@@ -1,0 +1,196 @@
+uuid: f4f0ab98-9ab4-4bae-8c42-f7d62ec66594
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_author
+    - field.storage.node.field_cta
+    - field.storage.node.field_target
+    - field.storage.node.field_video
+    - search_api.server.search
+  module:
+    - node
+    - search_api
+id: search
+name: Search
+description: ''
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: 0.5
+    dependencies:
+      config:
+        - field.storage.node.body
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+    dependencies:
+      module:
+        - node
+  field_author:
+    label: 'Article Title'
+    datasource_id: 'entity:node'
+    property_path: field_author
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_author
+  field_cta:
+    label: CTA
+    datasource_id: 'entity:node'
+    property_path: field_cta
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_cta
+  field_target:
+    label: Target
+    datasource_id: 'entity:node'
+    property_path: field_target
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_target
+  field_video:
+    label: 'Video Link'
+    datasource_id: 'entity:node'
+    property_path: field_video
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_video
+  nid:
+    label: ID
+    datasource_id: 'entity:node'
+    property_path: nid
+    type: integer
+    dependencies:
+      module:
+        - node
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - article
+        - csr
+        - news
+        - product
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  html_filter:
+    all_fields: true
+    fields:
+      - body
+      - field_author
+      - field_cta
+      - field_target
+      - field_video
+      - title
+      - type
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  ignorecase:
+    all_fields: true
+    fields:
+      - body
+      - field_author
+      - field_cta
+      - field_target
+      - field_video
+      - title
+      - type
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  rendered_item: {  }
+  stemmer:
+    all_fields: true
+    fields:
+      - body
+      - field_author
+      - title
+    exceptions:
+      mexican: mexic
+      texan: texa
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  tokenizer:
+    all_fields: true
+    fields:
+      - body
+      - field_author
+      - title
+    spaces: ''
+    overlap_cjk: 0
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: false
+    fields:
+      - body
+      - field_author
+      - field_cta
+      - field_target
+      - field_video
+      - title
+      - type
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: search

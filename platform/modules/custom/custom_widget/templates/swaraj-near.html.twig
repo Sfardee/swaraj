@@ -1,0 +1,123 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<section class="connect-box near-me-contact">
+  <img data-src="{{ image_path }}empty.png" height="0" width="0" class="map-lozad">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 CTR">
+        <h4>{{ data.text|trans }}</h4>
+        <small>{{ data.subtext|trans }}</small>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="spec-list-box">
+
+          <div class="">
+            <ul class="list-inline">
+              <li class="active">
+                <a data-toggle="tab" href="#Dealer" id="Dealer">{% trans %}Dealer{% endtrans %}
+                  {# <span class="badge">5</span> #}
+                </a>
+              </li>
+              {# <li>
+                <a data-toggle="tab" href="#Distributor" id="Distributor">Distributor
+                  <span class="badge">5</span>
+                </a>
+              </li> #}
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="map-section near-me-map os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+  <div
+    class="container">
+    <!-- <div class="visible-xs visible-sm CTR">
+                <h4>Always with you and for you</h4>
+                <p>Start your journey with our nearest Dealer as per your current location.</p>
+            </div> -->
+    <p class="change-location">
+      <a class="icons-link" href="#">
+        <i><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/Nevigation.svg" width="20"></i>
+        <span>{% trans %}Change Location{% endtrans %}</span>
+      </a>
+    </p>
+    <div class="row">
+
+      <div class="col-md-5 map" style="display:none;">
+        <div id="map"></div>
+      </div>
+
+
+      <!-- <div class="col-md-7 map-info"> -->
+      <div class="col-md-6 map-info col-md-push-3">
+      
+
+        <div class="hidden-xs hidden-sm desc">
+          <h2 class="header4">{{ data.maptext|trans }}</h2>
+          <p>{{ data.mapsubtext|trans }}</p>
+          <hr>
+
+        </div>
+
+        <div class="nearBylist">
+          <div class="near-me green">
+          </div>
+        </div>
+
+        <form id="mapForm">
+          <div class="map-form">
+            <div class="row">
+              <div class="col-md-10 MT30">
+                <select class="state selectpicker" id="state" required title="Select State*">
+                  <option value="" data-value="" disabled>{% trans %}Select State{% endtrans %}</option>
+                  {% for val in data.state %}
+                    <option data-value="{{ val.cord }}" value="{{ val.ucstate }}">{{ val.state }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="col-md-10 MT30">
+                <select class="city selectpicker" disabled id="city" required title="Select City*">
+                  <option value="" data-value="" disabled>{% trans %}Select City{% endtrans %}</option>
+                  {% for key, val in data.city %}
+                    <option data-value="{{ val.cord }}" rel='{{ val.state }}' value='{{ key|title }}'>{{ key|title }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="col-md-10 MT30">
+                <input class="text-box" name="pin" maxlength="6" placeholder="Pin Code" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter 6 digits pincode')" pattern="^(\d{6})$"  type="text" id="pin">
+              </div>
+            </div>
+
+            <div class="row MT30">
+
+              <div class="col-md-12">
+                <button class="btn green no-arrow btn-default update" type="submit">{% trans %}Update{% endtrans %}</button>
+                <a class="icons-link ML30 refresh" href="javascript:;">
+                  <i aria-hidden="true" class="fa fa-refresh"></i>
+                  <span>{% trans %}Refresh{% endtrans %}</span>
+                </a>
+              </div>
+
+            </div>
+
+            <input type="hidden" id="city-cord" value="all">
+            <input type="hidden" id="city-name" value="all">
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+  <div id="newContactForm">
+</div>

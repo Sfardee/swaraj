@@ -1,0 +1,19 @@
+uuid: 81c6e7f2-9b8d-4b1f-829e-734bef7c350b
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.enquiry_form_configuration
+    - field.storage.config_pages.field_terms_of_use_link
+id: config_pages.enquiry_form_configuration.field_terms_of_use_link
+field_name: field_terms_of_use_link
+entity_type: config_pages
+bundle: enquiry_form_configuration
+label: 'Terms of Use Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

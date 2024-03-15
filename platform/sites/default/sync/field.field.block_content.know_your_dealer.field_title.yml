@@ -1,0 +1,19 @@
+uuid: a0054696-41cc-4f58-b6d1-d7d5b378f61d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.know_your_dealer
+    - field.storage.block_content.field_title
+id: block_content.know_your_dealer.field_title
+field_name: field_title
+entity_type: block_content
+bundle: know_your_dealer
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

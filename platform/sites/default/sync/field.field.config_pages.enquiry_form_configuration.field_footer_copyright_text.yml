@@ -1,0 +1,21 @@
+uuid: 5923be31-0a73-4792-afa6-9cfe580c0807
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.enquiry_form_configuration
+    - field.storage.config_pages.field_footer_copyright_text
+id: config_pages.enquiry_form_configuration.field_footer_copyright_text
+field_name: field_footer_copyright_text
+entity_type: config_pages
+bundle: enquiry_form_configuration
+label: 'Footer copyright text'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 'Copyright 2015 Mahindra & Mahindra Ltd., Swaraj Division.'
+default_value_callback: ''
+settings: {  }
+field_type: string_long

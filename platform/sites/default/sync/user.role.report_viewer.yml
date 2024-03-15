@@ -1,0 +1,16 @@
+uuid: d42db8b6-0ab5-42f0-8c43-701c264883e1
+langcode: en
+status: true
+dependencies: {  }
+id: report_viewer
+label: 'Report Viewer'
+weight: 4
+is_admin: null
+permissions:
+  - 'access toolbar'
+  - 'access webform submission log'
+  - 'view any webform submission'
+  - 'view own webform submission'
+  - 'view the administration theme'
+  - 'view webform submissions any node'
+  - 'view webform submissions own node'

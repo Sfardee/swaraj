@@ -1,0 +1,91 @@
+.ipe-category-picker-bottom {
+  overflow-x: auto; }
+
+a.ipe-category[data-category="core"],
+a.ipe-category[data-category="User"],
+a.ipe-category[data-category="System"],
+a.ipe-category[data-category="Help"],
+a.ipe-category[data-category="Forms"],
+a.ipe-category[data-category="Devel"],
+a.ipe-category[data-category="Devel Node Access"],
+a.ipe-category[data-category="Chaos tools"] {
+  display: none; }
+
+#panels-ipe-tray {
+  /*z-index: 501;*/ }
+
+.field--name-field-stylizer .js-form-wrapper {
+  display: inline-block; }
+
+.field--name-field-stylizer .field--type-list-string {
+  display: block; }
+
+.ipe-block-form .block-content-form-revision-information {
+  display: none !important; }
+
+.ipe-block-form .js-form-type-vertical-tabs {
+  display: none; }
+
+a.tabledrag-handle .handle {
+  width: 32px;
+  height: 32px; }
+
+.jv-block-style-form .front {
+  display: none; }
+
+.vision-block-frm {
+  margin-bottom: -30px; }
+  .vision-block-frm h4 {
+    background-color: #ccc;
+    padding: 15px;
+    margin: 0; }
+  .vision-block-frm form.jv-block-style-form {
+    background-color: #ededed; }
+    .vision-block-frm form.jv-block-style-form label, .vision-block-frm form.jv-block-style-form .label {
+      font-weight: bold; }
+    .vision-block-frm form.jv-block-style-form input[type="text"] {
+      border: 1px solid #cccccc;
+      border-radius: 3px; }
+    .vision-block-frm form.jv-block-style-form input[type="radio"] {
+      margin-right: 5px; }
+    .vision-block-frm form.jv-block-style-form .description p {
+      font-style: italic;
+      font-size: 0.8em; }
+    .vision-block-frm form.jv-block-style-form .form-wrapper {
+      padding: 0;
+      background-color: #ededed;
+      margin: 0; }
+      .vision-block-frm form.jv-block-style-form .form-wrapper fieldset.form-item.form-wrapper legend {
+        border-bottom: 0 none;
+        margin: 8px 8px 0 8px;
+        background: #fff;
+        padding: 8px 3px 0px 10px;
+        width: calc(100% - 16px); }
+      .vision-block-frm form.jv-block-style-form .form-wrapper fieldset.form-item.form-wrapper .fieldset-wrapper {
+        margin: 0 8px 0 8px;
+        background-color: #fff;
+        padding: 2px 11px; }
+      .vision-block-frm form.jv-block-style-form .form-wrapper .vision-form-body {
+        padding: 8px 8px 0 8px;
+        background: #fff;
+        margin: 0 8px; }
+        .vision-block-frm form.jv-block-style-form .form-wrapper .vision-form-body hr {
+          margin: 0;
+          padding: 5px;
+          border-top: 2px solid #cfcfcf; }
+        .vision-block-frm form.jv-block-style-form .form-wrapper .vision-form-body .form-item:first-of-type {
+          margin-top: 0; }
+      .vision-block-frm form.jv-block-style-form .form-wrapper input.form-submit {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 5px;
+        background-color: #3d98ff;
+        border-color: #3d98ff;
+        font-weight: 400;
+        color: #fff;
+        margin-left: 10px;
+        margin-right: 10px;
+        box-sizing: border-box;
+        width: calc(100% - 20px);
+        margin-bottom: 17px; }
+

@@ -1,0 +1,36 @@
+uuid: 300ae6d3-e217-4d74-9b36-bb1cc391031f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.new_contact_us_mail_recipient.field_contact_us_state_wise_mail
+    - field.field.paragraph.new_contact_us_mail_recipient.field_request_type
+    - paragraphs.paragraphs_type.new_contact_us_mail_recipient
+  module:
+    - paragraphs
+id: paragraph.new_contact_us_mail_recipient.default
+targetEntityType: paragraph
+bundle: new_contact_us_mail_recipient
+mode: default
+content:
+  field_contact_us_state_wise_mail:
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  field_request_type:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+hidden:
+  created: true
+  status: true

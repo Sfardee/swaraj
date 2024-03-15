@@ -1,0 +1,20 @@
+uuid: dc8689cb-f09b-4cb4-a853-3d7c33ec9562
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.csr
+  module:
+    - path
+id: node.csr.path
+field_name: path
+entity_type: node
+bundle: csr
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

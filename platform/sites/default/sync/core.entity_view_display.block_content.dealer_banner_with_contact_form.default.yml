@@ -1,0 +1,50 @@
+uuid: 2ca08526-bc8c-4cae-a77f-e00ed3ed13c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dealer_banner_with_contact_form
+    - field.field.block_content.dealer_banner_with_contact_form.field_banner_image
+    - field.field.block_content.dealer_banner_with_contact_form.field_disclaimer_text
+    - field.field.block_content.dealer_banner_with_contact_form.field_subtitle
+    - field.field.block_content.dealer_banner_with_contact_form.field_title
+id: block_content.dealer_banner_with_contact_form.default
+targetEntityType: block_content
+bundle: dealer_banner_with_contact_form
+mode: default
+content:
+  field_banner_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_disclaimer_text:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_subtitle:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

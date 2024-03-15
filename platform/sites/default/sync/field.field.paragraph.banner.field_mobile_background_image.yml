@@ -1,0 +1,28 @@
+uuid: de3bc484-94af-41cb-91ca-f944f37ca59a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mobile_background_image
+    - media.type.image
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_mobile_background_image
+field_name: field_mobile_background_image
+entity_type: paragraph
+bundle: banner
+label: 'Mobile Background Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

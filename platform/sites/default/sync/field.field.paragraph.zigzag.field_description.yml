@@ -1,0 +1,21 @@
+uuid: b1ce398e-2802-4b96-b289-9ebb85a27901
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.zigzag
+  module:
+    - text
+id: paragraph.zigzag.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: zigzag
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

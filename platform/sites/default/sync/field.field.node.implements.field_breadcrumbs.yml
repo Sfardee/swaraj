@@ -1,0 +1,61 @@
+uuid: 92b7b354-ac22-4a2b-9f3e-a7a7be458983
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_breadcrumbs
+    - node.type.implements
+    - paragraphs.paragraphs_type.breadcrumbs
+  module:
+    - entity_reference_revisions
+id: node.implements.field_breadcrumbs
+field_name: field_breadcrumbs
+entity_type: node
+bundle: implements
+label: Breadcrumbs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      breadcrumbs: breadcrumbs
+    target_bundles_drag_drop:
+      about_us:
+        weight: 12
+        enabled: false
+      banner:
+        weight: 13
+        enabled: false
+      breadcrumbs:
+        enabled: true
+        weight: 14
+      commitment:
+        weight: 15
+        enabled: false
+      customers:
+        weight: 16
+        enabled: false
+      gallery:
+        weight: 17
+        enabled: false
+      milestone:
+        weight: 18
+        enabled: false
+      product_banner:
+        weight: 19
+        enabled: false
+      quick_tools:
+        weight: 20
+        enabled: false
+      specification:
+        weight: 21
+        enabled: false
+      zigzag:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

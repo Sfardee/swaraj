@@ -1,0 +1,18 @@
+uuid: 1ed53e3a-5095-4bc1-8bd4-0de48f53bcc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.article_block_with_video_followe
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.article_block_with_video_followe
+target_entity_type_id: block_content
+target_bundle: article_block_with_video_followe
+default_langcode: site_default
+language_alterable: true

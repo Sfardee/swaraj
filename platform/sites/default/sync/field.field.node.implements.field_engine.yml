@@ -1,0 +1,19 @@
+uuid: d8552f99-6ae7-4416-8c7a-fc27a59df53b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_engine
+    - node.type.implements
+id: node.implements.field_engine
+field_name: field_engine
+entity_type: node
+bundle: implements
+label: 'Engine kW (HP)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

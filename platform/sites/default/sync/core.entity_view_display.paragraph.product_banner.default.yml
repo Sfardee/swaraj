@@ -1,0 +1,103 @@
+uuid: 964f0704-0752-4039-90c9-eb6952475afe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_banner.field_background_image
+    - field.field.paragraph.product_banner.field_banner_type
+    - field.field.paragraph.product_banner.field_link
+    - field.field.paragraph.product_banner.field_mobile_background_image
+    - field.field.paragraph.product_banner.field_model_image
+    - field.field.paragraph.product_banner.field_model_name
+    - field.field.paragraph.product_banner.field_name
+    - field.field.paragraph.product_banner.field_number
+    - field.field.paragraph.product_banner.field_thousand_text
+    - paragraphs.paragraphs_type.product_banner
+  module:
+    - link
+    - options
+    - text
+id: paragraph.product_banner.default
+targetEntityType: paragraph
+bundle: product_banner
+mode: default
+content:
+  field_background_image:
+    type: entity_reference_entity_view
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_banner_type:
+    weight: 8
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_link:
+    weight: 3
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_mobile_background_image:
+    type: entity_reference_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_model_image:
+    type: entity_reference_entity_view
+    weight: 6
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_model_name:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_number:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_thousand_text:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

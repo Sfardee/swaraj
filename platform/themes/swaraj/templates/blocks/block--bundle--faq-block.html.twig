@@ -1,0 +1,37 @@
+{% block blockcontent %}
+  {% set nodes = [] %}
+  {% for faq in full_content.field_faq %}
+    {% if faq['#paragraph'] %}
+      {% set nodes = nodes | merge([faq['#paragraph']]) %}
+    {% endif %}
+  {% endfor %}
+	<div data-block-id="{{ uuid }}">
+		<section class="search-contentTab faq-box" id="faq">
+			<div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="header4">{{ block_content.field_title.value }}</h2>
+          </div>
+        </div>
+        <div class="spec-list-box">
+          <div class="tab-content accordion">
+            <div class="tab-pane active">
+              {% for k, faq in nodes %}
+                {% if k % 2 == 0 %}
+                  <div class="grey" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                  {% else %}
+                  <div class="white" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                {% endif %}
+                <h6 class="mob-trgr" itemprop="name">{{ faq.field_question.value }}</h6>
+                <p class="mob-cont" style="display: none;" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <span itemprop="text">{{ faq.field_answer.value }}</span>
+                </p>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+			</div>
+		</section>
+	</div>
+{% endblock %}

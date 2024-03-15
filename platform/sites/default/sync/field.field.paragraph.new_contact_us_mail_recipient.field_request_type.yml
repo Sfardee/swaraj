@@ -1,0 +1,23 @@
+uuid: a0373e45-b701-4477-bd79-c50ee1ae5fab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_request_type
+    - paragraphs.paragraphs_type.new_contact_us_mail_recipient
+  module:
+    - options
+id: paragraph.new_contact_us_mail_recipient.field_request_type
+field_name: field_request_type
+entity_type: paragraph
+bundle: new_contact_us_mail_recipient
+label: 'Request Type'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: Tractor
+default_value_callback: ''
+settings: {  }
+field_type: list_string

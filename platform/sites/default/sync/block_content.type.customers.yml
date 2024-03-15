@@ -1,0 +1,8 @@
+uuid: 890fdc00-61ea-4f5d-8a5a-898c8625da5b
+langcode: en
+status: true
+dependencies: {  }
+id: customers
+label: Customers
+revision: 0
+description: Customers

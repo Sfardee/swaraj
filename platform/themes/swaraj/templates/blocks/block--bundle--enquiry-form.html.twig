@@ -1,0 +1,73 @@
+{% block blockcontent %}
+	<div data-block-id="{{ uuid }}">
+		<div class="dealer-banner">
+			<div class="dealer-left">
+				<div class="dealer-carousel owl-carousel">
+					{% for banner in block_content.field_banner_image %}
+						<figure>
+							<img src="{{ file_url(banner.entity.field_media_image.entity.fileuri) }}" alt="{{ banner.entity.field_media_image.alt }}" class="image-responsive">
+						</figure>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="dealer-right">
+				<div class="know-more form-container">
+					<h3>{{ block_content.field_title.value }}</h3>
+					<p class="MB30">{{ block_content.field_subtitle.value }}</p>
+					<form id="enquiryForm" class="notranslate" autocomplete="off">
+						<div class="MB15">
+							<input type="text" id="name" name="name" minlength="3" maxlength="50" placeholder="Name / नाम *" pattern="[A-za-z][A-Za-z '.]+" class="input-box" required="" oninvalid="setCustomValidity('Will Accept Alphabets Only')" oninput="setCustomValidity('')" tabindex="1">
+						</div>
+						<div class="MB15">
+							<input id="mobile_number" name="number" type="text" id="mobile_number" placeholder="Phone Number / फ़ोन नंबर *" class="input-box" required maxlength="10" minlength="10" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter valid 10 digit mobile number.')" pattern="^[6789]\d{9}$" tabindex="2">
+						</div>
+						
+						<div class="form-group">
+							<select class="selectpicker" name="model[]" id="model" title="Model Interested / मॉडल इच्छुक हैं" multiple data-max-options="3" required tabindex="3">
+							
+                                                            {% for key, cat in products %}
+									<optgroup label="{{ key }}">
+										{% for model in cat %}
+											<option value="{{ model.cdms_identifier }}">{{ model.title }}</option>
+										{% endfor %}
+									</optgroup>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-group">
+							<select class="selectpicker" id="state" name="state" title="State / राज्य *" required tabindex="4">
+								{% for val in states %}
+									<option value="{{ val }}">{{ val }}</option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<div class="form-group">
+							<select class="selectpicker" id="district" name="district" title="District / जिला *" placeholder="District / जिला *" disabled="disabled" required tabindex="5">
+                  			</select>
+						</div>
+
+						<div class="form-group">
+							<select class="selectpicker" id="city_village" name="city_village" title="City / शहर *" placeholder="City / शहर *" disabled="disabled" required tabindex="6">
+                  			</select>
+						</div>
+
+						<div class="MB30">
+							<input type="text" autocomplete="off" id="datepickerEnquiry" class="date input-box" name="expected_date_of_delivery" placeholder="Expected Date of Delivery" onkeypress="return false;" tabindex="7">
+						</div>
+
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" required=""> {{ block_content.field_disclaimer_text.value | raw }}
+							</label>
+						</div>
+						<div class="MB30 MT30">
+							<input type="hidden" name="enquiry_form_csrf_token" value="{{ enquiry_form_csrf_token }}">
+							<button id="enquirySubmit" type="submit" value="Submit" class="btn btn-default">Submit / जमा करें</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

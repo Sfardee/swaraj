@@ -1,0 +1,19 @@
+uuid: 6332a44e-0120-4530-90a7-89c6844418ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gearbox
+    - node.type.implements
+id: node.implements.field_gearbox
+field_name: field_gearbox
+entity_type: node
+bundle: implements
+label: 'Grain tank capacity'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

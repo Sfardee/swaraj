@@ -1,0 +1,86 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+{% set i = 1 %}
+{% set j = 1 %}
+{% set k = 1 %}
+{% set l = 1 %}
+{% set m = 1 %}
+{% set n = 1 %}
+
+<section class="listing-section-1">
+  <div class="container os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+    <div class="row">
+      <div class="col-md-12 CTR">
+        <h4>{{ data.title|trans }}</h4>
+        <p>{{ data.subtitle|trans }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="listing-tab-wrapper">
+  <section class="listing-tab">
+    <div class="container hidden-xs tabs-slider os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+        <div class="imp-listing-tabs-carousel owl-carousel">
+          {% for id, hp in data.cat %}
+          {% if i == '1' %}
+            {% set active = 'active' %}
+          {% else %}
+            {% set active = '' %}
+          {% endif %}
+            <div>
+                <div class="tabsnav {{ active }}"><a data-toggle="tab" href="#listProd{{ l }}">{{ hp|t }}</a></div>
+            </div>
+          {% set i = i + 1 %}
+          {% set l = l + 1 %}
+          {% endfor %}
+        </div>
+    </div>
+    <div class="container visible-xs our-product os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+      <ul>
+          {% for id, hp in data.cat %}
+        {% if j == '1' %}
+          {% set active = 'active' %}
+        {% else %}
+          {% set active = '' %}
+        {% endif %}
+          <li class="{{ active }}">
+            <a data-toggle="tab" href="#listProd{{ m }}">{{ hp|trans }}</a>
+          </li>
+        {% set j = j + 1 %}
+        {% set m = m + 1 %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
+
+<section class="product-list">
+  <div class="tab-content">
+  {% for type, power in data.implement %}
+  {% if k == '1' %}
+    {% set active = 'active' %}
+  {% else %}
+    {% set active = '' %}
+  {% endif %}
+    <div class="tab-pane fade in {{ active }}" id="listProd{{ n }}">
+      <div class="container">
+          <h3>{{ type|trans }}</h3>
+        {% for value in power|batch(3) %}
+          <div class="row list-item">
+            {% for val in value %}
+            <div class="col-md-4 product-details">
+              <span></span>
+              {% if val.link %}<a class="full-link" href="{{ val.link }}"></a>{% endif %}
+              <figure><img alt="" class="img-responsive lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ val.image }}">
+                <figcaption>{{ val.title|trans }}</figcaption>
+              </figure>
+            </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% set k = k + 1 %}
+    {% set n = n + 1 %}
+  {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,60 @@
+uuid: 07d5e500-eb5a-4f21-b14c-86ca397b763d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.file_download_unit.field_description
+    - field.field.paragraph.file_download_unit.field_file_download
+    - field.field.paragraph.file_download_unit.field_info
+    - field.field.paragraph.file_download_unit.field_model_image
+    - field.field.paragraph.file_download_unit.field_name
+    - paragraphs.paragraphs_type.file_download_unit
+  module:
+    - file
+    - text
+id: paragraph.file_download_unit.default
+targetEntityType: paragraph
+bundle: file_download_unit
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_file_download:
+    weight: 3
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_info:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_model_image:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

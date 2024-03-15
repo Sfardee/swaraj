@@ -1,0 +1,5 @@
+services:
+  jarvis_vision.twig.jarvis_vision_extension:
+    class: Drupal\jarvis_vision\Twig\JvExtension
+    tags:
+      - { name: twig.extension }

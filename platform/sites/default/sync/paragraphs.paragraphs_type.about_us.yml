@@ -1,0 +1,9 @@
+uuid: 48c772c5-604b-4118-b0aa-b409bb6f1f74
+langcode: en
+status: true
+dependencies: {  }
+id: about_us
+label: 'About Us'
+icon_uuid: null
+description: 'About Us'
+behavior_plugins: {  }

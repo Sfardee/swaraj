@@ -1,0 +1,25 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+<div class="container">
+  {% if data.page_breadcrumbs %}
+    {% set a = 1 %}
+    <ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+      {% for val in data.page_breadcrumbs %}
+        {% if val.link %}
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" typeof="WebPage" href="{{ val.link }}">
+              <span itemprop="name">{{ val.title }}</span>
+            </a>
+            <meta itemprop="position" content="{{ a }}" />
+          </li>
+        {% else %}
+          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemprop="item" class="hidden" typeof="WebPage" href="{{ url('<current>') }}"><span itemprop="name">{{ val.title }}</span></a>
+            {{ val.title }}
+            <meta itemprop="position" content="{{ a }}" />
+          </li>
+        {% endif %}
+        {% set a = a + 1 %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

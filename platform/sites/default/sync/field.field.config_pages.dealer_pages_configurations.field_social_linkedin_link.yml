@@ -1,0 +1,19 @@
+uuid: 783f8462-a368-4cd2-ba4a-764255fcce73
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.dealer_pages_configurations
+    - field.storage.config_pages.field_social_linkedin_link
+id: config_pages.dealer_pages_configurations.field_social_linkedin_link
+field_name: field_social_linkedin_link
+entity_type: config_pages
+bundle: dealer_pages_configurations
+label: 'Social - Linkedin Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

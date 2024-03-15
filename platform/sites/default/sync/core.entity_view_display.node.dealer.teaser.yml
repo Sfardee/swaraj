@@ -1,0 +1,82 @@
+uuid: 406892a0-b55a-470a-a6b3-019967d5dafd
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.dealer.field_address_line_1
+    - field.field.node.dealer.field_address_line_2
+    - field.field.node.dealer.field_city
+    - field.field.node.dealer.field_constitution
+    - field.field.node.dealer.field_cst
+    - field.field.node.dealer.field_dealer
+    - field.field.node.dealer.field_dealer_name
+    - field.field.node.dealer.field_district
+    - field.field.node.dealer.field_doa
+    - field.field.node.dealer.field_email
+    - field.field.node.dealer.field_gstin
+    - field.field.node.dealer.field_latitude
+    - field.field.node.dealer.field_longitude
+    - field.field.node.dealer.field_lst
+    - field.field.node.dealer.field_meta_tags
+    - field.field.node.dealer.field_mobile
+    - field.field.node.dealer.field_pan_no
+    - field.field.node.dealer.field_person
+    - field.field.node.dealer.field_phone
+    - field.field.node.dealer.field_pincode
+    - field.field.node.dealer.field_state
+    - field.field.node.dealer.field_working_hours_day1
+    - field.field.node.dealer.field_working_hours_day2
+    - field.field.node.dealer.field_working_hours_day3
+    - field.field.node.dealer.field_working_hours_day4
+    - field.field.node.dealer.field_working_hours_day5
+    - field.field.node.dealer.field_working_hours_day6
+    - field.field.node.dealer.field_working_hours_day7
+    - field.field.node.dealer.field_zone
+    - field.field.node.dealer.panelizer
+    - node.type.dealer
+  module:
+    - user
+id: node.dealer.teaser
+targetEntityType: node
+bundle: dealer
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address_line_1: true
+  field_address_line_2: true
+  field_city: true
+  field_constitution: true
+  field_cst: true
+  field_dealer: true
+  field_dealer_name: true
+  field_district: true
+  field_doa: true
+  field_email: true
+  field_gstin: true
+  field_latitude: true
+  field_longitude: true
+  field_lst: true
+  field_meta_tags: true
+  field_mobile: true
+  field_pan_no: true
+  field_person: true
+  field_phone: true
+  field_pincode: true
+  field_state: true
+  field_working_hours_day1: true
+  field_working_hours_day2: true
+  field_working_hours_day3: true
+  field_working_hours_day4: true
+  field_working_hours_day5: true
+  field_working_hours_day6: true
+  field_working_hours_day7: true
+  field_zone: true
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

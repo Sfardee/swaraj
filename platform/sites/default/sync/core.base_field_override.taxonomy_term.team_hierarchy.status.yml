@@ -1,0 +1,22 @@
+uuid: 149053f2-c7a7-45dd-9d41-daf7597373d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.team_hierarchy
+id: taxonomy_term.team_hierarchy.status
+field_name: status
+entity_type: taxonomy_term
+bundle: team_hierarchy
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

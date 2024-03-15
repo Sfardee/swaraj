@@ -1,0 +1,58 @@
+uuid: 5145f80b-8e8e-4eb2-860c-afbba3d04901
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery
+    - node.type.gallery
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - entity_reference_revisions
+id: node.gallery.field_gallery
+field_name: field_gallery
+entity_type: node
+bundle: gallery
+label: Gallery
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery: gallery
+    target_bundles_drag_drop:
+      about_us:
+        weight: 11
+        enabled: false
+      banner:
+        weight: 12
+        enabled: false
+      commitment:
+        weight: 13
+        enabled: false
+      customers:
+        weight: 14
+        enabled: false
+      gallery:
+        enabled: true
+        weight: 15
+      milestone:
+        weight: 16
+        enabled: false
+      product_banner:
+        weight: 17
+        enabled: false
+      quick_tools:
+        weight: 18
+        enabled: false
+      specification:
+        weight: 19
+        enabled: false
+      zigzag:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,19 @@
+uuid: 1264e010-d669-43c1-921a-5dd3185caa04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.team_member
+id: node.team_member.field_author
+field_name: field_author
+entity_type: node
+bundle: team_member
+label: Designation
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: b137b1e5-5854-47e6-a5a6-d1a38374776e
+langcode: en
+status: true
+dependencies: {  }
+id: image_unit
+label: 'Image Unit'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph is used in "Article block with Video followed by Image" block'
+behavior_plugins: {  }

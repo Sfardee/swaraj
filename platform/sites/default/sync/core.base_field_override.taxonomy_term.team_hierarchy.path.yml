@@ -1,0 +1,20 @@
+uuid: dcbeb2fd-52a8-4977-9ec4-e96f1e628927
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.team_hierarchy
+  module:
+    - path
+id: taxonomy_term.team_hierarchy.path
+field_name: path
+entity_type: taxonomy_term
+bundle: team_hierarchy
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

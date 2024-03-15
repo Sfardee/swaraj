@@ -1,0 +1,20 @@
+uuid: 8efa05e5-77a6-4448-a100-51ea4b365632
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_node_id_of_enquiry_form_th
+field_name: field_node_id_of_enquiry_form_th
+entity_type: config_pages
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

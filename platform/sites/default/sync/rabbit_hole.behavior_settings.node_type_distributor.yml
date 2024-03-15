@@ -1,0 +1,14 @@
+uuid: 6b954d5e-119e-45aa-a262-69dba3070d60
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.distributor
+id: node_type_distributor
+entity_type_id: node_type
+entity_id: distributor
+action: page_redirect
+allow_override: 0
+redirect: /
+redirect_code: 307
+redirect_fallback_action: access_denied

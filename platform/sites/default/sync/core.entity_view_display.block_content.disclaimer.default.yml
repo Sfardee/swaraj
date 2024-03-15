@@ -1,0 +1,22 @@
+uuid: 5bb176ab-5d55-4d5a-ad2e-e517b34f6fd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.disclaimer
+    - field.field.block_content.disclaimer.field_disclaimer_text
+id: block_content.disclaimer.default
+targetEntityType: block_content
+bundle: disclaimer
+mode: default
+content:
+  field_disclaimer_text:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

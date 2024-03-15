@@ -1,0 +1,12 @@
+name: Custom Widget
+description: Custom Widget module to build our own widgets
+package: Custom
+type: module
+dependencies:
+- node
+- block
+version: 1.0
+core: 8.x
+dependencies:
+  - block
+

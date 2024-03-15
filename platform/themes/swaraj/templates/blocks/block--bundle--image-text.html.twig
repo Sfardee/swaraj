@@ -1,0 +1,36 @@
+{% block blockcontent %}
+  {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+  {% set nodes = [] %}
+  {% set i = 1 %}
+  {% for customer in block_content.field_image %}
+    {% if customer %}
+      {% set nodes = nodes | merge([customer.entity.field_media_image.entity.fileuri]) %}
+    {% endif %}
+  {% endfor %}
+  <div data-block-id="{{ uuid }}">
+    <section class="common-section fixsec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 CTR MTAL">
+            <h4>{{ block_content.field_title.value }}</h4>
+            <p>{{ block_content.field_subtitle.value }}</p>
+          </div>
+        </div>
+        <div class="about-img-box">
+        {% for key, value in nodes %}
+          <div class="img-box-{{ i }}"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(value) }}"></div>
+          {% set i = i + 1 %}
+        {% endfor %}
+          <div class="info-box">
+          <div class="about-detail">
+          {{ block_content.body.value|raw }}
+          </div>
+            <p class="MT20">
+              <a class="btn btn-default green" href="{{ block_content.field_cta.0.url }}">{{ block_content.field_cta.title }}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>  
+{% endblock %}

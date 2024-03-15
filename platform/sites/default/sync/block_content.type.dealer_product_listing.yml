@@ -1,0 +1,8 @@
+uuid: 27c70562-3e32-437b-90af-27adfb6d8d55
+langcode: en
+status: true
+dependencies: {  }
+id: dealer_product_listing
+label: 'Dealer Page - Product Listing'
+revision: 0
+description: 'Product listing page for Dealer pages.'

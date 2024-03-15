@@ -1,0 +1,21 @@
+uuid: 4ee52875-df93-406c-9112-71c426894993
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_state
+    - paragraphs.paragraphs_type.contact_us_state_wise_mail_recip
+  module:
+    - options
+id: paragraph.contact_us_state_wise_mail_recip.field_state
+field_name: field_state
+entity_type: paragraph
+bundle: contact_us_state_wise_mail_recip
+label: State
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

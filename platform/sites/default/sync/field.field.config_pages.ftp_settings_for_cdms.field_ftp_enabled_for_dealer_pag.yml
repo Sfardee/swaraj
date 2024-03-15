@@ -1,0 +1,23 @@
+uuid: 2f3476e1-13fd-4e12-a3cd-5771e642a865
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_ftp_enabled_for_dealer_pag
+id: config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_dealer_pag
+field_name: field_ftp_enabled_for_dealer_pag
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'FTP Enabled for Dealer Page'
+description: 'Use this flag to enable/disabled FTP for Dealer pages report'
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

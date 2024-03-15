@@ -1,0 +1,21 @@
+uuid: cb5f5e60-3ed8-4125-98b2-3f5f619940fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.panelizer
+    - node.type.csr
+  module:
+    - panelizer
+id: node.csr.panelizer
+field_name: panelizer
+entity_type: node
+bundle: csr
+label: Panelizer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: panelizer

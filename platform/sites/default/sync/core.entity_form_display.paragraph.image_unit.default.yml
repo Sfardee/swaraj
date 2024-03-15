@@ -1,0 +1,32 @@
+uuid: f7d39e5e-2351-4e09-a6e4-d243cf686da8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_unit.field_background_image
+    - field.field.paragraph.image_unit.field_mobile_background_image
+    - paragraphs.paragraphs_type.image_unit
+  module:
+    - media_library
+id: paragraph.image_unit.default
+targetEntityType: paragraph
+bundle: image_unit
+mode: default
+content:
+  field_background_image:
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_mobile_background_image:
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,19 @@
+uuid: d250a686-a4fa-401a-a427-146d5142cab7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.new_product_listing
+    - field.storage.block_content.field_title
+id: block_content.new_product_listing.field_title
+field_name: field_title
+entity_type: block_content
+bundle: new_product_listing
+label: 'Block Title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

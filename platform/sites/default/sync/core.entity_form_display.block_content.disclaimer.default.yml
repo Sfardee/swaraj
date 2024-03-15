@@ -1,0 +1,36 @@
+uuid: deab2dd1-7e28-4d7c-90f6-94be8651cfc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.disclaimer
+    - field.field.block_content.disclaimer.field_disclaimer_text
+id: block_content.disclaimer.default
+targetEntityType: block_content
+bundle: disclaimer
+mode: default
+content:
+  field_disclaimer_text:
+    weight: 26
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

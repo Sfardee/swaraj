@@ -1,0 +1,52 @@
+{% block blockcontent %}
+    {% set nodes = [] %}
+	{% for gallery in full_content.field_gallery_videos %}
+		{% if gallery['#paragraph'] %}
+			{% set nodes = nodes | merge([gallery['#paragraph']]) %}
+		{% endif %}
+	{% endfor %}
+    {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+    <div data-block-id="{{ uuid }}">
+        <section class="MB70 josh-gallery">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 CTR os-animation" data-os-animation="fadeInUp" data-os-animation-delay="0s">
+                        <h4>{{ block_content.field_title.value }}</h4>
+                        {% for i, gallery_video in nodes %}
+                        <div class="col-md-4 MT50">
+                            <a href="#galleryModal-3" data-id="{{ i }}" data-toggle="modal">
+                                <img class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(gallery_video.field_gallery_image_thumbnail.entity.field_media_image.entity.fileuri) }}" alt="{{ gallery_video.field_gallery_image_thumbnail.entity.field_media_image.alt }}">
+                            </a>
+                            <a href="{{ file_url(gallery_video.field_gallery_image_thumbnail.entity.field_media_image.entity.fileuri) }}" download>
+                                <img class="down-icon" src="{{ image_path }}download-icon.jpg" alt="">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="galleryModal-3" class="modal fade galleryModal">
+            <div class="modal-dialog">
+                <div class="close-video">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="gallery-carousal-photo gallery-carousal-video without-tag owl-carousel white-arrow">
+                    {% for i, gallery_video in nodes %}
+                    <div>
+                        <figure class="gallery-fig">
+                            <video width="100%" height="480" controls>
+                                <source src="{{ file_url(gallery_video.field_video.entity.field_media_video_file.entity.uri.value) }}" type="{{ type }}">
+                            </video>
+                            <a href="{{ file_url(gallery_video.field_video.entity.field_media_video_file.entity.uri.value) }}" download>
+                                <img class="down-icon" src="{{ image_path }}download-icon.jpg" alt="">
+                            </a>
+                        </figure>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

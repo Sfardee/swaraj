@@ -1,0 +1,17 @@
+uuid: 343546b5-49a1-415b-9e98-8b5b3b6ce74b
+langcode: en
+status: true
+dependencies: {  }
+id: enquiry_form_configuration
+label: 'Enquiry Form - Configuration'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/swaraj-settings/enquiry-form
+  weight: 0
+  description: ''
+token: false

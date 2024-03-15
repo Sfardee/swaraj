@@ -1,0 +1,19 @@
+uuid: 0d3e93e2-afc3-4731-9aee-d8f233b09739
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_number
+    - paragraphs.paragraphs_type.banner
+id: paragraph.banner.field_number
+field_name: field_number
+entity_type: paragraph
+bundle: banner
+label: Subtext
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

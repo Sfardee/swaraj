@@ -1,0 +1,42 @@
+uuid: 941b1fbd-2fca-449c-a2d4-597ec1d4d6fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.zigzag
+    - field.field.block_content.zigzag.field_zigzag
+  module:
+    - paragraphs
+id: block_content.zigzag.default
+targetEntityType: block_content
+bundle: zigzag
+mode: default
+content:
+  field_zigzag:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

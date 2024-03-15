@@ -1,0 +1,18 @@
+uuid: 45ec9b8c-afb0-4855-b05a-3b7e3ef7d759
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.csr
+id: node.csr.changed
+field_name: changed
+entity_type: node
+bundle: csr
+label: Changed
+description: 'The time that the node was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

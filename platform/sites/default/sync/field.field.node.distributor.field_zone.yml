@@ -1,0 +1,19 @@
+uuid: 44aed9dc-a9f8-4397-a6de-e3c298abe5e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zone
+    - node.type.distributor
+id: node.distributor.field_zone
+field_name: field_zone
+entity_type: node
+bundle: distributor
+label: Zone
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

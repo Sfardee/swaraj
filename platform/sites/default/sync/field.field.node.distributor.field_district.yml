@@ -1,0 +1,19 @@
+uuid: 7522aeaa-ac03-4516-8dd5-d8724b149513
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_district
+    - node.type.distributor
+id: node.distributor.field_district
+field_name: field_district
+entity_type: node
+bundle: distributor
+label: District
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

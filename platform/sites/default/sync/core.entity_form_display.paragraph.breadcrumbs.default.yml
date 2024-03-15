@@ -1,0 +1,34 @@
+uuid: b7c742f2-5c2a-4bc8-8615-08b259b744ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.breadcrumbs.field_link
+    - field.field.paragraph.breadcrumbs.field_name
+    - paragraphs.paragraphs_type.breadcrumbs
+  module:
+    - link
+id: paragraph.breadcrumbs.default
+targetEntityType: paragraph
+bundle: breadcrumbs
+mode: default
+content:
+  field_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

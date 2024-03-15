@@ -1,0 +1,72 @@
+uuid: de2a6239-4b45-42a9-b79c-f3aa0f058b77
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.file_download_listing
+    - field.field.block_content.file_download_listing.body
+    - field.field.block_content.file_download_listing.field_file_download_cta_text
+    - field.field.block_content.file_download_listing.field_file_download_unit
+    - field.field.block_content.file_download_listing.field_title
+  module:
+    - paragraphs
+    - text
+id: block_content.file_download_listing.default
+targetEntityType: block_content
+bundle: file_download_listing
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_file_download_cta_text:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_file_download_unit:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

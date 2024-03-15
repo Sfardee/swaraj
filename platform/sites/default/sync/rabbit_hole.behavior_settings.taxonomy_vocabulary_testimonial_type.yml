@@ -1,0 +1,14 @@
+uuid: b66bcf89-4537-47fe-bbfd-c58a2ec51b70
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.testimonial_type
+id: taxonomy_vocabulary_testimonial_type
+entity_type_id: taxonomy_vocabulary
+entity_id: testimonial_type
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

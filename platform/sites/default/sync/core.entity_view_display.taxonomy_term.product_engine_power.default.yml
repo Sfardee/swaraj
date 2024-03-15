@@ -1,0 +1,32 @@
+uuid: d5dbd2f4-e7a6-44e5-801f-891ff7160774
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.product_engine_power.field_link
+    - taxonomy.vocabulary.product_engine_power
+  module:
+    - text
+id: taxonomy_term.product_engine_power.default
+targetEntityType: taxonomy_term
+bundle: product_engine_power
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

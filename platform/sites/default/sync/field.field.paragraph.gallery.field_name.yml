@@ -1,0 +1,19 @@
+uuid: ac74d72a-70f8-4eeb-a29b-0729241ed95a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - paragraphs.paragraphs_type.gallery
+id: paragraph.gallery.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: gallery
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

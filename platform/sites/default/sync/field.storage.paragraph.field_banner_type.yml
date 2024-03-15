@@ -1,0 +1,30 @@
+uuid: 8e89d28d-498a-47a5-8083-b9de03388247
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_banner_type
+field_name: field_banner_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: campaign
+      label: Campaign
+    -
+      value: product
+      label: Product
+    -
+      value: generic
+      label: 'Josh Ka Raaz'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,32 @@
+uuid: 2044e7e4-8801-4de5-975d-aa51f858676b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.specification.field_description
+    - field.field.paragraph.specification.field_name
+    - paragraphs.paragraphs_type.specification
+  module:
+    - text
+id: paragraph.specification.default
+targetEntityType: paragraph
+bundle: specification
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

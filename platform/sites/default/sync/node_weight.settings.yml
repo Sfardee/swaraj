@@ -1,0 +1,6 @@
+node_weight:
+  checked_node_types:
+    - team_member
+    - testimonials
+_core:
+  default_config_hash: cYU1RD4JLkqhPsH9LZBq1B3sGtSQPPz3Y98DR763WrY

@@ -1,0 +1,22 @@
+display:
+  default:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: 'नाम*'
+  widget:
+    display_options:
+      filters:
+        name:
+          expose:
+            label: 'नाम*'
+  widget_table:
+    display_options:
+      fields:
+        name:
+          label: 'नाम*'
+      filters:
+        name:
+          expose:
+            label: 'नाम*'

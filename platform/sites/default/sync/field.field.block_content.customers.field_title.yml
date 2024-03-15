@@ -1,0 +1,19 @@
+uuid: 6799c90d-67bb-420f-8613-4a60e57857cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.customers
+    - field.storage.block_content.field_title
+id: block_content.customers.field_title
+field_name: field_title
+entity_type: block_content
+bundle: customers
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

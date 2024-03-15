@@ -1,0 +1,22 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<section class="search-contentTab news-contentTab">
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="News">
+      {{ data.view_display }}
+    </div>
+  </div>
+</section>
+
+{% for key, value in data.video %}
+  <div class="modal fade youtube-video-box galleryModal" id="myModalVideo{{ key }}">
+    <div class="container">
+      <div class="close-video">
+        <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+      </div>
+      <div>
+        <iframe allowfullscreen frameborder="0" height="600" id="SwarajVideo" class="lozad" data-src="{{ value }}" width="100%"></iframe>
+      </div>
+    </div>
+  </div>
+{% endfor %}

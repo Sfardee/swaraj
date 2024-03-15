@@ -1,0 +1,19 @@
+uuid: 4c2a2320-2210-4636-bef0-876aa0c52046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pincode
+    - node.type.distributor
+id: node.distributor.field_pincode
+field_name: field_pincode
+entity_type: node
+bundle: distributor
+label: Pincode
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

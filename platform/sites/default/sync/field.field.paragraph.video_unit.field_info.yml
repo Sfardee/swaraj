@@ -1,0 +1,19 @@
+uuid: 1b953762-f332-4b16-9b32-5506d88617c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_info
+    - paragraphs.paragraphs_type.video_unit
+id: paragraph.video_unit.field_info
+field_name: field_info
+entity_type: paragraph
+bundle: video_unit
+label: Info
+description: 'Use text of length less than 50 char.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

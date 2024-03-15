@@ -1,0 +1,79 @@
+{% set i = 1 %}
+{% set j = 1 %}
+{% set k = 1 %}
+<section class="common-section">
+  <div class="container os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+    <div class="row">
+      <div class="col-md-12 CTR MTAL">
+        <h4>{{ data.title|trans }}</h4>
+        <p>{{ data.subtitle|trans }}</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-carousel owl-carousel">
+      {% for year, mile in data.mile %}
+      {% if i == '1' %}
+        {% set active = 'active' %}
+      {% else %}
+        {% set active = '' %}
+      {% endif %}
+        <div>
+          <div class="milestone-tabs {{ active }}">
+            <a data-toggle="tab" href="#mileTabs{{ i }}">{{ year }}</a>
+          </div>
+        </div>
+        {% set i = i + 1 %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="milestone-info">
+    <div class="container">
+      <div class="tab-content">
+      {% for year, mile in data.mile %}
+      {% if j == '1' %}
+        {% set active = 'active' %}
+      {% else %}
+        {% set active = '' %}
+      {% endif %}
+        <div class="tab-pane fade in {{ active }}" id="mileTabs{{ j }}">
+          <div class="milestoneBox-carousel owl-carousel green">
+          {% for value in mile|batch(3) %}
+            <div>
+              <div class="row">
+               {% for val in value %}
+               {% if k % 2 == 0 %}
+                  {% set active = 'active' %}
+                {% else %}
+                  {% set active = '' %}
+                {% endif %}
+                <div class="col-md-4">
+                  <div class="milestone-box {{ active }}">
+                    <h3>{{ val.title }}</h3>
+                    <p class="designation">{{ val.subtext }}</p>
+                    {{ val.desc|raw }}
+                  </div>
+                </div>
+                {% set k = k + 1 %}
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% set j = j + 1 %}
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="TAR MT5">*{% trans %}Data current as of{% endtrans %} {{ data.year }}</p>
+    <div class="our-journey">
+      <div class="row">
+        <div class="col-md-6 col-md-push-3 CTR">
+          {{ data.desc|raw|trans }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

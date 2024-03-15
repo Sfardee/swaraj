@@ -1,0 +1,19 @@
+uuid: 3b42ff0b-d9a4-4172-927b-8f44be1361f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cylinders
+    - node.type.product
+id: node.product.field_cylinders
+field_name: field_cylinders
+entity_type: node
+bundle: product
+label: Cylinders
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

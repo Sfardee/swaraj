@@ -1,0 +1,66 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<section class="search-contentTab">
+  <div class="tab-content">
+    <div class="tab-pane fade faq-container in active" id="FAQs">
+      <div class="container">
+        <div class="faqTitle">
+          <div class="row">
+            <div class="col-md-12">
+              <h5>{{ data.text }}</h5>
+              <p>{{ data.subtext }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="swaraj-carousel owl-carousel green">
+
+                <div class="CTR">
+                  <figure>
+                    <a href="#"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/mobile.svg"></a>
+                  </figure>
+                  <p>
+                    <a href="#">{{ data.mobile }}</a>
+                  </p>
+                </div>
+
+                <div class="CTR">
+                  <figure>
+                    <a href="#"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/whatsapp.svg"></a>
+                  </figure>
+                  <p>
+                    <a href="#">{{ data.whatsapp }}</a>
+                  </p>
+                </div>
+
+                <div class="CTR">
+                  <figure>
+                    <a href="mailto:{{ data.mail }}"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/email.svg"></a>
+                  </figure>
+                  <p>
+                    <a href="mailto:{{ data.mail }}">For
+                      {{ data.mail }}</a>
+                  </p>
+                </div>
+
+                <div class="CTR">
+                  <figure>
+                    <a href="#"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/feedback.svg"></a>
+                  </figure>
+                  <p>
+                    <a href="{{ base_path ~ data.link }}">{% trans %}Submit a feedback{% endtrans %}</a>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,67 @@
+uuid: 5e3a4a21-5a97-4719-a170-9ca6171082bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.new_product_listing
+    - field.storage.block_content.field_product_items
+    - paragraphs.paragraphs_type.product_list_item
+  module:
+    - entity_reference_revisions
+id: block_content.new_product_listing.field_product_items
+field_name: field_product_items
+entity_type: block_content
+bundle: new_product_listing
+label: 'Product items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      product_list_item: product_list_item
+    target_bundles_drag_drop:
+      about_us:
+        weight: 14
+        enabled: false
+      banner:
+        weight: 15
+        enabled: false
+      breadcrumbs:
+        weight: 16
+        enabled: false
+      commitment:
+        weight: 17
+        enabled: false
+      customers:
+        weight: 18
+        enabled: false
+      gallery:
+        weight: 19
+        enabled: false
+      milestone:
+        weight: 20
+        enabled: false
+      product_banner:
+        weight: 21
+        enabled: false
+      product_item:
+        weight: 22
+        enabled: false
+      product_list_item:
+        enabled: true
+        weight: 23
+      quick_tools:
+        weight: 24
+        enabled: false
+      specification:
+        weight: 25
+        enabled: false
+      zigzag:
+        weight: 26
+        enabled: false
+field_type: entity_reference_revisions

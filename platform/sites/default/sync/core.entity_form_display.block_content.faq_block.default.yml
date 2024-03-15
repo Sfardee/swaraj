@@ -1,0 +1,51 @@
+uuid: 8d07f236-1aba-4616-8093-4d433a65f733
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.faq_block
+    - field.field.block_content.faq_block.field_faq
+    - field.field.block_content.faq_block.field_title
+  module:
+    - paragraphs
+id: block_content.faq_block.default
+targetEntityType: block_content
+bundle: faq_block
+mode: default
+content:
+  field_faq:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

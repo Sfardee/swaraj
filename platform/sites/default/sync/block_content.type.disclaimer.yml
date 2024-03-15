@@ -1,0 +1,8 @@
+uuid: f439ca9d-9aee-4c76-b01b-ad341e3fdf3e
+langcode: en
+status: true
+dependencies: {  }
+id: disclaimer
+label: Disclaimer
+revision: 0
+description: 'Use this block to add disclaimer in product / implement pages'

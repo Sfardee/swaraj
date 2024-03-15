@@ -1,0 +1,8 @@
+uuid: 60b97e77-0440-4df2-9bff-ba4cf04e632e
+langcode: en
+status: true
+dependencies: {  }
+id: new_product_listing
+label: 'New Product Listing'
+revision: 0
+description: 'New block for product listing on homepage'

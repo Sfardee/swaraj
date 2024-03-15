@@ -1,0 +1,18 @@
+uuid: 74ceb0f7-49b7-4c5d-bb71-d834baf480f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.contact_us_state_wise_mail_recip
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: paragraph.contact_us_state_wise_mail_recip
+target_entity_type_id: paragraph
+target_bundle: contact_us_state_wise_mail_recip
+default_langcode: site_default
+language_alterable: true

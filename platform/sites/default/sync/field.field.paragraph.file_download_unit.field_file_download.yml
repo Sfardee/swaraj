@@ -1,0 +1,27 @@
+uuid: 4007c1d9-bf87-48f5-b458-f018d655017a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file_download
+    - paragraphs.paragraphs_type.file_download_unit
+  module:
+    - file
+id: paragraph.file_download_unit.field_file_download
+field_name: field_file_download
+entity_type: paragraph
+bundle: file_download_unit
+label: 'File Download'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: file_downloads
+  file_extensions: pdf
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

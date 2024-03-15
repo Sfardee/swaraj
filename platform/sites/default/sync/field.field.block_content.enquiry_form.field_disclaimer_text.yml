@@ -1,0 +1,19 @@
+uuid: cd3a204c-a46d-4817-b4d8-b93c703c33c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.enquiry_form
+    - field.storage.block_content.field_disclaimer_text
+id: block_content.enquiry_form.field_disclaimer_text
+field_name: field_disclaimer_text
+entity_type: block_content
+bundle: enquiry_form
+label: 'Consent Text for Form'
+description: 'This text will be displayed next to Consent Check box in Enquiry Form. Anchor tag is allowed'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

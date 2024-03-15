@@ -1,0 +1,25 @@
+uuid: ad1e65a4-15d0-4f16-925e-8fe1883543d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_no_of_days_for_which_repor
+id: config_pages.ftp_settings_for_cdms.field_no_of_days_for_which_repor
+field_name: field_no_of_days_for_which_repor
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'No of Days for which report to be exported'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 1
+  max: 30
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,19 @@
+uuid: 7ebe0803-f2c1-4b28-924a-fb8a08cae799
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_thousand_text
+    - paragraphs.paragraphs_type.customers
+id: paragraph.customers.field_thousand_text
+field_name: field_thousand_text
+entity_type: paragraph
+bundle: customers
+label: 'Thousand Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

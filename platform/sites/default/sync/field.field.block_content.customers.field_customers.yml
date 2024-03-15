@@ -1,0 +1,31 @@
+uuid: 1771c8e7-368d-41ff-a7af-432efae8fcdc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.customers
+    - field.storage.block_content.field_customers
+    - paragraphs.paragraphs_type.customers
+  module:
+    - entity_reference_revisions
+id: block_content.customers.field_customers
+field_name: field_customers
+entity_type: block_content
+bundle: customers
+label: Customers
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      customers: customers
+    target_bundles_drag_drop:
+      customers:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

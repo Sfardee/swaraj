@@ -1,0 +1,17 @@
+uuid: 054378bd-a9af-4748-925d-b61d126eab6a
+langcode: en
+status: true
+dependencies: {  }
+id: new_contact_us_mail_configuratio
+label: 'New Contact Us - Mail Configuration'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/swaraj-settings/new-contact-us-mail-configuration
+  weight: 0
+  description: ''
+token: false

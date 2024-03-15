@@ -1,0 +1,19 @@
+uuid: 61d14567-311c-4c21-830c-ba49bd5317b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_link
+    - taxonomy.vocabulary.product_engine_power
+id: taxonomy_term.product_engine_power.field_link
+field_name: field_link
+entity_type: taxonomy_term
+bundle: product_engine_power
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

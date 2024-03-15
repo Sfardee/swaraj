@@ -1,0 +1,8 @@
+uuid: d4ad0dca-2e1a-4f55-aa98-c66ef37ffb4d
+langcode: en
+status: true
+dependencies: {  }
+id: banner_address
+label: 'Banner with Address'
+revision: 0
+description: 'Banner with Address'

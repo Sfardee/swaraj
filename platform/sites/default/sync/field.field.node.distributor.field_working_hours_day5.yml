@@ -1,0 +1,19 @@
+uuid: f18cb6d8-245e-47e8-ac41-79876eb2cc71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_working_hours_day5
+    - node.type.distributor
+id: node.distributor.field_working_hours_day5
+field_name: field_working_hours_day5
+entity_type: node
+bundle: distributor
+label: 'Working hours-Day5'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: ed35fd4f-e796-4bc1-ac92-dabe65877112
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_engine_power
+id: taxonomy_term.product_engine_power.status
+field_name: status
+entity_type: taxonomy_term
+bundle: product_engine_power
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

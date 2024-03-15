@@ -1,0 +1,16 @@
+jarvis_vision.block_plugin.style_form:
+  path: '/admin/panels_ipe/variant/{panels_storage_type}/{panels_storage_id}/block_plugins/{plugin_id}/block/{block_uuid}/style_form'
+  defaults:
+    _controller: '\Drupal\jarvis_vision\Controller\JarvisVisionController::getBlockStylePluginForm'
+  requirements:
+    _panels_storage_access: read
+    _permission: 'access panels in-place editing'
+  options:
+    _admin_route: FALSE
+jarvis_vision.ckeditor_settings:
+  path: '/admin/config/content/jarvis_config'
+  defaults:
+    _form: '\Drupal\jarvis_vision\Form\CKEdiorConfigForm'
+    _title: 'Jarvis CKEdior Settings'
+  requirements:
+    _permission: 'administer site configuration'

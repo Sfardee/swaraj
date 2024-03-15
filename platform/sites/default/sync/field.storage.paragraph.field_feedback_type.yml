@@ -1,0 +1,51 @@
+uuid: b0e181ef-b038-4593-8600-eb0504ea036a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_feedback_type
+field_name: field_feedback_type
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'become a dealer'
+      label: 'become a dealer'
+    -
+      value: 'bulk buying'
+      label: 'bulk buying'
+    -
+      value: export
+      label: export
+    -
+      value: implements
+      label: implements
+    -
+      value: others
+      label: others
+    -
+      value: price
+      label: price
+    -
+      value: purchase/buy
+      label: purchase/buy
+    -
+      value: 'service/parts feedback'
+      label: 'service/parts feedback'
+    -
+      value: 'spare part request'
+      label: 'spare part request'
+    -
+      value: 'tractor demo'
+      label: 'tractor demo'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

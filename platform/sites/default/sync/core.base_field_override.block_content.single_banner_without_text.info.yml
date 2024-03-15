@@ -1,0 +1,18 @@
+uuid: b9d61238-063c-42c2-960f-47c00b744c1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.single_banner_without_text
+id: block_content.single_banner_without_text.info
+field_name: info
+entity_type: block_content
+bundle: single_banner_without_text
+label: 'Block description'
+description: 'A brief description of your block.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

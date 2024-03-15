@@ -1,0 +1,8 @@
+uuid: 0d9b24e7-0bbb-4fcb-94a0-a7990a109af5
+langcode: en
+status: true
+dependencies: {  }
+id: image_gallery
+label: 'Image Gallery'
+revision: 0
+description: 'This custom block is used on "Josh Ka Raaz" campaign page'

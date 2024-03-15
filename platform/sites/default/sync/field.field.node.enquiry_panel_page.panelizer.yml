@@ -1,0 +1,21 @@
+uuid: d29e57a4-4425-401d-9bf0-bff3d8d73963
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.panelizer
+    - node.type.enquiry_panel_page
+  module:
+    - panelizer
+id: node.enquiry_panel_page.panelizer
+field_name: panelizer
+entity_type: node
+bundle: enquiry_panel_page
+label: Panelizer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: panelizer

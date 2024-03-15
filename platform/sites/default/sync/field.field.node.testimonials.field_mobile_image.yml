@@ -1,0 +1,28 @@
+uuid: 898884cc-9993-42e2-9456-503bab5d2a41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mobile_image
+    - media.type.image
+    - node.type.testimonials
+id: node.testimonials.field_mobile_image
+field_name: field_mobile_image
+entity_type: node
+bundle: testimonials
+label: 'Mobile Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

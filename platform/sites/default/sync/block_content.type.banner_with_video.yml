@@ -1,0 +1,8 @@
+uuid: e163984a-b52e-4ecb-965d-2500d4e48960
+langcode: en
+status: true
+dependencies: {  }
+id: banner_with_video
+label: 'Banner With Video'
+revision: 0
+description: 'Banner With Video'

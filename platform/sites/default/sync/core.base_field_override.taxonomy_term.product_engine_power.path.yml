@@ -1,0 +1,20 @@
+uuid: cf085a95-cecf-4984-898d-9784b390c138
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_engine_power
+  module:
+    - path
+id: taxonomy_term.product_engine_power.path
+field_name: path
+entity_type: taxonomy_term
+bundle: product_engine_power
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

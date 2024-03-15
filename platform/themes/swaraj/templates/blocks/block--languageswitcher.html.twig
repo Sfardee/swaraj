@@ -1,0 +1,26 @@
+{%
+	set classes = [
+		'dropdown',
+		'transparent-bg',
+		'v2',
+	]
+  %}
+
+
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+         <button class="btn dropdown-toggle" type="button" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <span class="lng">Select Language</span>
+            <span class="fa fa-angle-down"></span>
+        </button>
+        {{ content }} 
+    {% endblock %}
+</div>
+
+
+                                   

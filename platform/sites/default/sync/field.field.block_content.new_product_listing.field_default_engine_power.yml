@@ -1,0 +1,29 @@
+uuid: 70955bdc-bddc-460c-b2fa-490b63d61ab2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.new_product_listing
+    - field.storage.block_content.field_default_engine_power
+    - taxonomy.vocabulary.product_engine_power
+id: block_content.new_product_listing.field_default_engine_power
+field_name: field_default_engine_power
+entity_type: block_content
+bundle: new_product_listing
+label: 'Default Engine power'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_engine_power: product_engine_power
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

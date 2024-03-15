@@ -1,0 +1,28 @@
+uuid: 64b9ede8-6df0-4a86-bd11-b2d88f1b30ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_product_image
+    - media.type.image
+    - paragraphs.paragraphs_type.product_item
+id: paragraph.product_item.field_product_image
+field_name: field_product_image
+entity_type: paragraph
+bundle: product_item
+label: 'Product Image'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

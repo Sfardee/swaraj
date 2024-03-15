@@ -1,0 +1,19 @@
+uuid: 31a15333-f002-4ea4-84de-83da43dd1e6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mobile
+    - node.type.dealer
+id: node.dealer.field_mobile
+field_name: field_mobile
+entity_type: node
+bundle: dealer
+label: Mobile
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

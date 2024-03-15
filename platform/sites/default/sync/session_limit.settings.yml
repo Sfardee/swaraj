@@ -1,0 +1,11 @@
+session_limit_max: 1
+session_limit_masquerade_ignore: false
+session_limit_behaviour: 2
+session_limit_logged_out_message_severity: error
+session_limit_roles:
+  authenticated: 0
+  administrator: 0
+  editor: 0
+_core:
+  default_config_hash: 6LIpKkpajaLVzp7vCiTE8WQxllcMEoQ3vrFIq4FRYSE
+session_limit_admin_inclusion: 1

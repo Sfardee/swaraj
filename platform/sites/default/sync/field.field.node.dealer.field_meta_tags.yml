@@ -1,0 +1,21 @@
+uuid: 049a3e3e-539e-4fa4-8f9e-aeeb01062af0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tags
+    - node.type.dealer
+  module:
+    - metatag
+id: node.dealer.field_meta_tags
+field_name: field_meta_tags
+entity_type: node
+bundle: dealer
+label: 'Meta tags'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

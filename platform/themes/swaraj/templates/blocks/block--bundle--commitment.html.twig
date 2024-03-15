@@ -1,0 +1,53 @@
+{% block blockcontent %}
+  {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+  {% set nodes = [] %}
+  {% for banner in full_content.field_commitment %}
+    {% if banner['#paragraph'] %}
+      {% set nodes = nodes | merge([banner['#paragraph']]) %}
+    {% endif %}
+  {% endfor %}
+  <div data-block-id="{{ uuid }}">
+    <section class="common-section">
+      <div class="container os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+        <div class="row">
+          <div class="col-md-12 CTR MTAL">
+            <h4>{{ block_content.field_title.value }}</h4>
+            <p>{{ block_content.field_subtitle.value }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="commitment-carousel owl-carousel green">
+            {% for key, values in nodes %}
+              <div>
+                <div class="commitment-box">
+                  <figure>
+                  {% if values.field_name.value %}
+                    <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}play.png"></a>
+                    {% endif %}
+                    <img class="img-responsive lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(values.field_model_image.entity.field_media_image.entity.fileuri) }}"></figure>
+                  <div class="commitment-info">{{ values.field_description.value|raw }}</div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% for key, values in nodes %}
+    {% if values.field_name.value %}
+    <div class="modal fade youtube-video-box" id="myModalVideo{{ key }}">
+      <div class="container">
+        <div class="close-video">
+          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+        </div>
+        <div>
+          <iframe allowfullscreen frameborder="0" height="600" id="SwarajVideo" class="lozad" data-src="{{ values.field_name.value }}" width="100%"></iframe>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+{% endblock %}

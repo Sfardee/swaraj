@@ -1,0 +1,13 @@
+uuid: 26f60779-894e-40bf-a0c2-94e09b393d1c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  shortlink: '[site:url]'
+  title: 'Farm Tractor | Agriculture Tractor | Mini Farm Tractor | Tractors in India'
+  description: 'Swaraj Tractors is India’s first indigenous tractor brand. Established in 1974, A rapidly growing brand with a wide range of agriculture tractors from 15 HP to 65 HP, Swaraj stands firmly among the top farm tractor brands in India.'

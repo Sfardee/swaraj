@@ -1,0 +1,28 @@
+uuid: aab17078-11ff-47d5-8b09-c1c0fb511938
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.text_with_cta
+    - field.storage.block_content.field_mobile_background_image
+    - media.type.image
+id: block_content.text_with_cta.field_mobile_background_image
+field_name: field_mobile_background_image
+entity_type: block_content
+bundle: text_with_cta
+label: 'Mobile Background Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

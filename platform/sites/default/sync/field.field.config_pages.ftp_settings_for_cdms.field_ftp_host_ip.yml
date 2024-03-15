@@ -1,0 +1,21 @@
+uuid: 5ab88d70-e70d-4ace-934d-5e5671222477
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_ftp_host_ip
+id: config_pages.ftp_settings_for_cdms.field_ftp_host_ip
+field_name: field_ftp_host_ip
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'FTP Host IP'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 10.255.2.36
+default_value_callback: ''
+settings: {  }
+field_type: string

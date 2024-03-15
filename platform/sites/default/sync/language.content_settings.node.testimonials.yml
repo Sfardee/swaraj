@@ -1,0 +1,18 @@
+uuid: 34e32c42-8e69-4731-b232-80b476c9c453
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.testimonials
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: node.testimonials
+target_entity_type_id: node
+target_bundle: testimonials
+default_langcode: site_default
+language_alterable: true

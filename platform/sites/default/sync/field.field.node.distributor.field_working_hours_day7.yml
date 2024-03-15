@@ -1,0 +1,19 @@
+uuid: a7fcc56d-61d4-44c3-a160-87f1871ccf5a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_working_hours_day7
+    - node.type.distributor
+id: node.distributor.field_working_hours_day7
+field_name: field_working_hours_day7
+entity_type: node
+bundle: distributor
+label: 'Working hours-Day7'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 7674f2cd-7d5e-4790-945b-4bb78b6e491a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.csr_category
+  module:
+    - path
+id: taxonomy_term.csr_category.path
+field_name: path
+entity_type: taxonomy_term
+bundle: csr_category
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

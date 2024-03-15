@@ -1,0 +1,73 @@
+diff --git a/config/install/session_limit.settings.yml b/config/install/session_limit.settings.yml
+index 7c62ff5..c36d839 100644
+--- a/config/install/session_limit.settings.yml
++++ b/config/install/session_limit.settings.yml
+@@ -2,4 +2,5 @@ session_limit_max: 1
+ session_limit_masquerade_ignore: false
+ session_limit_behaviour: 0
+ session_limit_logged_out_message_severity: warning
+-session_limit_roles: []
+\ No newline at end of file
++session_limit_roles: []
++session_limit_admin_inclusion: 0
+\ No newline at end of file
+diff --git a/src/Form/SessionLimitForm.php b/src/Form/SessionLimitForm.php
+index c56acf2..708fde1 100644
+--- a/src/Form/SessionLimitForm.php
++++ b/src/Form/SessionLimitForm.php
+@@ -75,7 +75,7 @@ class SessionLimitForm extends FormBase {
+     /** @var SessionLimit $session_limit */
+     $session_limit = \Drupal::service('session_limit');
+     $session_reference = $form_state->getValue(['session_reference']);
+-    $sid = $form['active_sessions']['#value'][$session_reference]->sid;
++    $sid = isset($session_reference) ? $form['active_sessions']['#value'][$session_reference]->sid : '';
+ 
+     if ($current_session_id == $sid) {
+       // @todo the user is not seeing the message below.
+diff --git a/src/Form/SettingsForm.php b/src/Form/SettingsForm.php
+index 22801c2..cb2f4d3 100644
+--- a/src/Form/SettingsForm.php
++++ b/src/Form/SettingsForm.php
+@@ -88,6 +88,12 @@ class SettingsForm extends ConfigFormBase {
+       ];
+     }
+ 
++    $form['session_limit_admin_inclusion'] = [
++      '#type' => 'checkbox',
++      '#title' => $this->t('Apply session limit for (ADMIN) also'),
++      '#description' => $this->t("Bydefsult session limit is not working for ADMIN , but if eneble this checkbox then it will work for admin also"),
++      '#default_value' => \Drupal::config('session_limit.settings')->get('session_limit_admin_inclusion'),
++    ];
+     return parent::buildForm($form, $form_state);
+   }
+ 
+@@ -109,10 +115,10 @@ class SettingsForm extends ConfigFormBase {
+    */
+   public function submitForm(array &$form, FormStateInterface $form_state) {
+     $config = $this->config('session_limit.settings');
+-
+     $config->set('session_limit_max', $form_state->getValue($form['session_limit_max']['#parents']));
+     $config->set('session_limit_behaviour', $form_state->getValue($form['session_limit_behaviour']['#parents']));
+     $config->set('session_limit_logged_out_message_severity', $form_state->getValue($form['session_limit_logged_out_message_severity']['#parents']));
++    $config->set('session_limit_admin_inclusion', $form_state->getValue($form['session_limit_admin_inclusion']['#parents']));
+ 
+     $role_limits = [];
+     foreach (user_roles(TRUE) as $rid => $role) {
+diff --git a/src/Services/SessionLimit.php b/src/Services/SessionLimit.php
+index 3ab8020..450675f 100644
+--- a/src/Services/SessionLimit.php
++++ b/src/Services/SessionLimit.php
+@@ -183,7 +183,12 @@ class SessionLimit implements EventSubscriberInterface {
+    * @param SessionLimitBypassEvent $event
+    */
+   public function onSessionLimitBypass(SessionLimitBypassEvent $event) {
+-    if ($this->getCurrentUser()->id() < 2) {
++
++      $admin_bypass_check =  $this->configFactory->get('session_limit.settings')
++      ->get('session_limit_admin_inclusion');
++      $uid = $admin_bypass_check ? 1 : 2;
++
++    if ($this->getCurrentUser()->id() < $uid) {
+       // User 1 and anonymous don't get session checked.
+       $event->setBypass(TRUE);
+       return;

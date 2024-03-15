@@ -1,0 +1,28 @@
+uuid: 2e064946-3d62-49f1-a679-b436d29121e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_warranty
+    - media.type.image
+    - node.type.product
+id: node.product.field_warranty
+field_name: field_warranty
+entity_type: node
+bundle: product
+label: Warranty
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

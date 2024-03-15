@@ -1,0 +1,34 @@
+uuid: c63f139b-b444-4e60-acf1-2debe2f1632f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quick_tools
+    - field.storage.block_content.field_quick_tools
+    - paragraphs.paragraphs_type.quick_tools
+  module:
+    - entity_reference_revisions
+id: block_content.quick_tools.field_quick_tools
+field_name: field_quick_tools
+entity_type: block_content
+bundle: quick_tools
+label: 'Quick Tools'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      quick_tools: quick_tools
+    target_bundles_drag_drop:
+      customers:
+        weight: 3
+        enabled: false
+      quick_tools:
+        enabled: true
+        weight: 4
+field_type: entity_reference_revisions

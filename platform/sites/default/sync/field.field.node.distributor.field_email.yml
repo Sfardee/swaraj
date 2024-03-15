@@ -1,0 +1,19 @@
+uuid: d8ab4677-ff32-41b6-a3ce-c8f7d996e42c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.distributor
+id: node.distributor.field_email
+field_name: field_email
+entity_type: node
+bundle: distributor
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,7 @@
+jarvis_vision.admin.ckeditor_settings:
+  title: 'Jarvis Config'
+  description: 'Jarvis - Custom Configuration'
+  route_name: jarvis_vision.ckeditor_settings
+  parent: system.admin_config
+  menu_name: jarvis_vision
+  weight: 99

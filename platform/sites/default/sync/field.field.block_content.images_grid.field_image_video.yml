@@ -1,0 +1,58 @@
+uuid: a97a5cd4-101e-4c2f-9d7f-112c99b75469
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.images_grid
+    - field.storage.block_content.field_image_video
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - entity_reference_revisions
+id: block_content.images_grid.field_image_video
+field_name: field_image_video
+entity_type: block_content
+bundle: images_grid
+label: Image/Video
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery: gallery
+    target_bundles_drag_drop:
+      about_us:
+        weight: 11
+        enabled: false
+      banner:
+        weight: 12
+        enabled: false
+      commitment:
+        weight: 13
+        enabled: false
+      customers:
+        weight: 14
+        enabled: false
+      gallery:
+        enabled: true
+        weight: 15
+      milestone:
+        weight: 16
+        enabled: false
+      product_banner:
+        weight: 17
+        enabled: false
+      quick_tools:
+        weight: 18
+        enabled: false
+      specification:
+        weight: 19
+        enabled: false
+      zigzag:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

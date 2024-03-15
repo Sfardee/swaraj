@@ -1,0 +1,18 @@
+uuid: 4e1653eb-138f-4a1b-a0b4-34e99e33b5b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_engine_power
+id: taxonomy_term.product_engine_power.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: product_engine_power
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

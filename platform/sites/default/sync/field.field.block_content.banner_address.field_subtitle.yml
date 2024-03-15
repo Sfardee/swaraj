@@ -1,0 +1,19 @@
+uuid: 276a1d55-421e-4cd2-ae23-db19ffb6dc52
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner_address
+    - field.storage.block_content.field_subtitle
+id: block_content.banner_address.field_subtitle
+field_name: field_subtitle
+entity_type: block_content
+bundle: banner_address
+label: Subtitle
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,166 @@
+.swaraj717 .h5title {
+    font-size: 30px;
+    font-family: "Gilroy-ExtraBold",serif;
+    color: #043c46;
+    padding-bottom: 10px;
+}
+
+ul.features li, .article ul li {
+    list-style: disc;
+    padding-left: 10px;
+    margin-left: 18px;
+}
+
+.hero-box .h1 span {
+    font-size: 80px;
+}
+
+.galleryModal .gallery-carousal .owl-dots {
+    bottom: 5px;
+}
+
+.flex-video iframe {
+    height: 467px;
+}
+
+@media (max-width: 767px) {
+    .hero-box .h1 span {
+        font-size: 50px;
+    }
+
+    .flex-video iframe {
+        height: 216px;
+    }
+}
+
+ul.features {
+    padding-bottom: 25px;
+}
+
+.milestone-carousel.owl-carousel .owl-nav .owl-prev.disabled,.milestone-carousel.owl-carousel .owl-nav .owl-next.disabled  {
+    background: none;
+    cursor: none;
+}
+
+.user-login-form {
+    padding: 50px;
+}
+
+.messages-list {
+    margin: 20px;
+    text-align: center;
+    color: red;
+    border: 1px solid;
+    padding-bottom: 15px;
+}
+
+.messages__content {
+    padding-top: 15px;
+}
+
+.product-no-carousel img{
+    display: block;
+    width: 100%;
+}
+
+.footer ul.list-box li {
+    font-size: 13px;
+}
+
+.our-product ul li {
+    font-size: 18px;
+}
+
+.menu-mob-box h6 {
+    background: url(../images/plus.png) no-repeat 72% center;
+    margin: 0;
+    font-size: 16px;
+  }
+  
+.menu-mob-box h6.act {
+    background: url(../images/minus.png) no-repeat 72% center;
+}
+
+#map > div:nth-child(2){display: none;}
+
+.bootstrap-select .dropdown-menu li {
+    padding: 0px;
+}
+
+.dropdown-menu > li > a {
+    padding: 7px 15px;
+}
+
+#datetimepicker2 {
+    background-color: #ffffff;
+}
+
+footer.footer.dealer .row {
+    text-align: left;
+}
+
+.map-list li p span {
+  width: 110px;
+}
+
+.generic-info .btn {
+    margin-top: 345px;
+    margin-left: 325px;
+}
+
+@media (max-width: 767px) {
+    .generic-info .btn {
+        margin-top: 260px;
+        margin-left: 5px;
+    }
+}
+
+.header4 {
+    font-family: "Gilroy-ExtraBold", serif;
+    font-size: 45px;
+    color: #67d49d;
+    text-align: center;
+    text-transform: uppercase;
+}
+  
+@media (max-width: 991px) {
+    .header4 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header4 {
+        font-size: 30px;
+    }
+}
+
+.map-section .header4 {
+    text-align: left;
+}
+
+.faq-box {
+    padding: 0px;
+}
+
+.faq-box .spec-list-box {
+    margin-top: 60px;
+}
+
+.thumb-play-icon {
+    width: 20% !important;
+    height: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.spec-list-box ul.circle-list {
+    text-align: left;
+}
+
+.spec-list-box ul.circle-list li {
+    padding: 3px;
+}

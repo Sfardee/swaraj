@@ -1,0 +1,33 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<section class="features-box similarPro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="header4">{{ data.title|trans }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="similarPro-carousel owl-carousel green">
+        {% for val in data.product %}
+          <div class="os-animation" data-os-animation-delay=".5s" data-os-animation="fadeInUp">
+            <div class="home-card">
+              <figure>
+                <a href="{{ val.link }}"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ val.image }}"></a>
+              </figure>
+              <h5 class="card-title">
+                <a href="{{ val.link }}">{{ val.title }}</a>
+              </h5>
+            </div>
+            <p class="btn-box">
+              <a class="btn btn-default green" href="{{ val.link }}">{% trans %}View Details{% endtrans %}</a>
+            </p>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

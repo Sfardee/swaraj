@@ -1,0 +1,85 @@
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+    'stretched',
+    'no-transition',
+  ]
+%}
+{% set css_path = base_path ~ 'themes/swaraj/css/' %}
+{% set js_path = base_path ~ 'themes/swaraj/js/' %}
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+{% set font_path = base_path ~ 'themes/swaraj/fonts/' %}
+<!doctype html>
+<html {{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <link rel="shortcut icon" href="{{ base_path }}themes/swaraj/favicon.ico">
+    <link rel="preload" href="{{ font_path }}fontawesome-webfont.woff2?v=4.5.0" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ font_path }}icomoon.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="{{ font_path }}Gilroy-ExtraBold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="{{ font_path }}Gilroy-Light.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preconnect" href="https://polyfill.io">
+    <link rel="preconnect" href="https://connect.facebook.net">
+    <link rel="preconnect" href="https://www.facebook.com">
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% if tracking_enabled %}
+      <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T6GRVMX');</script>
+      <!-- End Google Tag Manager -->
+      <!-- Facebook Pixel Code -->
+      <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '222049976320483');
+        fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=222049976320483&ev=PageView&noscript=1"
+      /></noscript>
+      <!-- End Facebook Pixel Code -->
+      {% if thank_you %}
+          
+      {% endif %}
+    {% endif %}
+  </head>
+
+  <body{{ attributes.addClass(body_classes) }}>
+    {{ page_top }} 
+    {{ page }} 
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token }}">
+    {% if tracking_enabled %}
+      <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6GRVMX"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      {% if thank_you %}
+        
+      {% endif %}
+    {% endif %}
+  </body>
+
+</html>
+

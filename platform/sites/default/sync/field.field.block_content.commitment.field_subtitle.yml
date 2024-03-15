@@ -1,0 +1,19 @@
+uuid: 5425287c-82b0-40ed-b525-a119d7280152
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.commitment
+    - field.storage.block_content.field_subtitle
+id: block_content.commitment.field_subtitle
+field_name: field_subtitle
+entity_type: block_content
+bundle: commitment
+label: Subtitle
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

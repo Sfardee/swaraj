@@ -1,0 +1,8 @@
+uuid: 55865a87-17c1-40bd-b840-50db468ba9b1
+langcode: en
+status: true
+dependencies: {  }
+id: dealer_banner_with_contact_form
+label: 'Dealer Page - Banner with Contact Form'
+revision: 0
+description: 'This is unique banner component with contact form for dealer pages.'

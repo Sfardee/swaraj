@@ -1,0 +1,20 @@
+uuid: d1039c67-d3a7-4dc9-9080-b2b96b653776
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_warranty
+field_name: field_warranty
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

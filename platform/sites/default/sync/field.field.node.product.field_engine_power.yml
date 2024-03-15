@@ -1,0 +1,29 @@
+uuid: 77fdd744-2a01-4165-9f92-3ca9466c2277
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_engine_power
+    - node.type.product
+    - taxonomy.vocabulary.product_engine_power
+id: node.product.field_engine_power
+field_name: field_engine_power
+entity_type: node
+bundle: product
+label: 'Engine power'
+description: 'Use this field to list the tractor based on engine power. The actual value to be provided in field ''Horsepower'''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_engine_power: product_engine_power
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

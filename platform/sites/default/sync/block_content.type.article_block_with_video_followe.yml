@@ -1,0 +1,8 @@
+uuid: 17d692f8-548c-40d8-ab32-318d9521822b
+langcode: en
+status: true
+dependencies: {  }
+id: article_block_with_video_followe
+label: 'Article block with Video followed by Image'
+revision: 0
+description: 'This is special block developed for Josh Ka Raaz Campaign to display video followed by image'

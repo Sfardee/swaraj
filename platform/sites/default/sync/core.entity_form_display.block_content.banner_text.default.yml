@@ -1,0 +1,54 @@
+uuid: 9796d53b-6692-4f27-a46f-0b4bf48e69bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner_text
+    - field.field.block_content.banner_text.field_desktop_background_image
+    - field.field.block_content.banner_text.field_mobile_background_image
+    - field.field.block_content.banner_text.field_title
+  module:
+    - media_library
+id: block_content.banner_text.default
+targetEntityType: block_content
+bundle: banner_text
+mode: default
+content:
+  field_desktop_background_image:
+    weight: 2
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_mobile_background_image:
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

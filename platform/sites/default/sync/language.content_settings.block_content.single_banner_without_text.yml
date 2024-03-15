@@ -1,0 +1,18 @@
+uuid: 2ee11e47-2c42-4835-9c29-f035f10c4472
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.single_banner_without_text
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.single_banner_without_text
+target_entity_type_id: block_content
+target_bundle: single_banner_without_text
+default_langcode: site_default
+language_alterable: false

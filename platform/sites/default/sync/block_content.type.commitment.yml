@@ -1,0 +1,8 @@
+uuid: 6caf2793-8447-47ac-bdf7-426080541bdf
+langcode: en
+status: true
+dependencies: {  }
+id: commitment
+label: 'Video Image Carousal'
+revision: 0
+description: 'Video Image Carousal'

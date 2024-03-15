@@ -1,0 +1,47 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<section class="our-pride opt2">
+  <div class="container ourpride-title os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+    <div class="row">
+      <div class="col-md-12 CTR">
+        <h4>{{ data.text }}</h4>
+        <p>{{ data.subtext }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="tesimonial-carousel owl-carousel os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+  {% for key, value in data.data %}
+    <div>
+      <div class="our-pride-box flex-row">
+        <figure>
+        {% if value.video %}
+        <a class="play-icon" href="#myModalVideo{{ key }}" data-toggle="modal"><img src="{{ image_path }}play.png"></a>
+        {% endif %}
+        <img alt="" class="hidden-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ value.image }}">
+          <img alt="" class="visible-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ value.mobile_image }}"></figure>
+        <div class="tesimonial-box">
+          <p><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/tesimonial.svg" width="40"></p>
+          {{ value.body|raw }}
+          <p class="name-box">{{ value.author }}</p>
+          <p>{{ value.location }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="CTR MT30"><a href="{{ data.link }}" class="btn btn-default">{% trans %}View the Team {% endtrans %}</a></p>
+</section>
+{% for key, value in data.data %}
+{% if value.video %}
+  <div class="modal fade youtube-video-box" id="myModalVideo{{ key }}">
+    <div class="container">
+      <div class="close-video">
+        <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+      </div>
+      <div>
+        <iframe allowfullscreen frameborder="0" height="600" id="SwarajVideo" class="lozad" data-src="{{ video }}" width="100%"></iframe>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,10 @@
+uuid: 48ba02c5-e7ae-4800-8257-d70af26ce68c
+langcode: en
+status: true
+dependencies: {  }
+id: faq_unit
+label: 'FAQ Unit'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph is used in FAQ Block'
+behavior_plugins: {  }

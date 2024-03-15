@@ -1,0 +1,15 @@
+custom_widget.content:
+  title: 'Swaraj Settings'
+  description: 'Swaraj Settings'
+  route_name: custom_widget.content
+  parent: system.admin_config
+  menu_name: custom_widget
+  weight: 1
+
+custom_widget.common_settings:
+  title: 'Swaraj Common Settings'
+  description: 'Swaraj Common Settings'
+  route_name: custom_widget.common_settings
+  parent: custom_widget.content
+  menu_name: custom_widget
+  weight: 2

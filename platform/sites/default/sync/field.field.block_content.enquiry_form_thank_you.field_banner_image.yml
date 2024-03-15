@@ -1,0 +1,29 @@
+uuid: 192c7a80-7835-4479-8509-a8a5b1cef47f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.enquiry_form_thank_you
+    - field.storage.block_content.field_banner_image
+    - media.type.image
+id: block_content.enquiry_form_thank_you.field_banner_image
+field_name: field_banner_image
+entity_type: block_content
+bundle: enquiry_form_thank_you
+label: 'Banner Image'
+description: 'Please use banner image of size 614 × 650 px'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: created
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

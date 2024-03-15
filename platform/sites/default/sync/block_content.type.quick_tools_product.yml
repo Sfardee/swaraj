@@ -1,0 +1,8 @@
+uuid: 6939fcc5-1bb5-46ba-a50f-0bbf119f1c6a
+langcode: en
+status: true
+dependencies: {  }
+id: quick_tools_product
+label: 'Quick Tools Product'
+revision: 0
+description: 'Quick Tools Product Page'

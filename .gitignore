@@ -1,0 +1,5 @@
+.DS_Store
+platform/sites/*/files
+platform/sites/*/private
+/platform/sites/default/sync/config.custom_widget.yml
+/platform/sites/default/sync/db_maintenance.settings.yml

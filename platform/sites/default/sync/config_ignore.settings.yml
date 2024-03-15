@@ -1,0 +1,8 @@
+ignored_config_entities:
+  - securelogin.settings
+  - config.custom_widget
+  - db_maintenance.settings
+  - smtp.settings
+  - 'metatag.metatag_defaults.*'
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

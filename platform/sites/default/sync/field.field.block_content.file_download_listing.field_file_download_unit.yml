@@ -1,0 +1,91 @@
+uuid: 59553a52-eeca-4dc0-afa2-c6af3f53578c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.file_download_listing
+    - field.storage.block_content.field_file_download_unit
+    - paragraphs.paragraphs_type.file_download_unit
+  module:
+    - entity_reference_revisions
+id: block_content.file_download_listing.field_file_download_unit
+field_name: field_file_download_unit
+entity_type: block_content
+bundle: file_download_listing
+label: 'File Download Unit'
+description: 'Add upto 9 File downlods '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      file_download_unit: file_download_unit
+    target_bundles_drag_drop:
+      about_us:
+        weight: 22
+        enabled: false
+      banner:
+        weight: 23
+        enabled: false
+      breadcrumbs:
+        weight: 24
+        enabled: false
+      commitment:
+        weight: 25
+        enabled: false
+      contact_us_mail_recipient:
+        weight: 26
+        enabled: false
+      contact_us_state_wise_mail_recip:
+        weight: 27
+        enabled: false
+      customers:
+        weight: 28
+        enabled: false
+      faq_unit:
+        weight: 29
+        enabled: false
+      file_download_unit:
+        enabled: true
+        weight: 30
+      gallery:
+        weight: 31
+        enabled: false
+      gallery_image_unit:
+        weight: 32
+        enabled: false
+      gallery_video_unit:
+        weight: 33
+        enabled: false
+      image_unit:
+        weight: 34
+        enabled: false
+      milestone:
+        weight: 35
+        enabled: false
+      product_banner:
+        weight: 36
+        enabled: false
+      product_item:
+        weight: 37
+        enabled: false
+      product_list_item:
+        weight: 38
+        enabled: false
+      quick_tools:
+        weight: 39
+        enabled: false
+      specification:
+        weight: 40
+        enabled: false
+      video_unit:
+        weight: 41
+        enabled: false
+      zigzag:
+        weight: 42
+        enabled: false
+field_type: entity_reference_revisions

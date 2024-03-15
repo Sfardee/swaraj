@@ -1,0 +1,14 @@
+uuid: 22438189-3087-4d59-9629-856a2891b46c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.report_viewer
+  module:
+    - user
+id: user_remove_role_action.report_viewer
+label: 'Remove the Report Viewer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: report_viewer

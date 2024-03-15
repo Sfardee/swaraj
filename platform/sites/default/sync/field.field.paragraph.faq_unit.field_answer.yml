@@ -1,0 +1,19 @@
+uuid: 7c474a66-290b-4d0f-99df-718bbc877c2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_answer
+    - paragraphs.paragraphs_type.faq_unit
+id: paragraph.faq_unit.field_answer
+field_name: field_answer
+entity_type: paragraph
+bundle: faq_unit
+label: Answer
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

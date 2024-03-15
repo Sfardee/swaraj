@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Swaraj</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.dropdown.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- CSS -->
+</head>
+
+<body>
+    <header><img src="images/hero-image.jpg" alt="" class="hero-desk" /><img src="images/hero-image-m.jpg" alt="" class="hero-mobile" /></header>
+    <div class="container">
+        <div class="CTR">
+            <h1>Toh ab der kis baat ki.</h1>
+            <p class="titile-info">Turrant apni jaankari bharein aur hum jald hi aap se sampark karenge.</p>
+            <p class="validation-info">नाम, फ़ोन नंबर और पिन कोड भरना अनिवार्य है।</p>
+            <form id="formsubmit">
+                <div class="form-box">
+                    <ul>
+                        <li>
+                            <input type="text"  name="" minlength="2" maxlength="50" placeholder="Name / नाम *" pattern="[A-Za-z '.]+" class="text-box" required oninvalid="setCustomValidity('Will Accept Alphabets Only')" oninput="setCustomValidity('')">
+                        </li>
+                        <li>
+                            <input type="text" name="" minlength="6" maxlength="13" pattern="^(?!0+$)\d{6,}$" placeholder="Phone Number / फ़ोन नंबर *" class="text-box" required oninvalid="setCustomValidity('Will Accept Numbers Only. Cant be all Zeros')" oninput="setCustomValidity('')">
+                        </li>
+                        <li>
+                            <div class="dropdown-mul-2">
+                                <a class="close-dropdown" href="javascript:void(0)">×</a>
+                                <select style="display:none" name="" id="mul-2" multiple placeholder="Model Interested / मॉडल इच्छुक हैं">
+                                    <option value="1">724XM</option>
+                                    <option value="2">724XM ORCH</option>
+                                    <option value="3">724XM ORCH NT</option>
+                                    <option value="4">825XM</option>
+                                    <option value="5">735XT</option>
+                                </select>
+                            </div>
+
+                            <!--input type="text" name="" placeholder="Model Interested / मॉडल इच्छुक हैं" class="text-box"-->
+                        </li>
+                        <li>
+                            <div class="select-dropdown">
+                            <select name="" placeholder="State / राज्य">
+                                    <option>State / राज्य</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></div>
+<!--
+                            <div class="state">
+                                <select style="display:none" name=""   placeholder="State / राज्य">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+-->
+                            
+                            
+<!--                            <input type="text" name="" placeholder="State / राज्य" class="text-box">-->
+                        </li>
+                        <li>
+                            <div class="select-dropdown">
+                            <select name="" placeholder="City / शहर">
+                                    <option>City / शहर</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select></div>
+<!--
+                            <div class="city">
+                                <select style="display:none" name=""   placeholder="City / शहर">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+-->
+                            <!--input type="text" name="" placeholder="City / शहर" class="text-box"-->
+                        </li>
+                        <li>
+                            <input type="text" name="" maxlength="60" placeholder="District / जिला" pattern="[A-Za-z0-9 '.-]+" class="text-box">
+                        </li>
+                        <li>
+                            <input type="text" name="" placeholder="Tehsil / तहसील" pattern="[A-Za-z0-9 '.-]+" class="text-box">
+                        </li>
+                        <li>
+                            <input type="text" name="" placeholder="Village / गाँव" pattern="[A-Za-z0-9 '.-]+" class="text-box">
+                        </li>
+                        <li>
+                            <input type="text" pattern="^(\d{6})$"  placeholder="Pin code / पिन कोड *" class="text-box" required oninvalid="setCustomValidity('Will accept numbers only, minimum 6 digits')" oninput="setCustomValidity('')">
+                            
+                            
+<!--                            <input type="text" name="" minlength="5" maxlength="6" placeholder="Pin code / पिन कोड" class="text-box"  required oninvalid="setCustomValidity('Will accept numbers only, minimum 6 digits')" oninput="setCustomValidity('Will accept numbers only, minimum 6 digits')">-->
+                        </li>
+                    </ul>
+                    <p class="submit-box">
+                        <button type="submit" value="Submit" class="submit-button">Submit / जमा करें</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="popupBox2" id="dialog"> 
+        <p class="close-btn"><a href="#" onClick="hide_album()"></a></p>
+        <div class="CTR">
+            <figure><img src="images/popup-img.gif" alt=""></figure>
+            <p>फॉर्म जमा करने के लिए धन्यवाद।<br>
+हम आपसे जल्द ही संपर्क करेंगे।</p>
+        </div>
+        
+    </div>
+
+
+    <footer>Copyright 2019 Mahindra & Mahindra Ltd., Swaraj Division.</footer>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.dropdown.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

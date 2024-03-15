@@ -1,0 +1,20 @@
+uuid: 3b4a7869-2134-4032-ab73-1f19e5a25340
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.news_category
+  module:
+    - text
+id: taxonomy_term.news_category.description
+field_name: description
+entity_type: taxonomy_term
+bundle: news_category
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

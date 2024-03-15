@@ -1,0 +1,83 @@
+uuid: eea97597-10d0-4a4b-9b0c-cf39c926c0d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.new_product_listing
+    - field.field.block_content.new_product_listing.field_block_description
+    - field.field.block_content.new_product_listing.field_default_engine_power
+    - field.field.block_content.new_product_listing.field_product_block_description
+    - field.field.block_content.new_product_listing.field_product_block_title
+    - field.field.block_content.new_product_listing.field_product_items
+    - field.field.block_content.new_product_listing.field_title
+    - field.field.block_content.new_product_listing.field_view_all_link
+  module:
+    - entity_reference_revisions
+    - link
+id: block_content.new_product_listing.default
+targetEntityType: block_content
+bundle: new_product_listing
+mode: default
+content:
+  field_block_description:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_default_engine_power:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_product_block_description:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_product_block_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_product_items:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_view_all_link:
+    weight: 9
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

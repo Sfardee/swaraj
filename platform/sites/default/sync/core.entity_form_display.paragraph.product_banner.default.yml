@@ -1,0 +1,94 @@
+uuid: e96d3c87-f402-4690-aab9-425e3681d21b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_banner.field_background_image
+    - field.field.paragraph.product_banner.field_banner_type
+    - field.field.paragraph.product_banner.field_link
+    - field.field.paragraph.product_banner.field_mobile_background_image
+    - field.field.paragraph.product_banner.field_model_image
+    - field.field.paragraph.product_banner.field_model_name
+    - field.field.paragraph.product_banner.field_name
+    - field.field.paragraph.product_banner.field_number
+    - field.field.paragraph.product_banner.field_thousand_text
+    - paragraphs.paragraphs_type.product_banner
+  module:
+    - link
+    - media_library
+    - text
+id: paragraph.product_banner.default
+targetEntityType: paragraph
+bundle: product_banner
+mode: default
+content:
+  field_background_image:
+    type: media_library_widget
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_banner_type:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_link:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_mobile_background_image:
+    type: media_library_widget
+    weight: 4
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_model_image:
+    type: media_library_widget
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_model_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_thousand_text:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

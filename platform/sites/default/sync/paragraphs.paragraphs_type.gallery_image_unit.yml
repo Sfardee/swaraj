@@ -1,0 +1,10 @@
+uuid: 734bb1b6-f537-4522-8478-a7009ae7d11f
+langcode: en
+status: true
+dependencies: {  }
+id: gallery_image_unit
+label: 'Gallery Image Unit'
+icon_uuid: null
+icon_default: null
+description: 'This Paragraph is mainly used in "Image Gallery" block'
+behavior_plugins: {  }

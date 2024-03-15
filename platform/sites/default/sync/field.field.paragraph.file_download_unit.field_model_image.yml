@@ -1,0 +1,28 @@
+uuid: 4e0ee4f9-b98b-4d26-b05d-2d79f9a63515
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_model_image
+    - media.type.image
+    - paragraphs.paragraphs_type.file_download_unit
+id: paragraph.file_download_unit.field_model_image
+field_name: field_model_image
+entity_type: paragraph
+bundle: file_download_unit
+label: Image
+description: 'Use image of size 343x150 px'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

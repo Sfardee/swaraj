@@ -1,0 +1,5 @@
+system.site:
+  mapping:
+    site_disable_page_node:
+      type: boolean
+      label: 'Disable Content types'

@@ -1,0 +1,110 @@
+uuid: b270a5af-e67f-4f2f-b119-a794febc74c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.dealer_pages_configurations
+    - field.field.config_pages.dealer_pages_configurations.field_footer_copyright_text
+    - field.field.config_pages.dealer_pages_configurations.field_footer_disclaimer_text
+    - field.field.config_pages.dealer_pages_configurations.field_footer_main_text
+    - field.field.config_pages.dealer_pages_configurations.field_logo_url
+    - field.field.config_pages.dealer_pages_configurations.field_node_id_of_dealer_panel_pg
+    - field.field.config_pages.dealer_pages_configurations.field_privacy_policy_link
+    - field.field.config_pages.dealer_pages_configurations.field_social_facebook_link
+    - field.field.config_pages.dealer_pages_configurations.field_social_linkedin_link
+    - field.field.config_pages.dealer_pages_configurations.field_social_twitter_link
+    - field.field.config_pages.dealer_pages_configurations.field_social_youtube_link
+    - field.field.config_pages.dealer_pages_configurations.field_terms_of_use_link
+id: config_pages.dealer_pages_configurations.default
+targetEntityType: config_pages
+bundle: dealer_pages_configurations
+mode: default
+content:
+  field_footer_copyright_text:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_footer_disclaimer_text:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_footer_main_text:
+    weight: 9
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_logo_url:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_node_id_of_dealer_panel_pg:
+    weight: 0
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_privacy_policy_link:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_facebook_link:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_linkedin_link:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_twitter_link:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_youtube_link:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_terms_of_use_link:
+    weight: 4
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

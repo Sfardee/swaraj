@@ -1,0 +1,33 @@
+uuid: 0e2f71a5-4c7e-4f43-9de5-65e062d6ee9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.contact_us_mail_configuration
+    - field.field.config_pages.contact_us_mail_configuration.field_contact_us_mail_recipients
+    - field.field.config_pages.contact_us_mail_configuration.field_default_email_recipient
+  module:
+    - entity_reference_revisions
+id: config_pages.contact_us_mail_configuration.default
+targetEntityType: config_pages
+bundle: contact_us_mail_configuration
+mode: default
+content:
+  field_contact_us_mail_recipients:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_default_email_recipient:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+hidden:
+  search_api_excerpt: true

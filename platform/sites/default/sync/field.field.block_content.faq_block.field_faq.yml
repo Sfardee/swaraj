@@ -1,0 +1,88 @@
+uuid: 005e45d1-6c6b-4b4e-99ae-a2c2c852ee85
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.faq_block
+    - field.storage.block_content.field_faq
+    - paragraphs.paragraphs_type.faq_unit
+  module:
+    - entity_reference_revisions
+id: block_content.faq_block.field_faq
+field_name: field_faq
+entity_type: block_content
+bundle: faq_block
+label: FAQ
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      faq_unit: faq_unit
+    target_bundles_drag_drop:
+      about_us:
+        weight: 21
+        enabled: false
+      banner:
+        weight: 22
+        enabled: false
+      breadcrumbs:
+        weight: 23
+        enabled: false
+      commitment:
+        weight: 24
+        enabled: false
+      contact_us_mail_recipient:
+        weight: 25
+        enabled: false
+      contact_us_state_wise_mail_recip:
+        weight: 26
+        enabled: false
+      customers:
+        weight: 27
+        enabled: false
+      faq_unit:
+        enabled: true
+        weight: 28
+      gallery:
+        weight: 29
+        enabled: false
+      gallery_image_unit:
+        weight: 30
+        enabled: false
+      gallery_video_unit:
+        weight: 31
+        enabled: false
+      image_unit:
+        weight: 32
+        enabled: false
+      milestone:
+        weight: 33
+        enabled: false
+      product_banner:
+        weight: 34
+        enabled: false
+      product_item:
+        weight: 35
+        enabled: false
+      product_list_item:
+        weight: 36
+        enabled: false
+      quick_tools:
+        weight: 37
+        enabled: false
+      specification:
+        weight: 38
+        enabled: false
+      video_unit:
+        weight: 39
+        enabled: false
+      zigzag:
+        weight: 40
+        enabled: false
+field_type: entity_reference_revisions

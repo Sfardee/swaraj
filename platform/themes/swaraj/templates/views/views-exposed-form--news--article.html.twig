@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+<div class="container news-bx">
+  <div class="row">
+    <div class="col-md-5 col-sm-5">
+      <div class="search-container">
+        <div class="search-box clearfix">
+          {{ form.actions }}
+          <div class="ohidden">
+            {{ form.title }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 col-sm-7 text-right">
+          <div class="group-datePicker hidden">
+            <input type='text' class="form-control" id='datepicker' />
+            <div style="display:none">{{ form.created }}</div>
+            <div style="display:none">{{ form.created_1 }}</div>
+          </div>
+        {{ form.field_article_category_target_id }}
+    </div>
+  </div>
+</div>
+

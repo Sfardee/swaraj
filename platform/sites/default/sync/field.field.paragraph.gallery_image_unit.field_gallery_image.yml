@@ -1,0 +1,28 @@
+uuid: 750f49cd-6b89-446b-836c-4a34b04dbec9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_image
+    - media.type.image
+    - paragraphs.paragraphs_type.gallery_image_unit
+id: paragraph.gallery_image_unit.field_gallery_image
+field_name: field_gallery_image
+entity_type: paragraph
+bundle: gallery_image_unit
+label: 'Gallery Image'
+description: 'Use image of size 1087x634px'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

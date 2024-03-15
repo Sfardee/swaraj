@@ -1,0 +1,8 @@
+uuid: 1de88223-7b42-4c8b-aa88-dd6bf6639333
+langcode: en
+status: true
+dependencies: {  }
+id: quick_tools
+label: 'Quick Tools'
+revision: 0
+description: 'Quick links throughout the site.'

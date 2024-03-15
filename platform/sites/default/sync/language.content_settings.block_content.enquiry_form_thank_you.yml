@@ -1,0 +1,18 @@
+uuid: d68e97e8-c185-461c-906e-a99c1e836e5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.enquiry_form_thank_you
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.enquiry_form_thank_you
+target_entity_type_id: block_content
+target_bundle: enquiry_form_thank_you
+default_langcode: site_default
+language_alterable: true

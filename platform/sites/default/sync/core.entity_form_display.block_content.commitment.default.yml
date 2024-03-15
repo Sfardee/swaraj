@@ -1,0 +1,60 @@
+uuid: 08c34520-172e-4df4-a526-d8a908700d26
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.commitment
+    - field.field.block_content.commitment.field_commitment
+    - field.field.block_content.commitment.field_subtitle
+    - field.field.block_content.commitment.field_title
+  module:
+    - paragraphs
+id: block_content.commitment.default
+targetEntityType: block_content
+bundle: commitment
+mode: default
+content:
+  field_commitment:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_subtitle:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

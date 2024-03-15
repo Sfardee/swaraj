@@ -1,0 +1,7 @@
+queue_mail_keys: "smtp_*\r\nwebform_*\r\nuser_*\r\nsystem_*"
+queue_mail_queue_time: 120
+queue_mail_queue_wait_time: 1
+threshold: 50
+requeue_interval: 20
+_core:
+  default_config_hash: L1NLZHorv0hiCyXT83hfpLptiTWHi9nsKNYnDMcMVDg

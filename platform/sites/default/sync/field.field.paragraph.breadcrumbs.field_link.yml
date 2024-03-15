@@ -1,0 +1,23 @@
+uuid: d5af5bce-29cb-41ce-8206-b725e5e7613d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.breadcrumbs
+  module:
+    - link
+id: paragraph.breadcrumbs.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: breadcrumbs
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

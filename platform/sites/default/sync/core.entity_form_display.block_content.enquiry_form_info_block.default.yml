@@ -1,0 +1,59 @@
+uuid: a31fb5c2-885b-40c1-aabe-6e76787ce9a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.enquiry_form_info_block
+    - field.field.block_content.enquiry_form_info_block.body
+    - field.field.block_content.enquiry_form_info_block.field_title
+    - field.field.block_content.enquiry_form_info_block.field_view_all_link
+  module:
+    - link
+    - text
+id: block_content.enquiry_form_info_block.default
+targetEntityType: block_content
+bundle: enquiry_form_info_block
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_view_all_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

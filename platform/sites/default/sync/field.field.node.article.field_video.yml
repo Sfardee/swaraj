@@ -1,0 +1,19 @@
+uuid: 10e35643-7dcd-4512-880a-74741c89517b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.article
+id: node.article.field_video
+field_name: field_video
+entity_type: node
+bundle: article
+label: 'Video Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

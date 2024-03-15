@@ -1,0 +1,9 @@
+uuid: 6aec1638-f116-4adc-ad8e-fc905ad2996c
+langcode: en
+status: true
+dependencies: {  }
+id: quick_tools
+label: 'Quick Tools'
+icon_uuid: null
+description: 'Quick tools'
+behavior_plugins: {  }

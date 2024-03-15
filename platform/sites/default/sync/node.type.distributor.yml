@@ -1,0 +1,17 @@
+uuid: 2db6d008-dd4e-4ce6-bb86-ad26e84bf812
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Distributor
+type: distributor
+description: 'Use this content type to store distributor data'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

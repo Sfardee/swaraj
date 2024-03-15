@@ -1,0 +1,19 @@
+uuid: 1d50f8be-69a5-4828-b2f4-73875acaa728
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_thousand_text
+    - paragraphs.paragraphs_type.gallery
+id: paragraph.gallery.field_thousand_text
+field_name: field_thousand_text
+entity_type: paragraph
+bundle: gallery
+label: 'Video Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

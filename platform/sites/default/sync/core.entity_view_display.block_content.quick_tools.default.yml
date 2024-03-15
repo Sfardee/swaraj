@@ -1,0 +1,26 @@
+uuid: 0b1a25cd-9212-4da3-9810-82cadbc86bde
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quick_tools
+    - field.field.block_content.quick_tools.field_quick_tools
+  module:
+    - entity_reference_revisions
+id: block_content.quick_tools.default
+targetEntityType: block_content
+bundle: quick_tools
+mode: default
+content:
+  field_quick_tools:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

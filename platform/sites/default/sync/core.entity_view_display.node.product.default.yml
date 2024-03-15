@@ -1,0 +1,240 @@
+uuid: 53f67174-3c72-40cc-aa3d-8ddc35089790
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.product.body
+    - field.field.node.product.field_big_image
+    - field.field.node.product.field_brakes
+    - field.field.node.product.field_breadcrumbs
+    - field.field.node.product.field_brochure
+    - field.field.node.product.field_cdms_identifier
+    - field.field.node.product.field_cylinders
+    - field.field.node.product.field_engine
+    - field.field.node.product.field_engine_power
+    - field.field.node.product.field_gearbox
+    - field.field.node.product.field_h1_title
+    - field.field.node.product.field_horsepower
+    - field.field.node.product.field_image
+    - field.field.node.product.field_main_menu_image
+    - field.field.node.product.field_meta_tags
+    - field.field.node.product.field_pto_hp
+    - field.field.node.product.field_short_description
+    - field.field.node.product.field_similar_image
+    - field.field.node.product.field_specification
+    - field.field.node.product.field_warranty
+    - field.field.node.product.field_wheel_drive
+    - field.field.node.product.panelizer
+    - node.type.product
+  module:
+    - entity_reference_revisions
+    - metatag
+    - panelizer
+    - text
+    - user
+third_party_settings:
+  panelizer:
+    enable: true
+    custom: true
+    allow: true
+    default: default
+    displays:
+      default:
+        blocks: {  }
+        id: panels_variant
+        label: Default
+        uuid: 93f9b6cb-db21-434f-b1b7-77def37783f3
+        weight: 0
+        layout: layout_onecol
+        layout_settings: {  }
+        page_title: '[node:title]'
+        storage_type: panelizer_default
+        storage_id: 'node:product:default:default'
+        builder: ipe
+        pattern: panelizer
+        static_context: {  }
+id: node.product.default
+targetEntityType: node
+bundle: product
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_big_image:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_brakes:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_breadcrumbs:
+    weight: 118
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_brochure:
+    type: entity_reference_entity_view
+    weight: 114
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_cdms_identifier:
+    weight: 120
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cylinders:
+    weight: 109
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_engine:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_engine_power:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_gearbox:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_h1_title:
+    weight: 121
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_horsepower:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_main_menu_image:
+    type: entity_reference_entity_view
+    weight: 107
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_meta_tags:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_pto_hp:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_short_description:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_similar_image:
+    type: entity_reference_entity_view
+    weight: 117
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_specification:
+    type: entity_reference_revisions_entity_view
+    weight: 113
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_warranty:
+    type: entity_reference_entity_view
+    weight: 112
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_wheel_drive:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

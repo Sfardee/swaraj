@@ -1,0 +1,63 @@
+uuid: 069b4875-f764-4b9c-a515-d0a4dd942a55
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.customers
+    - field.field.block_content.customers.body
+    - field.field.block_content.customers.field_customers
+    - field.field.block_content.customers.field_title
+  module:
+    - paragraphs
+    - text
+id: block_content.customers.default
+targetEntityType: block_content
+bundle: customers
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_customers:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

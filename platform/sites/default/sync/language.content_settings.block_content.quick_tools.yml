@@ -1,0 +1,18 @@
+uuid: 9c21a84a-c250-48fc-968e-8b813c03ccf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quick_tools
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.quick_tools
+target_entity_type_id: block_content
+target_bundle: quick_tools
+default_langcode: site_default
+language_alterable: true

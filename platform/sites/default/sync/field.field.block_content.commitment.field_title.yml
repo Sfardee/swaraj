@@ -1,0 +1,19 @@
+uuid: 66ce6614-0d58-4143-8dbd-cb039f796c2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.commitment
+    - field.storage.block_content.field_title
+id: block_content.commitment.field_title
+field_name: field_title
+entity_type: block_content
+bundle: commitment
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

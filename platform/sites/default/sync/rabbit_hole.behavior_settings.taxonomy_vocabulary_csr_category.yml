@@ -1,0 +1,14 @@
+uuid: 388f27f6-513f-4044-9019-d1024937fff0
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.csr_category
+id: taxonomy_vocabulary_csr_category
+entity_type_id: taxonomy_vocabulary
+entity_id: csr_category
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

@@ -1,0 +1,17 @@
+uuid: 1c6efaca-d201-47b6-8b73-c43722bd5bd0
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us_mail_configuration
+label: 'Contact Us - Mail Configuration'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/swaraj-settings/contact-us-mail-configuration
+  weight: 0
+  description: ''
+token: false

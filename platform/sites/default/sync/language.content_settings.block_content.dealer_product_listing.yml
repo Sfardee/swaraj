@@ -1,0 +1,18 @@
+uuid: 7de125e8-f865-407b-b116-3d357d1332c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dealer_product_listing
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: block_content.dealer_product_listing
+target_entity_type_id: block_content
+target_bundle: dealer_product_listing
+default_langcode: site_default
+language_alterable: true

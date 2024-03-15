@@ -1,0 +1,18 @@
+uuid: 685254f7-2859-4e81-9903-20090abe25a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_engine_power
+id: taxonomy_term.product_engine_power.name
+field_name: name
+entity_type: taxonomy_term
+bundle: product_engine_power
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

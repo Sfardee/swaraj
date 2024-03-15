@@ -1,0 +1,22 @@
+uuid: 3e2ee6b4-b872-443a-ad1d-813a7f6df5de
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - swaraj
+_core:
+  default_config_hash: YRY68JWkaUiGeZlWMv1nzeIgDm0ZZwXYgpqUpLFzwAY
+id: swaraj_content
+theme: swaraj
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

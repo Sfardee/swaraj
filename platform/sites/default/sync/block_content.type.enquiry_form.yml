@@ -1,0 +1,8 @@
+uuid: bb9bbced-d191-494d-9ea8-e581e82ff975
+langcode: en
+status: true
+dependencies: {  }
+id: enquiry_form
+label: 'Enquiry Form'
+revision: 0
+description: 'Enquiry form with banner slider for http://enquiryform.swarajtractors.com/'

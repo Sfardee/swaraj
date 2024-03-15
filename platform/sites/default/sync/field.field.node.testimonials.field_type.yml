@@ -1,0 +1,29 @@
+uuid: 2e4f3cb6-02a6-4d54-86b1-302d026cc490
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.testimonials
+    - taxonomy.vocabulary.testimonial_type
+id: node.testimonials.field_type
+field_name: field_type
+entity_type: node
+bundle: testimonials
+label: Type
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      testimonial_type: testimonial_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

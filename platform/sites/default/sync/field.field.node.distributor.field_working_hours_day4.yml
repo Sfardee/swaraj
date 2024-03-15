@@ -1,0 +1,19 @@
+uuid: ed04b766-bf66-4ff6-bd86-042c87950a8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_working_hours_day4
+    - node.type.distributor
+id: node.distributor.field_working_hours_day4
+field_name: field_working_hours_day4
+entity_type: node
+bundle: distributor
+label: 'Working hours-Day4'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

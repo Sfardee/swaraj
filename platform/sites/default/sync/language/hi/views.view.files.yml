@@ -1,0 +1,16 @@
+display:
+  default:
+    display_options:
+      pager:
+        options:
+          tags:
+            next: 'अगला ›'
+      fields:
+        filename:
+          label: 'नाम*'
+  page_2:
+    display_options:
+      pager:
+        options:
+          tags:
+            next: 'अगला ›'

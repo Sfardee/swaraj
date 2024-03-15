@@ -1,0 +1,19 @@
+uuid: fdcf045f-a44f-499e-a203-45b7d1ccd590
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_ftp_failure_mail_recipient
+id: config_pages.ftp_settings_for_cdms.field_ftp_failure_mail_recipient
+field_name: field_ftp_failure_mail_recipient
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'FTP failure mail recipient'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

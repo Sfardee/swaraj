@@ -1,0 +1,758 @@
+
+
+<?php
+
+use Drupal\block\Entity\Block;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\Core\Url;
+
+function swaraj_css_alter(&$css, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+ $user = \Drupal::currentUser();
+ $node = \Drupal::routeMatch()->getParameter('node');
+ $type = '';
+ if ($node instanceof \Drupal\node\NodeInterface) {
+    // You can get nid and anything else you need from the node object.
+  $nid = $node->id();
+  $type = $node->bundle();
+ }
+ if ($type == 'enquiry_panel_page' && !$user->hasPermission("view the administration theme")) {
+    $css_files = array();
+    
+    foreach($css as $k=>$v) {
+      if (preg_match('/^themes\/swaraj\/css\/*/', $v['data'])) {
+        $css_files[] = $v['data'];
+        if ($v['data'] == 'themes/swaraj/css/main.css') {
+          $v['data'] = 'themes/swaraj/css/no-bootstrap-styles.min.css';
+          $css['themes/swaraj/css/no-bootstrap-styles.min.css'] = $v; 
+        }
+        unset($css[$k]);
+      } else {
+        unset($css[$k]);
+      }
+    }
+    $min_css_path = DRUPAL_ROOT . '/' . drupal_get_path('theme', 'swaraj').'/css/no-bootstrap-styles.min.css';
+    if (!file_exists($min_css_path)) {
+      $fh = fopen($min_css_path, 'wb');
+      $css_text = '';
+    $skip_files = [
+    'themes/swaraj/css/no_bootstrap_main.css',
+    'themes/swaraj/css/main.css',
+    'themes/swaraj/css/bootstrap.css',
+    'themes/swaraj/css/custom.css'
+    ];
+      foreach ($css_files as $css_file) {
+        if (!in_array($css_file, $skip_files)) {
+          $css_text .= file_get_contents(DRUPAL_ROOT . '/' . $css_file)."\r\n";
+        }
+      }
+      $css_text .= file_get_contents(DRUPAL_ROOT . '/themes/swaraj/css/no_bootstrap_main.css')."\r\n";
+      $css_text .= file_get_contents(DRUPAL_ROOT . '/themes/swaraj/css/custom.css');
+      fwrite($fh, $css_text);
+      fclose($fh);
+      chmod($min_css_path, 0777);
+    }
+  }
+  elseif (!$user->hasPermission("view the administration theme")) {
+    $css_files = array();
+    foreach($css as $k=>$v) {
+      if (preg_match('/^themes\/swaraj\/css\/*/', $v['data'])) {
+        $css_files[] = $v['data'];
+        if ($v['data'] == 'themes/swaraj/css/main.css') {
+          $v['data'] = 'themes/swaraj/css/styles.min.css';
+          $css['themes/swaraj/css/styles.min.css'] = $v; 
+        }
+        unset($css[$k]);
+      } else {
+        unset($css[$k]);
+      }
+    }
+    $min_css_path = DRUPAL_ROOT . '/' . drupal_get_path('theme', 'swaraj').'/css/styles.min.css';
+    if (!file_exists($min_css_path)) {
+      $fh = fopen($min_css_path, 'wb');
+      $css_text = '';
+      foreach ($css_files as $css_file) {
+        if ($css_file != 'themes/swaraj/css/main.css' && $css_file != 'themes/swaraj/css/custom.css') {
+          $css_text .= file_get_contents(DRUPAL_ROOT . '/' . $css_file)."\r\n";
+        }
+      }
+      $css_text .= file_get_contents(DRUPAL_ROOT . '/themes/swaraj/css/main.css')."\r\n";
+      $css_text .= file_get_contents(DRUPAL_ROOT . '/themes/swaraj/css/custom.css');
+      fwrite($fh, $css_text);
+      fclose($fh);
+      chmod($min_css_path, 0777);
+    }
+  }
+}
+
+function swaraj_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets)
+{
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $type = '';
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    // You can get nid and anything else you need from the node object.
+   $nid = $node->id();
+   $type = $node->bundle();
+  } 
+  $user = \Drupal::currentUser();
+   if ($type == 'enquiry_panel_page' && !$user->hasPermission("view the administration theme")) {
+    $js_files = array();
+    foreach ($javascript as $k => $v) {
+      if (preg_match('/^modules\/custom\/custom_widget\/js\/*/', $v['data']) || preg_match('/^themes\/swaraj\/js\/*/', $v['data']) || preg_match('/jquery\.min\.js/', $v['data']) || preg_match('/jquery\.once\.min\.js/', $v['data']) || preg_match('/jquery\.form\.min\.js/', $v['data'])|| preg_match('/drupalSettingsLoader\.js/', $v['data']) || preg_match('/drupal\.js/', $v['data']) || preg_match('/drupal\.init\.js/', $v['data']) || preg_match('/debounce\.js/', $v['data']) || preg_match('/underscore-min\.js/', $v['data']) || preg_match('/backbone-min\.js/', $v['data']) || preg_match('/ajax\.js/', $v['data']) || preg_match('/maps\.googleapis\.com\/*/', $v['data']) || preg_match('/cdn\.rawgit\.com\/*/', $v['data']) || preg_match('/polyfill\.io\/*/', $v['data']) || preg_match('/core\/modules\/views/', $v['data']) || preg_match('/views_infinite_scroll/', $v['data']) || preg_match('/password_encrypt/', $v['data']) || preg_match('/libraries/', $v['data']) || preg_match('/better_exposed_filters/', $v['data'])) {
+        $js_files[] = $k;
+        if ($v['data'] == 'themes/swaraj/js/main.js' || $v['data'] == 'themes/swaraj/js/bootstrap.js') {
+          $v['data'] = 'themes/swaraj/js/no-bootstrap-scripts.min.js';
+          $v['version'] = '-1';
+          $javascript['themes/swaraj/js/no-bootstrap-scripts.min.js'] = $v; 
+        }
+        
+        if (!(preg_match('/maps\.googleapis\.com\/*/', $v['data']) || preg_match('/cdn\.rawgit\.com\/*/', $v['data']) || preg_match('/polyfill\.io\/*/', $v['data']))) {
+          unset($javascript[$k]);
+        }
+      } else {
+        unset($javascript[$k]);
+      }
+    }
+    $min_js_path = DRUPAL_ROOT . '/' . drupal_get_path('theme', 'swaraj').'/js/no-bootstrap-scripts.min.js';
+    if (!file_exists($min_js_path)) {
+      $fh = fopen($min_js_path, 'wb');
+    
+      $js_text = '';
+      foreach ($js_files as $js_file) {
+        if ($js_file != 'themes/swaraj/js/bootstrap.js') {
+          $js_text .= "\r\n".file_get_contents(DRUPAL_ROOT . '/' . $js_file);
+        }
+      }
+      fwrite($fh, $js_text);
+      fclose($fh);
+      chmod($min_js_path, 0777);
+    }
+  }
+
+  elseif (!$user->hasPermission("view the administration theme")) {
+    $js_files = array();
+    foreach ($javascript as $k => $v) {
+      if (preg_match('/^modules\/custom\/custom_widget\/js\/*/', $v['data']) || preg_match('/^themes\/swaraj\/js\/*/', $v['data']) || preg_match('/jquery\.min\.js/', $v['data']) || preg_match('/jquery\.once\.min\.js/', $v['data']) || preg_match('/jquery\.form\.min\.js/', $v['data'])|| preg_match('/drupalSettingsLoader\.js/', $v['data']) || preg_match('/drupal\.js/', $v['data']) || preg_match('/drupal\.init\.js/', $v['data']) || preg_match('/debounce\.js/', $v['data']) || preg_match('/underscore-min\.js/', $v['data']) || preg_match('/backbone-min\.js/', $v['data']) || preg_match('/ajax\.js/', $v['data']) || preg_match('/maps\.googleapis\.com\/*/', $v['data']) || preg_match('/cdn\.rawgit\.com\/*/', $v['data']) || preg_match('/polyfill\.io\/*/', $v['data']) || preg_match('/core\/modules\/views/', $v['data']) || preg_match('/views_infinite_scroll/', $v['data']) || preg_match('/password_encrypt/', $v['data']) || preg_match('/libraries/', $v['data']) || preg_match('/better_exposed_filters/', $v['data'])) {
+        $js_files[] = $k;
+        if ($v['data'] == 'themes/swaraj/js/main.js') {
+          $v['data'] = 'themes/swaraj/js/scripts.min.js';
+          $v['version'] = '-1';
+          $javascript['themes/swaraj/js/scripts.min.js'] = $v; 
+        }
+        
+        if (!(preg_match('/maps\.googleapis\.com\/*/', $v['data']) || preg_match('/cdn\.rawgit\.com\/*/', $v['data']) || preg_match('/polyfill\.io\/*/', $v['data']))) {
+          unset($javascript[$k]);
+        }
+      } else {
+        unset($javascript[$k]);
+      }
+    }
+    $min_js_path = DRUPAL_ROOT . '/' . drupal_get_path('theme', 'swaraj').'/js/scripts.min.js';
+    if (!file_exists($min_js_path)) {
+      $fh = fopen($min_js_path, 'wb');
+      $js_text = '';
+      foreach ($js_files as $js_file) {
+        $js_text .= "\r\n".file_get_contents(DRUPAL_ROOT . '/' . $js_file);
+      }
+      fwrite($fh, $js_text);
+      fclose($fh);
+      chmod($min_js_path, 0777);
+    }
+  }
+}
+
+/**
+ * 
+ * process data for html.html.twig
+ */
+function swaraj_preprocess_html(&$variables)
+{
+  $variables['tracking_enabled'] = FALSE;
+  $variables['website_type'] = 'corporate';
+  $domain_host = strtolower($_SERVER['HTTP_HOST']);
+  // swaraj production
+  if (strpos($domain_host, 'swarajtractors.com') !== false) {
+    $variables['tracking_enabled'] = TRUE;
+  }
+  if (strpos($domain_host, 'www.') !== false) {
+    $variables['website_type'] = 'corporate';
+  }
+  if (strpos($domain_host, 'dealer.') !== false) {
+    $variables['website_type'] = 'dealer';
+  }
+  if (strpos($domain_host, 'enquiryform.') !== false) {
+    $variables['website_type'] = 'enquiryform';
+    $variables['thank_you'] = 0;
+    if (stripos($_SERVER['REQUEST_URI'], 'thank-you')) {
+      $variables['thank_you'] = 1;
+    }
+  }
+  $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+}
+
+/**
+ * 
+ * process data for page.html.twig
+ */
+function swaraj_preprocess_page(&$variables, $hook)
+{
+  $language = \Drupal::languageManager()->getCurrentLanguage();
+  $variables['lang_code'] = $language->getId();
+  $varibales['frontpageUrl'] = \Drupal::urlGenerator()->generateFromRoute('<front>', [], ['absolute' => TRUE]);
+  $block = \Drupal::entityManager()->getStorage('block')->load('languageswitcher');
+  $variables['languageswitcher'] = \Drupal::entityManager()
+  ->getViewBuilder('block')
+  ->view($block);
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $type = '';
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $type = $node->bundle();
+  $variables['node_type'] = $type;
+  }
+  if ($type == 'dealer') {
+    $dealerConfig = \Drupal::service('entity_type.manager')->getStorage('config_pages')->load('dealer_pages_configurations'); 
+    $variables['logo_url'] = !empty($dealerConfig->get('field_logo_url')->getValue())? $dealerConfig->get('field_logo_url')->getValue()[0]['value']: "/";
+    $variables['privacy_link'] = !empty($dealerConfig->get('field_privacy_policy_link')->getValue())? $dealerConfig->get('field_privacy_policy_link')->getValue()[0]['value']: "";
+    $variables['terms_link'] = !empty($dealerConfig->get('field_terms_of_use_link')->getValue())? $dealerConfig->get('field_terms_of_use_link')->getValue()[0]['value']: "";
+    $variables['footer_main_text'] = !empty($dealerConfig->get('field_footer_main_text')->getValue())? $dealerConfig->get('field_footer_main_text')->getValue()[0]['value']: "";
+    $variables['footer_copyright_text'] = !empty($dealerConfig->get('field_footer_copyright_text')->getValue())? $dealerConfig->get('field_footer_copyright_text')->getValue()[0]['value']: "";
+    $variables['footer_disclaimer_text'] = !empty($dealerConfig->get('field_footer_disclaimer_text')->getValue())? $dealerConfig->get('field_footer_disclaimer_text')->getValue()[0]['value']: "";
+    $variables['social_facebook'] = !empty($dealerConfig->get('field_social_facebook_link')->getValue())? $dealerConfig->get('field_social_facebook_link')->getValue()[0]['value']: "";
+    $variables['social_twitter'] = !empty($dealerConfig->get('field_social_twitter_link')->getValue())? $dealerConfig->get('field_social_twitter_link')->getValue()[0]['value']: "";
+    $variables['social_linkedin'] = !empty($dealerConfig->get('field_social_linkedin_link')->getValue())? $dealerConfig->get('field_social_linkedin_link')->getValue()[0]['value']: "";
+    $variables['social_youtube'] = !empty($dealerConfig->get('field_social_youtube_link')->getValue())? $dealerConfig->get('field_social_youtube_link')->getValue()[0]['value']: "";
+  } 
+  elseif ($type == 'enquiry_panel_page') {
+    $dealerConfig = \Drupal::service('entity_type.manager')->getStorage('config_pages')->load('enquiry_form_configuration'); 
+    $variables['logo_url'] = !empty($dealerConfig->get('field_logo_url')->getValue())? $dealerConfig->get('field_logo_url')->getValue()[0]['value']: "/";
+    $variables['privacy_link'] = !empty($dealerConfig->get('field_privacy_policy_link')->getValue())? $dealerConfig->get('field_privacy_policy_link')->getValue()[0]['value']: "";
+    $variables['terms_link'] = !empty($dealerConfig->get('field_terms_of_use_link')->getValue())? $dealerConfig->get('field_terms_of_use_link')->getValue()[0]['value']: "";
+    $variables['footer_main_text'] = !empty($dealerConfig->get('field_footer_main_text')->getValue())? $dealerConfig->get('field_footer_main_text')->getValue()[0]['value']: "";
+    $variables['footer_copyright_text'] = !empty($dealerConfig->get('field_footer_copyright_text')->getValue())? $dealerConfig->get('field_footer_copyright_text')->getValue()[0]['value']: "";
+    $variables['social_facebook'] = !empty($dealerConfig->get('field_social_facebook_link')->getValue())? $dealerConfig->get('field_social_facebook_link')->getValue()[0]['value']: "";
+    $variables['social_twitter'] = !empty($dealerConfig->get('field_social_twitter_link')->getValue())? $dealerConfig->get('field_social_twitter_link')->getValue()[0]['value']: "";
+    $variables['social_linkedin'] = !empty($dealerConfig->get('field_social_linkedin_link')->getValue())? $dealerConfig->get('field_social_linkedin_link')->getValue()[0]['value']: "";
+    $variables['social_youtube'] = !empty($dealerConfig->get('field_social_youtube_link')->getValue())? $dealerConfig->get('field_social_youtube_link')->getValue()[0]['value']: "";
+    $variables['#attached']['library'][] = 'swaraj/select-plugin';
+  }
+  else {
+    $config = \Drupal::config('config.custom_widget');
+    
+    // login menu
+    $login_links = $config->get('login_links');
+    $login_links = unserialize($login_links);
+    if (is_array($login_links)) {
+      // get menu from cache
+    } else {
+      $login_links = array();
+      $tree = \Drupal::menuTree()->load('login', new \Drupal\Core\Menu\MenuTreeParameters());
+      foreach ($tree as $item) {
+        $title = $item->link->getTitle();
+        $login_links[$title] = $item->link->getUrlObject()->toString();
+      }
+      ksort($login_links);
+      $configUpdate = \Drupal::service('config.factory')->getEditable('config.custom_widget');
+      $configUpdate->set('login_links', serialize($login_links));
+      $configUpdate->save();
+    }
+    
+    // main menu
+    $mainLinksConfigName = 'main_links' . $language->getId();
+    $main_links = $config->get($mainLinksConfigName);
+    $main_links = unserialize($main_links);
+    $en_first_tree = [];
+    
+    if (FALSE) {
+      // get menu from cache
+    } 
+  else {
+
+      $tree = \Drupal::menuTree()->load('main', new \Drupal\Core\Menu\MenuTreeParameters());
+
+      //added code on 8th may 2023 to sort menu by weight
+      $manipulators = array(
+        // Only show links that are accessible for the current user.
+        array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+        // Use the default sorting of menu links.
+        array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+      );
+      $tree = \Drupal::menuTree()->transform($tree, $manipulators);
+      //added code on 8th may 2023 to sort menu by weight
+
+      $main_links = array();
+foreach ($tree as $item) {
+        $link = $item->link;
+        if ($link instanceof \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent) {
+          $uuid = $link->getDerivativeId();
+          $entity = \Drupal::service('entity.repository')
+             ->loadEntityByUuid('menu_link_content', $uuid);
+          $enLinkTitle = $entity->label();
+          if ($entity->hasTranslation($language->getId())) {
+           $entity_trans_link = '';
+           $entity = $entity->getTranslation($language->getId());
+           $entity_trans_link = ($entity->getUrlObject != NULL) ? $entity->getUrlObject->toString() : $item->link->getTitle();
+          }
+          $title = $entity->label();
+        }
+        else {
+          $enLinkTitle = $title = $item->link->getTitle();
+        }
+        $en_first_tree[$title] = $enLinkTitle;
+        $subtree = $item->subtree;
+        // var_dump($item->link->isEnabled());
+        // var_dump($item->link->getWeight());
+        if(!empty($subtree)){
+          // $main_links[$title][] = $title;
+          foreach($subtree as $val){
+            
+            $val_link = $val->link;
+            if ($val_link instanceof \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent) {
+              $val_uuid = $val_link->getDerivativeId();
+              $en_val_entity = $val_entity = \Drupal::service('entity.repository')
+                 ->loadEntityByUuid('menu_link_content', $val_uuid);
+              if ($val_entity->hasTranslation($language->getId())) {
+               $val_entity = $val_entity->getTranslation($language->getId());
+         $main_links[$title][$val_entity->label()] = $val_entity->getUrlObject()->toString();
+              }
+            }
+      else {
+            // var_dump($val->link->getWeight());
+            $main_links[$title][$val_entity->label()] = $val->link->getUrlObject()->toString();
+      }
+            $subsubtree = $val->subtree;
+            if(!empty($subsubtree)){
+              $main_links[$title][$val_entity->label()] = $val_entity->label();
+              $sub_links = array();
+              // preg_match('#\((.*?)\)#', $val->link->getTitle(), $match);
+              // $power = $match[1];
+              $power = $val_entity->label();
+              $term_id = _getTidByName($en_val_entity->label());
+              foreach($subsubtree as $val1){
+                $val1_link = $val1->link;
+                if ($val1_link instanceof \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent) {
+                  $val1_uuid = $val1_link->getDerivativeId();
+                  $val1_entity = \Drupal::service('entity.repository')
+                   ->loadEntityByUuid('menu_link_content', $val1_uuid);
+                  if ($val1_entity->hasTranslation($language->getId())) {
+                   $val1_entity = $val1_entity->getTranslation($language->getId());
+                  }
+                }  
+                if($term_id){
+                  $products = _getEngineProducts($term_id);
+                  $implements = _getimplementsProduct($term_id);
+                  if (!empty($products)) {
+                    $sub_links['products'] = $products;
+                  } else {
+                    $sub_links['products'] = $implements ;
+                  }
+                }
+                // var_dump($val1->link->getUrlObject()->toString());exit;
+                if($val1->link->isEnabled()){
+                  $sub_links[$val1_entity->label()] = _getNidByName($val1_entity->label());
+                }
+                //echo $val1->link->getAttribute().'<hr>';
+              }
+              $main_links[$title][$val_entity->label()] = $sub_links;
+              // kint( $sub_links);
+              // print_r($main_links);exit;
+
+            }
+          }
+        }
+    else {
+          if($title != 'Home'){
+            $main_links[$title][] = (isset($entity_trans_link)) ? $entity_trans_link : $item->link->getUrlObject()->toString();
+          }
+        }
+      }
+     // kint($main_links);//exit;
+    foreach($main_links as $key => $val){
+        if($en_first_tree[$key] == "Products & Services"){
+          foreach($val as $key1 => $val1){
+            if(is_array($val1)){
+              $model[$key1] = $val1;
+            } else {
+              $links[$key1] = $val1;
+            }
+          }
+        $merge = array_merge($model, $links);
+        $main_links[$key] = $merge;
+        }
+      }
+      $mainMenuLinks[$language->getId()] = $main_links;
+      $configUpdate = \Drupal::service('config.factory')->getEditable('config.custom_widget');
+      $configUpdate->set('main_links' . $language->getId() , serialize($mainMenuLinks[$language->getId()]));
+      $configUpdate->save();
+    }
+
+    // Popular tree
+    $popular = $config->get('popular');
+    $popular = unserialize($popular);
+    if (is_array($popular)) {
+      // get menu from cache
+    } else {
+      $popular = array();
+      $popular_tree = \Drupal::menuTree()->load('popular', new \Drupal\Core\Menu\MenuTreeParameters());
+      $i = 0;
+      foreach ($popular_tree as $item) {
+        $val_link = $item->link;
+        if ($val_link instanceof \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent) {
+          $val_uuid = $val_link->getDerivativeId();
+          $val_entity = \Drupal::service('entity.repository')
+             ->loadEntityByUuid('menu_link_content', $val_uuid);
+          if ($val_entity->hasTranslation($language->getId())) {
+           $val_entity = $val_entity->getTranslation($language->getId());
+          }
+        }
+        
+        $popular[$i]['title'] = $val_entity->label();
+        $popular[$i]['link'] = $item->link->getUrlObject()->toString();
+        if (strpos($item->link->getUrlObject()->toString(), 'pdf') !== false) {
+          $popular[$i]['target'] = '_blank';
+        } else {
+          $popular[$i]['target'] = '';
+        }
+        $i++;
+      }
+      $configUpdate = \Drupal::service('config.factory')->getEditable('config.custom_widget');
+      $configUpdate->set('popular', serialize($popular));
+      $configUpdate->save();
+    }
+$langCode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    
+    $menu_config_lang = [];
+    $state_menu_variables = [
+      'contact_us_main_menu' => 'contact_us_main_menu_' . $langCode,
+      'contact_us_footer_menu' => 'contact_us_footer_menu_' . $langCode,
+      'footer_disclaimer_text' => 'footer_disclaimer_text_' . $langCode,
+      'footer_copyright_text' => 'footer_copyright_text_' . $langCode
+    ];
+    foreach ($state_menu_variables as $state_variable_key => $state_variable_val) {
+      $menu_config_lang[$state_variable_key] = \Drupal::state()->get($state_variable_val);
+    }
+    
+    // footer menu
+    $footer_links = $config->get('footer_links');
+    $footer_links = unserialize($footer_links);
+    
+    if (is_array($footer_links)) {
+      // get menu from cache
+    } else {
+      $tree = \Drupal::menuTree()->load('footer', new \Drupal\Core\Menu\MenuTreeParameters());
+      $footer_links = array();
+      foreach ($tree as $item) {
+        $val_link = $item->link;
+        if ($val_link instanceof \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent) {
+          $val_uuid = $val_link->getDerivativeId();
+          $val_entity = \Drupal::service('entity.repository')
+             ->loadEntityByUuid('menu_link_content', $val_uuid);
+          if ($val_entity->hasTranslation($language->getId())) {
+           $val_entity = $val_entity->getTranslation($language->getId());
+          }
+        }
+        
+        $title = strtolower($item->link->getTitle());
+        $subtree = $item->subtree;
+        //kint($subtree);
+        if(!empty($subtree)){
+          $footer_links[$title][] = $title;
+          foreach($subtree as $val){
+            $val1_link = $val->link;
+            if ($val1_link instanceof \Drupal\menu_link_content\Plugin\Menu\MenuLinkContent) {
+              $val1_uuid = $val1_link->getDerivativeId();
+              $val1_entity = \Drupal::service('entity.repository')
+               ->loadEntityByUuid('menu_link_content', $val1_uuid);
+              if ($val1_entity->hasTranslation($language->getId())) {
+               $val1_entity = $val1_entity->getTranslation($language->getId());
+              }
+            }  
+            $footer_links[$title][$val1_entity->label()] = (isset($val1_entity) && $val1_entity->getUrlObject != NULL) ? $val1_entity->getUrlObject->toString() : $val->link->getUrlObject()->toString();
+          }
+        } else {
+          $footer_links[$title][] = (isset($val_entity) && $val_entity->getUrlObject) ? $val_entity->getUrlObject->toString() : $item->link->getUrlObject()->toString();
+        }
+      }
+      //kint($footer_links);
+      //exit;
+      $configUpdate = \Drupal::service('config.factory')->getEditable('config.custom_widget');
+      $configUpdate->set('footer_links', serialize($footer_links));
+      $configUpdate->save();
+    }
+
+    // engine data
+    $engine = $config->get('engine_' . $language->getId());
+    $engine = unserialize($engine);
+    
+    if (FALSE) {
+      // get menu from cache
+    } else {
+      $engine = array();
+      $type_terms = \Drupal::entityManager()->getStorage('taxonomy_term')
+        ->loadTree('product_engine_power');
+      foreach ($type_terms as $type_term) {
+        $type_term = Term::load($type_term->tid);  
+        if ($type_term->hasTranslation($language->getId())) {
+          $type_term = $type_term->getTranslation($language->getId());
+        }
+        $products = _getEngineProducts($type_term->id());
+        if($products){
+          //print_R($type_term->getName());
+          //print '<br>';
+          $engine[$type_term->id()] = $type_term->getName();
+        }
+      }
+      $configUpdate = \Drupal::service('config.factory')->getEditable('config.custom_widget');
+      $configUpdate->set('engine_' . $language->getId(), serialize($engine));
+      $configUpdate->save();
+    }
+
+    if (FALSE) {
+      // get menu from cache
+    } else {
+      $type_terms = \Drupal::entityManager()->getStorage('taxonomy_term')
+        ->loadTree('implements_category');
+      foreach ($type_terms as $type_term) {
+        $type_term = Term::load($type_term->tid);  
+        if ($type_term->hasTranslation($language->getId())) {
+          $type_term = $type_term->getTranslation($language->getId());
+        }
+        $implements = _getimplementsProduct($type_term->id());
+        if($implements){
+          //print_R($type_term->getName());
+          //print '<br>';
+          $engine[$type_term->id()] = $type_term->getName();
+        }
+      }
+      $configUpdate = \Drupal::service('config.factory')->getEditable('config.custom_widget');
+      $configUpdate->save();
+    }
+
+    if ($type == 'page' || $type == 'product' || $type == 'features_implements') {
+      $variables['h1_title'] = isset($node->field_h1_title->value)? $node->field_h1_title->value: $node->title->value;
+    } else {
+      if ($type != '') {
+        $variables['h1_title'] = $node->title->value;
+      } else {
+        $variables['h1_title'] = '';
+      }
+    }
+    //echo '<pre>';
+    //kint($language->getId());
+    //kint($mainMenuLinks[$language->getId()]);exit;
+    $variables['main_menu'] = $mainMenuLinks[$language->getId()];
+    $variables['main_menu_links_map'] = $en_first_tree;
+    $variables['product_menu'] = $engine;
+    $variables['login_menu'] = $login_links;
+    $variables['popular_menu'] = $popular;
+    $variables['footer_menu'] = $footer_links;
+    $variables['toll_free_number'] = $config->get('toll_free_number');
+    $variables['privacy'] = $config->get('privacy_link');
+    $variables['terms'] = $config->get('terms_link');
+    
+    $variables['contact_main_menu'] = ($menu_config_lang['contact_us_main_menu'] != '') ? $menu_config_lang['contact_us_main_menu'] : $config->get('contact_us_main_menu');
+    $variables['contact_footer_menu'] = ($menu_config_lang['contact_us_footer_menu'] != '') ? $menu_config_lang['contact_us_footer_menu'] : $config->get('contact_us_footer_menu');
+    $variables['copyright'] = ($menu_config_lang['footer_copyright_text'] != '') ? $menu_config_lang['footer_copyright_text'] : $config->get('footer_copyright_text');
+    $variables['disclaimer'] = ($menu_config_lang['footer_disclaimer_text'] != '') ? $menu_config_lang['footer_disclaimer_text'] : $config->get('footer_disclaimer_text');
+    
+    
+    $variables['facebook'] = $config->get('facebook_link');
+    $variables['twitter'] = $config->get('twitter_link');
+    $variables['linkedin'] = $config->get('linkedin_link');
+    $variables['youtube'] = $config->get('youtube_link');
+    $variables['android'] = $config->get('android_link');
+    $variables['apple'] = $config->get('apple_link');
+    $variables['faq'] = $config->get('faq_link');
+    $variables['google_map_api_key'] = $config->get('google_map_api_key');    
+    $white_logo = 'swaraj-logo-green.png';
+    $path = $config->get('main_logo_white');
+    $variables['white_logo'] = file_create_url($path);
+    $path = $config->get('main_logo_green');
+    $variables['green_logo'] = file_create_url($path);
+  }
+}
+
+/**
+ * 
+ * process data for block
+ */
+function swaraj_preprocess_block(&$variables) {
+  global $base_url;
+  $language = \Drupal::languageManager()->getCurrentLanguage();
+  $variables['lang_code'] = $language->getId();
+  $config = \Drupal::config('config.custom_widget');
+  $variables['google_map_api_key'] = !empty($config->get('google_map_api_key'))? $config->get('google_map_api_key'): 'AIzaSyB4i2QQFtyO87OCzxhi0TQxWqZzKVZjSp8'; 
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $block_id = !is_null($variables['elements']['content']['#block_content']) ? $variables['elements']['content']['#block_content']->bundle() : '';
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+      $type = $node->bundle();
+    $variables['node_type'] = $type;
+      if($block_id == 'quick_tools_product') {
+        if($type == 'product'){
+          $para_id = $variables['elements']['content']['#block_content']->get('field_quick_tools_product')->getValue();
+          foreach ($para_id as $key => $val) {
+            $para = Paragraph::load($val['target_id']);
+            if($para->field_name->value == 'Download Brochure'){
+              if($node->field_brochure->target_id){
+                $para->field_link->setValue(array('uri' => _getmediaurl($node->field_brochure->target_id, 'file'), 'title' => 'Download Brochure'));
+              }
+            }
+            if($para->field_name->value == 'Service Request'){
+              $para->field_link->setValue(array('uri' => $base_url . "/contact-us?model=" . rawurlencode($node->title->value) . "&request=service", 'title' => 'Service Request'));
+            }
+            if($para->field_name->value == 'Test Drive'){
+              $para->field_link->setValue(array('uri' => $base_url . "/contact-us?model=" . rawurlencode($node->title->value) . "&request=drive", 'title' => 'Test Drive'));
+            }
+            if($para->field_name->value == 'Get A Call Back'){
+              $para->field_link->setValue(array('uri' => $base_url . "/contact-us?model=" . rawurlencode($node->title->value) . "&request=call", 'title' => 'Get A Call Back'));
+            }
+            if($para->field_name->value == 'Get A Quote'){
+              $para->field_link->setValue(array('uri' => $base_url . "/contact-us?model=" . rawurlencode($node->title->value) . "&request=quote", 'title' => 'Get A Quote'));
+            }
+          }
+        }
+      }
+      if($block_id == 'quick_tools') {
+        if($type == 'page'){
+          $para_id = $variables['elements']['content']['#block_content']->get('field_quick_tools')->getValue();
+          foreach ($para_id as $key => $val) {
+            $para = Paragraph::load($val['target_id']);
+            if($para->field_name->value == 'Get A Call Back'){
+              $para->field_link->setValue(array('uri' => $base_url . "/contact-us?request=call", 'title' => 'Get A Call Back'));
+            }
+            if($para->field_name->value == 'Test Drive'){
+              $para->field_link->setValue(array('uri' => $base_url . "/contact-us?request=drive", 'title' => 'Test Drive'));
+            }
+            if($para->field_name->value == 'Service Request'){
+              $para->field_link->setValue(array('uri' => $base_url . "/contact-us?request=service", 'title' => 'Service Request'));
+            }
+          }
+        }
+      }
+      if($type == 'dealer') {
+        if ($block_id == 'know_your_dealer') {
+          $variables['dealer'] = $node;
+          $options = ['absolute' => TRUE];
+          $variables['link'] = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()], $options)->toString();
+        }
+        if ($block_id == 'dealer_banner_with_contact_form') {
+          $variables['states'] = get_states();
+          $variables['dealerid'] = $node->title->value;
+          $variables['dealername'] = $node->field_dealer_name->value;
+          $variables['dealeremail'] = $node->field_email->value;
+          $variables['dealerstate'] = $node->field_state->value;
+        }
+      }
+      $page_breadcrumbs = array();
+      if($type == 'page' || $type == 'article' || $type == 'csr' || $type == 'news') {
+        if($block_id == 'banner_with_video' || $block_id == 'banner_text' || $block_id == 'banner_address' ){
+          $para_id = $node->get('field_breadcrumbs')->getValue();
+          foreach ($para_id as $key => $val) {
+            $para = Paragraph::load($val['target_id']);
+            $res['title'] = $para->field_name->value;
+            $link = $para->field_link->uri;
+            $res['link'] = !empty($link) ? Url::fromUri($link) : '';
+            $page_breadcrumbs[] = $res;
+          }
+        }
+      }
+      $variables['page_breadcrumbs'] = $page_breadcrumbs;
+    }
+    if ($block_id == 'dealer_product_listing') {
+      $type_terms = \Drupal::entityManager()->getStorage('taxonomy_term')
+      ->loadByProperties(['vid' => 'product_engine_power']);
+      foreach ($type_terms as $type_term) {
+        if ($type_term->hasTranslation($language->getId())) {
+          $type_term = $type_term->getTranslation($language->getId());
+        }
+        $details = _getEngineProducts($type_term->id());
+        if($details != NULL){
+          $product[$type_term->label()] = $details;
+          foreach ($details as $arr) {
+            $engine[$type_term->label()][] = $arr['title'];
+          }
+        }
+      }
+      $variables['engine'] = $engine;
+      $variables['product'] = $product;
+    }
+
+    if ($block_id == 'enquiry_form') {
+      $type_terms = \Drupal::entityManager()->getStorage('taxonomy_term')
+        ->loadByProperties(['vid' => 'product_engine_power']);
+      foreach ($type_terms as $type_term) {
+        if ($type_term->hasTranslation($language->getId())) {
+          $type_term = $type_term->getTranslation($language->getId());
+        }
+        $details = _getEngineProducts($type_term->id());
+        if($details != NULL){
+          $products[$type_term->label()] = $details;
+        }
+      }
+      $variables['products'] = $products;
+      //echo '<pre>';
+      //print_r($products);
+      //exit;
+      $variables['states'] = get_states();
+    }
+
+    $user = \Drupal::currentUser();
+    if ($user->hasPermission("view the administration theme")) {
+      $variables['uuid'] = $variables['elements']['content']['#block_content']->uuid();
+      if (isset($node->panelizer)) {
+        $panel_blocks = $node->panelizer->panels_display['blocks'];
+        foreach ($panel_blocks as $panel_block) {
+          if ($panel_block['id'] == 'block_content:'.$variables['uuid']) {
+            $variables['uuid'] = $panel_block['uuid'];
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function swaraj_theme_suggestions_page_alter(&$suggestions, $variables, $hook) {
+  /**
+   * 404 template suggestion.
+   */
+  if (!is_null(Drupal::requestStack()->getCurrentRequest()->attributes->get('exception'))) {
+    $status_code = Drupal::requestStack()->getCurrentRequest()->attributes->get('exception')->getStatusCode();
+    switch ($status_code) {
+      case 404: {
+        $suggestions[] = 'page__' . (string) $status_code;
+        break;
+      }
+      default:
+        break;
+    }
+  }
+
+  // Theme Suggestions for Content types
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+function swaraj_form_alter(&$form, &$form_state, $form_id) {
+  // replace the 'FORM-ID' with the actual id of the contact form 
+  if ($form_id == 'user_login_form') {
+     $form['name'] = array (
+        '#type' => 'textfield',
+        '#title' => 'User Login',
+        '#prefix' => '<h2>User Login</h2>'
+     );
+  }
+}
+
+function swaraj_preprocess_status_messages(&$variables) {
+  if (isset($_SESSION['messages'])) {
+    $current_path = \Drupal::service('path.current')->getPath();
+    if ($current_path != '/user/login') {
+      unset($_SESSION['messages']);
+    }
+  }
+}

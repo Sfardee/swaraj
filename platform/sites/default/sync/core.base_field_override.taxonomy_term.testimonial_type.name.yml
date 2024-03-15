@@ -1,0 +1,18 @@
+uuid: 782aa469-82df-45c0-b0b6-0064047d5aea
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.testimonial_type
+id: taxonomy_term.testimonial_type.name
+field_name: name
+entity_type: taxonomy_term
+bundle: testimonial_type
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,41 @@
+uuid: 5c2d0d40-7d8b-4496-b4cc-cb6bc882a2a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.milestone.field_description
+    - field.field.paragraph.milestone.field_name
+    - field.field.paragraph.milestone.field_number
+    - paragraphs.paragraphs_type.milestone
+  module:
+    - text
+id: paragraph.milestone.default
+targetEntityType: paragraph
+bundle: milestone
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_name:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_number:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

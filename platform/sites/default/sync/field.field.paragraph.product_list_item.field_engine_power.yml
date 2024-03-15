@@ -1,0 +1,29 @@
+uuid: 49db9f69-c2cf-4555-8416-b856ca5e8243
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_engine_power
+    - paragraphs.paragraphs_type.product_list_item
+    - taxonomy.vocabulary.product_engine_power
+id: paragraph.product_list_item.field_engine_power
+field_name: field_engine_power
+entity_type: paragraph
+bundle: product_list_item
+label: 'Engine power'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      product_engine_power: product_engine_power
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

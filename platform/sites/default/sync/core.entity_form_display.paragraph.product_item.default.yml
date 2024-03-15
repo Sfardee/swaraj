@@ -1,0 +1,35 @@
+uuid: eb8d8ff8-8510-4fa9-ad57-a7cbbb7fef96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.product_item.field_product
+    - field.field.paragraph.product_item.field_product_image
+    - paragraphs.paragraphs_type.product_item
+  module:
+    - media_library
+id: paragraph.product_item.default
+targetEntityType: paragraph
+bundle: product_item
+mode: default
+content:
+  field_product:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_product_image:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

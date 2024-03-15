@@ -1,0 +1,32 @@
+uuid: 7d636311-d0b1-4b3d-ac08-d167c47e7c6f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.single_banner_without_text
+    - field.field.block_content.single_banner_without_text.field_desktop_background_image
+    - field.field.block_content.single_banner_without_text.field_mobile_background_image
+id: block_content.single_banner_without_text.default
+targetEntityType: block_content
+bundle: single_banner_without_text
+mode: default
+content:
+  field_desktop_background_image:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_mobile_background_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

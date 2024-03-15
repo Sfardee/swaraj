@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "My Protected Area"
+AuthUserFile /Applications/MAMP/htdocs/swaraj/lead_form/platform/admin_export/.htpasswd
+Require valid-user

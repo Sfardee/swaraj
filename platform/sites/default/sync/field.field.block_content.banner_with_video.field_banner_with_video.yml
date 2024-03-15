@@ -1,0 +1,43 @@
+uuid: 13cf4f05-7db7-4b29-8977-c5da6f294d16
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner_with_video
+    - field.storage.block_content.field_banner_with_video
+    - paragraphs.paragraphs_type.banner
+  module:
+    - entity_reference_revisions
+id: block_content.banner_with_video.field_banner_with_video
+field_name: field_banner_with_video
+entity_type: block_content
+bundle: banner_with_video
+label: 'Banner With Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      banner: banner
+    target_bundles_drag_drop:
+      banner:
+        enabled: true
+        weight: 6
+      customers:
+        weight: 7
+        enabled: false
+      product_banner:
+        weight: 8
+        enabled: false
+      quick_tools:
+        weight: 9
+        enabled: false
+      specification:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

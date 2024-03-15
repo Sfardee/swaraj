@@ -1,0 +1,20 @@
+uuid: 20f7b21c-91d6-4e1b-a3b2-54c03d0dd2aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_no_of_days_for_which_repor
+field_name: field_no_of_days_for_which_repor
+entity_type: config_pages
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

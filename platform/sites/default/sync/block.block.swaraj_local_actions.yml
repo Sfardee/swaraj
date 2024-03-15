@@ -1,0 +1,20 @@
+uuid: 13d015e9-3bf4-4cfd-a7a6-97bd38e05343
+langcode: en
+status: true
+dependencies:
+  theme:
+    - swaraj
+_core:
+  default_config_hash: HHryZVJbeKi9WnuBGC8FOhBZmBnk2G1H6KxFuy-rC9A
+id: swaraj_local_actions
+theme: swaraj
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

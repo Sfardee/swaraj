@@ -1,0 +1,68 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+<div class="row">
+  <div class="col-md-12">
+    <h4>{{ data.title }}</h4>
+  </div>
+</div>
+
+<section class="gallerySec">
+<div class="container">
+{% for details in data.details|batch(2) %}
+  <div class="row">
+    {% for nid, data in details %}
+    <div class="col-md-6 col-sm-6">
+      <figure class="gallery-fig" data-toggle="modal" data-target="#galleryModal{{ nid }}">
+        <img class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ data.img }}" alt="">
+        <div class="tagInfo">
+            
+          {% if data.images != 0 %}
+            <span>{{ data.images }} {% trans %} Images {% endtrans %}</span>
+          {% endif %}
+          {% if data.images != 0 and data.videos != 0 %} | {% endif %}
+          {% if data.videos != 0 %}
+            <span>{{ data.videos }} {% trans %} Videos {% endtrans %}</span>
+          {% endif %}
+          
+        </div>
+        <figcaption>
+          {{ data.title }}
+        </figcaption>
+      </figure>
+    </div>
+  {% endfor %}
+  </div>
+{% endfor %}
+</div>
+
+</section>
+
+{% for node, values in data.gallery %}
+    {% for images in values %}
+    <div class="modal fade galleryModal" id="galleryModal{{ node }}">
+      <div class="modal-dialog">
+        <div class="close-video">
+          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+        </div>
+        <div class="gallery-carousal owl-carousel white-arrow">
+          {% for value in images %}
+            <div>
+            {% if value.image %}
+              <figure class="gallery-fig">
+                <img class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ value.image }}" alt="">
+            {% else %}
+              <figure class="gallery-fig flex-video">
+                <iframe allowfullscreen frameborder="0" class="lozad" data-src="{{ value.video }}" width="100%"></iframe>
+            {% endif %}
+            {% if value.text.length > 0 %}    
+                <figcaption>
+                {{ value.text }}
+                </figcaption>
+            {%endif%}    
+              </figure>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+{% endfor %}

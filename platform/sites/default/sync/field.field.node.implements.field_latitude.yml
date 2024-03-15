@@ -1,0 +1,19 @@
+uuid: 90e03aee-88e3-4811-9769-aaf93c4767bd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latitude
+    - node.type.implements
+id: node.implements.field_latitude
+field_name: field_latitude
+entity_type: node
+bundle: implements
+label: 'Bale Weight'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

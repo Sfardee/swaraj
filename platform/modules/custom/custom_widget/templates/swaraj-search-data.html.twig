@@ -1,0 +1,28 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+{{ product }}
+{{ article }}
+
+<div class="container">
+  <div class="search-result-product hidden">
+    <div class="no-result">
+      <figure><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}no-result.png"></figure>
+      <span>{% trans %}No result found!{% endtrans %}</span>
+    </div>
+  </div>
+</div>
+
+{% if data.video %}
+{% for key, value in data.video %}
+  <div class="modal fade youtube-video-box" id="myModalVideo{{ key }}">
+    <div class="container">
+      <div class="close-video">
+        <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+      </div>
+      <div>
+        <iframe allowfullscreen frameborder="0" height="600" id="SwarajVideo" class="lozad" data-src="{{ value }}" width="100%"></iframe>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+{% endif %}
+

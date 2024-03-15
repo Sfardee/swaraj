@@ -1,0 +1,18 @@
+uuid: 0b8c6a98-c239-4d9d-9bb3-bde6566da369
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dealer
+id: node.dealer.title
+field_name: title
+entity_type: node
+bundle: dealer
+label: Title
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

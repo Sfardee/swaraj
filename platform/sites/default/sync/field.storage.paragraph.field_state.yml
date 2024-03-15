@@ -1,0 +1,126 @@
+uuid: fdeb4750-5c4e-4108-83ad-980a05c23392
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_state
+field_name: field_state
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Andaman & Nicobar'
+      label: 'Andaman & Nicobar'
+    -
+      value: 'Andhra Pradesh'
+      label: 'Andhra Pradesh'
+    -
+      value: 'Arunachal Pradesh'
+      label: 'Arunachal Pradesh'
+    -
+      value: Assam
+      label: Assam
+    -
+      value: Bihar
+      label: Bihar
+    -
+      value: Chandigarh
+      label: Chandigarh
+    -
+      value: Chhattisgarh
+      label: Chhattisgarh
+    -
+      value: 'Dadra, Nagarhaveli'
+      label: 'Dadra, Nagarhaveli'
+    -
+      value: Delhi
+      label: Delhi
+    -
+      value: 'Goa, Daman & Diu'
+      label: 'Goa, Daman & Diu'
+    -
+      value: Gujarat
+      label: Gujarat
+    -
+      value: Haryana
+      label: Haryana
+    -
+      value: 'Himachal Pradesh'
+      label: 'Himachal Pradesh'
+    -
+      value: 'Jammu & Kashmir'
+      label: 'Jammu & Kashmir'
+    -
+      value: Jharkhand
+      label: Jharkhand
+    -
+      value: Karnataka
+      label: Karnataka
+    -
+      value: Kerala
+      label: Kerala
+    -
+      value: Lakshwadeep
+      label: Lakshwadeep
+    -
+      value: 'Madhya Pradesh'
+      label: 'Madhya Pradesh'
+    -
+      value: Maharashtra
+      label: Maharashtra
+    -
+      value: Manipur
+      label: Manipur
+    -
+      value: Meghalaya
+      label: Meghalaya
+    -
+      value: Mizoram
+      label: Mizoram
+    -
+      value: Nagaland
+      label: Nagaland
+    -
+      value: Odisha
+      label: Odisha
+    -
+      value: Puducherry
+      label: Puducherry
+    -
+      value: Punjab
+      label: Punjab
+    -
+      value: Rajasthan
+      label: Rajasthan
+    -
+      value: Sikkim
+      label: Sikkim
+    -
+      value: 'Tamil Nadu'
+      label: 'Tamil Nadu'
+    -
+      value: Telengana
+      label: Telengana
+    -
+      value: Tripura
+      label: Tripura
+    -
+      value: 'Uttar Pradesh'
+      label: 'Uttar Pradesh'
+    -
+      value: Uttarakhand
+      label: Uttarakhand
+    -
+      value: 'West Bengal'
+      label: 'West Bengal'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

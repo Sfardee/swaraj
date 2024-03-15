@@ -1,0 +1,19 @@
+uuid: dfd18b2c-eb6b-43bc-b584-5a719a22ce0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state
+    - node.type.distributor
+id: node.distributor.field_state
+field_name: field_state
+entity_type: node
+bundle: distributor
+label: State
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

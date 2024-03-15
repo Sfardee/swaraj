@@ -1,0 +1,22 @@
+uuid: fc6373aa-b8ae-44e4-9a91-7cefe637f88d
+langcode: en
+status: false
+dependencies:
+  theme:
+    - swaraj
+_core:
+  default_config_hash: QeZBeCilQfeET3GeW6ZtJkEiwROADTZktFgKWwPieD4
+id: swaraj_secondary_local_tasks
+theme: swaraj
+region: content
+weight: 3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility: {  }

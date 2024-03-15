@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTP_HOST} ^(www\.)?joshkaraaz\.com$ [NC,OR]
+    RewriteCond %{HTTP_HOST} ^(www\.)?joshkaraazmeraswaraj\.com$ [NC]
+    RewriteRule (.*)  https://www.swarajtractors.com/josh-ka-raaz-mera-swaraj%{REQUEST_URI} [R=301,L]
+</IfModule>

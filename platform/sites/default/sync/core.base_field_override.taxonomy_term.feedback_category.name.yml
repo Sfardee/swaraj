@@ -1,0 +1,18 @@
+uuid: 2f8a54da-01fb-4e81-bb9d-bfa74cf52d7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.feedback_category
+id: taxonomy_term.feedback_category.name
+field_name: name
+entity_type: taxonomy_term
+bundle: feedback_category
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

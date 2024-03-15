@@ -1,0 +1,8 @@
+uuid: 991ae9a7-b322-44ca-9cf2-206ee946573e
+langcode: en
+status: true
+dependencies: {  }
+id: image_text
+label: '3 Image With Text'
+revision: 0
+description: '3 Image With Text'

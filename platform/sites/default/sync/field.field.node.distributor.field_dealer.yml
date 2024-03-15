@@ -1,0 +1,19 @@
+uuid: 95dac900-fac3-4865-a973-678afc33fd0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dealer
+    - node.type.distributor
+id: node.distributor.field_dealer
+field_name: field_dealer
+entity_type: node
+bundle: distributor
+label: Dealer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

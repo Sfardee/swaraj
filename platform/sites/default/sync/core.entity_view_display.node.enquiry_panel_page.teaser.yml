@@ -1,0 +1,28 @@
+uuid: 4e3b6809-7a06-4f7e-b30c-43941e8689b5
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.enquiry_panel_page.field_h1_title
+    - field.field.node.enquiry_panel_page.field_meta_tags
+    - field.field.node.enquiry_panel_page.panelizer
+    - node.type.enquiry_panel_page
+  module:
+    - user
+_core:
+  default_config_hash: cSv5lDnbIgDug475Hdz3woED2XMqYv3awI-J9u1JLbY
+id: node.enquiry_panel_page.teaser
+targetEntityType: node
+bundle: enquiry_panel_page
+mode: teaser
+content:
+  links:
+    weight: 101
+    region: content
+hidden:
+  field_h1_title: true
+  field_meta_tags: true
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 654f11dd-df97-42af-88af-62f1d6f0d1df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pto_hp
+    - node.type.gallery
+id: node.gallery.field_pto_hp
+field_name: field_pto_hp
+entity_type: node
+bundle: gallery
+label: 'Video Count'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

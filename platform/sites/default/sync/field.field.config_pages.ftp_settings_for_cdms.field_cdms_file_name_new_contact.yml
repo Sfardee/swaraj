@@ -1,0 +1,21 @@
+uuid: 3e83f053-952b-428f-b085-adbdfb2ace85
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_cdms_file_name_new_contact
+id: config_pages.ftp_settings_for_cdms.field_cdms_file_name_new_contact
+field_name: field_cdms_file_name_new_contact
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'CDMS File Name - Main Website New Contact us report'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: SampleFlatFile-<date>.xlsx
+default_value_callback: ''
+settings: {  }
+field_type: string

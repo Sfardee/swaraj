@@ -1,0 +1,19 @@
+uuid: 6f07a446-d8fe-44d0-b111-680057885e8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cst
+    - node.type.dealer
+id: node.dealer.field_cst
+field_name: field_cst
+entity_type: node
+bundle: dealer
+label: CST
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,28 @@
+uuid: ffc0f584-0472-45d5-ab6a-841e51913239
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.text_with_cta
+    - field.storage.block_content.field_desktop_background_image
+    - media.type.image
+id: block_content.text_with_cta.field_desktop_background_image
+field_name: field_desktop_background_image
+entity_type: block_content
+bundle: text_with_cta
+label: 'Desktop Background Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

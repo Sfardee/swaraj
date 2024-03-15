@@ -1,0 +1,14 @@
+uuid: 92f2d275-8f33-4283-8545-9a1e747f9967
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.report_viewer
+  module:
+    - user
+id: user_add_role_action.report_viewer
+label: 'Add the Report Viewer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: report_viewer

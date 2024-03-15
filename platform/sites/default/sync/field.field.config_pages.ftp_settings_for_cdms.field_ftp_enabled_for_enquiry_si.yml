@@ -1,0 +1,23 @@
+uuid: f7e2eef1-9d85-448c-acf6-133212b1d9fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_ftp_enabled_for_enquiry_si
+id: config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_enquiry_si
+field_name: field_ftp_enabled_for_enquiry_si
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'FTP Enabled for Enquiry Site'
+description: 'Use this flag to enable/disabled FTP for Enquiry pages report'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

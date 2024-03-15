@@ -1,0 +1,51 @@
+uuid: 34055c27-72ac-4a85-9ee5-14a836229125
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.dealer_page_services_offered
+    - field.field.block_content.dealer_page_services_offered.field_services_offered
+    - field.field.block_content.dealer_page_services_offered.field_title
+  module:
+    - paragraphs
+id: block_content.dealer_page_services_offered.default
+targetEntityType: block_content
+bundle: dealer_page_services_offered
+mode: default
+content:
+  field_services_offered:
+    type: entity_reference_paragraphs
+    weight: 27
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

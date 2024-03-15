@@ -1,0 +1,28 @@
+uuid: 363f79db-21f2-4f95-bb71-8f7bf28b21fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_menu_image
+    - media.type.image
+    - node.type.product
+id: node.product.field_main_menu_image
+field_name: field_main_menu_image
+entity_type: node
+bundle: product
+label: 'Main menu image'
+description: 'This image is visible in main menu in desktop only. Ideal size is 392 x 302'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,14 @@
+name: 'MimeDetect file upload validator'
+description: 'Validates all file uploads for consistency between its real file content and the filename extension.'
+package: Media
+# core: 8.x
+type: module
+dependencies:
+  - drupal:mimedetect
+  - drupal:file
+
+# Information added by Drupal.org packaging script on 2017-10-22
+version: '8.x-1.0-beta2'
+core: '8.x'
+project: 'mimedetect'
+datestamp: 1508705828

@@ -1,0 +1,82 @@
+uuid: 65f6069a-9226-42f6-8b18-9aecaf4b607f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_gallery
+    - field.storage.block_content.field_gallery_images
+    - paragraphs.paragraphs_type.gallery_image_unit
+  module:
+    - entity_reference_revisions
+id: block_content.image_gallery.field_gallery_images
+field_name: field_gallery_images
+entity_type: block_content
+bundle: image_gallery
+label: 'Gallery Images'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery_image_unit: gallery_image_unit
+    target_bundles_drag_drop:
+      about_us:
+        weight: 19
+        enabled: false
+      banner:
+        weight: 20
+        enabled: false
+      breadcrumbs:
+        weight: 21
+        enabled: false
+      commitment:
+        weight: 22
+        enabled: false
+      contact_us_mail_recipient:
+        weight: 23
+        enabled: false
+      contact_us_state_wise_mail_recip:
+        weight: 24
+        enabled: false
+      customers:
+        weight: 25
+        enabled: false
+      gallery:
+        weight: 26
+        enabled: false
+      gallery_image_unit:
+        enabled: true
+        weight: 27
+      image_unit:
+        weight: 28
+        enabled: false
+      milestone:
+        weight: 29
+        enabled: false
+      product_banner:
+        weight: 30
+        enabled: false
+      product_item:
+        weight: 31
+        enabled: false
+      product_list_item:
+        weight: 32
+        enabled: false
+      quick_tools:
+        weight: 33
+        enabled: false
+      specification:
+        weight: 34
+        enabled: false
+      video_unit:
+        weight: 35
+        enabled: false
+      zigzag:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

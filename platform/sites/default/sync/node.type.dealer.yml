@@ -1,0 +1,17 @@
+uuid: c7415551-6df4-4df1-9e39-9a9f5fd51f3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Dealer
+type: dealer
+description: 'Use this content type to store dealer data'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

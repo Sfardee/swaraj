@@ -1,0 +1,8 @@
+uuid: 33044438-4381-4844-9809-a7d5d6f78f7a
+langcode: en
+status: true
+dependencies: {  }
+id: banner_text
+label: 'Banner With Text'
+revision: 0
+description: 'Banner with text'

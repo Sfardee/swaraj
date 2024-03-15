@@ -1,0 +1,23 @@
+uuid: 4622e240-f8a1-402c-b1c2-cc283a285d27
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.enquiry_form_configuration
+    - field.storage.config_pages.field_node_id_of_enquiry_form_th
+id: config_pages.enquiry_form_configuration.field_node_id_of_enquiry_form_th
+field_name: field_node_id_of_enquiry_form_th
+entity_type: config_pages
+bundle: enquiry_form_configuration
+label: 'node id of enquiry form thank you page'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

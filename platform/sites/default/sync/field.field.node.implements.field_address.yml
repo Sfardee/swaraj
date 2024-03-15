@@ -1,0 +1,19 @@
+uuid: 321a2097-4093-4d55-aadb-2f99caa05cb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.implements
+id: node.implements.field_address
+field_name: field_address
+entity_type: node
+bundle: implements
+label: 'No. of Bottoms'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+attributes:
+  class:
+    label: ''
+    description: ''
+  type:
+    label: ''
+    description: ''
+    options:
+      _product: 'Product - mega menu'
+      _contact: 'Contact address - mega menu'
+      _other: 'Normal menu'
+  target:
+    label: ''
+    description: ''
+    options:
+      _blank: 'New window (_blank)'
+      _self: 'Same window (_self)'

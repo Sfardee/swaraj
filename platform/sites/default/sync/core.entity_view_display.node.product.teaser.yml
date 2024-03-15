@@ -1,0 +1,74 @@
+uuid: 079f012d-f761-4517-a4ca-8cbff28f1058
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.product.body
+    - field.field.node.product.field_big_image
+    - field.field.node.product.field_brakes
+    - field.field.node.product.field_breadcrumbs
+    - field.field.node.product.field_brochure
+    - field.field.node.product.field_cdms_identifier
+    - field.field.node.product.field_cylinders
+    - field.field.node.product.field_engine
+    - field.field.node.product.field_engine_power
+    - field.field.node.product.field_gearbox
+    - field.field.node.product.field_h1_title
+    - field.field.node.product.field_horsepower
+    - field.field.node.product.field_image
+    - field.field.node.product.field_main_menu_image
+    - field.field.node.product.field_meta_tags
+    - field.field.node.product.field_pto_hp
+    - field.field.node.product.field_short_description
+    - field.field.node.product.field_similar_image
+    - field.field.node.product.field_specification
+    - field.field.node.product.field_warranty
+    - field.field.node.product.field_wheel_drive
+    - field.field.node.product.panelizer
+    - node.type.product
+  module:
+    - text
+    - user
+id: node.product.teaser
+targetEntityType: node
+bundle: product
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_big_image: true
+  field_brakes: true
+  field_breadcrumbs: true
+  field_brochure: true
+  field_cdms_identifier: true
+  field_cylinders: true
+  field_engine: true
+  field_engine_power: true
+  field_gearbox: true
+  field_h1_title: true
+  field_horsepower: true
+  field_image: true
+  field_main_menu_image: true
+  field_meta_tags: true
+  field_pto_hp: true
+  field_short_description: true
+  field_similar_image: true
+  field_specification: true
+  field_warranty: true
+  field_wheel_drive: true
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

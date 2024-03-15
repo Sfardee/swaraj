@@ -1,0 +1,19 @@
+uuid: ac3740e9-f9be-480d-8609-bd2376c9f0ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pto_hp
+    - node.type.team_member
+id: node.team_member.field_pto_hp
+field_name: field_pto_hp
+entity_type: node
+bundle: team_member
+label: 'Twitter Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

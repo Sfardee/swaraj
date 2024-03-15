@@ -1,0 +1,13 @@
+diff --git a/src/Plugin/metatag/Tag/MetaNameBase.php b/src/Plugin/metatag/Tag/MetaNameBase.php
+index 5eafb80..62d3e44 100644
+--- a/src/Plugin/metatag/Tag/MetaNameBase.php
++++ b/src/Plugin/metatag/Tag/MetaNameBase.php
+@@ -246,7 +246,7 @@ abstract class MetaNameBase extends PluginBase {
+       '#type' => 'textfield',
+       '#title' => $this->label(),
+       '#default_value' => $this->value(),
+-      '#maxlength' => 255,
++      '#maxlength' => 1024,
+       '#required' => isset($element['#required']) ? $element['#required'] : FALSE,
+       '#description' => $this->description(),
+       '#element_validate' => [[get_class($this), 'validateTag']],

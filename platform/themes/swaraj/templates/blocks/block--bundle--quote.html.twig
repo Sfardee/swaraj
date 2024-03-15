@@ -1,0 +1,25 @@
+{% block blockcontent %}
+  {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+  <div data-block-id="{{ uuid }}">
+    <div class="container">
+      <div class="row flex-row">
+        <div class="col-md-4 col-sm-4 MT30">
+          <div class="gray-bx">
+            <p class="title">Related Links</p>
+            <hr>
+            <ul>
+              <li><a href="{{ block_content.field_cta.0.url }}">{{ block_content.field_cta.title }}</a></li>
+              <li><a href="{{ block_content.field_cta2.0.url }}">{{ block_content.field_cta2.title }}</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-8 col-sm-8 MT30">
+          <div class="testQuote">
+            {{ block_content.field_title.value }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+{% endblock %}

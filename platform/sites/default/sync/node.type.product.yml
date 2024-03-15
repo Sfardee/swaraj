@@ -1,0 +1,18 @@
+uuid: a3169303-34f8-40fa-8742-dba15697d011
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Product
+type: product
+description: 'Use this content type to create product page'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

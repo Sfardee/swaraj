@@ -1,0 +1,8 @@
+uuid: 25e7cb1e-bea2-4307-9176-02752da84305
+langcode: en
+status: true
+dependencies: {  }
+id: know_your_dealer
+label: 'Dealer Page - Know Your Dealer'
+revision: 0
+description: 'This block is used exclusively on Dealer pages to display details of current dealer in context. Don''t use it on any other page. '

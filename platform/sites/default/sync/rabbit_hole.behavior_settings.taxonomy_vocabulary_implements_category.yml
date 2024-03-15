@@ -1,0 +1,14 @@
+uuid: b133d06c-a6b2-4828-9fac-0ff106b2e7fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.implements_category
+id: taxonomy_vocabulary_implements_category
+entity_type_id: taxonomy_vocabulary
+entity_id: implements_category
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

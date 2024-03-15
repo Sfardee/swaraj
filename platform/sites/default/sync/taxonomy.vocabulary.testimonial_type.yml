@@ -1,0 +1,8 @@
+uuid: 3810f181-d0f3-4392-8b77-57971ce287f4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Testimonial Type'
+vid: testimonial_type
+description: ''
+weight: 0

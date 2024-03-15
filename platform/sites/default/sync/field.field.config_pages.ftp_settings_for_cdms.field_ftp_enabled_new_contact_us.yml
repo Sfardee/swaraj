@@ -1,0 +1,23 @@
+uuid: 7363e4f3-d313-4afc-98b5-aa4e2cfe52dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_ftp_enabled_new_contact_us
+id: config_pages.ftp_settings_for_cdms.field_ftp_enabled_new_contact_us
+field_name: field_ftp_enabled_new_contact_us
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'FTP Enabled for Main Site New Contact Us Form'
+description: 'Use this flag to enable/disable FTP for Main Site New Contact Us form'
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

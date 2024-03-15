@@ -1,0 +1,36 @@
+uuid: dbdbadca-9d65-4dbf-b150-fddd69917d0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.know_your_dealer
+    - field.field.block_content.know_your_dealer.field_title
+id: block_content.know_your_dealer.default
+targetEntityType: block_content
+bundle: know_your_dealer
+mode: default
+content:
+  field_title:
+    weight: 26
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: e2c7e048-cf19-493f-a226-80c501fcd772
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.enquiry_form_configuration
+    - field.storage.config_pages.field_node_id_of_enquiry_form_pa
+id: config_pages.enquiry_form_configuration.field_node_id_of_enquiry_form_pa
+field_name: field_node_id_of_enquiry_form_pa
+entity_type: config_pages
+bundle: enquiry_form_configuration
+label: 'node id of enquiry form page'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

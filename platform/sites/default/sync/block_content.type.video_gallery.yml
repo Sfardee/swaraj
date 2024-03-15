@@ -1,0 +1,8 @@
+uuid: 5a9aa97e-32e5-4428-b454-46365f228aca
+langcode: en
+status: true
+dependencies: {  }
+id: video_gallery
+label: 'Video Gallery'
+revision: 0
+description: 'This custom block is used on "Josh Ka Raaz" campaign page'

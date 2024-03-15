@@ -1,0 +1,8 @@
+uuid: d1acb88a-5329-4866-b885-2dc019d038b9
+langcode: en
+status: true
+dependencies: {  }
+id: simple_text_block
+label: 'Simple Text Block'
+revision: 0
+description: 'Simple Text Block '

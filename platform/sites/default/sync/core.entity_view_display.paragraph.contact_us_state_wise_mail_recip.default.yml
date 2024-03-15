@@ -1,0 +1,31 @@
+uuid: a6fdfad1-f4d5-4853-b19c-45b77f6e3e10
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact_us_state_wise_mail_recip.field_email_recipients
+    - field.field.paragraph.contact_us_state_wise_mail_recip.field_state
+    - paragraphs.paragraphs_type.contact_us_state_wise_mail_recip
+  module:
+    - options
+id: paragraph.contact_us_state_wise_mail_recip.default
+targetEntityType: paragraph
+bundle: contact_us_state_wise_mail_recip
+mode: default
+content:
+  field_email_recipients:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_state:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  search_api_excerpt: true

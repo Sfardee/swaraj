@@ -1,0 +1,41 @@
+uuid: c95b2d35-847a-4d21-a194-941cfb42d297
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.milestone.field_meta_tags
+    - field.field.node.milestone.field_milestone
+    - node.type.milestone
+  module:
+    - entity_reference_revisions
+    - metatag
+    - user
+id: node.milestone.default
+targetEntityType: node
+bundle: milestone
+mode: default
+content:
+  field_meta_tags:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_milestone:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

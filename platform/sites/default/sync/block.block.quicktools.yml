@@ -1,0 +1,42 @@
+uuid: beb4a1b5-a98d-4015-8833-5f414448153a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:quick_tools:f91d484e-dbe2-4d56-9f01-fc4643021936'
+  module:
+    - block_content
+    - ctools
+    - system
+  theme:
+    - swaraj
+id: quicktools
+theme: swaraj
+region: content
+weight: -1
+provider: null
+plugin: 'block_content:f91d484e-dbe2-4d56-9f01-fc4643021936'
+settings:
+  id: 'block_content:f91d484e-dbe2-4d56-9f01-fc4643021936'
+  label: 'Quick Tools'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      dealer: dealer
+      distributor: distributor
+      enquiry_panel_page: enquiry_panel_page
+      product: product
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /contact-us
+    negate: true
+    context_mapping: {  }

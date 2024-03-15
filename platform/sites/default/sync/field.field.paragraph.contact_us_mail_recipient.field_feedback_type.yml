@@ -1,0 +1,21 @@
+uuid: 90b83a6a-5ed3-4408-9d16-3c0152db7ea4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_feedback_type
+    - paragraphs.paragraphs_type.contact_us_mail_recipient
+  module:
+    - options
+id: paragraph.contact_us_mail_recipient.field_feedback_type
+field_name: field_feedback_type
+entity_type: paragraph
+bundle: contact_us_mail_recipient
+label: 'Feedback Type'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

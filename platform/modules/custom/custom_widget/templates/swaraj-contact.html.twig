@@ -1,0 +1,373 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<section class="connect-box notranslate">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 CTR">
+        <h4>{% trans %}How Can I Help You?{% endtrans %}</h4>
+        <div class="business-select-box">
+          <span class="iam">{% trans %}I am a{% endtrans %}</span>
+          <span class="businessP">
+            <select class="selectpicker" id="person" name="">
+            {% for key, val in data.person %}
+              <option value="{{ key }}">{{ val }}</option>
+              {% endfor %}
+            </select>
+          </span>
+
+          <span class="for">, looking for{% endtrans %}</span>
+          <span class="request">
+            <select class="selectpicker" id="request" name="">
+            {% for key, val in data.for %}
+              <option value="{{ key }}">{{ val }}</option>
+              {% endfor %}
+            </select>
+          </span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<form id="contactForm" class="notranslate" autocomplete="off">
+
+  <section class="tell-us-box yourself-bx">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="row flex-row">
+            <div class="col-md-6 col-sm-6">
+              <div class="about-bx">
+                <p class="svg">
+                  <img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/yourself-icon.svg">
+                </p>
+                <h6>{% trans %}Tell us about  YOURSELF{% endtrans %}</h6>
+                <p class="para">
+                  {% trans %}All your data will be safe and will not be{% endtrans %}<br>
+                  {% trans %}shared with anyone.{% endtrans %}
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <div class="form-container">
+                <div class="form-group">
+                  <input class="form-control" id="name" name="name" maxlength="50" minlength="3" onchange="this.checkValidity();" pattern="[A-Za-z][A-Za-z '.]+" placeholder="Name*" required="" type="text">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" name="number" id="mobile-number" maxlength="10" minlength="10" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter valid 10 digit mobile number.')" pattern="^[6789]\d{9}$" placeholder="Mobile Number*" required="" type="text">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email ID"  type="email">
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <p class="text-center next-btn visible-xs">
+            <a href="javascript:;">{% trans %}next{% endtrans %}</a>
+          </p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+  <section class="tell-us-box test-drive-bx act">
+    <div class="container">
+      <div class="row flex-row">
+
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <div class="about-bx">
+                <p class="svg">
+                  <img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/drive-icon.svg">
+                </p>
+                <h6>{% trans %}Book a TEST DRIVE{% endtrans %}
+                </h6>
+                <p class="para">
+                  {% trans %}Its good to have the test ride before
+                                                      buying your tractor! Select the date
+                                                      and time convenient for you.{% endtrans %}
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+              <div class="form-container">
+                <div class="radio-btn-container">
+                      <div class="form-group">
+                          <label class="radio-inline inp-cont">
+                              {% trans %}Tractors{% endtrans %}
+                              <input type="radio" name="vehicle" value="tractor" id="radio-tractor"
+                              checked="checked">
+                              <span class="checkmark"></span>
+                          </label>
+                          <label class="radio-inline inp-cont">
+                              {% trans %}Farm Machinery{% endtrans %}
+                              <input type="radio" name="vehicle"
+                                  value="implements" id="radio-implement">
+                              <span class="checkmark"></span>
+                          </label>
+                      </div>
+                  </div>
+                <div class="form-group">
+                  <select class="selectpicker" data-max-options="3" id="tractor_model" multiple name="model[]" title="Tractor Model*" required>
+                  {% for key, cat in data.product %}
+                    <optgroup label="{{ key }}">
+                      {% for model in cat %}
+                        <option value="{{ model.cdms_identifier }}">{{ model.title }}</option>
+                      {% endfor %}
+                    </optgroup>
+                  {% endfor %}
+                  </select>
+                  <select class="selectpicker" data-max-options="3" id="implement_model" multiple name="immodel[]" title="Farm Machinery Model">
+                  {% for key, cat in data.implement %}
+                    <optgroup label="{{ key }}">
+                      {% for model in cat %}
+                        <option value="{{ model.cdms_identifier }}">{{ model.title }}</option>
+                      {% endfor %}
+                    </optgroup>
+                  {% endfor %}
+                  </select>
+
+                </div>
+
+                 <div class="form-group">
+                  <input class="form-control spare" name="spare" id="spare-part" placeholder="Spare Part Model" type="text">
+                </div>
+
+                <div class="form-group">
+                  <input class="form-control date" name="date" id="datetimepicker2" placeholder="Date" type="text" readonly>
+                </div>
+
+                <div class="form-group" id="time-div">
+                  <select class="selectpicker" id="time" name="time" title="Time">
+                  {% for val in data.time %}
+                    <option value="{{ val }}">{{ val }}</option>
+                  {% endfor %}
+                  </select>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center next-btn visible-xs">
+          <a href="javascript:;">{% trans %}next{% endtrans %}</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+  <section class="tell-us-box located-bx act">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <h5>{% trans %}located at{% endtrans %}</h5>
+          <div class="row flex-row">
+            <div class="col-md-6 col-sm-6">
+              <div class="about-bx">
+                <p class="svg">
+                  <img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/gps-icon.svg">
+                </p>
+                <h6>{% trans %}Connect with nearest{% endtrans %}<br>
+                  {% trans %}SWARAJ representative{% endtrans %}</h6>
+                <p class="para">
+                  {% trans %}We are always near you standing next to
+                                                      you in every point of your journey{% endtrans %}
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6">
+
+              <div class="form-container">
+                <div class="form-group">
+                  <select class="selectpicker" id="state" name="state" title="State*"  placeholder="State" required>
+                    {% for val in data.states %}
+                      <option value="{{ val }}">{{ val }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <select class="selectpicker" id="district" name="district" title="District*" placeholder="District*" required disabled="disabled">
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <select class="selectpicker" id="tehsil" name="tehsil" title="Tehsil*" placeholder="Tehsil*" required disabled="disabled">
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <select class="selectpicker" id="city" name="city" title="City / Village*" placeholder="City / Village*" required disabled="disabled">
+                  </select>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center next-btn visible-xs">
+          <a href="javascript:;">{% trans %}next{% endtrans %}</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+  <section class="tell-us-box feedback act">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <h5>{% trans %}Message{% endtrans %}</h5>
+
+          <div class="spec-list-box">
+
+            <div class="">
+              <ul class="list-inline">
+                <li class="active">
+                  <a data-toggle="tab" href="#Information">{% trans %}Information{% endtrans %}</a>
+                </li>
+                <li>
+                  <a data-toggle="tab" href="#Feedback">{% trans %}Feedback{% endtrans %}</a>
+                </li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="tab-content col-md-12">
+          <div class="tab-pane fade in active" id="Information">
+            <div class="row flex-row">
+              <div class="col-md-6 col-sm-6">
+                <div class="about-bx">
+                  <p class="svg">
+                    <img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/feedback-icon.svg">
+                  </p>
+                  <h6>{% trans %}Whats on your MIND{% endtrans %}</h6>
+                  <p class="para">
+                    {% trans %}Share you valuable feedback OR request with us.{% endtrans %}
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6">
+
+                <div class="form-container">
+
+                  <div class="form-group">
+                    <input class="form-control" id="title1" name="title1" placeholder="Title" type="text">
+                  </div>
+
+                  <div class="form-group">
+                    <textarea class="form-control" cols="30" id="message1" name="message1" placeholder="Message" rows="7" maxlength="500"></textarea>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="Feedback">
+            <div class="row flex-row">
+              <div class="col-md-6 col-sm-6">
+                <div class="about-bx">
+                  <p class="svg">
+                    <img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/feedback-icon.svg">
+                  </p>
+                  <h6>{% trans %}Whats on your MIND{% endtrans %}</h6>
+                  <p class="para">
+                    {% trans %}Share you valuable feedback OR request with us.{% endtrans %}
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6">
+
+                <div class="form-container">
+
+                  <div class="form-group">
+                    <input class="form-control" name="title2" placeholder="Title" type="text">
+                  </div>
+
+                  <div class="form-group">
+                    <textarea class="form-control" cols="30" id="message2" name="message2" placeholder="Message" rows="7" maxlength="500"></textarea>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<section class="tell-us-box step-bx visible-xs">
+  <div class="container">
+    <div class="row step st2 act2">
+      <div class="col-md-12">
+        <p>
+          <span>2</span>{% trans %}Looking for{% endtrans %}</p>
+      </div>
+    </div>
+
+    <div class="row step st3 act2">
+      <div class="col-md-12">
+        <p>
+          <span>3</span>{% trans %}Located at{% endtrans %}</p>
+      </div>
+    </div>
+
+    <div class="row step st4 act2">
+      <div class="col-md-12">
+        <p>
+          <span>4</span>{% trans %}Message{% endtrans %}</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="tell-us-box form-btn-bx">
+  <div class="full-width" style="display:flex">
+    <button class="btn btn-default sb-btn" id="conSubmit" type="submit">{% trans %}Submit{% endtrans %}</button>
+    <button class="btn btn-default ref-btn" type="reset">{% trans %}Refresh{% endtrans %}</button>
+  </div>
+</section>
+</form>
+
+<div class="popupBox2" id="dialog">
+  <p class="close-btn">
+    <a href="javascript:;"></a>
+  </p>
+  <div class="CTR">
+    <figure><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}popup-img.gif"></figure>
+    <div class="content">
+      <h4>
+        {% trans %}Thank you for reaching out{% endtrans %}
+      </h4>
+      <p>
+        {% trans %}We appreciate your effort and time, someone from SWARAJ family will contact you soon{% endtrans %}
+      </p>
+    </div>
+  </div>
+</div>

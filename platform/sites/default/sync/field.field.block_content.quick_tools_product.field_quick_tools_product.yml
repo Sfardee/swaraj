@@ -1,0 +1,55 @@
+uuid: 001e2fac-9c92-4606-9420-bb1ef87f4b1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quick_tools_product
+    - field.storage.block_content.field_quick_tools_product
+    - paragraphs.paragraphs_type.quick_tools
+  module:
+    - entity_reference_revisions
+id: block_content.quick_tools_product.field_quick_tools_product
+field_name: field_quick_tools_product
+entity_type: block_content
+bundle: quick_tools_product
+label: 'Quick Tools Product'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      quick_tools: quick_tools
+    target_bundles_drag_drop:
+      about_us:
+        weight: 10
+        enabled: false
+      banner:
+        weight: 11
+        enabled: false
+      commitment:
+        weight: 12
+        enabled: false
+      customers:
+        weight: 13
+        enabled: false
+      milestone:
+        weight: 14
+        enabled: false
+      product_banner:
+        weight: 15
+        enabled: false
+      quick_tools:
+        enabled: true
+        weight: 16
+      specification:
+        weight: 17
+        enabled: false
+      zigzag:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

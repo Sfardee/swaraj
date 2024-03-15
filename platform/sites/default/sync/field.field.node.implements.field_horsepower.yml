@@ -1,0 +1,19 @@
+uuid: 4833fc6e-b17d-491b-9560-34ee95d6822d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_horsepower
+    - node.type.implements
+id: node.implements.field_horsepower
+field_name: field_horsepower
+entity_type: node
+bundle: implements
+label: 'Required Tractor kW (HP)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,37 @@
+uuid: 8c1d6759-1199-4dfc-a673-4a82552fd450
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.contact_us_mail_configuration
+    - field.field.config_pages.contact_us_mail_configuration.field_contact_us_mail_recipients
+    - field.field.config_pages.contact_us_mail_configuration.field_default_email_recipient
+  module:
+    - paragraphs
+id: config_pages.contact_us_mail_configuration.default
+targetEntityType: config_pages
+bundle: contact_us_mail_configuration
+mode: default
+content:
+  field_contact_us_mail_recipients:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_default_email_recipient:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+hidden:
+  label: true

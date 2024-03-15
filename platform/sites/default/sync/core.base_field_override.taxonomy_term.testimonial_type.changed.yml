@@ -1,0 +1,18 @@
+uuid: 37cfa471-56cb-4982-b83a-55ba6a5c3622
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.testimonial_type
+id: taxonomy_term.testimonial_type.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: testimonial_type
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

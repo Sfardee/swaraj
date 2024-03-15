@@ -1,0 +1,22 @@
+uuid: c9585222-cfa4-47d8-849d-716550e43553
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dealer
+id: node.dealer.sticky
+field_name: sticky
+entity_type: node
+bundle: dealer
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

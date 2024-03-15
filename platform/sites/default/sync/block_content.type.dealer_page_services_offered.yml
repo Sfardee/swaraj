@@ -1,0 +1,8 @@
+uuid: 39058bc3-2a04-4454-8226-8cf29852a187
+langcode: en
+status: true
+dependencies: {  }
+id: dealer_page_services_offered
+label: 'Dealer Page - Services Offered'
+revision: 0
+description: 'This is a generic block to display services offered, used mainly on dealer pages'

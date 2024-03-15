@@ -1,0 +1,19 @@
+uuid: ce015822-579b-4239-b120-4c31b23bbba1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_engine
+    - node.type.product
+id: node.product.field_engine
+field_name: field_engine
+entity_type: node
+bundle: product
+label: Engine
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

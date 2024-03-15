@@ -1,0 +1,19 @@
+uuid: 2498aa50-8469-46b7-8f2e-fb91a837f08a
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.enquiry_form_configuration
+    - field.storage.config_pages.field_social_linkedin_link
+id: config_pages.enquiry_form_configuration.field_social_linkedin_link
+field_name: field_social_linkedin_link
+entity_type: config_pages
+bundle: enquiry_form_configuration
+label: 'Social - Linkedin Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

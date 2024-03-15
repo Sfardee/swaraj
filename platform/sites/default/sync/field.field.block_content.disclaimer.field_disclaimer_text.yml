@@ -1,0 +1,21 @@
+uuid: 42006003-9b1e-48f4-bfb0-86db187d3216
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.disclaimer
+    - field.storage.block_content.field_disclaimer_text
+id: block_content.disclaimer.field_disclaimer_text
+field_name: field_disclaimer_text
+entity_type: block_content
+bundle: disclaimer
+label: 'Disclaimer Text'
+description: 'Don''t forget to start with "Disclaimer: "'
+required: true
+translatable: true
+default_value:
+  -
+    value: 'Disclaimer: '
+default_value_callback: ''
+settings: {  }
+field_type: string_long

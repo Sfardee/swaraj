@@ -1,0 +1,85 @@
+uuid: 836e4090-05a5-4191-8b60-5f392846c10e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video_gallery
+    - field.storage.block_content.field_gallery_videos
+    - paragraphs.paragraphs_type.gallery_video_unit
+  module:
+    - entity_reference_revisions
+id: block_content.video_gallery.field_gallery_videos
+field_name: field_gallery_videos
+entity_type: block_content
+bundle: video_gallery
+label: 'Gallery Videos'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery_video_unit: gallery_video_unit
+    target_bundles_drag_drop:
+      about_us:
+        weight: 20
+        enabled: false
+      banner:
+        weight: 21
+        enabled: false
+      breadcrumbs:
+        weight: 22
+        enabled: false
+      commitment:
+        weight: 23
+        enabled: false
+      contact_us_mail_recipient:
+        weight: 24
+        enabled: false
+      contact_us_state_wise_mail_recip:
+        weight: 25
+        enabled: false
+      customers:
+        weight: 26
+        enabled: false
+      gallery:
+        weight: 27
+        enabled: false
+      gallery_image_unit:
+        weight: 28
+        enabled: false
+      gallery_video_unit:
+        enabled: true
+        weight: 29
+      image_unit:
+        weight: 30
+        enabled: false
+      milestone:
+        weight: 31
+        enabled: false
+      product_banner:
+        weight: 32
+        enabled: false
+      product_item:
+        weight: 33
+        enabled: false
+      product_list_item:
+        weight: 34
+        enabled: false
+      quick_tools:
+        weight: 35
+        enabled: false
+      specification:
+        weight: 36
+        enabled: false
+      video_unit:
+        weight: 37
+        enabled: false
+      zigzag:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

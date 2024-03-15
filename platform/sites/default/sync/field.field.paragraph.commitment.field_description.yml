@@ -1,0 +1,21 @@
+uuid: b64828f7-0094-4237-9f5c-6d24b40253c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.commitment
+  module:
+    - text
+id: paragraph.commitment.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: commitment
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

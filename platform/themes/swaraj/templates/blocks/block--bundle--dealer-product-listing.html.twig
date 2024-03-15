@@ -1,0 +1,72 @@
+{% block blockcontent %}
+	{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+	<div data-block-id="{{ uuid }}">
+		<div class="our-product-dealer">
+			<div class="container">
+				<div class="dorp-dwon-stop">
+					<div class="flex">
+						<div class="col-md-5 ">
+							<div class="menu-left-box">
+								<h4>{{ block_content.field_title.value }}</h4>
+								{% set i = 1 %}
+								{% for key, val in engine %}
+								<div class="prod-dtl">
+									<div class="h2 menu-trgr">
+										<a href="#">{{ key }}</a>
+										<span class="fa fa-angle-down"></span>
+									</div>
+									<div class="tog_cont menutabsbox">
+										<ul>
+											{% for tractor in val %}
+											<li{% if i == 1 %} class="active"{% endif %}>
+												<a href="#menutabs-{{ i }}" data-catg="{{ key }}">{{ tractor }}</a>
+											</li>
+											{% set i = i + 1 %}
+											{% endfor %}
+										</ul>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="col-md-7">
+							<div class="tab_container">
+								{% set i = 1 %}
+								{% for power, tractors in product %}
+									{% for nid, tractor in tractors %}
+									<div id="menutabs-{{ i }}" class="tab_content_box">
+										<div class="menu-info">
+											<div class="row">
+												<div class="col-md-8 col-md-push-2">
+													<figure><img data-src="{{ tractor.image }}" alt="" class="img-responsive lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp"></figure>
+												</div>
+											</div>
+											<h3>{{ 'Swaraj ' ~ tractor.title }}</h3>
+											<div class="row menu-product-info">
+												<div class="col-md-4 col-sm-4">
+													<h5>Key Feature</h5>
+													<p>Power : {{ tractor.hp }}</p>
+													<p>Engine : {{ tractor.cc | raw }}</p>
+													<p>Brakes : {{ tractor.br }}</p>
+													<p>PTO r/min : {{ tractor.pto }}</p>
+												</div>
+												<div class="col-md-8 col-sm-8 MT40">
+													<p>{{ tractor.short }}</p>
+													<p class="MT25">
+														<a href="{{ 'https://www.swarajtractors.com' ~ tractor.link }}" class="btn btn-default outerline" target="_blank">View Details</a>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									{% set i = i + 1 %}
+									{% endfor %}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

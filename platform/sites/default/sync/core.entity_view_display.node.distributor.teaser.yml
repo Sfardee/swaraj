@@ -1,0 +1,82 @@
+uuid: 61bf75c9-7e44-448e-b3e5-0c0cf692291c
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.distributor.field_address_line_1
+    - field.field.node.distributor.field_address_line_2
+    - field.field.node.distributor.field_city
+    - field.field.node.distributor.field_constitution
+    - field.field.node.distributor.field_cst
+    - field.field.node.distributor.field_dealer
+    - field.field.node.distributor.field_dealer_name
+    - field.field.node.distributor.field_district
+    - field.field.node.distributor.field_doa
+    - field.field.node.distributor.field_email
+    - field.field.node.distributor.field_gstin
+    - field.field.node.distributor.field_latitude
+    - field.field.node.distributor.field_longitude
+    - field.field.node.distributor.field_lst
+    - field.field.node.distributor.field_meta_tags
+    - field.field.node.distributor.field_mobile
+    - field.field.node.distributor.field_pan_no
+    - field.field.node.distributor.field_person
+    - field.field.node.distributor.field_phone
+    - field.field.node.distributor.field_pincode
+    - field.field.node.distributor.field_state
+    - field.field.node.distributor.field_working_hours_day1
+    - field.field.node.distributor.field_working_hours_day2
+    - field.field.node.distributor.field_working_hours_day3
+    - field.field.node.distributor.field_working_hours_day4
+    - field.field.node.distributor.field_working_hours_day5
+    - field.field.node.distributor.field_working_hours_day6
+    - field.field.node.distributor.field_working_hours_day7
+    - field.field.node.distributor.field_zone
+    - field.field.node.distributor.panelizer
+    - node.type.distributor
+  module:
+    - user
+id: node.distributor.teaser
+targetEntityType: node
+bundle: distributor
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address_line_1: true
+  field_address_line_2: true
+  field_city: true
+  field_constitution: true
+  field_cst: true
+  field_dealer: true
+  field_dealer_name: true
+  field_district: true
+  field_doa: true
+  field_email: true
+  field_gstin: true
+  field_latitude: true
+  field_longitude: true
+  field_lst: true
+  field_meta_tags: true
+  field_mobile: true
+  field_pan_no: true
+  field_person: true
+  field_phone: true
+  field_pincode: true
+  field_state: true
+  field_working_hours_day1: true
+  field_working_hours_day2: true
+  field_working_hours_day3: true
+  field_working_hours_day4: true
+  field_working_hours_day5: true
+  field_working_hours_day6: true
+  field_working_hours_day7: true
+  field_zone: true
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

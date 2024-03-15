@@ -1,0 +1,19 @@
+uuid: 605f701e-1b6c-456d-b377-6f29507a1480
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.enquiry_form_configuration
+    - field.storage.config_pages.field_logo_url
+id: config_pages.enquiry_form_configuration.field_logo_url
+field_name: field_logo_url
+entity_type: config_pages
+bundle: enquiry_form_configuration
+label: 'Logo URL'
+description: 'The Swaraj Logo will use this URL when user clicks on it. It will always open in new tab.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

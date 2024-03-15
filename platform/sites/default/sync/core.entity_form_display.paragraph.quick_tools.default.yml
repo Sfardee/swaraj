@@ -1,0 +1,43 @@
+uuid: 38e96536-8f11-4358-a34d-57079517d6e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quick_tools.field_customer_image
+    - field.field.paragraph.quick_tools.field_link
+    - field.field.paragraph.quick_tools.field_name
+    - paragraphs.paragraphs_type.quick_tools
+  module:
+    - file
+    - link
+id: paragraph.quick_tools.default
+targetEntityType: paragraph
+bundle: quick_tools
+mode: default
+content:
+  field_customer_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

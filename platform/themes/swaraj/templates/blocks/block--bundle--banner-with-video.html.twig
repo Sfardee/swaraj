@@ -1,0 +1,77 @@
+{% block blockcontent %}
+  {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+  {% set nodes = [] %}
+  {% for banner in full_content.field_banner_with_video %}
+    {% if banner['#paragraph'] %}
+      {% set nodes = nodes | merge([banner['#paragraph']]) %}
+    {% endif %}
+  {% endfor %}
+  <div data-block-id="{{ uuid }}">
+    <div class="media-hero-carousel owl-carousel clearfix inner-hero">
+      {% for key, values in nodes %}
+        <div class="hero-box">
+          <div class="container">
+            {% if page_breadcrumbs %}
+            {% set a = 1 %}
+            <ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            {% for val in page_breadcrumbs %}
+              {% if val.link %}
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" typeof="WebPage" href="{{ val.link }}"><span itemprop="name">{{ val.title }}</span></a>
+                  <meta itemprop="position" content="{{ a }}" />
+                </li>
+              {% else %}
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" class="hidden" typeof="WebPage" href="{{ url('<current>') }}"><span itemprop="name">{{ val.title }}</span></a>
+                  {{ val.title }}
+                  <meta itemprop="position" content="{{ a }}" />
+                </li>
+              {% endif %}
+              {% set a = a + 1 %}
+            {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          <figure>
+            <img alt="" class="hidden-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(values.field_background_image.entity.field_media_image.entity.fileuri) }}">
+            <img alt="" class="visible-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(values.field_mobile_background_image.entity.field_media_image.entity.fileuri) }}">
+          </figure>
+
+          <div class="hero-container">
+            <div class="container">
+
+
+              <div class="row flex-row product-info">
+                <div class="col-md-5 col-sm-6">
+                  <div class="h1">{{ values.field_name.value }}</div>
+                  <h3>{{ values.field_number.value }}</h3>
+                  {{ values.field_description.value|raw }}
+                  {% if values.field_thousand_text.value %}
+                    <p class="MT20">
+                      <a class="btn btn-default watch MR15" data-toggle="modal" href="#myModalVideo{{ key }}">watch video</a>
+                    </p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+    {% for key, value in nodes %}
+      {% if value.field_thousand_text.value %}
+        <div class="modal fade youtube-video-box" id="myModalVideo{{ key }}">
+          <div class="container">
+            <div class="close-video">
+              <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+            </div>
+            <div>
+              <iframe allowfullscreen frameborder="0" height="600" id="SwarajVideo" class="lozad" data-src="{{ value.field_thousand_text.value }}" width="100%"></iframe>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>  
+{% endblock %}

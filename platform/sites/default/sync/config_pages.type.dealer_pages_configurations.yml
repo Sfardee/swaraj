@@ -1,0 +1,17 @@
+uuid: 64315e9b-f7f5-4344-8386-dc5c7aad652f
+langcode: en
+status: true
+dependencies: {  }
+id: dealer_pages_configurations
+label: 'Dealer Pages - configurations'
+context:
+  show_warning: true
+  group:
+    language: false
+  fallback:
+    language: ''
+menu:
+  path: /admin/config/swaraj-settings/dealer-pages
+  weight: 0
+  description: ''
+token: false

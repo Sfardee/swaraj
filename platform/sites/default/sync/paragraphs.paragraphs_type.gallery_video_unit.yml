@@ -1,0 +1,10 @@
+uuid: 0442626b-23f8-4f21-8c53-8fec5bb47fa9
+langcode: en
+status: true
+dependencies: {  }
+id: gallery_video_unit
+label: 'Gallery Video Unit'
+icon_uuid: null
+icon_default: null
+description: 'This Paragraph is mainly used in "Video Gallery" block'
+behavior_plugins: {  }

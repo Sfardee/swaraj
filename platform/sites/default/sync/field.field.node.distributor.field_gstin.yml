@@ -1,0 +1,19 @@
+uuid: d30007c7-660f-4831-a37f-f0e214021b3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gstin
+    - node.type.distributor
+id: node.distributor.field_gstin
+field_name: field_gstin
+entity_type: node
+bundle: distributor
+label: GSTIN
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

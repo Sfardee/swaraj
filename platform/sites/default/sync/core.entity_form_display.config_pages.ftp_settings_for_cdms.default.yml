@@ -1,0 +1,130 @@
+uuid: f0e221b2-b5ce-4681-a566-5d328693619d
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name_dealer_page
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name_enquiry_for
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name_new_contact
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_dealer_pag
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_enquiry_si
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_main_site
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_new_contact_us
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_failure_mail_recipient
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_file_path
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_host_ip
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_password
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_username
+    - field.field.config_pages.ftp_settings_for_cdms.field_no_of_days_for_which_repor
+id: config_pages.ftp_settings_for_cdms.default
+targetEntityType: config_pages
+bundle: ftp_settings_for_cdms
+mode: default
+content:
+  field_cdms_file_name:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cdms_file_name_dealer_page:
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cdms_file_name_enquiry_for:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_cdms_file_name_new_contact:
+    weight: 9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ftp_enabled_for_dealer_pag:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ftp_enabled_for_enquiry_si:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ftp_enabled_for_main_site:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ftp_enabled_new_contact_us:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_ftp_failure_mail_recipient:
+    weight: 12
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_ftp_file_path:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ftp_host_ip:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ftp_password:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ftp_username:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_no_of_days_for_which_repor:
+    weight: 13
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  label: true

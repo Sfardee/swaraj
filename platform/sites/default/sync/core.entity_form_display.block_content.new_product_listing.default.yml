@@ -1,0 +1,99 @@
+uuid: 128a85b0-e654-4b94-97c7-b3022d5f8561
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.new_product_listing
+    - field.field.block_content.new_product_listing.field_block_description
+    - field.field.block_content.new_product_listing.field_default_engine_power
+    - field.field.block_content.new_product_listing.field_product_block_description
+    - field.field.block_content.new_product_listing.field_product_block_title
+    - field.field.block_content.new_product_listing.field_product_items
+    - field.field.block_content.new_product_listing.field_title
+    - field.field.block_content.new_product_listing.field_view_all_link
+  module:
+    - link
+    - paragraphs
+id: block_content.new_product_listing.default
+targetEntityType: block_content
+bundle: new_product_listing
+mode: default
+content:
+  field_block_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_default_engine_power:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_product_block_description:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_product_block_title:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_product_items:
+    type: entity_reference_paragraphs
+    weight: 6
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_view_all_link:
+    weight: 27
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: 'this is user friendly text to search block'
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

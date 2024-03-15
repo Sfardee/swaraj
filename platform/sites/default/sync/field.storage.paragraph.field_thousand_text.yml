@@ -1,0 +1,21 @@
+uuid: 3baaa714-08a1-4dc7-8923-1c92b61a7106
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_thousand_text
+field_name: field_thousand_text
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

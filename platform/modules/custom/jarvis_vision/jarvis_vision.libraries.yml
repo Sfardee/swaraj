@@ -1,0 +1,15 @@
+panels_ipe:
+  version: VERSION
+  js:
+    # Core.
+    js/panels_ipe.js: {}
+  css:
+    component:
+      css/override.css: {}
+  dependencies:
+    - panelizer/panels_ipe
+
+jarvis_custom:
+  version: VERSION
+  js:
+    js/custom.js: {}

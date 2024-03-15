@@ -1,0 +1,14 @@
+uuid: 455dfbd4-e119-4d18-8d89-065efdee8d2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.states
+id: taxonomy_vocabulary_states
+entity_type_id: taxonomy_vocabulary
+entity_id: states
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

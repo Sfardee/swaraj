@@ -1,0 +1,18 @@
+uuid: f7d4dad3-e1e4-47f8-9ea8-0af69bde38db
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_ftp_enabled_for_enquiry_si
+field_name: field_ftp_enabled_for_enquiry_si
+entity_type: config_pages
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

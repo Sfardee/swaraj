@@ -1,0 +1,43 @@
+global-styling:
+  version: 1.1
+
+  css:
+    theme:
+      css/vendor.css: {}
+      css/bootstrap.css: {}
+      css/main.css: {}
+      css/animate.css: {}      
+      css/custom.css: {}
+     
+
+  js:
+    https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Object.assign%2CIntersectionObserver: { external:true }
+    #https://cdn.rawgit.com/w3c/IntersectionObserver/master/polyfill/intersection-observer.js: { external:true }
+    js/jquery-migrate-3.3.1.js: {}
+    js/modernizr.js: {}
+    js/datepicker.js: {}
+    js/bootstrap.js: {}
+    js/waypoints.js: {}
+    js/jquery.sticky-header.min.js: {}
+    js/owl.carousel.js: {}
+    #js/vivus.js: {}
+    js/jquery.countup.js: {}
+    js/main.js: {}
+    js/lozad.min.js: {}
+    js/custom.js: {}
+    #js/map.js: {} 
+    js/mob-menu.js: {}   
+
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupal.ajax
+    - core/drupalSettings
+
+select-plugin: 
+  css:
+    theme:
+      css/select2.min.css: {}
+  js:
+    js/bootstrap4.js: {}

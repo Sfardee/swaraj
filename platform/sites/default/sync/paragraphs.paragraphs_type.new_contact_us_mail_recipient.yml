@@ -1,0 +1,10 @@
+uuid: 0f4db6da-7881-4e74-b366-7967d65372db
+langcode: en
+status: true
+dependencies: {  }
+id: new_contact_us_mail_recipient
+label: 'New Contact Us - Mail Recipient'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

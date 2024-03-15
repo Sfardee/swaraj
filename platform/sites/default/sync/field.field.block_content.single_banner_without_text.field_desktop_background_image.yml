@@ -1,0 +1,28 @@
+uuid: a42f9cc6-0189-4cf6-a215-730686a093ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.single_banner_without_text
+    - field.storage.block_content.field_desktop_background_image
+    - media.type.image
+id: block_content.single_banner_without_text.field_desktop_background_image
+field_name: field_desktop_background_image
+entity_type: block_content
+bundle: single_banner_without_text
+label: 'Desktop Image'
+description: 'Use image of size 1440 x 706 px'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

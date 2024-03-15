@@ -1,0 +1,18 @@
+{% block blockcontent %}
+  <div data-block-id="{{ uuid }}">
+    <section class="listing-section-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 CTR">  
+            {% if block_content.field_title.value %}
+              <h4>{{ block_content.field_title.value }}</h4>
+            {% endif %}
+            {% if block_content.body.value %}
+              {{ block_content.body.value | raw }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+uuid: 74d1aa7d-49ad-420c-96af-b4fb47c23cfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dealer
+id: node_type_dealer
+entity_type_id: node_type
+entity_id: dealer
+action: display_page
+allow_override: 0
+redirect: /
+redirect_code: 307
+redirect_fallback_action: access_denied

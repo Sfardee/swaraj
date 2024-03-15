@@ -1,0 +1,22 @@
+uuid: 3250fa86-5a37-4bb5-873c-b57a19170ff5
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.milestone
+id: node.milestone.promote
+field_name: promote
+entity_type: node
+bundle: milestone
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

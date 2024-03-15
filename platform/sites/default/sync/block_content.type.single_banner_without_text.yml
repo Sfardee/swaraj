@@ -1,0 +1,8 @@
+uuid: 21523175-87c8-4443-bce2-29354e587507
+langcode: en
+status: true
+dependencies: {  }
+id: single_banner_without_text
+label: 'Single Banner without text'
+revision: 0
+description: 'Simple banner without slider and text'

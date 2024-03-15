@@ -1,0 +1,28 @@
+uuid: 48eec72c-cbdd-4483-afbb-73c37e4163b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_similar_image
+    - media.type.image
+    - node.type.news
+id: node.news.field_similar_image
+field_name: field_similar_image
+entity_type: node
+bundle: news
+label: 'Author Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

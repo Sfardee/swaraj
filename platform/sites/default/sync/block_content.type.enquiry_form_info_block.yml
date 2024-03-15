@@ -1,0 +1,8 @@
+uuid: 060cceb0-7335-449b-9261-47b6b5fda172
+langcode: en
+status: true
+dependencies: {  }
+id: enquiry_form_info_block
+label: 'Enquiry Form Info Block'
+revision: 0
+description: 'SEO content block for http://enquiryform.swarajtractors.com/'

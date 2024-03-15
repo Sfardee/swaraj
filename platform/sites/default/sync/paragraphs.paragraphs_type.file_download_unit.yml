@@ -1,0 +1,10 @@
+uuid: 769ec06b-97d8-40c6-92f6-b2f0b4823fc2
+langcode: en
+status: true
+dependencies: {  }
+id: file_download_unit
+label: 'File Download Unit'
+icon_uuid: null
+icon_default: null
+description: 'This paragraph is used to add File Download block similar to Article in Listing page.'
+behavior_plugins: {  }

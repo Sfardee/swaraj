@@ -1,0 +1,20 @@
+uuid: 8bf2d5ac-f7d0-4e97-a704-8a8a4d22b6ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.features_implements
+  module:
+    - path
+id: node.features_implements.path
+field_name: path
+entity_type: node
+bundle: features_implements
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

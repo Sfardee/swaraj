@@ -1,0 +1,21 @@
+uuid: 7b27dea5-7fa2-4dce-a3a2-6f044a4a162c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.images_grid
+    - field.storage.block_content.field_grid_type
+  module:
+    - options
+id: block_content.images_grid.field_grid_type
+field_name: field_grid_type
+entity_type: block_content
+bundle: images_grid
+label: 'Grid Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

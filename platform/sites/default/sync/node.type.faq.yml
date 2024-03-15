@@ -1,0 +1,17 @@
+uuid: af1e1ef5-3372-482b-896d-751a6e61409f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: FAQ
+type: faq
+description: 'Use this content type to create FAQ content'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

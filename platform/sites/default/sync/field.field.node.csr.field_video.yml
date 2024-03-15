@@ -1,0 +1,19 @@
+uuid: 6cb69d6f-dd0b-463f-b164-5c2d80e733b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.csr
+id: node.csr.field_video
+field_name: field_video
+entity_type: node
+bundle: csr
+label: 'Video Link'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

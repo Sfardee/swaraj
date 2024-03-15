@@ -1,0 +1,19 @@
+uuid: 00c49572-c06b-4e84-8901-fde5673c4a52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pto_hp
+    - node.type.product
+id: node.product.field_pto_hp
+field_name: field_pto_hp
+entity_type: node
+bundle: product
+label: 'PTO r/min'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+services:
+  custom_widget.event_subscriber:
+    class: Drupal\custom_widget\EventSubscriber\CustomWidgetSubscriber
+    tags:
+      - {name: event_subscriber}
+  route_enhancer.custom_widget.homepage:
+    class: Drupal\custom_widget\Routing\Enhancer\HomepageEnhancer
+    arguments: ['@entity.query', '@entity_type.manager']
+    tags:
+      - { name: route_enhancer }

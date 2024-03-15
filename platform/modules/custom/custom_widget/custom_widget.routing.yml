@@ -1,0 +1,128 @@
+custom_widget.content:
+ path: '/admin/config/swaraj-settings'
+ defaults:
+   _title: 'Swaraj Settings'
+   _controller: '\Drupal\custom_widget\Controller\SwarajSettings::content'
+ options:
+    _admin_route: TRUE
+    _weight: 1
+ requirements:
+   _permission: 'swaraj-settings'
+
+custom_widget.common_settings:
+  path: '/admin/config/swaraj-settings/common-settings'
+  defaults:
+    _form: '\Drupal\custom_widget\Form\CommonSettingsConfig'
+    _title: 'Swaraj Common Settings'
+  options:
+     _admin_route: TRUE 
+  requirements:
+    _permission: 'swaraj-settings'
+
+custom_widget.customer_data:
+ path: '/get-customer-data'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\CustomerData::getCustomerData'
+ requirements:
+   _permission: 'access content'
+
+custom_widget.contact_submit:
+ path: '/contact-submit'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\CustomerData::contactSubmit'
+ requirements:
+   _permission: 'access content'
+  
+custom_widget.new_contact_submit:
+ path: '/new-contact-submit'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\CustomerData::newContactSubmit'
+ requirements:
+   _permission: 'access content'
+
+custom_widget.dealer_contact_submit:
+ path: '/dealer-contact-submit'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\CustomerData::dealerContactSubmit'
+ requirements:
+   _permission: 'access content'
+
+custom_widget.enquiry_submit:
+ path: '/enquiry-submit'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\CustomerData::enquirySubmit'
+ requirements:
+   _permission: 'access content'
+
+custom_widget.check_date:
+ path: '/check-date'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\CustomerData::checkDate'
+ requirements:
+   _permission: 'access content'
+
+custom_widget.dealer_filter:
+ path: '/dealer-filter'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\CustomerData::dealerFilter'
+ requirements:
+   _permission: 'access content'
+
+custom_widget.batch_process:
+  path: '/admin/content/dealer-import'
+  defaults:
+    _controller: '\Drupal\custom_widget\Controller\DealerImport::dealerImport'
+    _title: 'Dealer Data Import'
+  options:
+    _admin_route: TRUE 
+  requirements:
+    _permission: 'access administration pages'
+ 
+custom_widget.user_session_update:
+  path: '/user-session-update'
+  defaults:
+    _controller: '\Drupal\custom_widget\Controller\UserSession::userSessionUpdate'
+  requirements:
+    _permission: 'access content'
+
+custom_widget.get_district:
+  path: '/get-district'
+  defaults:
+    _controller: '\Drupal\custom_widget\Controller\CustomerData::getDistrict'
+  requirements:
+    _permission: 'access content'
+
+custom_widget.get_tehsil:
+  path: '/get-tehsil'
+  defaults:
+    _controller: '\Drupal\custom_widget\Controller\CustomerData::getTehsil'
+  requirements:
+    _permission: 'access content'
+   
+custom_widget.get_village:
+  path: '/get-village'
+  defaults:
+    _controller: '\Drupal\custom_widget\Controller\CustomerData::getVillage'
+  requirements:
+    _permission: 'access content'
+
+custom_widget.get_city:
+  path: '/get-city'
+  defaults:
+    _controller: '\Drupal\custom_widget\Controller\CustomerData::getCity'
+  requirements:
+    _permission: 'access content'
+
+custom_widget.get_city_village:
+  path: '/get-city-village'
+  defaults:
+    _controller: '\Drupal\custom_widget\Controller\CustomerData::getCityVillage'
+  requirements:
+    _permission: 'access content'
+
+custom_widget.ftp_test:
+ path: '/ftp-test'
+ defaults:
+   _controller: '\Drupal\custom_widget\Controller\FtpTest::ftpUploadTest'
+ requirements:
+   _permission: 'access content'

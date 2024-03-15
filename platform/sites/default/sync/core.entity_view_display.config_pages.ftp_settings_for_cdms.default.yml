@@ -1,0 +1,147 @@
+uuid: a222ec38-a132-4ef6-b543-40a0329d7a51
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name_dealer_page
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name_enquiry_for
+    - field.field.config_pages.ftp_settings_for_cdms.field_cdms_file_name_new_contact
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_dealer_pag
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_enquiry_si
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_for_main_site
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_enabled_new_contact_us
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_failure_mail_recipient
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_file_path
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_host_ip
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_password
+    - field.field.config_pages.ftp_settings_for_cdms.field_ftp_username
+    - field.field.config_pages.ftp_settings_for_cdms.field_no_of_days_for_which_repor
+id: config_pages.ftp_settings_for_cdms.default
+targetEntityType: config_pages
+bundle: ftp_settings_for_cdms
+mode: default
+content:
+  field_cdms_file_name:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cdms_file_name_dealer_page:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cdms_file_name_enquiry_for:
+    weight: 10
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cdms_file_name_new_contact:
+    weight: 13
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ftp_enabled_for_dealer_pag:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ftp_enabled_for_enquiry_si:
+    weight: 11
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ftp_enabled_for_main_site:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ftp_enabled_new_contact_us:
+    weight: 12
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_ftp_failure_mail_recipient:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_ftp_file_path:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ftp_host_ip:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ftp_password:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ftp_username:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_no_of_days_for_which_repor:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+hidden:
+  search_api_excerpt: true

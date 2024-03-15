@@ -1,0 +1,78 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<section class="map-section map-contact os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+  <div class="container map-home">
+    <img data-src="{{ image_path }}empty.png" height="0" width="0" class="map-lozad">
+    <div class="visible-xs visible-sm CTR">
+      <h4>{{ data.text }}</h4>
+      <p>{{ data.subtext }}</p>
+    </div>
+    <p class="change-location">
+      <a class="icons-link" href="#">
+        <i><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/Nevigation.svg" width="20"></i>
+        <span>Change Location</span>
+      </a>
+    </p>
+    <div class="row">
+
+      <div class="col-md-4  map">
+        <div id="map" style="display:none;"></div>
+      </div>
+
+      <div class="col-md-7  map-info">
+        <div class="hidden-xs hidden-sm">
+          <h2 class="header4">{{ data.text|trans }}</h2>
+          <p>{{ data.subtext|trans }}</p>
+          <hr>
+
+        </div>
+        <div class="nearBylist">
+          <div class="map-carousel owl-carousel green"></div>
+          <hr class="">
+          <p class="link2">
+            <a href="/near-me" class="view-dealer" target="_blank">View All</a>
+          </p>
+        </div>
+        <form id="mapForm">
+        <div class="map-form MT20">
+          <div class="row MT10">
+              <div class="col-md-10 MT30">
+                <select class="state selectpicker" id="state" required title="{% trans %}Select State{% endtrans %}*">
+                  <option value="" data-value="" disabled>{% trans %}Select State{% endtrans %}</option>
+                  {% for val in data.state %}
+                    <option data-value="{{ val.cord }}" value="{{ val.ucstate }}">{{ val.state }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+              <div class="col-md-10 MT30">
+                <select class="city selectpicker" disabled id="city" required title="{% trans %}Select City{% endtrans %}*">
+                  <option value="" data-value="" disabled>{% trans %}Select City{% endtrans %}</option>
+                  {# {% for key, val in data.city %}
+                    <option data-value="{{ val.cord }}" value='{{ key|title }}'>{{ key|title }}</option>
+                  {% endfor %} #}
+                </select>
+              </div>
+
+              <div class="col-md-10 MT30">
+                <input class="text-box" maxlength="6" name="pincode" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter 6 digits pincode')" pattern="^(\d{6})$" placeholder="{% trans %}Pin Code{% endtrans %}" type="text" id="pin">
+              </div>
+              <input type="hidden" id="city-cord" value="all">
+              <input type="hidden" id="city-name" value="all">
+          </div>
+          <div class="row MT30">
+
+              <div class="col-md-12">
+                  <button class="btn green no-arrow btn-default update" type="submit">{% trans %}Update{% endtrans %}</button>
+                  <a href="javascript:;" class="icons-link ML30 refresh"><i class="fa fa-refresh" aria-hidden="true"></i> <span>{% trans %}Refresh{% endtrans %}</span></a>
+              </div>
+
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="newContactForm">
+</div>

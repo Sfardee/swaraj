@@ -1,0 +1,47 @@
+uuid: a5188765-b2b4-41e4-8587-e0e33778ea38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quick_tools.field_customer_image
+    - field.field.paragraph.quick_tools.field_link
+    - field.field.paragraph.quick_tools.field_name
+    - paragraphs.paragraphs_type.quick_tools
+  module:
+    - file
+    - link
+id: paragraph.quick_tools.default
+targetEntityType: paragraph
+bundle: quick_tools
+mode: default
+content:
+  field_customer_image:
+    weight: 0
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_link:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_name:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 6a25ea84-e971-4b15-898e-1b31ec0a9641
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.testimonials
+id: node.testimonials.promote
+field_name: promote
+entity_type: node
+bundle: testimonials
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,19 @@
+uuid: ecd03aa5-689c-464a-b040-8f2f6ad19274
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.new_product_listing
+    - field.storage.block_content.field_product_block_title
+id: block_content.new_product_listing.field_product_block_title
+field_name: field_product_block_title
+entity_type: block_content
+bundle: new_product_listing
+label: 'Product block title'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

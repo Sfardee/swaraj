@@ -1,0 +1,21 @@
+uuid: af50d691-79e1-45f1-8783-e87554b49616
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_ftp_file_path
+id: config_pages.ftp_settings_for_cdms.field_ftp_file_path
+field_name: field_ftp_file_path
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'FTP File Path'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'F:\CDMS-APP\Deploy\FTPFILES'
+default_value_callback: ''
+settings: {  }
+field_type: string

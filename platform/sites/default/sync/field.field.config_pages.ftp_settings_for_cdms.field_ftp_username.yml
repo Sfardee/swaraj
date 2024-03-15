@@ -1,0 +1,21 @@
+uuid: f427f0a5-5a33-4a69-ba1c-82ec7ad41242
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.ftp_settings_for_cdms
+    - field.storage.config_pages.field_ftp_username
+id: config_pages.ftp_settings_for_cdms.field_ftp_username
+field_name: field_ftp_username
+entity_type: config_pages
+bundle: ftp_settings_for_cdms
+label: 'FTP Username'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ExternalVendorFTP
+default_value_callback: ''
+settings: {  }
+field_type: string

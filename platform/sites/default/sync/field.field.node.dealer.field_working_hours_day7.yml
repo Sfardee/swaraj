@@ -1,0 +1,19 @@
+uuid: b6e5f3f8-5f79-4684-b1fc-0a6c44746a26
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_working_hours_day7
+    - node.type.dealer
+id: node.dealer.field_working_hours_day7
+field_name: field_working_hours_day7
+entity_type: node
+bundle: dealer
+label: 'Working hours-Day7'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

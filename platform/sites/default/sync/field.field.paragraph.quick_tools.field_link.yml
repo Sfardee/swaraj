@@ -1,0 +1,23 @@
+uuid: 75c7e3be-0e03-47c6-9729-50e7b3b4ba84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.quick_tools
+  module:
+    - link
+id: paragraph.quick_tools.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: quick_tools
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

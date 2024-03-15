@@ -1,0 +1,35 @@
+uuid: 4de8ce54-9dc6-426b-9df4-9d009fab0476
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.youtube_video.field_embed_id
+    - field.field.media.youtube_video.field_media_video_embed_field
+    - field.field.media.youtube_video.field_thumbnail
+    - media.type.youtube_video
+  module:
+    - image
+id: media.youtube_video.media_library
+targetEntityType: media
+bundle: youtube_video
+mode: media_library
+content:
+  field_thumbnail:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_embed_id: true
+  field_media_video_embed_field: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,174 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+{% set i = 1 %}
+
+<section class="listing-section-1 swaraj717">
+  <div class="container os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+
+    {% if data.page_breadcrumbs %}
+      {% set a = 1 %}
+      <ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {% for val in data.page_breadcrumbs %}
+          {% if val.link %}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" typeof="WebPage" href="{{ val.link }}">
+                <span itemprop="name">{{ val.title }}</span>
+              </a>
+              <meta itemprop="position" content="{{ a }}" />
+            </li>
+          {% else %}
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" class="hidden" typeof="WebPage" href="{{ url('<current>') }}"><span itemprop="name">{{ val.title }}</span></a>
+              {{ val.title }}
+              <meta itemprop="position" content="{{ a }}" />
+            </li>
+          {% endif %}
+          {% set a = a + 1 %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-md-7">
+
+        <div class="warranty">
+          <img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ data.warimg }}">
+        </div>
+
+        <div class="sliderSec">
+
+          <div class="all">
+            <div class="slider">
+              <div class="owl-carousel one">
+                {% for i, media in data.media_gallery %}
+                  {% if media.type == 'image' %}
+                    <div class="item-box"><img src="{{ media.url }}" alt=""></div>
+                  {% else %}
+                    <div class="item-box">
+                      <figure>
+                        <a class="play-icon" href="#myModalVideo{{ i }}" data-toggle="modal">
+                          <img src="{{ image_path }}play.png" alt="play video">
+                        </a>
+                        <img src="{{ media.thumbnail }}" alt="">
+                      </figure>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <!-- <div class="left nonl"></div><div class="right"></div> -->
+            </div>
+
+            <div class="slider-two">
+              <div class="owl-carousel two">
+                {% for i, media in data.media_gallery %}
+                  {% if media.type == 'image' %}
+                    <div class="item"><img src="{{ media.url }}" alt=""></div>
+                  {% else %}
+                    <div class="item"><img src="{{ image_path }}play.png" alt="play video" class="thumb-play-icon"><img src="{{ media.thumbnail }}" alt=""></div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <!-- <div class="left-t nonl-t"></div><div class="right-t"></div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+
+        <h1 class="grn">
+          <span>{% trans %}swaraj{% endtrans %}</span>
+          {{ data.title }}
+        </h1>
+
+        <div class="share-box">
+          <span class="shareDrop"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/share-icon.svg">
+            <div class="shareList">
+              <ul class="list-inline">
+                <li>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u={{ data.link }}" target="_blank"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/fb-icon.svg"></a>
+                </li>
+                <li>
+                  <a href="http://twitter.com/share?url={{ data.link }}" target="_blank"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/twitter-icon.svg"></a>
+                </li>
+                <li>
+                  <a href="https://wa.me/?text={{ data.link }}" target="_blank"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/whts-icon.svg"></a>
+                </li>
+                {# <li>
+                  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ data.link }}" target="_blank"><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/gm-icon.svg"></a>
+                </li> #}
+              </ul>
+
+            </div>
+          </span>
+
+        </div>
+
+        {{ data.desc|raw }}
+        {% if data.pdf %}
+        <p>
+          <a class="icons-link text-uppercase" href="{{ data.pdf }}" target="_blank">
+            <span><img alt="" src="{{ image_path }}svg/doc-icon.svg"></span>
+            <span>{% trans %}Download Brochure{% endtrans %}</span>
+          </a>
+        </p>
+        {% endif %}
+        <div class="glance-dv">
+          <h5>{{ data.title }} {% trans %}Specifications at a Glance{% endtrans %}</h5>
+
+          <ul class="circle-list">
+            {%if data.cbw %}
+              <li>{% trans %}Cutter bar Width (mm) {% endtrans %}: {{ data.cbw }}</li>
+            {% endif %}
+            {%if data.ehp %}
+              <li>{% trans %}Engine kW (HP) {% endtrans %}: {{ data.ehp | raw }}</li>
+            {% endif %}
+            {%if data.gtc %}
+              <li>{% trans %}Grain tank capacity {% endtrans %}: {{ data.gtc | raw }}</li>
+            {% endif %}
+            {%if data.rthp %}
+              <li>{% trans %}Required Tractor kW (HP) {% endtrans %}: {{ data.rthp }}</li>
+            {% endif %}
+            {%if data.nb %}
+              <li>{% trans %}No. of Blades {% endtrans %}: {{ data.nb }}</li>
+            {% endif %}
+            {%if data.sz %}
+              <li>{% trans %}Sizes {% endtrans %}: {{ data.sz }}</li>
+            {% endif %}
+            {%if data.bsz %}
+              <li>{% trans %}Bale Size {% endtrans %}: {{ data.bsz }}</li>
+            {% endif %}
+            {%if data.bw %}
+              <li>{% trans %}Bale Weight {% endtrans %}: {{ data.bw }}</li>
+            {% endif %}
+            {%if data.psr %}
+              <li>{% trans %}PTO speed required {% endtrans %}: {{ data.psr }}</li>
+            {% endif %}
+            {%if data.nob %}
+              <li>{% trans %}No. of Bottoms {% endtrans %}: {{ data.nob }}</li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <p class="view-all">
+          <a class="btn btn-default green" href="{{ base_path ~ 'contact-us?imple=' ~ data.title ~ '&request=quote'}}">{% trans %}Request a call back / Get a quote{% endtrans %}</a>
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+{% for key, value in data.media_gallery %}
+  {% if value.type == 'youtube_video' %}
+  <div class="modal fade youtube-video-box galleryModal" id="myModalVideo{{ key }}">
+    <div class="container">
+      <div class="close-video">
+        <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+      </div>
+      <div>
+        <iframe allowfullscreen frameborder="0" height="600" id="SwarajVideo" class="lozad" data-src="{{ value.url }}" width="100%"></iframe>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}

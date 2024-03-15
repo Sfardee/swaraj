@@ -1,0 +1,10 @@
+uuid: eb0d9306-4e18-4f90-ab0c-2286af32223d
+langcode: en
+status: true
+dependencies: {  }
+id: contact_us_state_wise_mail_recip
+label: 'Contact Us - State wise - Mail Recipient'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

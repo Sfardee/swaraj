@@ -1,0 +1,94 @@
+uuid: 5c45f25e-2cb9-49ff-99c8-53493102e9a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_milestone
+    - node.type.milestone
+    - paragraphs.paragraphs_type.milestone
+  module:
+    - entity_reference_revisions
+id: node.milestone.field_milestone
+field_name: field_milestone
+entity_type: node
+bundle: milestone
+label: Milestone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      milestone: milestone
+    target_bundles_drag_drop:
+      about_us:
+        weight: 23
+        enabled: false
+      banner:
+        weight: 7
+        enabled: false
+      breadcrumbs:
+        weight: 25
+        enabled: false
+      commitment:
+        weight: 26
+        enabled: false
+      contact_us_mail_recipient:
+        weight: 27
+        enabled: false
+      contact_us_state_wise_mail_recip:
+        weight: 28
+        enabled: false
+      customers:
+        weight: 8
+        enabled: false
+      faq_unit:
+        weight: 30
+        enabled: false
+      file_download_unit:
+        weight: 31
+        enabled: false
+      gallery:
+        weight: 32
+        enabled: false
+      gallery_image_unit:
+        weight: 33
+        enabled: false
+      gallery_video_unit:
+        weight: 34
+        enabled: false
+      image_unit:
+        weight: 35
+        enabled: false
+      milestone:
+        enabled: true
+        weight: 9
+      new_contact_us_mail_recipient:
+        weight: 37
+        enabled: false
+      product_banner:
+        weight: 10
+        enabled: false
+      product_item:
+        weight: 39
+        enabled: false
+      product_list_item:
+        weight: 40
+        enabled: false
+      quick_tools:
+        weight: 11
+        enabled: false
+      specification:
+        weight: 12
+        enabled: false
+      video_unit:
+        weight: 43
+        enabled: false
+      zigzag:
+        weight: 44
+        enabled: false
+field_type: entity_reference_revisions

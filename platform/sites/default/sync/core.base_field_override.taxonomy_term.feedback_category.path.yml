@@ -1,0 +1,20 @@
+uuid: 6af596df-ed2b-4102-80c2-efc1470c6fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.feedback_category
+  module:
+    - path
+id: taxonomy_term.feedback_category.path
+field_name: path
+entity_type: taxonomy_term
+bundle: feedback_category
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

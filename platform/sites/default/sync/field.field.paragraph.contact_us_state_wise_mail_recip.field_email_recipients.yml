@@ -1,0 +1,19 @@
+uuid: e939d576-47b5-43e6-b82f-d110b49c5fbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_email_recipients
+    - paragraphs.paragraphs_type.contact_us_state_wise_mail_recip
+id: paragraph.contact_us_state_wise_mail_recip.field_email_recipients
+field_name: field_email_recipients
+entity_type: paragraph
+bundle: contact_us_state_wise_mail_recip
+label: 'Email Recipients'
+description: 'Comma separated list of mail recipient.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

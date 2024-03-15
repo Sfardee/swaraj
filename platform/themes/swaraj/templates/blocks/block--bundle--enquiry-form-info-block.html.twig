@@ -1,0 +1,24 @@
+{% block blockcontent %}
+	{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+	<div data-block-id="{{ uuid }}">
+		<section class="seo-tag">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 CTR">
+						<h4>{{ block_content.field_title.value }}</h4>
+						<p class="MT50">{{ block_content.body.value|raw }}</p>
+						<div class="MT50">
+							{% if block_content.field_view_all_link.0.url.external %}
+                <a href="{{  block_content.field_view_all_link.0.url }}"  class="btn btn-default green" target="_blank" rel="noopener noreferrer">
+              {% else %}
+                <a href="{{ path( block_content.field_view_all_link.0.url.routeName,  block_content.field_view_all_link.0.url.routeParameters) }}" class="btn btn-default green">
+              {% endif %}
+              {{ block_content.field_view_all_link.title }}
+              </a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+{% endblock %}

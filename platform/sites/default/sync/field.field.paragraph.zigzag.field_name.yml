@@ -1,0 +1,19 @@
+uuid: 8dd7c60e-ae4b-4a5d-8c98-0e30aa04b472
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - paragraphs.paragraphs_type.zigzag
+id: paragraph.zigzag.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: zigzag
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

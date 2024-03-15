@@ -1,0 +1,19 @@
+uuid: b0f4f5d4-a0ad-474a-a086-8687bc8c7182
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.new_contact_us_mail_configuratio
+    - field.storage.config_pages.field_default_email_recipient
+id: config_pages.new_contact_us_mail_configuratio.field_default_email_recipient
+field_name: field_default_email_recipient
+entity_type: config_pages
+bundle: new_contact_us_mail_configuratio
+label: 'Default Email Recipient'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

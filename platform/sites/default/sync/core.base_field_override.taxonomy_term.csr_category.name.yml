@@ -1,0 +1,18 @@
+uuid: 3191159c-3740-4289-b5ee-585acaf78a23
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.csr_category
+id: taxonomy_term.csr_category.name
+field_name: name
+entity_type: taxonomy_term
+bundle: csr_category
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

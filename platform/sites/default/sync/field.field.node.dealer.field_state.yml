@@ -1,0 +1,19 @@
+uuid: 1c54e911-4147-4533-85ae-d757f5eea10e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state
+    - node.type.dealer
+id: node.dealer.field_state
+field_name: field_state
+entity_type: node
+bundle: dealer
+label: State
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

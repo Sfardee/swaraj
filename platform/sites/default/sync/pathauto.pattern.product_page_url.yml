@@ -1,0 +1,22 @@
+uuid: 6b7eeac7-8094-48a4-b370-6ffedb6742d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: product_page_url
+label: 'Product page url'
+type: 'canonical_entities:node'
+pattern: '[node:title]-tractor'
+selection_criteria:
+  e0235cdd-c308-43e0-aef1-4725d002e503:
+    id: node_type
+    bundles:
+      product: product
+    negate: false
+    context_mapping:
+      node: node
+    uuid: e0235cdd-c308-43e0-aef1-4725d002e503
+selection_logic: and
+weight: -5
+relationships: {  }

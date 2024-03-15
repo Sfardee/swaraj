@@ -1,0 +1,43 @@
+uuid: 26682e99-58a7-4e93-b4cb-f5594b8a0033
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.milestone.field_description
+    - field.field.paragraph.milestone.field_name
+    - field.field.paragraph.milestone.field_number
+    - paragraphs.paragraphs_type.milestone
+  module:
+    - text
+id: paragraph.milestone.default
+targetEntityType: paragraph
+bundle: milestone
+mode: default
+content:
+  field_description:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_number:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

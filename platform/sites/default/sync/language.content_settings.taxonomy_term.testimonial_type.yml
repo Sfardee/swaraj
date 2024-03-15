@@ -1,0 +1,18 @@
+uuid: 4f137bf7-24bf-433c-a0bb-1e16bdb4bc39
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.testimonial_type
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: taxonomy_term.testimonial_type
+target_entity_type_id: taxonomy_term
+target_bundle: testimonial_type
+default_langcode: site_default
+language_alterable: true

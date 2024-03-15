@@ -1,0 +1,30 @@
+{% set class = '' %}
+{% if data.top == 1 %}
+  {% set class = 'scrollTopBand1' %}
+{% endif %}
+<div class="listing-tab-wrapper searchTab {{ class }}">
+  <section class="listing-tab">
+    <div class="container hidden-xs tabs-slider os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+      <div class="row">
+        <div class="col-md-12 flexrow" id="tabsnav">
+          {% for title, link in data.pages %}
+            <div class="tabsnav">
+              <a href="{{ link }}">{{ title }}</a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="container our-product media-list-link visible-xs tabs-slider os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+      <ul id="nav">
+        {% for title, link in data.pages %}
+          <li>
+            <a href="{{ link }}">{{ title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</div>
+

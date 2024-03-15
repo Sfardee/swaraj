@@ -1,0 +1,8 @@
+uuid: 606b5746-30b7-4e97-9ca7-1acbc2d68f9b
+langcode: en
+status: true
+dependencies: {  }
+id: banner
+label: Banner
+revision: 0
+description: 'Home Page Banner'

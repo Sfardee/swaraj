@@ -1,0 +1,21 @@
+uuid: bcc27ea8-aa85-4e03-a8dc-835754919f65
+langcode: en
+status: true
+dependencies:
+  module:
+    - config_pages
+id: config_pages.field_cdms_file_name_new_contact
+field_name: field_cdms_file_name_new_contact
+entity_type: config_pages
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

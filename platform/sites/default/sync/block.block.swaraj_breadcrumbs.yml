@@ -1,0 +1,22 @@
+uuid: 519c7996-782e-40d1-94d5-31d595b9ed5e
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - swaraj
+_core:
+  default_config_hash: WWu2OQswgCztl9OeXjD1stexIEMZsSgPMYIdC-JHx9c
+id: swaraj_breadcrumbs
+theme: swaraj
+region: content
+weight: 1
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

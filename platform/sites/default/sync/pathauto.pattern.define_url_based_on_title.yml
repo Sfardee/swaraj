@@ -1,0 +1,26 @@
+uuid: 8260e231-c111-4548-88b8-8ed0ac88c3ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: define_url_based_on_title
+label: 'define url based on title'
+type: 'canonical_entities:node'
+pattern: '[node:title]'
+selection_criteria:
+  404e8979-cf0b-4fe0-a53f-d175356e6146:
+    id: node_type
+    bundles:
+      csr: csr
+      enquiry_panel_page: enquiry_panel_page
+      implements: implements
+      news: news
+      page: page
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 404e8979-cf0b-4fe0-a53f-d175356e6146
+selection_logic: and
+weight: 0
+relationships: {  }

@@ -1,0 +1,8 @@
+uuid: 7c445cde-cf74-461c-8a06-409d5f72d299
+langcode: en
+status: true
+dependencies: {  }
+name: 'Product Features'
+vid: product_features
+description: ''
+weight: 0

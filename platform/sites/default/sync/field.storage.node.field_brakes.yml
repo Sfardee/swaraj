@@ -1,0 +1,21 @@
+uuid: be0ab697-6d86-4fce-976d-0ddc6477a253
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_brakes
+field_name: field_brakes
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

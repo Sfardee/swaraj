@@ -1,0 +1,8 @@
+fileinfo:
+  enable: 1
+unixfile:
+  enable: 0
+  binary: /usr/bin/file
+magicfile: ''
+_core:
+  default_config_hash: ykyOIb2yb5zIQZsms3p-9rsNdJwrDOQ2StjtfvHDmEU

@@ -1,0 +1,21 @@
+uuid: 5dcd980a-ae5f-4f36-9ad2-533ec6335bfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_banner_type
+    - paragraphs.paragraphs_type.product_banner
+  module:
+    - options
+id: paragraph.product_banner.field_banner_type
+field_name: field_banner_type
+entity_type: paragraph
+bundle: product_banner
+label: 'Banner Type'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

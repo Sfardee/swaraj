@@ -1,0 +1,28 @@
+uuid: a166f946-c53d-4cac-92a9-799528dca0b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_image
+    - media.type.image
+    - paragraphs.paragraphs_type.image_unit
+id: paragraph.image_unit.field_background_image
+field_name: field_background_image
+entity_type: paragraph
+bundle: image_unit
+label: 'Desktop Image'
+description: 'Use image of size 1144 x 581 px'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

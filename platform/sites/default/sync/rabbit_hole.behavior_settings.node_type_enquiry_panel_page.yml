@@ -1,0 +1,14 @@
+uuid: cabab012-671c-4cf7-9252-5d2863d0a02a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.enquiry_panel_page
+id: node_type_enquiry_panel_page
+entity_type_id: node_type
+entity_id: enquiry_panel_page
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

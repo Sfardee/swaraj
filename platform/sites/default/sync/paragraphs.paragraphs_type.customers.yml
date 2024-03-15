@@ -1,0 +1,9 @@
+uuid: 9835358a-267d-4f70-9c32-a17e0b0384d8
+langcode: en
+status: true
+dependencies: {  }
+id: customers
+label: Customers
+icon_uuid: null
+description: Customers
+behavior_plugins: {  }

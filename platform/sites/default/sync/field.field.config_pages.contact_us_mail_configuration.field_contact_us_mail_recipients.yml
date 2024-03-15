@@ -1,0 +1,70 @@
+uuid: 5def6928-c5f4-4bd7-9517-0cf44b6572dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.contact_us_mail_configuration
+    - field.storage.config_pages.field_contact_us_mail_recipients
+    - paragraphs.paragraphs_type.contact_us_mail_recipient
+  module:
+    - entity_reference_revisions
+id: config_pages.contact_us_mail_configuration.field_contact_us_mail_recipients
+field_name: field_contact_us_mail_recipients
+entity_type: config_pages
+bundle: contact_us_mail_configuration
+label: 'Contact Us - Mail Recipients'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact_us_mail_recipient: contact_us_mail_recipient
+    target_bundles_drag_drop:
+      about_us:
+        weight: 15
+        enabled: false
+      banner:
+        weight: 16
+        enabled: false
+      breadcrumbs:
+        weight: 17
+        enabled: false
+      commitment:
+        weight: 18
+        enabled: false
+      contact_us_mail_recipient:
+        enabled: true
+        weight: 19
+      customers:
+        weight: 20
+        enabled: false
+      gallery:
+        weight: 21
+        enabled: false
+      milestone:
+        weight: 22
+        enabled: false
+      product_banner:
+        weight: 23
+        enabled: false
+      product_item:
+        weight: 24
+        enabled: false
+      product_list_item:
+        weight: 25
+        enabled: false
+      quick_tools:
+        weight: 26
+        enabled: false
+      specification:
+        weight: 27
+        enabled: false
+      zigzag:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

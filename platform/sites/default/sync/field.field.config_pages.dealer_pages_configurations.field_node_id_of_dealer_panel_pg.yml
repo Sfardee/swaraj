@@ -1,0 +1,23 @@
+uuid: 270d7a42-6a53-4196-81b2-a844cae0b2cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.dealer_pages_configurations
+    - field.storage.config_pages.field_node_id_of_dealer_panel_pg
+id: config_pages.dealer_pages_configurations.field_node_id_of_dealer_panel_pg
+field_name: field_node_id_of_dealer_panel_pg
+entity_type: config_pages
+bundle: dealer_pages_configurations
+label: 'Node ID of Generic Dealer Panel Page'
+description: 'Enter the node id of generic dealer panel page, which has all the blocks added to it. '
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

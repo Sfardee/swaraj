@@ -1,0 +1,18 @@
+uuid: c388acf8-4118-494a-9b83-0898f459e80b
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.csr_category
+id: taxonomy_term.csr_category.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: csr_category
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

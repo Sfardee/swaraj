@@ -1,0 +1,9 @@
+uuid: 4bba1fb6-b3bf-4f7c-8443-c759c4b706a3
+langcode: en
+status: true
+dependencies: {  }
+id: commitment
+label: 'Video Image Carousal'
+icon_uuid: null
+description: 'Video Image Carousal'
+behavior_plugins: {  }

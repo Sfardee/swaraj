@@ -1,0 +1,78 @@
+{% set i = 1 %}
+{% set j = 1 %}
+{% set k = 1 %}
+
+<section class="specification-box" id="spec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="header4 12.10">
+
+          {{ data.title|trans }}
+
+        </h2>
+      </div>
+    </div>
+    <div class="row hidden-sm hidden-xs">
+      <div class="col-md-12 speci-tabs">
+       <div class="speci-carousel owl-carousel">
+          {% for val in data.spec %}
+              {% if i == 1 %}
+                {% set active = 'active' %}
+              {% else %}
+                {% set active = '' %}
+              {% endif %}
+            <div>
+              <div class="sp-tabs {{ active }}">
+                <a data-toggle="tab" href="#tab{{ i }}">{{ val.name }}</a>
+              </div>
+            </div>
+            {% set i = i + 1 %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="spec-list-box">
+
+          <div class="wrapper-spec-list visible-xs visible-sm">
+            <ul class="list-inline">
+            {% for val in data.spec %}
+                {% if j == 1 %}
+                  {% set active = 'active' %}
+                {% else %}
+                  {% set active = '' %}
+                {% endif %}
+              <li class="{{ active }}">
+                <a data-toggle="tab" href="#tab{{ j }}">{{ val.name }}</a>
+              </li>
+              {% set j = j + 1 %}
+              {% endfor %}
+            </ul>
+          </div>
+
+
+          <div class="tab-content">
+              {% for val in data.spec %}
+                {% if k == '1' %}
+                  {% set active = 'active' %}
+                {% else %}
+                  {% set active = '' %}
+                {% endif %}
+              <div class="tab-pane fade in {{ active }}" id="tab{{ k }}">
+              {{ val.desc|raw }}
+              </div>
+              {% set k = k + 1 %}
+              {% endfor %}
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>

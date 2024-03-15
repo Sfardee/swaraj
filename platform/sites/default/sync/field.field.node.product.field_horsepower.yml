@@ -1,0 +1,19 @@
+uuid: 34158812-2112-4511-8f05-27fc23bde653
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_horsepower
+    - node.type.product
+id: node.product.field_horsepower
+field_name: field_horsepower
+entity_type: node
+bundle: product
+label: Horsepower
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

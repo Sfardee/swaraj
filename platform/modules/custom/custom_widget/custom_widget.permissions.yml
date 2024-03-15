@@ -1,0 +1,4 @@
+swaraj-settings:
+  description: 'Access to Swaraj specific configurarion.'
+  title: 'Swaraj Settings'
+  restrict access: TRUE

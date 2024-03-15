@@ -1,0 +1,8 @@
+uuid: ad099c9b-140b-4990-9280-44636637062e
+langcode: en
+status: true
+dependencies: {  }
+name: 'CSR Category'
+vid: csr_category
+description: ''
+weight: 0

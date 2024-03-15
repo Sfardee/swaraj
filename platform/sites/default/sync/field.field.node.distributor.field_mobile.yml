@@ -1,0 +1,19 @@
+uuid: 8a8a1941-57ac-4dd4-b644-2b26248dc312
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mobile
+    - node.type.distributor
+id: node.distributor.field_mobile
+field_name: field_mobile
+entity_type: node
+bundle: distributor
+label: Mobile
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

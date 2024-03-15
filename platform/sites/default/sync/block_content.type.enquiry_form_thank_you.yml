@@ -1,0 +1,8 @@
+uuid: 944d1974-7324-43f6-873a-1a19665e8543
+langcode: en
+status: true
+dependencies: {  }
+id: enquiry_form_thank_you
+label: 'Enquiry Form - Thank you'
+revision: 0
+description: 'Thank you message with banner slider for http://enquiryform.swarajtractors.com/'

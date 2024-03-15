@@ -1,0 +1,41 @@
+{% block blockcontent %}
+  {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+  <div data-block-id="{{ uuid }}">
+    <div class="inner-hero">
+      <div class="hero-box">
+        <div class="container">
+          {% if page_breadcrumbs %}
+            {% set a = 1 %}
+            <ul class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            {% for val in page_breadcrumbs %}
+              {% if val.link %}
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" typeof="WebPage" href="{{ val.link }}"><span itemprop="name">{{ val.title }}</span></a>
+                  <meta itemprop="position" content="{{ a }}" />
+                </li>
+              {% else %}
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                  <a itemprop="item" class="hidden" typeof="WebPage" href="{{ url('<current>') }}"><span itemprop="name">{{ val.title }}</span></a>
+                  {{ val.title }}
+                  <meta itemprop="position" content="{{ a }}" />
+                </li>
+              {% endif %}
+              {% set a = a + 1 %}
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+
+        <div class="hero-container">
+          <div class="container">
+            <h4>{{ block_content.field_title.value }}</h4>
+          </div>
+        </div>
+        <div>
+          <img alt="" class="img-responsive hidden-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(block_content.field_desktop_background_image.entity.field_media_image.entity.fileuri) }}">
+          <img alt="" class="img-responsive visible-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(block_content.field_mobile_background_image.entity.field_media_image.entity.fileuri) }}">
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

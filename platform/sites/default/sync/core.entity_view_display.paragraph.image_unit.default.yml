@@ -1,0 +1,31 @@
+uuid: 9afb405a-c58e-4cde-a11f-e63193e84222
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_unit.field_background_image
+    - field.field.paragraph.image_unit.field_mobile_background_image
+    - paragraphs.paragraphs_type.image_unit
+id: paragraph.image_unit.default
+targetEntityType: paragraph
+bundle: image_unit
+mode: default
+content:
+  field_background_image:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_mobile_background_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  search_api_excerpt: true

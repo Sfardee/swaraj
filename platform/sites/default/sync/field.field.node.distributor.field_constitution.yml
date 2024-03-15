@@ -1,0 +1,19 @@
+uuid: a91a1549-820a-46d5-9b79-0e786c87b875
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_constitution
+    - node.type.distributor
+id: node.distributor.field_constitution
+field_name: field_constitution
+entity_type: node
+bundle: distributor
+label: CONSTITUTION
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,42 @@
+uuid: ef5adad5-1c0d-4007-b7e1-e2d98f8b5c41
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quick_tools_product
+    - field.field.block_content.quick_tools_product.field_quick_tools_product
+  module:
+    - paragraphs
+id: block_content.quick_tools_product.default
+targetEntityType: block_content
+bundle: quick_tools_product
+mode: default
+content:
+  field_quick_tools_product:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,18 @@
+uuid: df62fb4a-4e86-403d-b446-8f8241be377e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dealer
+id: node.dealer.created
+field_name: created
+entity_type: node
+bundle: dealer
+label: 'Authored on'
+description: 'The time that the node was created.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

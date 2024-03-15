@@ -1,0 +1,158 @@
+{% block blockcontent %}
+  {% set image_path = base_path ~ 'themes/swaraj/images/' %}
+  {% set nodes = [] %}
+  {% for banner in full_content.field_image_video %}
+    {% if banner['#paragraph'] %}
+      {% set nodes = nodes | merge([banner['#paragraph']]) %}
+    {% endif %}
+  {% endfor %}
+  <div data-block-id="{{ uuid }}">
+    <div class="container PB30">
+      {% if block_content.field_grid_type.value == 'three' %}
+        <div class="row hidden-xs">
+        {% for key, data in nodes %}
+          {% if key == 0 %}
+            <div class="col-md-7 MT30">
+              {% if data.field_model_image.value and data.field_thousand_text.value %}
+                <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img src="{{ image_path }}play.png"></a>
+                <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+              {% else %}
+                <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% for key, data in nodes|slice(1,2) %}
+          {% if key == 0 %}
+            <div class="col-md-5 MT30">
+              <div class="row">
+                <div class="col-md-12">
+                {% else %}
+                <div class="col-md-12">
+                {% endif %}
+                {% if data.field_model_image.value %}
+                  <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+                {% else %}
+                  <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}play.png"></a>
+                {% endif %}
+          {% if key == 1 %}
+                </div>
+              </div>
+            </div>
+            {% else %}
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+
+        <div class="row visible-xs MT15">
+          <div class="col-md-12">
+            <div class="article-media-car owl-carousel green">
+            {% for data in nodes %}
+              {% if data.field_model_image.value and data.field_thousand_text.value %}
+                <div>
+                  <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img src="{{ image_path }}play.png"></a>
+                  <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+                </div>
+              {% else %}
+                <div>
+                  <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+                </div>
+              {% endif %}
+            {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      {% endif %}
+
+      {% if block_content.field_grid_type.value == 'one' %}
+
+        <div class="row hidden-xs">
+          <div class="col-md-12 MT30">
+          {% for data in nodes %}
+            {% if data.field_model_image.value and data.field_thousand_text.value %}
+              <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img src="{{ image_path }}play.png"></a>
+              <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(values.field_model_image.entity.field_media_image.entity.fileuri) }}">
+            {% else %}
+              <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+
+        <div class="row visible-xs MT15">
+          <div class="col-md-12">
+            <div class="article-media-car owl-carousel green">
+              {% for data in nodes %}
+                {% if data.field_model_image.value and data.field_thousand_text.value %}
+                  <div>
+                    <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img src="{{ image_path }}play.png"></a>
+                    <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+                  </div>
+                {% else %}
+                  <div>
+                    <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      {% endif %}
+
+      {% if block_content.field_grid_type.value == 'two' %}
+
+        <div class="row hidden-xs">
+          {% for data in nodes %}
+          <div class="col-md-6 MT30">
+            {% if data.field_model_image.value and data.field_thousand_text.value %}
+              <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img src="{{ image_path }}play.png"></a>
+              <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+            {% else %}
+              <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+            {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="row visible-xs MT15">
+          <div class="col-md-12">
+            <div class="article-media-car owl-carousel green">
+              {% for data in nodes %}
+                {% if data.field_model_image.value and data.field_thousand_text.value %}
+                  <div>
+                    <a class="play-icon" data-toggle="modal" href="#myModalVideo{{ key }}"><img src="{{ image_path }}play.png"></a>
+                    <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+                  </div>
+                {% else %}
+                  <div>
+                    <img alt="" class="full-width lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ file_url(data.field_model_image.entity.field_media_image.entity.fileuri) }}">
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+
+      {% endif %}
+
+      {% for key, value in nodes %}
+        {% if value.field_thousand_text.value %}
+          <div class="modal fade youtube-video-box" id="myModalVideo{{ key }}">
+            <div class="container">
+              <div class="close-video">
+                <button aria-hidden="true" class="close" data-dismiss="modal" type="button">&times;</button>
+              </div>
+              <div>
+                <iframe allowfullscreen frameborder="0" height="600" id="SwarajVideo" class="lozad" data-src="{{ value.field_thousand_text.value }}" width="100%"></iframe>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

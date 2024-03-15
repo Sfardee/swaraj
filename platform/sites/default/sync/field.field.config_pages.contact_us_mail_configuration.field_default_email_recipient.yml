@@ -1,0 +1,19 @@
+uuid: 74c2e90a-1587-4e16-aabc-1a51ee6b2930
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.contact_us_mail_configuration
+    - field.storage.config_pages.field_default_email_recipient
+id: config_pages.contact_us_mail_configuration.field_default_email_recipient
+field_name: field_default_email_recipient
+entity_type: config_pages
+bundle: contact_us_mail_configuration
+label: 'Default Email Recipient'
+description: 'In case there are no rules defined for given combination, these users will get email.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

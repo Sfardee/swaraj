@@ -1,0 +1,28 @@
+uuid: 073d09fb-f0ad-4e55-ac90-275553e2adf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_model_image
+    - media.type.image
+    - paragraphs.paragraphs_type.commitment
+id: paragraph.commitment.field_model_image
+field_name: field_model_image
+entity_type: paragraph
+bundle: commitment
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

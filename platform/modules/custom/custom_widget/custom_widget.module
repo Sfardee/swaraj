@@ -1,0 +1,942 @@
+<?php
+
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\file\Entity\File;
+use Drupal\block\Entity\Block;
+use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\PrivateTempStoreFactory;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use \Drupal\Core\File\FileSystemInterface;
+use \Drupal\views\Views;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_theme().
+ */
+function custom_widget_theme($existing, $type, $theme, $path)
+{
+	// $placeholder_image = base_path() . \Drupal::theme()->getActiveTheme()->getPath() . '/images/cinnamon-placeholder.png';
+
+	return [
+		'swaraj_testimonial' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_testimonial2' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_article' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_product' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_products' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_implements' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_similar' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_similar_article' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_contactus' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_new_contact_us' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_product_details' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_implements_details' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_specification' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_features' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_implement' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_tabs' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_detailtabs' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_yourself' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_support' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_search' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_faq' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_news' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_milestone' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_team' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_share' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_member' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_near' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_contact' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_breadcrumbs' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_gallery' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_gallery2' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_search_data' => [
+			'variables' => ['data' => null]
+    ],
+    'swaraj_article_details' => [
+			'variables' => ['data' => null]
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function custom_widget_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+	switch ($form_id) {
+    case 'views_exposed_form':
+    if ($form['#id'] == 'views-exposed-form-search-product') {
+      $form['search']['#attributes']['class'][] = 'search-text-box search-page-box';
+      $form['search']['#attributes']['placeholder'][] = 'Search Article, Product...';
+      $form['actions']['submit']['#attributes']['class'][] = 'search-btn';
+      $form['actions']['submit']['#attributes']['class'][] = 'search-btn-js';
+      $form['actions']['submit']['#value'] = t('Search');
+    }
+    if ($form['#id'] == 'views-exposed-form-news-news') {
+      $form['title']['#attributes']['class'][] = 'search-text-box';
+      $form['title']['#attributes']['placeholder'][] = t('Search Article');
+      $form['title']['#attributes']['data-bef-auto-submit-exclude'] = '1';
+      $form['field_news_category_target_id']['#attributes']['class'][] = 'round-inpt';
+      $form['field_news_category_target_id']['#attributes']['class'][] = 'selectpicker';
+      $form['created']['#attributes']['disabled'] = 'disabled';
+      $form['created_1']['#attributes']['disabled'] = 'disabled';
+      $form['actions']['submit']['#attributes']['class'][] = 'search-btn';
+      $form['actions']['submit']['#value'] = t('Search');
+    }
+    if ($form['#id'] == 'views-exposed-form-news-csr') {
+      $form['title']['#attributes']['class'][] = 'search-text-box';
+      $form['title']['#attributes']['placeholder'][] = t('Search Article');
+      $form['title']['#attributes']['data-bef-auto-submit-exclude'] = '1';
+      $form['field_csr_category_target_id']['#attributes']['class'][] = 'round-inpt';
+      $form['field_csr_category_target_id']['#attributes']['class'][] = 'selectpicker';
+      $form['created']['#attributes']['disabled'] = 'disabled';
+      $form['created_1']['#attributes']['disabled'] = 'disabled';
+      $form['actions']['submit']['#attributes']['class'][] = 'search-btn';
+      $form['actions']['submit']['#value'] = t('Search');
+    }
+    if ($form['#id'] == 'views-exposed-form-news-article') {
+      $form['title']['#attributes']['class'][] = 'search-text-box';
+      $form['title']['#attributes']['placeholder'][] = t('Search Article');
+      $form['title']['#attributes']['data-bef-auto-submit-exclude'] = '1';
+      $form['field_article_category_target_id']['#attributes']['class'][] = 'round-inpt';
+      $form['field_article_category_target_id']['#attributes']['class'][] = 'selectpicker';
+      $form['created']['#attributes']['disabled'] = 'disabled';
+      $form['created_1']['#attributes']['disabled'] = 'disabled';
+      $form['actions']['submit']['#attributes']['class'][] = 'search-btn';
+      $form['actions']['submit']['#value'] = t('Search');
+    }
+      break;
+
+    case 'user_login_form':
+      $form['#attributes']['autocomplete'] = 'off';
+      break;
+
+    case 'config_pages_contact_us_mail_configuration_form':
+      $form['actions']['submit']['#submit'][] = 'custom_submit_method1';
+    break;
+
+    case 'config_pages_new_contact_us_mail_configuratio_form':
+      $form['actions']['submit']['#submit'][] = 'custom_submit_method2';
+    break;
+  }
+}
+
+/**
+ * swaraj search tab template
+ */
+function custom_widget_preprocess_swaraj_search_data(&$vars)
+{
+  $search = \Drupal::request()->query->get('search');
+  if(!empty($search)){
+    $view1 = \Drupal\views\Views::getView('search');
+    $view1->setDisplay('product');
+    $query1 = [
+      'search' => $search,
+    ];
+    $view1->setExposedInput($query1);
+    $vars['product'] = $view1->buildRenderable();
+    $vars['product'] = views_embed_view('search', 'product');
+    $view2 = \Drupal\views\Views::getView('search');
+    $view2->setDisplay('article');
+    $query2 = [
+      'search_api_fulltext' => $search,
+    ];
+    $view2->setExposedInput($query2);
+    $vars['article'] = $view2->buildRenderable();
+  } else {
+    $vars['product'] = views_embed_view('search', 'product');
+    $vars['article'] = views_embed_view('search', 'article');
+  }
+}
+
+
+// /**
+//  * swaraj hook_node_presave()
+//  */
+// function custom_widget_node_presave(Drupal\Core\Entity\EntityInterface $entity)
+// {
+//   \Drupal::logger('debugging')->warning(print_r($entity, TRUE));
+// }
+
+// /**
+//  * swaraj hook_node_insert()
+//  */
+// function custom_widget_node_insert(Drupal\Core\Entity\EntityInterface $node)
+// {
+//   if ($node->isNew()) {
+//    \Drupal::logger('debugging')->warning(print_r($node, TRUE));
+//   }
+// }
+
+/**
+ * Helper function for media
+ */
+function _getmediaurl($target_id = NULL, $media_type = NULL){
+  if($target_id){
+    $media = Media::load($target_id);
+    if($media_type == 'image')
+      $url = !is_null($media->field_media_image->entity) ? file_create_url($media->field_media_image->entity->getFileUri()) : '';
+    else if($media_type == 'file')
+      $url = !is_null($media->field_media_file->entity) ? file_create_url($media->field_media_file->entity->getFileUri()) : '';
+    return $url;
+  }
+}
+
+/**
+ * Helper function for product media gallery
+ */
+function _getproductmediaurl($target_id = NULL) {
+  $data = array();
+  if ($target_id) {
+    $media = Media::load($target_id);
+    if ($media->bundle() == 'image') {
+      $data['type'] = 'image';
+      $data['url'] = !is_null($media->field_media_image->entity) ? file_create_url($media->field_media_image->entity->getFileUri()) : '';
+    } else if ($media->bundle() == 'youtube_video') {
+      $data['type'] = 'youtube_video';
+      $data['url'] = !is_null($media->field_media_video_embed_field->value) ? 'https://www.youtube.com/embed/' . $media->field_embed_id->value : '';
+      $data['thumbnail'] = !is_null($media->field_thumbnail->entity) ? file_create_url($media->field_thumbnail->entity->getFileUri()) : '';
+    }
+  }
+  return $data;
+}
+
+/**
+ * Helper function for product
+ */
+function _gettermproduct($term_id = NULL, $limit = NULL){
+  if($term_id){
+    $data = array();
+    $query = \Drupal::entityQuery('node');
+    $query->condition('type', 'product');
+    $query->condition('status', NODE_PUBLISHED);
+    $query->condition('field_engine_power', $term_id);
+    if($limit)
+      $query->range(0, $limit);
+    $entity_ids = $query->execute();
+    if($entity_ids){
+      foreach ($entity_ids as $nid) {
+        $node = Node::load($nid);
+        $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        if($node->hasTranslation($language)){
+          $node = $node->getTranslation($language);
+        }
+        $data[$nid]['title'] = $node->title->value;
+        $data[$nid]['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $nid);
+        $data[$nid]['image'] = _getmediaurl($node->field_big_image->target_id, 'image');
+      }
+      return $data;
+    }
+  }
+}
+
+/**
+ * Helper function for product from engine power
+ */
+function _getEngineProducts($term_id = NULL){
+  if($term_id){
+    $query = \Drupal::entityQuery('node');
+    $query->condition('type', 'product');
+    $query->condition('field_engine_power', $term_id);
+    $query->condition('status', NODE_PUBLISHED);
+    $entity_ids = $query->execute();
+    $data = array();
+    if(!empty($entity_ids)){
+      foreach ($entity_ids as $nid) {
+        $node = Node::load($nid);
+        $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        if($node->hasTranslation($language)){
+          $node = $node->getTranslation($language);
+        }
+        $data[$nid]['title'] = !empty($node->title->value) ? $node->title->value : '';
+        $data[$nid]['cdms_identifier'] = !empty($node->field_cdms_identifier->value) ? $node->field_cdms_identifier->value : $data[$nid]['title'];
+        $data[$nid]['hp'] = !empty($node->field_horsepower->value) ? $node->field_horsepower->value : '';
+        $data[$nid]['cc'] = !empty($node->field_engine->value) ? $node->field_engine->value : '';
+        $data[$nid]['pto'] = !empty($node->field_pto_hp->value) ? $node->field_pto_hp->value : '';
+        $data[$nid]['br'] = !empty($node->field_brakes->value) ? $node->field_brakes->value : '';
+        $data[$nid]['cyl'] = !empty($node->field_cylinders->value) ? $node->field_cylinders->value : '';
+        $data[$nid]['desc'] = !empty($node->body->value) ? $node->body->value : '';
+        $data[$nid]['short'] = !empty($node->field_short_description->value) ? $node->field_short_description->value : '';
+        $data[$nid]['tid'] = !empty($node->field_engine_power->target_id) ? $node->field_engine_power->value : '';
+        $data[$nid]['image'] = !empty($node->field_main_menu_image->target_id) ? _getmediaurl($node->field_main_menu_image->target_id, 'image') : '';
+        $data[$nid]['product_image'] = !empty($node->field_big_image->target_id) ? _getmediaurl($node->field_big_image->target_id, 'image') : '';
+        $data[$nid]['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $nid);
+      }
+      return $data;
+      } else {
+      return NULL;
+    }
+  }
+}
+
+/**
+ * Helper function for implements
+ */
+function _getImplements($term_id = NULL){
+  if($term_id){
+    $query = \Drupal::entityQuery('node');
+    $query->condition('type', 'implements');
+    $query->condition('field_category', $term_id);
+    $query->condition('status', NODE_PUBLISHED);
+    $entity_ids = $query->execute();
+    $data = array();
+    foreach ($entity_ids as $nid) {
+      $node = Node::load($nid);
+      $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      if($node->hasTranslation($language)){
+        $node = $node->getTranslation($language);
+      }
+      $data[$nid]['title'] = $node->title->value;
+      $data[$nid]['cdms_identifier'] = !empty($node->field_cdms_identifier->value) ? $node->field_cdms_identifier->value : $data[$nid]['title'];
+      $data[$nid]['tid'] = $node->field_category->target_id;
+      $data[$nid]['image'] = _getmediaurl($node->field_image->target_id, 'image');
+      if (trim(strip_tags($node->body->value)) != '') {
+        $data[$nid]['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $nid);
+      } else {
+        $data[$nid]['link'] = "";
+      }
+    }
+    return $data;
+  }
+
+}
+
+function _getimplementsProduct($term_id = NULL){
+  if($term_id){
+    $query = \Drupal::entityQuery('node');
+    $query->condition('type', 'implements');
+    $query->condition('field_category', $term_id);
+    $query->condition('status', NODE_PUBLISHED);
+    $entity_ids = $query->execute();
+    $data = array();;
+    if(!empty($entity_ids)){
+      foreach ($entity_ids as $nid) {
+        $node = Node::load($nid);
+        $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        if($node->hasTranslation($language)){
+          $node = $node->getTranslation($language);
+        }
+        $data[$nid]['title'] = !empty($node->title->value) ? $node->title->value : '';
+        $data[$nid]['cdms_identifier'] = !empty($node->field_cdms_identifier->value) ? $node->field_cdms_identifier->value : $data[$nid]['title'];
+        $data[$nid]['hp'] = !empty($node->field_horsepower->value) ? $node->field_horsepower->value : '';
+        $data[$nid]['cc'] = !empty($node->field_engine->value) ? $node->field_engine->value : '';
+        $data[$nid]['pto'] = !empty($node->field_longitude->value) ? $node->field_longitude->value : '';
+        $data[$nid]['br'] = !empty($node->field_brakes->value) ? $node->field_brakes->value : '';
+        $data[$nid]['cyl'] = !empty($node->field_cylinders->value) ? $node->field_cylinders->value : '';
+        $data[$nid]['desc'] = !empty($node->body->value) ? $node->body->value : '';
+        $data[$nid]['short'] = '';
+        $data[$nid]['tid'] = $node->field_category->target_id;
+        $data[$nid]['image'] = _getmediaurl($node->field_image->target_id, 'image');
+        $data[$nid]['product_image'] = !empty($node->field_implement_image->target_id) ? _getmediaurl($node->field_implement_image->target_id, 'image') : '';
+        if (trim(strip_tags($node->body->value)) != '') {
+          $data[$nid]['link'] = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'. $nid);
+        } else {
+          $data[$nid]['link'] = "";
+        }
+      }
+      // kint($data[$nid]);
+      return $data;
+      } else {
+      return NULL;
+    }
+
+  }
+}
+
+/**
+ * Helper function for taxonomy term
+ */
+function _getTidByName($name = NULL, $vid = NULL) {
+    $properties = [];
+    if (!empty($name)) {
+      $properties['name'] = $name;
+    }
+    if (!empty($vid)) {
+      $properties['vid'] = $vid;
+    }
+    $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+    $term = reset($terms);
+
+    return !empty($term) ? $term->id() : 0;
+  }
+
+
+/**
+ *
+ */
+function _getNameByTid($tid = NULL){
+  if($tid){
+    $term = Term::load($tid);
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    if($term->hasTranslation($language)){
+      $term = $term->getTranslation($language);
+    }
+    return $term->getName();
+  }
+}
+/**
+ *
+ */
+function _getNidByName($title = NULL){
+  if($title){
+    $query = \Drupal::entityQuery('node');
+    $orGroup1 = $query->orConditionGroup();
+    $orGroup1->condition('type', 'product');
+    $orGroup1->condition('type', 'implements');
+    $query->condition($orGroup1);
+    // $query->condition('type', 'product');
+    $query->condition('title', $title);
+    $query->condition('status', NODE_PUBLISHED);
+    $entity_ids = $query->execute();
+    return array_shift($entity_ids);
+  }
+}
+
+/**
+ * Helper function for distance
+ */
+function distance($lat1, $lon1, $lat2, $lon2, $unit) {
+  $lat1 = floatval($lat1);
+  $lon1 = floatval($lon1);
+  $lat2 = floatval($lat2);
+  $lon2 = floatval($lon2);
+  if (($lat1 == $lat2) && ($lon1 == $lon2)) {
+    return 0;
+  }
+  else {
+    $theta = $lon1 - $lon2;
+    $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+    $dist = acos($dist);
+    $dist = rad2deg($dist);
+    $miles = $dist * 60 * 1.1515;
+    $unit = strtoupper($unit);
+    if ($unit == "K") {
+      return ($miles * 1.609344);
+    } else if ($unit == "N") {
+      return ($miles * 0.8684);
+    } else {
+      return $miles;
+    }
+  }
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function custom_widget_user_logout() {
+  // reset user IP
+  // $tempstore = \Drupal::service('user.private_tempstore')->get('custom_widget')
+  // $tempstore->set('user_ip', null);
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function custom_widget_user_login($account) {
+  $account->setLastAccessTime(REQUEST_TIME);
+  $account->save();
+  $session_count = \Drupal::database()->query("SELECT COUNT(DISTINCT(sid)) FROM {sessions} WHERE uid = :uid", array(
+    ':uid' => $account->id(),
+  ))->fetchField();
+  if ($session_count == 0) {
+    // save user IP.
+    $tempstore = \Drupal::service('user.private_tempstore')->get('custom_widget');
+    $tempstore->set('user_ip', \Drupal::request()->getClientIp());
+    $tempstore->set('user_just_login', 'yes');
+    // \Drupal::logger('my_module')->notice('ip-'.\Drupal::request()->getClientIp());
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function custom_widget_page_attachments_alter(&$page) {
+  $page['#attached']['library'][] = 'custom_widget/custom_widget';
+  // pass Google Maps API Key
+  $config = \Drupal::config('config.custom_widget');
+  $page['#attached']['drupalSettings']['google_map_api_key'] = !empty($config->get('google_map_api_key'))? $config->get('google_map_api_key'): 'AIzaSyB4i2QQFtyO87OCzxhi0TQxWqZzKVZjSp8';
+}
+
+/**
+ * Custom submit function to save config form data in custom table for easy retrieval
+ *
+ */
+function custom_submit_method1(array $form, FormStateInterface $form_state) {
+  $contact_us_mail_recipients = $form_state->getValue(array('field_contact_us_mail_recipients'));
+  $query = \Drupal::database()->delete('contact_us_webform_mail_config')->execute();
+  foreach ($contact_us_mail_recipients as $contact_us_mail_recipient) {
+    $field_feedback_type = '';
+    $field_email_recipients = '';
+    foreach($contact_us_mail_recipient['subform']['field_feedback_type'] as $field_feedback_type_array) {
+      $field_feedback_type = $field_feedback_type_array['value'];
+      foreach($contact_us_mail_recipient['subform']['field_contact_us_state_wise_mail'] as $field_contact_us_state_wise_mail) {
+        $field_email_recipients = $field_contact_us_state_wise_mail['subform']['field_email_recipients'][0]['value'];
+        foreach($field_contact_us_state_wise_mail['subform']['field_state'] as $state) {
+          $query = \Drupal::database()->insert('contact_us_webform_mail_config');
+          $query->fields(
+            array(
+              'id' => 0,
+              'field_feedback_type' => trim($field_feedback_type),
+              'field_state' => trim($state['value']),
+              'field_email_recipients' => trim($field_email_recipients),
+              'created_date' => date("Y-m-d\TH:i:s")
+            )
+          )->execute();
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Custom submit function to save config form data in custom table for easy retrieval
+ *
+ */
+function custom_submit_method2(array $form, FormStateInterface $form_state) {
+  $contact_us_mail_recipients = $form_state->getValue(array('field_contact_us_mail_recipients'));
+  $query = \Drupal::database()->delete('new_contact_us_webform_mail_config')->execute();
+  foreach ($contact_us_mail_recipients as $contact_us_mail_recipient) {
+    $field_feedback_type = '';
+    $field_email_recipients = '';
+    foreach($contact_us_mail_recipient['subform']['field_request_type'] as $field_feedback_type_array) {
+      $field_feedback_type = $field_feedback_type_array['value'];
+      foreach($contact_us_mail_recipient['subform']['field_contact_us_state_wise_mail'] as $field_contact_us_state_wise_mail) {
+        $field_email_recipients = $field_contact_us_state_wise_mail['subform']['field_email_recipients'][0]['value'];
+        foreach($field_contact_us_state_wise_mail['subform']['field_state'] as $state) {
+          $query = \Drupal::database()->insert('new_contact_us_webform_mail_config');
+          $query->fields(
+            array(
+              'id' => 0,
+              'field_feedback_type' => trim($field_feedback_type),
+              'field_state' => trim($state['value']),
+              'field_email_recipients' => trim($field_email_recipients),
+              'created_date' => date("Y-m-d\TH:i:s")
+            )
+          )->execute();
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Custom function to get feedback email recipients.
+ */
+function custom_widget_get_feedback_email_recipients($feedback_type, $state, $vehicle) {
+  $email_recipients = array();
+  $query = \Drupal::database()->select('contact_us_webform_mail_config', 'wm');
+  $query->fields('wm', array('field_email_recipients'));
+  $query->condition('wm.field_feedback_type', array(trim($feedback_type), trim($vehicle)), 'IN');
+  $query->condition('wm.field_state', trim($state));
+  $results = $query->execute()->fetchAll();
+  foreach ($results as $key => $val) {
+    $email_recipients = array_merge($email_recipients, explode(',', trim($val->field_email_recipients)));
+  }
+  array_unique($email_recipients);
+  $email_recipient = implode(',', $email_recipients);
+
+  if (count($email_recipients) === 0) {
+    $config = \Drupal::service('entity_type.manager')->getStorage('config_pages')->load('contact_us_mail_configuration');
+    $email_recipient = $config->get('field_default_email_recipient')->getValue()[0]['value'];
+  }
+
+  return $email_recipient;
+}
+
+/**
+ * Custom function to get feedback email recipients.
+ */
+function custom_widget_get_new_feedback_email_recipients($feedback_type, $state) {
+  $email_recipients = array();
+  $query = \Drupal::database()->select('new_contact_us_webform_mail_config', 'wm');
+  $query->fields('wm', array('field_email_recipients'));
+  $query->condition('wm.field_feedback_type', trim($feedback_type));
+  $query->condition('wm.field_state', trim($state));
+  $results = $query->execute()->fetchAll();
+  foreach ($results as $key => $val) {
+    $email_recipients = array_merge($email_recipients, explode(',', trim($val->field_email_recipients)));
+  }
+  array_unique($email_recipients);
+  $email_recipient = implode(',', $email_recipients);
+
+  if (count($email_recipients) === 0) {
+    $config = \Drupal::service('entity_type.manager')->getStorage('config_pages')->load('new_contact_us_mail_configuratio');
+    $email_recipient = $config->get('field_default_email_recipient')->getValue()[0]['value'];
+  }
+
+  return $email_recipient;
+}
+
+/**
+ * hook_views_query_alter
+ */
+function custom_widget_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if (($view->id() == 'contact_us_submission_report' || $view->id() == 'new_contact_us_submission_report' || $view->id() == 'dealer_pages_contact_submission_report' || $view->id() == 'enquiry_form_submission_report') && $view->current_display == 'data_export_1') {
+    $ftpConfig = \Drupal::service('entity_type.manager')->getStorage('config_pages')->load('ftp_settings_for_cdms');
+    $no_of_days = !empty($ftpConfig->get('field_no_of_days_for_which_repor')->getValue())? $ftpConfig->get('field_no_of_days_for_which_repor')->getValue()[0]['value']: 1;
+    $query->where[1]['conditions'][1]['field'] = 'webform_submission.completed BETWEEN '.strtotime("today -$no_of_days day 00:00:00").' AND '.strtotime("yesterday 23:59:59");
+  }
+}
+
+/**
+ * Custom cron job to export contact us submission data
+ * and ftp the file to CDMS FTP server.
+ *
+ */
+function custom_widget_cdms_cron() {
+  // Login as user 1
+  $user = User::load(1);
+  user_login_finalize($user);
+  \Drupal::logger('CDMS FTP Cron')->notice('Cron execution started.');
+
+  // generate the report - Main website - Contact us report
+  $view = \Drupal\views\Views::getView('contact_us_submission_report');
+  $views_preview = $view->preview('data_export_1');
+  $display = \Drupal::service('renderer')->renderRoot($views_preview);
+  $directory = 'public://reports';
+  /** @var FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+  $file_system->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $file_system->saveData($display, 'public://reports/SampleFlatFile.xlsx', FileSystemInterface::EXISTS_REPLACE);
+
+  // generate the report - Main website - New Contact us report
+  $view = \Drupal\views\Views::getView('new_contact_us_submission_report');
+  $views_preview = $view->preview('data_export_1');
+  $display = \Drupal::service('renderer')->renderRoot($views_preview);
+  $directory = 'public://reports';
+  /** @var FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+  $file_system->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $file_system->saveData($display, 'public://reports/SampleFlatFileNew.xlsx', FileSystemInterface::EXISTS_REPLACE);
+
+  // generate the report - Dealer Pages website
+  $view = \Drupal\views\Views::getView('dealer_pages_contact_submission_report');
+  $views_preview = $view->preview('data_export_1');
+  $display = \Drupal::service('renderer')->renderRoot($views_preview);
+  $directory = 'public://reports';
+  /** @var FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+  $file_system->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $file_system->saveData($display, 'public://reports/SampleFlatFileDealer.xlsx', FileSystemInterface::EXISTS_REPLACE);
+
+  // generate the report - Enquiry Form website
+  $view = \Drupal\views\Views::getView('enquiry_form_submission_report');
+  $views_preview = $view->preview('data_export_1');
+  $display = \Drupal::service('renderer')->renderRoot($views_preview);
+  $directory = 'public://reports';
+  /** @var FileSystemInterface $file_system */
+  $file_system = \Drupal::service('file_system');
+  $file_system->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY | FileSystemInterface::MODIFY_PERMISSIONS);
+  $file_system->saveData($display, 'public://reports/SampleFlatFileEnquiry.xlsx', FileSystemInterface::EXISTS_REPLACE);
+
+  // FTP server details
+  $ftpConfig = \Drupal::service('entity_type.manager')->getStorage('config_pages')->load('ftp_settings_for_cdms');
+  $ftp_host = !empty($ftpConfig->get('field_ftp_host_ip')->getValue())? $ftpConfig->get('field_ftp_host_ip')->getValue()[0]['value']: '10.255.2.36';
+  $ftp_username = !empty($ftpConfig->get('field_ftp_username')->getValue())? $ftpConfig->get('field_ftp_username')->getValue()[0]['value']: 'ExternalVendorFTP';
+  $ftp_password = !empty($ftpConfig->get('field_ftp_password')->getValue())? $ftpConfig->get('field_ftp_password')->getValue()[0]['value']: 'Him_098$1*';
+  $ftp_failure_mail_recipients = !empty($ftpConfig->get('field_ftp_failure_mail_recipient')->getValue())? $ftpConfig->get('field_ftp_failure_mail_recipient')->getValue()[0]['value']: '';
+
+  // open an FTP connection
+  if ($conn_id = ftp_ssl_connect($ftp_host)) {
+    // login to FTP server
+    if ($ftp_login = ftp_login($conn_id, $ftp_username, $ftp_password)) {
+
+      // local & server file path - Main Website - Contact Form
+      $localFilePath  = Drupal::service('file_system')->realpath('public://reports/SampleFlatFile.xlsx');
+      $remoteFilePath = !empty($ftpConfig->get('field_ftp_file_path')->getValue())? $ftpConfig->get('field_ftp_file_path')->getValue()[0]['value']: 'F:\CDMS-APP\Deploy\FTPFILES';
+      $remoteFileName = !empty($ftpConfig->get('field_cdms_file_name')->getValue())? $ftpConfig->get('field_cdms_file_name')->getValue()[0]['value']: 'SampleFlatFile-<date>.xlsx';
+      $remoteFilePath = $remoteFileName;
+      $remoteFilePath = str_replace('<date>', date('Y-m-d'), $remoteFilePath);
+      $ftpMainEnabled = !empty($ftpConfig->get('field_ftp_enabled_for_main_site')->getValue())? $ftpConfig->get('field_ftp_enabled_for_main_site')->getValue()[0]['value']: 0;
+
+      // local & server file path - Main Website - New Contact Form
+      $localNewFilePath  = Drupal::service('file_system')->realpath('public://reports/SampleFlatFileNew.xlsx');
+      $remoteNewFilePath = !empty($ftpConfig->get('field_ftp_file_path')->getValue())? $ftpConfig->get('field_ftp_file_path')->getValue()[0]['value']: 'F:\CDMS-APP\Deploy\FTPFILES';
+      $remoteNewFileName = !empty($ftpConfig->get('field_cdms_file_name_new_contact')->getValue())? $ftpConfig->get('field_cdms_file_name_new_contact')->getValue()[0]['value']: 'SampleFlatFile-<date>.xlsx';
+      $remoteNewFilePath = $remoteNewFileName;
+      $remoteNewFilePath = str_replace('<date>', date('Y-m-d'), $remoteNewFilePath);
+      $ftpNewMainEnabled = !empty($ftpConfig->get('field_ftp_enabled_new_contact_us')->getValue())? $ftpConfig->get('field_ftp_enabled_new_contact_us')->getValue()[0]['value']: 0;
+
+      // local & server file path - Dealer Pages
+      $localDealerFilePath  = Drupal::service('file_system')->realpath('public://reports/SampleFlatFileDealer.xlsx');
+      $remoteDealerFilePath = !empty($ftpConfig->get('field_ftp_file_path')->getValue())? $ftpConfig->get('field_ftp_file_path')->getValue()[0]['value']: 'F:\CDMS-APP\Deploy\FTPFILES';
+      $remoteDealerFileName = !empty($ftpConfig->get('field_cdms_file_name_dealer_page')->getValue())? $ftpConfig->get('field_cdms_file_name_dealer_page')->getValue()[0]['value']: 'SampleFlatFileDealer-<date>.xlsx';
+      $remoteDealerFilePath = $remoteDealerFileName;
+      $remoteDealerFilePath = str_replace('<date>', date('Y-m-d'), $remoteDealerFilePath);
+      $ftpDealerEnabled = !empty($ftpConfig->get('field_ftp_enabled_for_dealer_pag')->getValue())? $ftpConfig->get('field_ftp_enabled_for_dealer_pag')->getValue()[0]['value']: 0;
+
+      // local & server file path - Enquiry Form
+      $localEnquiryFilePath  = Drupal::service('file_system')->realpath('public://reports/SampleFlatFileEnquiry.xlsx');
+      $localEnquiryFilePath = !empty($ftpConfig->get('field_ftp_file_path')->getValue())? $ftpConfig->get('field_ftp_file_path')->getValue()[0]['value']: 'F:\CDMS-APP\Deploy\FTPFILES';
+      $remoteEnquiryFileName = !empty($ftpConfig->get('field_cdms_file_name_enquiry_for')->getValue())? $ftpConfig->get('field_cdms_file_name_enquiry_for')->getValue()[0]['value']: 'SampleFlatFileEnquiry-<date>.xlsx';
+      $remoteEnquiryFilePath = $remoteEnquiryFileName;
+      $remoteEnquiryFilePath = str_replace('<date>', date('Y-m-d'), $remoteEnquiryFilePath);
+      $ftpEnquiryEnabled = !empty($ftpConfig->get('field_ftp_enabled_for_enquiry_si')->getValue())? $ftpConfig->get('field_ftp_enabled_for_enquiry_si')->getValue()[0]['value']: 0;
+
+      // try to upload file - Main Website - Contact us
+      if ($ftpMainEnabled) {
+        if (ftp_put($conn_id, $remoteFilePath, $localFilePath, FTP_BINARY)) {
+          \Drupal::logger('CDMS FTP Cron')->notice("Main website contact us report - File transfer to FTP server was successful.");
+        } else {
+          \Drupal::logger('CDMS FTP Cron')->error("There was an error while uploading file $localFilePath to FTP server.");
+          // send mail to concerned person
+          custom_widget_send_mail('ftp_copy_error', $ftp_failure_mail_recipients);
+        }
+      } else {
+        \Drupal::logger('CDMS FTP Cron')->error("FTP transfer is disabled in configuration for main website - Contact Us Form.");
+      }
+
+      // try to upload file - Main Website - Contact us
+      if ($ftpNewMainEnabled) {
+        if (ftp_put($conn_id, $remoteNewFilePath, $localNewFilePath, FTP_BINARY)) {
+          \Drupal::logger('CDMS FTP Cron')->notice("Main website New contact us report - File transfer to FTP server was successful.");
+        } else {
+          \Drupal::logger('CDMS FTP Cron')->error("There was an error while uploading file $localNewFilePath to FTP server.");
+          // send mail to concerned person
+          custom_widget_send_mail('ftp_copy_error', $ftp_failure_mail_recipients);
+        }
+      } else {
+        \Drupal::logger('CDMS FTP Cron')->error("FTP transfer is disabled in configuration for main website - New Contact Us Form.");
+      }
+
+      // try to upload file - Dealer Pages
+      if ($ftpDealerEnabled) {
+        if (ftp_put($conn_id, $remoteDealerFilePath, $localDealerFilePath, FTP_BINARY)) {
+          \Drupal::logger('CDMS FTP Cron')->notice("Dealer pages contact us report - File transfer to FTP server was successful.");
+        } else {
+          \Drupal::logger('CDMS FTP Cron')->error("There was an error while uploading file $localDealerFilePath to FTP server.");
+          // send mail to concerned person
+          custom_widget_send_mail('ftp_copy_error', $ftp_failure_mail_recipients);
+        }
+      } else {
+        \Drupal::logger('CDMS FTP Cron')->error("FTP transfer is disabled in configuration for Dealer Pages website.");
+      }
+
+      // try to upload file - Enquiry Form
+      if ($ftpEnquiryEnabled) {
+        if (ftp_put($conn_id, $remoteEnquiryFilePath, $localEnquiryFilePath, FTP_BINARY)) {
+          \Drupal::logger('CDMS FTP Cron')->notice("Enquiry Form report - File transfer to FTP server was successful.");
+        } else {
+          \Drupal::logger('CDMS FTP Cron')->error("There was an error while uploading file $localEnquiryFilePath to FTP server.");
+          // send mail to concerned person
+          custom_widget_send_mail('ftp_copy_error', $ftp_failure_mail_recipients);
+        }
+      } else {
+        \Drupal::logger('CDMS FTP Cron')->error("FTP transfer is disabled in configuration for Enquiry form website.");
+      }
+
+      // close the connection
+      ftp_close($conn_id);
+    } else {
+      \Drupal::logger('CDMS FTP Cron')->error("Couldn't login to $ftp_host due to credentials issue.");
+      // send mail to concerned person
+      custom_widget_send_mail('ftp_authentication_error', $ftp_failure_mail_recipients);
+    }
+  } else {
+    \Drupal::logger('CDMS FTP Cron')->error("Couldn't connect to FTP server - $ftp_host.");
+    // send mail to concerned person
+    custom_widget_send_mail('ftp_connection_error', $ftp_failure_mail_recipients);
+  }
+
+  // Login as user 0 (anonymous)
+  $user = User::load(0);
+  user_login_finalize($user);
+}
+
+/**
+ * Helper function to send mail
+ */
+function custom_widget_send_mail($key, $to) {
+  if ($to != '') {
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $module = 'custom_widget';
+    $params = array();
+
+    switch ($key) {
+      case 'ftp_connection_error':
+        $params['subject'] = 'Swarajtractors.com - CDMS FTP connection error';
+        $params['body'] = "Automate job on swarajtractor.com is not able to make FTP connection. Kindly check if there is any issue at FTP end and connect support team to re-run the automated job.";
+        break;
+      case 'ftp_authentication_error':
+        $params['subject'] = 'Swarajtractors.com - CDMS FTP authentication error';
+        $params['body'] = "Automate job on swarajtractor.com is not able to make FTP connection due to authentication error. Kindly check if there is any issue at FTP end and connect support team to re-run the automated job.";
+        break;
+      case 'ftp_copy_error':
+        $params['subject'] = 'Swarajtractors.com - CDMS FTP file copy error';
+        $params['body'] = "Automate job on swarajtractor.com is not able to copy file to FTP location due to unknown error. Kindly check if there is any issue at FTP end and connect support team to re-run the automated job.";
+        break;
+    }
+
+    $langcode = \Drupal::currentUser()->getPreferredLangcode();
+    $send = true;
+    $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+  }
+}
+
+function get_states() {
+  $query = \Drupal::database()->query("SELECT distinct state FROM state_master_data ORDER BY state");
+  $states = $query->fetchCol();
+  return $states;
+}
+
+function get_district($state) {
+  $query = \Drupal::database()->query("SELECT distinct district FROM state_master_data where state=:state ORDER BY district", array(':state' => $state));
+  $district = $query->fetchCol();
+  return $district;
+}
+
+function get_tehsil($state, $district) {
+  $query = \Drupal::database()->query("SELECT distinct tehsil FROM state_master_data where state=:state AND district=:district ORDER BY tehsil", array(':state' => $state, ':district' => $district));
+  $tehsil = $query->fetchCol();
+  return $tehsil;
+}
+
+function get_village($state, $district, $tehsil) {
+  $query = \Drupal::database()->query("SELECT distinct village FROM state_master_data where state=:state AND district=:district AND tehsil=:tehsil ORDER BY village", array(':state' => $state, ':district' => $district, ':tehsil' => $tehsil));
+  $villages = $query->fetchCol();
+  return $villages;
+}
+
+function get_city_village($state, $district) {
+  $query = \Drupal::database()->query("SELECT distinct village FROM state_master_data where state=:state AND district=:district ORDER BY village", array(':state' => $state, ':district' => $district));
+  $villages = $query->fetchCol();
+  return $villages;
+}
+
+function get_city($state) {
+  $cities = array();
+  $query = \Drupal::database()->select('dealer_lat_long', 'd');
+  $query->fields('d', ['id', 'state', 'city', 'lat', 'long']);
+  $query->condition('d.state', trim($state));
+  $results = $query->execute()->fetchAll();
+  foreach($results as $val){
+    $cities[$val->city]['city'] = ucfirst($val->city);
+    $cities[$val->city]['state'] = ucfirst($val->state);
+    $cities[$val->city]['cord'] = $val->lat . "," . $val->long;
+  }
+  return $cities;
+}
+
+function validate_location_data($state, $district, $village) {
+  $query = \Drupal::database()->query("SELECT id FROM state_master_data where state=:state AND district=:district AND village=:village", array(':state' => $state, ':district' => $district, ':village' => $village));
+  $count = count($query->fetchCol());
+
+  return $count;
+}
+
+function validate_location1_data($state, $district, $tehsil) {
+  $query = \Drupal::database()->query("SELECT id FROM state_master_data where state=:state AND district=:district AND tehsil=:tehsil", array(':state' => $state, ':district' => $district, ':tehsil' => $tehsil));
+  $count = count($query->fetchCol());
+
+  return $count;
+}
+
+/**
+ * Implements hook_cache_flush().
+ *
+ * This function will clear both redis cache irrespective of
+ * which server triggered cache clear operation
+ */
+function custom_widget_cache_flush() {
+	// clear the menu cache
+	$config = \Drupal::service('config.factory')->getEditable('config.custom_widget');
+  $config->set('login_links', NULL);
+  $config->set('main_links', NULL);
+  $config->set('popular', NULL);
+  $config->set('footer_links', NULL);
+  $config->set('engine', NULL);
+  $config->save();
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function custom_widget_preprocess_block(&$vars) {
+  //- Change the block-id-name by your block id
+  if (isset($vars['elements']['content']['#block_content'])) {
+    $block_id = !is_null($vars['elements']['content']['#block_content']) ? $vars['elements']['content']['#block_content']->bundle() : '';
+
+    if($block_id == 'enquiry_form') {
+      //- This stops the block being cache in drupal 8
+      \Drupal::service('page_cache_kill_switch')->trigger();
+      $vars['#cache']['max-age'] = 0;
+      $temp_store_factory = \Drupal::service('session_based_temp_store');
+      $temp_store = $temp_store_factory->get('enquiry_form', 4800);
+      $token = bin2hex(random_bytes(32));
+      $temp_store->set('enquiry_form_csrf_token', $token);
+      $vars['enquiry_form_csrf_token'] = $token;
+    }
+
+    if ($block_id == 'simple_text_block') {
+      $vars['#attached']['library'][] = 'custom_widget/contact_us_thank_you_page';
+    }
+
+  }
+}

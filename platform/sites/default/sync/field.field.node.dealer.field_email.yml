@@ -1,0 +1,19 @@
+uuid: 0a9a552c-b48c-4298-91af-f93553a176b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.dealer
+id: node.dealer.field_email
+field_name: field_email
+entity_type: node
+bundle: dealer
+label: Email
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

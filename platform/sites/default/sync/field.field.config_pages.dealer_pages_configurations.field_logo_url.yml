@@ -1,0 +1,19 @@
+uuid: 9ff8a012-8441-4c2c-8e0f-ab8248c9483b
+langcode: en
+status: true
+dependencies:
+  config:
+    - config_pages.type.dealer_pages_configurations
+    - field.storage.config_pages.field_logo_url
+id: config_pages.dealer_pages_configurations.field_logo_url
+field_name: field_logo_url
+entity_type: config_pages
+bundle: dealer_pages_configurations
+label: 'Logo URL'
+description: 'The Swaraj Logo will use this URL when user clicks on it. It will always open in new tab.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

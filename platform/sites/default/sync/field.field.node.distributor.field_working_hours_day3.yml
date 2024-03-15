@@ -1,0 +1,19 @@
+uuid: bb190393-a090-4b86-aae6-57868e6f4fd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_working_hours_day3
+    - node.type.distributor
+id: node.distributor.field_working_hours_day3
+field_name: field_working_hours_day3
+entity_type: node
+bundle: distributor
+label: 'Working hours-Day3'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

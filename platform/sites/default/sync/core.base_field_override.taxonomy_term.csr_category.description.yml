@@ -1,0 +1,20 @@
+uuid: f8c6a468-63d0-4ace-91a1-51115286f618
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.csr_category
+  module:
+    - text
+id: taxonomy_term.csr_category.description
+field_name: description
+entity_type: taxonomy_term
+bundle: csr_category
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

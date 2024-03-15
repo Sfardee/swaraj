@@ -1,0 +1,20 @@
+uuid: b82fcc49-3f0e-4637-b0f7-434d58a28684
+langcode: en
+status: false
+dependencies:
+  theme:
+    - swaraj
+_core:
+  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
+id: swaraj_page_title
+theme: swaraj
+region: content
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

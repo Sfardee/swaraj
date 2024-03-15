@@ -1,0 +1,8 @@
+uuid: 1ffaf2d2-6395-499e-b872-57410dc9a351
+langcode: en
+status: true
+dependencies: {  }
+name: 'Implements Category'
+vid: implements_category
+description: ''
+weight: 0

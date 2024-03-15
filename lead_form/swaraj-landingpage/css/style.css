@@ -1,0 +1,133 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { margin:0px; padding:0px; text-decoration:none; list-style:none;}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary {display: block; padding:0px; margin:0px; border:none; outline:none;}
+body	{ background:#FFF; font:18px 'Mukta-Light', Arial, Helvetica, sans-serif; color: #41454e;}
+a,i,strong,p,img { border:none; outline:none;}
+
+ul, li { padding: 0; margin: 0; list-style: none; }
+a img { border: none } a { text-decoration: none; color:#FFF;} a:hover { text-decoration: underline; color:#FFF; }
+
+.FL{float:left}.FR{float:right}.CL{clear:both; font-size:0; line-height:0; height:0}.CL1{clear:both}
+.CTR{text-align:center}.TAR{text-align:right}.uline{text-decoration:underline}.UC{text-transform:uppercase}
+.clear 		{ display:block; clear:both; height:0px;}
+/*     Float containers fix 
+=============================== */
+.clearfix:after {content: ".";display: block;height: 0;clear: both;visibility: hidden}
+.clearfix{display: inline-block}
+/* Hides from IE-mac \*/
+* html .clearfix{height: 1%}
+.clearfix{display: block}
+/* End hide from IE-mac *//* reset CSS end here */
+
+
+@font-face {
+    font-family: 'Mukta-Light';
+    src: url('font/Mukta-Light.eot');
+    src: url('font/Mukta-Light.eot?#iefix') format('embedded-opentype'),
+         url('font/Mukta-Light.woff') format('woff'),
+         url('font/Mukta-Light.ttf') format('truetype'),
+         url('font/Mukta-Light.svg#autumn_in_novemberregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Mukta-Bold';
+    src: url('font/Mukta-Bold.eot');
+    src: url('font/Mukta-Bold.eot?#iefix') format('embedded-opentype'),
+         url('font/Mukta-Bold.woff') format('woff'),
+         url('font/Mukta-Bold.ttf') format('truetype'),
+         url('font/Mukta-Bold.svg#autumn_in_novemberregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* { box-sizing:border-box;}
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px
+}
+
+
+/* This is to remove the arrow of select element in IE */
+select::-ms-expand {	display: none; }
+select{ -webkit-appearance: none; appearance: none;}
+header img{width: 100%; height: auto; display: block;}
+.hero-mobile{display: none;}
+h1{font-size: 45px; font-family: 'Mukta-Bold'; color: #00793c; text-transform: uppercase; margin: 35px 0 0 0; line-height: 50px;}
+.titile-info{font-size: 25px;}
+.form-box{margin-top: 30px;}
+.form-box ul{list-style: none;}
+.form-box ul li{float: left; width: 50%; margin-bottom: 30px; padding:0 15px;}
+.form-box ul li .text-box{border: 1px solid #d5d7d4; height: 58px; padding:0 30px; width: 100%; font-size: 22px; line-height: 27px}
+.form-box ul li .text-box::placeholder,.form-box .dropdown-display .placeholder:first-child{color: #41454e;}
+.form-box ul li:last-child{width: 100%; float: none;}
+.form-box ul li:last-child .text-box{width: 50%; text-align: left;}
+.submit-box{padding-top: 15px}
+.submit-button{background: #009f4b; padding: 15px 80px; font-size: 22px; color: #FFF; border: 0;}
+
+.form-box .dropdown-display, .dropdown-display-label{border: 1px solid #d5d7d4; height: 58px; padding:10px 30px; width: 100%; font-size: 22px; border-radius: 0;}
+.form-box .dropdown-display .placeholder:first-child{font-size: 22px; line-height: 1.5; text-align: left; padding: 10px 30px; text-indent: 0;}
+.form-box .dropdown-display-label:after, .dropdown-display:after{border: 0; background: url(../images/dropdown-arrow.png) no-repeat 0 0; width: 16px; height: 9px; top: 23px;}
+.form-box .dropdown-clear-all{top: 13px;}
+.form-box .dropdown-option {width: 100%; margin: 0; padding: 5px;}
+.dropdown-multiple-label.active .dropdown-display-label:after, .dropdown-multiple-label.active .dropdown-display:after, .dropdown-multiple.active .dropdown-display-label:after, .dropdown-multiple.active .dropdown-display:after, .dropdown-single.active .dropdown-display-label:after, .dropdown-single.active .dropdown-display:after{border: 0;}
+.dropdown-selected{border: 1px solid #00793c; background: #00793c; border-radius: 10px; color: #FFF; font-size: 14px; padding: 0 10px; margin: 0 2px;}
+.dropdown-option.dropdown-chose:after{background: none; content: "×"; line-height: 1; font-size: 14px; width: 15px; height: 15px; background: #00793c; color: #FFF;}
+.dropdown-display .dropdown-chose-list span:before{display: none;}
+.dropdown-multiple:hover .dropdown-clear-all, .dropdown-single:hover .dropdown-clear-all{display: none !important}
+.select-dropdown {position: relative; font-size: 22px; line-height: 1.5;}
+.select-dropdown select {background: none; border-radius: 0; border: 1px solid #d5d7d4; height: 58px; padding:10px 30px; width: 100%; font-size: 22px; border-radius: 0;cursor: pointer; outline: none; /* remove focus ring from Webkit */ background: #ffffff; color: #41454e;  -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+.select-dropdown:after { content: ''; position: absolute; top: 0; right: 10px;  background:url(../images/dropdown-arrow.png) no-repeat 0 0;height: 9px; width: 16px; top: 23px; display:none \9; }
+
+.close-btn{text-align: right; padding: 20px 20px 0 0;}
+.close-btn a{background: url(../images/close-btn.png) no-repeat; width: 35px; height: 35px; display: inline-block;}
+
+#fade { display: none; background: #000;  position: fixed; left: 0; top: 0; z-index: 10; width: 100%; height: 100%; opacity: .80; }
+.popupBox2 { position: fixed; top: 50%; left: 50%; transform: translate(-50%,);z-index: 11; width:500px; display: none; background: #FFF; border: 5px solid #333; padding-bottom: 20px;}
+
+.close-dropdown{width: 20px; height: 20px; position: absolute; right: 6px; top: 17px; z-index: 2; background:#00793c; color: #FFF; border-radius: 50%; line-height: 1.2; display: none;}
+.dropdown-mul-2.active .close-dropdown{display: block;}
+.form-box .dropdown-display, .dropdown-display-label{text-align: left;}
+.validation-info{background: #bcead2; padding: 10px; margin: 20px 15px 0 15px;; font-size: 15px; text-align: left; color: #00793c;}
+
+footer{background: #585858; color: #FFF; text-align: center; margin-top: 60px; padding: 10px 15px}
+@media (min-width:768px) {
+    .container {
+        width: 750px
+    }
+}
+@media (min-width:992px) {
+    .container {
+        width: 970px
+    }
+}
+@media (min-width:1200px) {
+    .container {
+        width: 1170px
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    
+    
+	}
+@media only screen and (max-width: 767px){
+	/*Mobile*/
+    h1{font-size: 28px; display: none;}
+    .titile-info{display: none;}
+    .hero-desk{display: none;}
+    .hero-mobile{display: block;}
+    .form-box ul li,.form-box ul li:last-child .text-box{float: none; width: 100%;}
+    .form-box .dropdown-display .placeholder:first-child{font-size: 16px; line-height: 2.5;}
+    .form-box ul li .text-box,.select-dropdown select{font-size: 16px;}
+    .popupBox2{
+        width: 320px;
+    }
+}

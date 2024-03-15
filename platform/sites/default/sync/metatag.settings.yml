@@ -1,0 +1,92 @@
+entity_type_groups:
+  node:
+    article:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    csr:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    dealer:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    distributor:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    faq:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    features_implements:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    gallery:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    implements:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    milestone:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    news:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    page:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    product:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    team_member:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    testimonials:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang
+    webform:
+      basic: basic
+      advanced: advanced
+      open_graph: open_graph
+      site_verification: site_verification
+      hreflang: hreflang

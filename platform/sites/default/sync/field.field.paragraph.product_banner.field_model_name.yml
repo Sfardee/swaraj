@@ -1,0 +1,21 @@
+uuid: 55d9b9b7-e3a0-466e-bb9c-780474f548cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_model_name
+    - paragraphs.paragraphs_type.product_banner
+  module:
+    - text
+id: paragraph.product_banner.field_model_name
+field_name: field_model_name
+entity_type: paragraph
+bundle: product_banner
+label: 'Model Name'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

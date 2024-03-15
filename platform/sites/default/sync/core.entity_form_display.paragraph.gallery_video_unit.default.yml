@@ -1,0 +1,32 @@
+uuid: ef799cb3-7775-4033-b8f0-d183edb73ef5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery_video_unit.field_gallery_image_thumbnail
+    - field.field.paragraph.gallery_video_unit.field_video
+    - paragraphs.paragraphs_type.gallery_video_unit
+  module:
+    - media_library
+id: paragraph.gallery_video_unit.default
+targetEntityType: paragraph
+bundle: gallery_video_unit
+mode: default
+content:
+  field_gallery_image_thumbnail:
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_video:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,18 @@
+uuid: cbe638a4-71cb-4933-a766-5c8879fd9585
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.states
+id: taxonomy_term.states.changed
+field_name: changed
+entity_type: taxonomy_term
+bundle: states
+label: Changed
+description: 'The time that the term was last edited.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,27 @@
+uuid: 1e22fe62-3b0c-4202-8f46-550f58e74772
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_customer_image
+    - paragraphs.paragraphs_type.quick_tools
+  module:
+    - file
+id: paragraph.quick_tools.field_customer_image
+field_name: field_customer_image
+entity_type: paragraph
+bundle: quick_tools
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: svg
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

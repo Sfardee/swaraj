@@ -1,0 +1,17 @@
+name: Swaraj
+type: theme
+description: 'Swaraj theme created for Drupal 8'
+base theme: false
+
+libraries:
+- swaraj/global-styling
+
+regions:
+  content: Content
+
+version: '8.1'
+core: '8.x'
+project: 'drupal'
+datestamp: 1539754301
+
+screenshot: logo.png

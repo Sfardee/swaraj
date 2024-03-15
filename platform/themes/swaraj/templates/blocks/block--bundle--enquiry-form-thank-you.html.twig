@@ -1,0 +1,22 @@
+{% block blockcontent %}
+	{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+	<div data-block-id="{{ uuid }}">
+		<div class="dealer-banner">
+			<div class="dealer-left">
+				<div class="dealer-carousel owl-carousel">
+					{% for banner in block_content.field_banner_image %}
+						<figure>
+							<img src="{{ file_url(banner.entity.field_media_image.entity.fileuri) }}" alt="{{ banner.entity.field_media_image.alt }}" class="image-responsive">
+						</figure>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="dealer-right">
+				<div class="know-more form-container">
+					<h3 class="ft29">{{ block_content.field_title.value }}</h3>
+					<p class="MB30">{{ block_content.field_subtitle.value }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

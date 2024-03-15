@@ -1,0 +1,11 @@
+custom_widget:
+  version: VERSION
+  js:
+    js/logout.js: {}
+    js/jquery.alphanum.js: {}
+    js/validation.js: {}
+
+contact_us_thank_you_page:
+  version: VERSION
+  js:
+    js/contact_us_thank_you_page.js: {}

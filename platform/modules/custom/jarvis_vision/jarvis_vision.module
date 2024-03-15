@@ -1,0 +1,147 @@
+<?php
+/****************************************************************************************************
+  Jarvis sets up the basic overrides of Drupal.
+  This file is the bootstrap script for inclusion of the various configuration files and helpers
+  It is recommended for all conf/helpers to have the following convention
+  - Snake case naming
+  - Functions should be prefixed (E.g. str_ or arr_)
+  - Functions should be wrapped with (if !function_exists)
+  - PHPDoc annotations
+  - Minimal use of Drupal core code, or declared otherwise (for migration to other frameworks)
+****************************************************************************************************/
+
+use \Drupal\panels\Plugin\DisplayVariant\PanelsDisplayVariant;
+use \Drupal\Core\Form\FormStateInterface;
+use \Drupal\editor\Entity\Editor;
+
+// Includes the various helpers
+foreach (glob(dirname(__FILE__) . '/helpers/*.inc') as $filename) {
+  include_once $filename;
+}
+
+/**
+ * Implements hook_panels_build_alter().
+ */
+function jarvis_vision_panels_build_alter(&$build, PanelsDisplayVariant $panels_display) {
+  $builder = $panels_display->getBuilder();
+  $storage_type = $panels_display->getStorageType();
+
+  // Add our Javascript customizations for the IPE.
+  if ($builder->getPluginId() == 'ipe' && in_array($storage_type, ['panelizer_default', 'panelizer_field'])) {
+    $build['#attached']['library'][] = 'jarvis_vision/panels_ipe';
+  }
+}
+
+/**
+ * Adding CSS files into CKEditor
+ */
+function jarvis_vision_ckeditor_css_alter(array &$css, Editor $editor) {
+  if (!$editor->hasAssociatedFilterFormat()) {
+    return;
+  }
+
+  $known_formats = [
+    'basic_html',
+    'full_html'
+  ];
+
+  if (in_array($editor->getFilterFormat()->id(), $known_formats)) {
+    
+    $theme_config = \Drupal::config('system.theme');
+    $them_name = $theme_config->get('default');
+    $current_theme_path = drupal_get_path('theme', $them_name);
+
+    $custom_config = \Drupal::config('config.jarvis_vision');
+    $css_paths = $custom_config->get('css_paths');
+    if(!empty($css_paths)) {
+      $css_list = explode(',', $css_paths);
+      foreach ($css_list as $css_file) {
+        $css_file = trim($css_file);
+        $css[] = str_replace('%t', $current_theme_path, $css_file);
+      }
+    }
+  }
+}
+
+function jarvis_vision_editor_js_settings_alter(array &$settings) {
+  foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
+    if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
+      //echopre($settings);exit;
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['filebrowserBrowseUrl'] = '/browser/browse.php?type=Files';
+      //$settings['editor']['formats'][$text_format_id]['editorSettings']['skin'] = 'SKIN_NAME,ABSOLUTE_URL_TO_SKIN';
+    }
+  }
+}
+
+
+/**
+ * Function hook_preprocess
+ * Function used to set the default variables used in the theme.
+ */
+function jarvis_vision_preprocess(&$variables, $hook) {
+  global $base_url;
+  $variables['base_path'] = base_path();
+  $variables['base_url'] = $base_url;
+  $variables['theme_path'] = \Drupal::theme()->getActiveTheme()->getPath() . '/';
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+}
+
+/**
+ * Function hook_preprocess_HOOK 
+ * Function used to set the block variables Block content object, Block object & Block Menu object.
+ *
+ */
+function jarvis_vision_preprocess_block(&$variables) {
+  // -- Set block content variables for the template files 
+  if (!empty($variables['elements']) && isset($variables['elements']['content']['#block_content'])) {
+    $variables['block_content'] = $variables['elements']['content']['#block_content'];
+    $variables['full_content'] = $variables['elements']['content'];
+
+    if(!empty($variables['elements']['#configuration']['uuid'])) {
+      $uuid = $variables['elements']['#configuration']['uuid'];
+      $block_config = \Drupal::config('config.jarvis_vision.block_styles');
+
+      $variables['block_styles'] = $block_config->get($uuid) ? $block_config->get($uuid) : array();
+    } else {
+      $variables['block_styles'] = array();
+    }
+
+    //echopre(entity_load('paragraph', $variables['elements']['content']['#block_content']->field_hero_banner->getValue()[0]['target_id']));
+  }
+  
+  if($variables['base_plugin_id'] == 'system_menu_block') {
+    $variables[$variables['derivative_plugin_id'].'_menus'] = $variables['elements']['content']['#items'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_page() to set 40x template suggestions
+ */
+function jarvis_vision_theme_suggestions_page(array $variables) {
+  $path_args = explode('/', trim(\Drupal::service('path.current')->getPath(), '/'));
+  $suggestions = theme_get_suggestions($path_args, 'page');
+  $http_error_suggestions = [
+    'system.401' => 'page__401',
+    'system.403' => 'page__403',
+    'system.404' => 'page__404',
+  ];
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if (isset($http_error_suggestions[$route_name])) {
+    $suggestions[] = $http_error_suggestions[$route_name];
+  }
+
+  return $suggestions;
+}
+
+
+/**
+ * Function hook_theme_suggestions_HOOK_alter
+ * This function used to set the block theme suggestions.
+ *
+ */
+function jarvis_vision_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // -- Set the block template file name suggestion 
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}

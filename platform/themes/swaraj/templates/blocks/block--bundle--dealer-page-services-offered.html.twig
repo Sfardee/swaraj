@@ -1,0 +1,30 @@
+{% block blockcontent %}
+	{% set nodes = [] %}
+	{% for services in full_content.field_services_offered %}
+		{% if services['#paragraph'] %}
+			{% set nodes = nodes | merge([services['#paragraph']]) %}
+		{% endif %}
+	{% endfor %}
+	{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+	<div data-block-id="{{ uuid }}">
+		<div class="services-offered">
+			<div class="container">
+				<h4 class="CTR">{{ block_content.field_title.value }}</h4>
+				<div class="swaraj-carousel owl-carousel green">
+					{% for service in nodes %}
+					<div>
+						<div class="CTR">
+							<figure>
+								<img src="{{ file_url(service.field_customer_image.entity.fileuri) }}" alt="{{ service.field_customer_image.alt }}" class="normal-img" >
+								<img src="{{ file_url(service.field_customer_hover_image.entity.fileuri) }}" alt="{{ service.field_customer_hover_image.alt }}" class="hover-img" >
+							</figure>
+							<h3>{{ service.field_name.value | raw }}</h3>
+                			<p>{{ service.field_model_name.value | raw }}</p>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+uuid: bb60de57-7716-4eb8-917e-8a6ef5b749e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: dealer_page_url_alias
+label: 'Dealer page URL alias'
+type: 'canonical_entities:node'
+pattern: 'dealer/[node:field_dealer_name]'
+selection_criteria:
+  9a9e6613-d0bb-4c30-a146-9bc9589712d9:
+    id: node_type
+    bundles:
+      dealer: dealer
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 9a9e6613-d0bb-4c30-a146-9bc9589712d9
+selection_logic: and
+weight: -5
+relationships: {  }

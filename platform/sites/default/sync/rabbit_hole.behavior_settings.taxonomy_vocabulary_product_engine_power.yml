@@ -1,0 +1,14 @@
+uuid: fefec7e6-75da-41f8-9e1c-a75531e71109
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_engine_power
+id: taxonomy_vocabulary_product_engine_power
+entity_type_id: taxonomy_vocabulary
+entity_id: product_engine_power
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

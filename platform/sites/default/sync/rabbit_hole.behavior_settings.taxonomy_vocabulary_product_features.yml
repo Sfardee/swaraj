@@ -1,0 +1,14 @@
+uuid: ba542e13-af2a-4d2f-bc32-ed2e45b0a46a
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.product_features
+id: taxonomy_vocabulary_product_features
+entity_type_id: taxonomy_vocabulary
+entity_id: product_features
+action: display_page
+allow_override: 1
+redirect: ''
+redirect_code: 301
+redirect_fallback_action: access_denied

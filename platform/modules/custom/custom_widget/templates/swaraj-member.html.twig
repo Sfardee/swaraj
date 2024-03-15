@@ -1,0 +1,44 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+<section class="key-leader">
+  <div class="container os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+    <h5>{{ data.title|trans }}</h5>
+    {{ data.team }}
+  </div>
+</section>
+{% for val in data.details %}
+<div class="modal fade" id="teamModal{{ val.nid }}" role="dialog">
+  <div class="container">
+    <div class="close-video close-btn">
+      <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+    </div>
+    <div class="leader-poup">
+      <div class="row">
+        <div class="col-md-4"><img alt="" class="resize lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ val.image }}"></div>
+        <div class="col-md-8">
+          <div class="leader-info">
+            <h5>{{ val.name }}</h5>
+            <div class="clearfix">
+              <p class="FL MT5">{{ val.desi }}</p>
+              <p class="FR sos-icon">{% trans %}Follow on{% endtrans %}
+              {% if val.twitter %}
+                <a class="ML10" target="_blank" href="{{ val.twitter }}">
+                  <i class="fa fa-twitter"></i>
+                </a>
+                {% endif %}
+                {% if val.linkedin %}
+                <a href="{{ val.linkedin }}" target="_blank">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+                {% endif %}
+              </p>
+            </div>
+            <div>
+              {{ val.body|raw }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

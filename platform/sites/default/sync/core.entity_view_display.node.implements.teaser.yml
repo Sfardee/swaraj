@@ -1,0 +1,62 @@
+uuid: b716edb6-ffc3-4377-b878-710af79cd5b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.implements.body
+    - field.field.node.implements.field_address
+    - field.field.node.implements.field_brakes
+    - field.field.node.implements.field_breadcrumbs
+    - field.field.node.implements.field_brochure
+    - field.field.node.implements.field_category
+    - field.field.node.implements.field_cdms_identifier
+    - field.field.node.implements.field_cylinders
+    - field.field.node.implements.field_engine
+    - field.field.node.implements.field_gearbox
+    - field.field.node.implements.field_h1_title
+    - field.field.node.implements.field_horsepower
+    - field.field.node.implements.field_image
+    - field.field.node.implements.field_implement_image
+    - field.field.node.implements.field_latitude
+    - field.field.node.implements.field_longitude
+    - field.field.node.implements.field_meta_tags
+    - field.field.node.implements.field_pto_hp
+    - field.field.node.implements.field_wheel_drive
+    - field.field.node.implements.panelizer
+    - node.type.implements
+  module:
+    - user
+id: node.implements.teaser
+targetEntityType: node
+bundle: implements
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_address: true
+  field_brakes: true
+  field_breadcrumbs: true
+  field_brochure: true
+  field_category: true
+  field_cdms_identifier: true
+  field_cylinders: true
+  field_engine: true
+  field_gearbox: true
+  field_h1_title: true
+  field_horsepower: true
+  field_image: true
+  field_implement_image: true
+  field_latitude: true
+  field_longitude: true
+  field_meta_tags: true
+  field_pto_hp: true
+  field_wheel_drive: true
+  langcode: true
+  panelizer: true
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: c6e4678c-df9e-4026-963f-55c974d72f63
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.csr
+id: node.csr.sticky
+field_name: sticky
+entity_type: node
+bundle: csr
+label: 'Sticky at top of lists'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

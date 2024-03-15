@@ -1,0 +1,51 @@
+uuid: 43c7e9f5-e1ce-4f8b-805d-46a3605825d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.about_us.field_customer_hover_image
+    - field.field.paragraph.about_us.field_customer_image
+    - field.field.paragraph.about_us.field_model_name
+    - field.field.paragraph.about_us.field_name
+    - paragraphs.paragraphs_type.about_us
+  module:
+    - file
+    - text
+id: paragraph.about_us.default
+targetEntityType: paragraph
+bundle: about_us
+mode: default
+content:
+  field_customer_hover_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_customer_image:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_model_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

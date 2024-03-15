@@ -1,0 +1,28 @@
+{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+
+<div class="container ourpride-title os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+  <div class="row">
+    <div class="col-md-12 CTR">
+      <h4>{{ data.text }}</h4>
+      <p>{{ data.subtext }}</p>
+    </div>
+  </div>
+</div>
+<section class="our-pride">
+  <div class="tesimonial-carousel owl-carousel os-animation" data-os-animation-delay="0s" data-os-animation="fadeInUp">
+  {% for value in data.data %}
+    <div>
+      <div class="our-pride-box flex-row">
+        <figure><img alt="" class="hidden-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ value.image }}">
+          <img alt="" class="visible-xs lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ value.mobile_image }}"></figure>
+        <div class="tesimonial-box">
+          <p><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}svg/tesimonial.svg" width="40"></p>
+          {{ value.body|raw }}
+          <p class="name-box">{{ value.author }}</p>
+          <p>{{ value.location }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

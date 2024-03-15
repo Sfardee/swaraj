@@ -1,0 +1,20 @@
+uuid: 748c4480-0598-4be6-bd2c-732920ec96c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dealer
+  module:
+    - path
+id: node.dealer.path
+field_name: path
+entity_type: node
+bundle: dealer
+label: 'URL alias'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

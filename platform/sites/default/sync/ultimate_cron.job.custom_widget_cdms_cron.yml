@@ -1,0 +1,30 @@
+uuid: 6bee067a-0cb9-403f-a8e5-be01de9a0d7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_widget
+title: 'CDMS FTP export cron handler'
+id: custom_widget_cdms_cron
+weight: 0
+module: custom_widget
+callback: custom_widget_cdms_cron
+scheduler:
+  id: crontab
+  configuration:
+    rules:
+      - '0 1 * * *'
+    catch_up: 0
+launcher:
+  id: serial
+  configuration:
+    timeouts:
+      lock_timeout: 3600
+    launcher:
+      thread: 0
+logger:
+  id: database
+  configuration:
+    method: '3'
+    expire: 1209600
+    retain: 1000

@@ -1,0 +1,72 @@
+{% block blockcontent %}
+	{% set image_path = base_path ~ 'themes/swaraj/images/' %}
+	<div data-block-id="{{ uuid }}">
+		<div class="dealer-banner">
+			<div class="dealer-left">
+				<div class="dealer-carousel owl-carousel">
+					{% for banner in block_content.field_banner_image %}
+						<figure>
+							<img src="{{ file_url(banner.entity.field_media_image.entity.fileuri) }}" alt="{{ banner.entity.field_media_image.alt }}" class="image-responsive">
+						</figure>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="dealer-right">
+				<div class="know-more form-container">
+					<h3>{{ block_content.field_title.value }}</h3>
+					<p class="MB30">{{ block_content.field_subtitle.value }}</p>
+					<form id="dealerContactForm" class="notranslate" autocomplete="off">
+						<div class="MB15">
+							<input name="name" id="name" type="text" maxlength="50" minlength="3" onchange="this.checkValidity();" pattern="[A-Za-z][A-Za-z '.]+" required class="input-box" placeholder="Name*">
+						</div>
+						<div class="MB15">
+							<input id="mobile_number" name="number" type="text" id="mobile_number" placeholder="Phone Number*" class="input-box" required maxlength="10" minlength="10" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter valid 10 digit mobile number.')" pattern="^[6789]\d{9}$">
+						</div>
+						<div class="form-group">
+							<select class="selectpicker" name="state" id="state" title="Location (State) *" required>
+								{% for val in states %}
+									<option value="{{ val }}">{{ val }}</option>
+								{% endfor %}
+							</select>
+						</div>
+						<div class="form-group">
+							<select class="selectpicker" id="district" name="district" title="District" placeholder="District" disabled="disabled">
+                  			</select>
+						</div>
+						<div class="MB30">
+							<textarea name="message" class="input-box" placeholder="Message (optional)" id="message1" maxlength="50"></textarea>
+						</div>
+						<input type="hidden" name="dealer_id" value="{{ dealerid }}">
+						<input type="hidden" name="dealer_name" value="{{ dealername }}">
+						<input type="hidden" name="dealer_state" value="{{ dealerstate }}">
+						<input type="hidden" name="dealer_email" value="{{ dealeremail }}">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" required> {{ block_content.field_disclaimer_text.value | raw }}
+							</label>
+						</div>
+						<div>
+							<input type="submit" id="dealerContactSubmit" class="btn btn-default" value="Submit">
+						</div>
+					</form>
+				</div>
+				<div class="popupBox2" id="dialog">
+					<p class="close-btn">
+						<a href="javascript:;"></a>
+					</p>
+					<div class="CTR">
+						<figure><img alt="" class="lozad animated" style="animation-duration: 1.4s" data-animation="fadeInUp" data-src="{{ image_path }}popup-img.gif"></figure>
+						<div class="content">
+							<h4>
+								Thank you for reaching out
+							</h4>
+							<p>
+								We appreciate your effort and time, someone from SWARAJ family will contact you soon
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
