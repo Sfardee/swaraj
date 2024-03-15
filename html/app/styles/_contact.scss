@@ -1,0 +1,552 @@
+.contact-hero {
+    &.inner-hero {
+        .text-right {
+            border-right: solid 1px $c-gray6;
+            padding-right: 30px;
+            padding-top: 25px;
+            padding-bottom: 20px;
+            margin-right: -15px;
+
+            @include breakpoint($mxw768) {
+                padding: 0px;
+                margin: 0px;
+                border: 0px;
+                text-align: center;
+            }
+
+            h4 {
+                text-align: right;
+                @include breakpoint($mxw768) {
+                    text-align: center;
+                }
+            }
+        }
+
+        .text-left {
+            padding-right: 0px;
+            padding-top: 34px;
+            padding-bottom: 20px;
+            padding-left: 15px;
+            h5 {
+                text-align: left;
+                font-size: 22px;
+                font-family: $font-bold;
+                text-transform: uppercase;
+
+                @include breakpoint($mxw768) {
+                    text-align: center;
+                }
+            }
+
+            @include breakpoint($mxw768) {
+                text-align: center;
+                padding-left: 0px;
+                padding-top: 0px;
+            }
+        }
+
+        hr {
+            width: 200px;
+            margin: 25px auto;
+            border-color: rgba($c-white, 0.4);
+        }
+    }
+}
+
+.connect-box {
+    padding: 60px 0;
+    @include breakpoint($mxw768) {
+        padding: 0;
+    }
+    h4 {
+        margin-top: 40px;
+        @include breakpoint($mxw768) {
+            text-align: left;
+            font-size: 45px;
+        }
+    }
+    small {
+        font-size: 15px;
+        margin-top: 15px;
+        display: block;
+    }
+    .business-select-box {
+        font-size: 18px;
+        margin-top: 40px;
+        @include breakpoint($mxw768) {
+            text-align: left;
+        }
+        span {
+            display: inline-block;
+            &.iam,
+            &.for {
+                vertical-align: bottom;
+            }
+
+            .dropdown-toggle {
+                .bs-caret {
+                    display: none;
+                }
+                &:after {
+                    border: 0;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    content: "\f107";
+                    font-size: 30px;
+                    margin-right: 0px;
+                    position: absolute;
+                    bottom: 0px;
+                    color: $c-green;
+                }
+            }
+
+            .bootstrap-select.btn-group .dropdown-toggle .caret {
+                right: 4px;
+            }
+
+            .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+                .btn-default {
+                    padding: 0px 30px 0 5px;
+                    border: 0px;
+                    font-size: 22px;
+                    font-family: $font-bold;
+                    color: $c-green3;
+                    position: relative;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+
+    &.near-me-contact {
+        .spec-list-box {
+            @include breakpoint($mxw768) {
+                margin-top: 30px;
+                margin-bottom: 40px;
+            }
+        }
+        h4 {
+            @include breakpoint($mxw768) {
+                font-size: 30px;
+            }
+        }
+
+        small {
+            @include breakpoint($mxw768) {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.tell-us-box {
+    padding: 30px 0 60px 0px;
+    @include breakpoint($mxw768) {
+        padding-bottom: 0px;
+        .flex-row {
+            display: block;
+        }
+    }
+    h5 {
+        text-align: center;
+        font-size: 22px;
+        font-family: $font-bold;
+        margin-bottom: 60px;
+        color: $c-green2;
+        text-transform: uppercase;
+        @include breakpoint($mxw768) {
+            display: none;
+        }
+    }
+    .about-bx {
+        margin-top: 0px;
+        padding-left: 100px;
+        padding-right: 60px;
+
+        @include breakpoint($mxw768) {
+            border-right: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 50px;
+        }
+
+        .svg {
+            margin-bottom: 25px;
+            @include breakpoint($mxw768) {
+                display: none;
+            }
+        }
+        .para {
+            line-height: 1.5;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+        h6 {
+            font-size: 22px;
+            color: $c-green3;
+            text-transform: uppercase;
+            font-family: $font-bold;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+    }
+
+    &.test-drive-bx {
+        .about-bx {
+            @include breakpoint($mxw768) {
+                border-top: solid 1px rgba($c-green, 0.2);
+            }
+        }
+
+        .form-container {
+            @include breakpoint($mxw769) {
+                padding-top: 15%;
+            }
+
+            @include breakpoint($mxw768) {
+                padding-top: 0px;
+            }
+        }
+    }
+
+    &.located-bx {
+        .about-bx {
+            @include breakpoint($mxw768) {
+                border-top: solid 1px rgba($c-green, 0.2);
+            }
+        }
+    }
+
+    &.feedback {
+        .about-bx {
+            @include breakpoint($mxw768) {
+                padding-top: 0px;
+            }
+        }
+
+        h5 {
+            margin-bottom: 20px;
+        }
+        .spec-list-box {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            ul {
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            @include breakpoint($mxw768) {
+                border-top: solid 1px rgba($c-green, 0.2);
+                margin-top: 0px;
+                margin-bottom: 15px;
+                padding-top: 55px;
+
+                ul {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &.form-btn-bx {
+        padding: 0px;
+        .full-width {
+            width: 100%;
+            .halfWidth {
+                width: 49%;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.btn-default.sb-btn {
+    background-image: url("../images/btn-bg.jpg");
+    background-size: cover;
+    color: $c-white;
+    font-size: 22px;
+    font-family: $font-bold;
+    border-radius: 0px;
+    text-transform: inherit;
+    height: 76px;
+    width: 50%;
+    text-align: center;
+    padding: 0px;
+
+    &:hover {
+        background-image: url("../images/btn-bg.jpg");
+        background-size: cover;
+    }
+}
+
+.btn-default.ref-btn {
+    background: inherit;
+    color: $c-green3;
+    font-size: 22px;
+    font-family: $font-bold;
+    border-radius: 0px;
+    text-transform: inherit;
+    height: 76px;
+    border-top: solid 1px #dddddd;
+    width: 50%;
+    text-align: center;
+    padding: 0px;
+
+    &:hover {
+        background: inherit;
+    }
+}
+
+.form-container {
+    margin-left: -15px;
+    padding-left: 70px;
+    border-left: solid 1px rgba($c-green, 0.2);
+    @include breakpoint($mxw768) {
+        padding-left: 0px;
+        margin-left: 0px;
+        border: 0px;
+    }
+    h5 {
+        font-size: 15px;
+        text-align: left;
+        margin-bottom: 30px;
+
+        &.locate-m {
+            img {
+                padding-right: 7px;
+                vertical-align: sub;
+            }
+        }
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    textarea {
+        &.form-control {
+            height: auto;
+        }
+    }
+    .form-control {
+        border-radius: 0px;
+        box-shadow: inherit;
+        height: 60px;
+        line-height: 2;
+        padding: 10px 30px;
+        font-size: 15px;
+        color: $c-body;
+        border: solid 1px $c-gray7;
+
+        &.date {
+            background-image: url("../images/svg/date-icon.svg");
+            background-repeat: no-repeat;
+            background-size: 24px 24px;
+            background-position: 96% center;
+        }
+    }
+
+    .bootstrap-select > .dropdown-toggle.bs-placeholder,
+    .bootstrap-select > .dropdown-toggle.bs-placeholder:hover,
+    .bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+    .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+        color: $c-body;
+        border: solid 1px $c-gray7;
+        height: 60px;
+    }
+
+    .bootstrap-select {
+        .dropdown-toggle {
+            .bs-caret {
+                display: none;
+            }
+            &:after {
+                border: 0;
+                font: normal normal normal 14px/1 FontAwesome;
+                content: "\f107";
+                font-size: 30px;
+                margin-right: 0px;
+                position: absolute;
+                bottom: 11px;
+                right: 20px;
+                color: $c-green;
+            }
+        }
+    }
+}
+
+.step-bx {
+    .step {
+        color: #dee1e2;
+        font-size: 22px;
+        font-family: $font-bold;
+        padding: 20px 10px 5px;
+        line-height: 1.3;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+        border-bottom: solid 1px #dcdcdc;
+
+        &:first-child {
+            border-top: solid 1px #dcdcdc;
+        }
+
+        span {
+            padding: 3px;
+            height: 35px;
+            width: 35px;
+            display: inline-block;
+            background: #f9f9f9;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+}
+
+.next-btn {
+    margin-top: 15px;
+    a {
+        background: $c-green2;
+        color: $c-white;
+        padding: 12px 45px;
+        border-radius: 30px;
+        text-transform: uppercase;
+    }
+}
+@include breakpoint($mxw768) {
+    .test-drive-bx,
+    .located-bx,
+    .feedback {
+        display: none;
+    }
+}
+
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.highlighted.active,
+.datepicker table tr td.active.highlighted:active,
+.datepicker table tr td.active:active {
+    color: #fff;
+    background-color: $c-green3;
+    border-color: #204d74;
+}
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+    right: inherit;
+    left: 30px;
+}
+.bootstrap-select {
+    &.btn-group.show-tick .dropdown-menu {
+        .notify {
+            color: $c-black;
+        }
+    }
+    &.btn-group.show-tick .btn-default {
+        span {
+            &.filter-option {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-right: 30px;
+            }
+        }
+    }
+    &.btn-group.show-tick .dropdown-menu li a {
+        padding-left: 50px;
+        background: url("../images/sqr-icon.jpg") no-repeat;
+        background-position: 30px 6px;
+        position: relative;
+    }
+    .dropdown-header {
+        color: $c-green2;
+        font-size: 15px;
+        font-family: $font-bold;
+    }
+    .dropdown-menu li {
+        padding: 6px 0px;
+        a {
+            span {
+                &.glyphicon {
+                    font: normal normal normal 14px/1 FontAwesome;
+                    &.glyphicon-ok::before {
+                        content: "\f00c";
+                        color: $c-green3;
+                    }
+                }
+            }
+        }
+        &.dropdown-header {
+            padding: 4px 30px;
+        }
+        &.divider {
+            height: 0px;
+            padding: 0px;
+        }
+    }
+}
+
+.popupBox2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 12;
+    width: 500px;
+    display: none;
+    background: #fff;
+    border: 5px solid #333;
+    padding-bottom: 20px;
+
+    @include breakpoint($mxw768) {
+        width: 90%;
+    }
+
+    .content {
+        padding: 0 20px;
+        h4 {
+            font-size: 20px;
+        }
+    }
+}
+
+.close-btn {
+    text-align: right;
+    padding: 20px 20px 0 0;
+    a {
+        background: url(../images/close-btn.png) no-repeat;
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+    }
+}
+
+#fade {
+    display: none;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 11;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.new-form-enquery{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .radio-btn-container{
+        .radio-inline + .radio-inline{
+            margin-left: 0px;
+        }
+        .inp-cont{
+            padding-right: 30px;
+        }
+    }
+    &.form-container{
+        border: 0px;
+        margin-left: 0px;
+        padding: 0px;
+    }
+    
+}

@@ -1,0 +1,196 @@
+.milestone {
+    margin-top: 50px;
+
+    @include breakpoint($mxw768) {
+        background: url(../images/dotted.png) repeat-x left bottom;
+    }
+}
+
+/*.milestone-info{
+    .tab-content{
+        min-height:290px;
+        height: 290px;
+    }
+}*/
+body.explorer.explorer11 {
+    .milestone-info {
+        padding-top: 50px;
+    }
+}
+
+.milestoneBox-carousel .owl-stage-outer {
+    height: 290px;
+
+    @include breakpoint($mxw992) {
+        height: 610px;
+    }
+
+    @include breakpoint($mxw768) {
+        height: auto;
+
+    }
+}
+
+.milestone-carousel {
+
+    &.owl-carousel .owl-nav .owl-prev,
+    &.owl-carousel .owl-nav .owl-next {
+        height: 26px;
+        width: 16px;
+        margin-top: -13px;
+    }
+
+    &.owl-carousel .owl-nav .owl-prev {
+        background: url(../images/arrow-left.png) no-repeat;
+
+    }
+
+    &.owl-carousel .owl-nav .owl-next {
+        background: url(../images/arrow-right.png) no-repeat;
+    }
+}
+
+.milestone-tabs {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 10px;
+
+    @include breakpoint($mxw768) {
+        padding-top: 5px;
+        font-size: 18px;
+    }
+
+    a {
+        color: $c-green3;
+    }
+
+    &.active {
+        padding-top: 0;
+        font-family: $font-bold;
+        font-size: 42px;
+
+        @include breakpoint($mxw768) {
+            font-size: 24px;
+        }
+
+        a {
+            border-bottom: 3px solid $c-green2;
+        }
+    }
+}
+
+.TAR.MT5 {
+    @include breakpoint($mxw768) {
+        text-align: center;
+    }
+
+}
+
+.milestone-info {
+    background: url(../images/milestone.jpg) no-repeat center center;
+    min-height: 400px;
+    background-size: cover;
+    margin-top: 55px;
+    display: flex;
+    align-items: center;
+
+    @include breakpoint($mxw992) {
+        padding-bottom: 30px;
+    }
+
+    @include breakpoint($mxw768) {
+        display: block;
+        margin-top: 45px;
+    }
+
+    .milestone-box {
+        background: rgba($c-white, .7);
+        padding: 20px 25px;
+        height: 290px;
+        width: 360px;
+
+        @include breakpoint($mxw1200) {
+            width: auto;
+        }
+
+        @include breakpoint($mxw992) {
+            margin-top: 30px;
+            height: 170px;
+            background: $c-white;
+        }
+
+        @include breakpoint($mxw768) {
+            height: auto;
+        }
+
+        h3 {
+            font-family: $font-bold;
+            color: $c-green2;
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        .designation {
+            color: rgba($c-body, .7);
+        }
+
+        &.active {
+            background: $c-white;
+        }
+
+    }
+
+    .owl-dots {
+        position: absolute;
+        top: -90px;
+        margin: 0;
+        background: url(../images/dotted.png) repeat-x left center;
+        width: 100%;
+        height: 14px;
+
+        @include breakpoint($mxw992) {
+            top: -40px;
+        }
+
+        .owl-dot {
+            position: relative;
+
+            &:before {
+                width: 5px;
+                height: 10px;
+                background: $c-white;
+                position: absolute;
+                content: "";
+                left: -6px;
+                top: 5px;
+            }
+
+            &:after {
+                width: 5px;
+                height: 10px;
+                background: $c-white;
+                position: absolute;
+                content: "";
+                right: -6px;
+                top: 5px;
+            }
+        }
+    }
+}
+
+.our-journey {
+    h5 {
+        font-family: $font-light;
+        font-size: 24px;
+        line-height: 1.5;
+
+        strong {
+            font-family: $font-bold;
+            color: $c-green2;
+        }
+    }
+}
+
+.ilestoneBox-carousel {
+    //height: 290px;
+}

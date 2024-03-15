@@ -1,0 +1,365 @@
+/* animation */
+
+.os-animation {
+  opacity: 0;
+}
+
+.os-animation.animated {
+  opacity: 1;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+
+.svg-box {
+  width: 26%;
+  //border-right: 1px solid $c-white;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-svg {
+  position: absolute;
+  z-index: 1;
+  width: 580px;
+  top: -100px;
+  opacity: 0.05;
+  transform: rotate(-180deg);
+  left: 10px;
+  .st0 {
+    stroke: $c-white;
+  }
+}
+.hero-svg-2 {
+  position: absolute;
+  z-index: 1;
+  width: 1160px;
+  bottom: -130px;
+  opacity: 0.05;
+  left: -490px;
+  .st0 {
+    stroke: $c-white;
+  }
+}
+.hero-container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 130px;
+  z-index: 1;
+  @include breakpoint($mxw992) {
+    top: 100px;
+  }
+  @include breakpoint($mxw768) {
+    top: 80px;
+
+    .product-info {
+      flex-direction: column;
+    }
+    .campion-info {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+.inner-hero {
+  .hero-box {
+    max-width: 100%;
+    width: 100%;
+    .img-responsive {
+      width: 100%;
+    }
+
+    figure {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.hero-box {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  figure {
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    @include breakpoint($mxw1000) {
+      font-size: 30px;
+    }
+    @include breakpoint($mxw992) {
+      font-size: 30px;
+    }
+    @include breakpoint($mxw768) {
+      font-size: 25px;
+    }
+    span {
+      font-size: 140px;
+      display: block;
+      line-height: 0.8;
+      @include breakpoint($mxw1000) {
+        font-size: 70px;
+      }
+
+      @include breakpoint($mxw992) {
+        font-size: 70px;
+      }
+      @include breakpoint($mxw768) {
+        font-size: 50px;
+      }
+    }
+  }
+  h3 {
+    font-size: 30px;
+    font-family: $font-bold;
+    color: $c-white;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+      @include breakpoint($mxw1000) {
+          font-size: 20px;
+      }
+    @include breakpoint($mxw992) {
+      font-size: 20px;
+      margin: 0 0 10px 0;
+    }
+  }
+  font-size: 15px;
+  color: $c-white;
+}
+
+.hero-carousel {
+  background: $c-green3 url(../images/hero-1-big.jpg) repeat left top;
+  overflow: hidden;
+  &:before {
+    background: #013b47;
+    content: "";
+    position: absolute;
+    height: 765px;
+    left: 0;
+    top: 0;
+    width: 50%;
+  }
+  &.owl-carousel .owl-item img {
+    width: auto;
+    @include breakpoint($mxw768) {
+      width: 100%;
+    }
+  }
+  .campion-info {
+    .center-hero {
+      margin: 0 auto;
+    }
+  }
+  .hero-container .campion-info img {
+    @include breakpoint($mxw1200) {
+      width: 90%;
+    }
+    @include breakpoint($mxw1000) {
+      width: 80%;
+    }
+  }
+
+  @include breakpoint($mxw768) {
+    overflow: hidden;
+    .hero-container .product-info img {
+      width: 85%;
+      margin: 0 auto;
+    }
+    .hero-container .campion-info img {
+      width: 85%;
+    }
+  }
+  .owl-dots {
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    @include breakpoint($mxw992) {
+      left: 7%;
+    }
+    @include breakpoint($mxw768) {
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .owl-dot {
+      display: inherit;
+      @include breakpoint($mxw992) {
+        display: inline-block;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.owl-carousel {
+    .owl-nav {
+      .owl-prev {
+        background: url(../images/svg/arrow-left.svg) no-repeat 0 0;
+        left: 70px;
+        height: 20px;
+      }
+
+      .owl-next {
+        background: url(../images/svg/arrow-right.svg) no-repeat 0 0;
+        right: 70px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  background: transparent;
+  li {
+    a {
+      color: $c-gray5;
+    }
+  }
+  li + li:before {
+    content: "> ";
+  }
+  @include breakpoint($mxw769) {
+    display: none;
+  }
+}
+
+.inner-hero {
+  &.media-hero-carousel {
+    .hero-box {
+      .breadcrumb {
+        z-index: 1;
+      }
+    }
+  }
+
+  .hero-container {
+    @include center(y);
+  }
+
+  .container {
+    position: relative;
+  }
+  .hero-box {
+    .breadcrumb {
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    @include breakpoint($mxw768) {
+      img.img-responsive {
+        width: 100%;
+      }
+    }
+  }
+  h4 {
+    color: $c-white;
+    font-size: 68px;
+    @include breakpoint($mxw768) {
+      font-size: 45px;
+    }
+  }
+  h5 {
+    margin-top: 200px;
+    font-size: 54px;
+    font-family: $font-bold;
+    span{
+      display: block;
+    }
+    @include breakpoint($mxw1000) {
+      font-size: 45px;
+    }
+    @include breakpoint($mxw992) {
+      margin-top: 130px;
+      font-size: 32px;
+    }
+    &.MT0{
+      margin-top: 0px;
+    }
+  }
+}

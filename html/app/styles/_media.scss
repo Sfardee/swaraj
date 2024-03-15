@@ -1,0 +1,452 @@
+.media-hero-carousel,
+.artile-hero-bx {
+    @include breakpoint($mxw769) {
+        .hero-box {
+            h1 {
+                font-size: 45px;
+            }
+            h3 {
+                font-size: 25px;
+            }
+        }
+    }
+
+    &.owl-carousel .owl-item img {
+        @include breakpoint($mxw769) {
+            width: 100%;
+        }
+    }
+
+    .owl-dots {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+    }
+}
+.round-inpt {
+    border-radius: 30px;
+    .btn.dropdown-toggle.btn-default {
+        border-radius: 30px;
+        border: 1px solid $c-green2;
+        color: $c-green3;
+        font-family: $font-light;
+        font-weight: bold;
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+}
+
+.group-datePicker {
+    width: 253px;
+    display: inline-block;
+    margin-right: 25px;
+    vertical-align: top;
+
+    @include breakpoint($mxw769) {
+        width: 173px;
+    }
+
+    @include breakpoint($mxw768) {
+        width: 100%;
+        margin-top: 15px;
+        margin-right: 0px;
+    }
+
+    input {
+        border-radius: 30px;
+        border: 1px solid $c-green2;
+        color: $c-green3;
+        padding: 8px 20px;
+        height: 54px;
+        font-family: $font-light;
+        font-weight: bold;
+        font-size: 16px;
+        background-image: url(../images/svg/date-icon.svg);
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        background-position: 90% center;
+    }
+}
+.news-bx {
+    .bootstrap-select.btn-group .dropdown-toggle .caret {
+        right: 22px;
+    }
+    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+        width: 253px;
+        display: inline-block;
+        font-family: $font-light;
+        font-weight: bold;
+        vertical-align: baseline;
+
+        @include breakpoint($mxw769) {
+            width: 193px;
+        }
+
+        @include breakpoint($mxw768) {
+            width: 100%;
+            margin-top: 15px;
+        }
+    }
+}
+
+@include breakpoint($mxw769) {
+    .media-list-link {
+        ul li {
+            padding: 20px;
+        }
+    }
+}
+@include breakpoint($mxw769) {
+    .news-contentTab {
+        .tab-pane {
+            margin-bottom: 60px;
+            .row.MT50 {
+                margin-top: 20px;
+            }
+
+            .row.MT40 {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.gallerySec {
+    padding: 70px 0;
+    @include breakpoint($mxw768) {
+        padding: 30px 0 70px 0;
+        .view-all {
+            margin-top: 0px;
+        }
+    }
+}
+
+.gallery-fig {
+    position: relative;
+    margin-top: 30px;
+    cursor: pointer;
+    .tagInfo {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 7px 20px;
+        border-radius: 20px;
+        background: $c-gray;
+        font-size: 12px;
+        color: $c-green;
+        font-family: $font-bold;
+    }
+    img {
+        width: 100%;
+    }
+    figcaption {
+        font-size: 20px;
+        font-family: $font-bold;
+        color: $c-green;
+        padding: 26px 40px;
+        background: $c-gray3;
+
+        @include breakpoint($mxw768) {
+            padding: 15px 20px;
+        }
+    }
+}
+
+
+
+.modal-backdrop {
+    &.in {
+        opacity: 0.8;
+    }
+}
+
+.white-arrow {
+    &.owl-carousel {
+        .owl-nav {
+            .owl-prev {
+                background: url("../images/prev-w.png") no-repeat center center;
+            }
+
+            .owl-next {
+                background: url("../images/next-w.png") no-repeat center center;
+            }
+        }
+    }
+}
+
+.galleryModal {
+    .modal-dialog {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        -ms-transform: translate(-50%, -50%) !important;
+        -webkit-transform: translate(-50%, -50%) !important;
+        margin: 0;
+        width: 800px;
+        // height: 663px;
+
+        @include breakpoint($mxw1000) {
+            width: 90%;
+        }
+
+        .close-video {
+            position: absolute;
+            top: -50px;
+            right: 0px;
+            z-index: 4;
+        }
+    }
+
+    .gallery-carousal, .gallery-carousal-photo {
+        .owl-nav {
+            .owl-prev {
+                width: 28px;
+                height: 34px;
+                left: -84px;
+                @include breakpoint($mxw1200) {
+                    left: -34px;
+                }
+                @include breakpoint($mxw768) {
+                    left: 0;
+                    top: 100px;
+                }
+            }
+
+            .owl-next {
+                width: 28px;
+                height: 34px;
+                right: -90px;
+                @include breakpoint($mxw1200) {
+                    right: -30px;
+                }
+
+                @include breakpoint($mxw768) {
+                    right: 0;
+                    top: 100px;
+                }
+            }
+        }
+
+        .owl-dots {
+            counter-reset: slides-num; /* Initialize counter. */
+            position: absolute;
+            top: inherit;
+            bottom: 100px;
+            left: inherit;
+            right: 20px;
+            margin-top: 15px;
+            padding: 7px 20px 7px 40px;
+            border-radius: 20px;
+            background: $c-gray;
+            font-size: 12px;
+            color: $c-green;
+            font-family: $font-bold;
+
+            &:after {
+                content: counter(
+                    slides-num
+                ); /* get total number of items - more info on http://www.sitepoint.com/a-little-known-way-to-replace-some-scripts-with-css-counters/ */
+                display: inline-block;
+
+                vertical-align: middle;
+                padding-left: 5px;
+            }
+        }
+
+        .owl-dot {
+            display: inline-block;
+            counter-increment: slides-num; /* Increment counter */
+            margin: 0px;
+            width: 0px;
+            height: 0px;
+
+            span {
+                display: none;
+            }
+
+            &.active {
+                border: 0px;
+
+                &:before {
+                    content: counter(slides-num) " /"; /* Use the same counter to get current item. */
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: absolute;
+                    left: 12px;
+                    top: 7px;
+                    width: 40px;
+                }
+            }
+        }
+        &.without-tag {
+            .gallery-fig {
+                cursor: inherit;
+            }
+            .owl-dots{
+                bottom: 0px;
+            }
+        }
+    }
+
+    .gallery-fig {
+        margin-top: 0px;
+
+        .tagInfo {
+            top: inherit;
+            bottom: 100px;
+        }
+        .down-icon {
+            width: auto;
+            right: 0px;
+            top: 0;
+        }
+    }
+}
+
+img {
+    &.full-width {
+        width: 100%;
+    }
+}
+
+.article {
+    padding-bottom: 55px;
+
+    h3 {
+        text-transform: none;
+        color: $c-green3;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+    h4 {
+        //text-transform: none;
+        color: $c-green3;
+        margin-bottom: 15px;
+        margin-top: 50px;
+        font-size: 18px;
+        text-align: left;
+    }
+    .usr-bx {
+        p {
+            margin-bottom: 20px;
+        }
+    }
+}
+.article-qt-bx {
+    //padding: 30px 0;
+    @include breakpoint($mxw768) {
+        padding: 0px;
+    }
+}
+
+.testQuote {
+    font-size: 25px;
+    color: $c-green;
+    font-family: $font-bold;
+    &:before {
+        content: url(../images/qt-icon.png);
+        display: block;
+    }
+}
+
+.gray-bg {
+    padding: 60px 0;
+    background: $c-gray;
+    .home-card {
+        background: $c-white;
+    }
+}
+
+.gray-bx {
+    background: $c-gray;
+    padding: 30px;
+    p {
+        &.title {
+            font-size: 12px;
+            font-family: $font-bold;
+            color: $c-green5;
+            text-transform: uppercase;
+        }
+    }
+    hr {
+        width: 25px;
+        margin: 15px 0;
+        border-width: 2px;
+        border-color: $c-green;
+        display: inline-block;
+    }
+
+    ul {
+        margin-top: 0px;
+        li {
+            padding: 8px 0;
+            a {
+                font-family: $font-bold;
+                text-decoration: underline;
+                display: block;
+                background: url(../images/svg/cta-arrow.svg) no-repeat 100% center;
+                background-size: 10px;
+                transition: all 0.3s linear;
+                &:hover {
+                    background: url(../images/svg/cta-arrow.svg) no-repeat 97% center;
+                    background-size: 10px;
+                }
+            }
+        }
+    }
+}
+.usr-info {
+    padding: 30px 0;
+    div {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    span {
+        padding-left: 15px;
+        @include breakpoint($mxw768) {
+            display: block;
+        }
+        &.name {
+            font-size: 20px;
+            color: $c-green;
+            font-family: $font-bold;
+        }
+    }
+}
+
+.art-next-prev {
+    text-align: right;
+    padding: 30px 0;
+    margin: 30px 0;
+    border-bottom: solid 1px $c-green2;
+    @include breakpoint($mxw768) {
+        text-align: center;
+        margin-top: 0px;
+        a {
+            margin-right: 10px;
+            &.ML20 {
+                margin-left: 0px;
+            }
+            &.btn-default.btn-sm {
+                padding: 5px 20px;
+            }
+        }
+    }
+
+    @include breakpoint($mxw375) {
+        a {
+            margin-top: 10px;
+        }
+    }
+
+    @include breakpoint($mxw320) {
+        a {
+            margin-top: 10px;
+        }
+    }
+}

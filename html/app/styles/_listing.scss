@@ -1,0 +1,235 @@
+.listing-section-1 {
+    padding: 90px 0 50px 0;
+
+    @include breakpoint($mxw768) {
+        padding: 50px 0 50px 0;
+
+        .CTR {
+
+            h4,
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+
+}
+
+.listing-tab {
+    background: $c-green3;
+    height: 100px;
+    transition: all 0.6s ease-in-out;
+
+    @include breakpoint($mxw768) {
+        height: auto;
+    }
+
+    .tabsnav {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: rgba($c-white, .2);
+            font-family: $font-bold;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+
+        &.active {
+            a {
+                color: rgba($c-white, 1);
+            }
+        }
+    }
+
+    .owl-carousel .owl-nav .owl-prev,
+    .owl-carousel .owl-nav .owl-next {
+        margin-top: -6px
+    }
+
+    @include breakpoint($mxw992) {
+        .owl-carousel .owl-nav .owl-next {
+            right: -16px;
+        }
+
+        .owl-carousel .owl-nav .owl-prev {
+            left: -16px;
+        }
+    }
+}
+
+.product-list {
+    padding: 60px 0 100px 0;
+
+    @include breakpoint($mxw768) {
+        padding: 20px 0 100px 0;
+    }
+
+    h3 {
+        font-size: 30px;
+        text-align: center;
+        color: $c-green3;
+        margin: 30px 0 50px 0;
+
+        @include breakpoint($mxw768) {
+            font-size: 22px;
+            text-align: left;
+            margin: 0;
+        }
+    }
+
+    .product-details {
+        min-height: 515px;
+        transition: all 0.9s linear;
+        position: relative;
+
+        @include breakpoint($mxw992) {
+            width: 100%;
+        }
+
+        a{
+            &.full-link{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+
+                @include breakpoint($mxw768) {
+                    width: 90%; 
+                }
+
+                @include breakpoint($mxw992) {
+                    width: 96%; 
+                }
+
+
+            }
+        }
+
+        @include breakpoint($mxw768) {
+            margin-top: 40px;
+            min-height: 295px;
+            height: auto;
+        }
+
+        figure {
+            margin: 0 auto;
+
+            figcaption {
+                color: $c-green3;
+                padding: 0 2px;
+            }
+        }
+
+        span {
+            width: 198px;
+            // left: 50%;
+            // transform: translate(-50%, 0);
+            @include center(x);
+
+            @include breakpoint($mxw768) {
+                width: 90%;
+                left: 50%;
+                height: 65%;
+                top: 14%;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        .product-info {
+            position: absolute;
+            bottom: 20px;
+            // left: 50%;
+            // -webkit-transform: translate(-50%, 0);
+            // transform: translate(-50%, 0);
+            @include center(x);
+            z-index: 2;
+            width: 100%;
+
+
+            figure {
+                img {
+                    margin: 0 auto;
+                }
+            }
+
+            .product-title {
+                font-size: 20px;
+                font-family:$font-bold;
+                color: $c-green3;
+                text-align: center;
+                margin-top: 60px;
+                transition: all 0.5s linear;
+                width: 185px;
+                margin: 60px auto 10px auto;
+
+                @include breakpoint($mxw768) {
+                    margin-top: 10px;
+                    display: none;
+                }
+            }
+
+            .info {
+                width: 198px;
+                margin: 0 auto;
+                display: none;
+
+                ul {
+                    padding: 0 15px;
+
+                    li {
+                        display: flex;
+                        font-size: 14px;
+                        color: $c-white;
+
+                        .details {
+                            width: 90px
+                        }
+
+                        .details-info {
+                            padding-left: 15px;
+                            width: 90px;
+                        }
+
+                        p {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .product-info {
+                .product-title {
+                    margin: 30px auto 40px auto;
+                    color: $c-white;
+                }
+            }
+        }
+    }
+
+    .list-item {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 80px;
+
+        @include breakpoint($mxw768) {
+            display: block;
+            margin-bottom: 0px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// @include breakpoint($mxw768) {
+//     .inner-hero {
+//         margin-top: 70px;
+//     }
+// }

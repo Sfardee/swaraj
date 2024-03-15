@@ -1,0 +1,513 @@
+.dealer-banner {
+  position: relative;
+  display: flex;
+
+  .dealer-left {
+    width: 60%;
+    @include breakpoint($mxw1000) {
+      width: 62%;
+    }
+  }
+
+  .dealer-right {
+    width: 40%;
+    background: url(../images/bg-1.jpg) repeat-y;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    padding-left: 60px;
+    position: relative;
+    z-index: 3;
+    @include breakpoint($mxw1000) {
+      width: 38%;
+    }
+  }
+
+  @include breakpoint($mxw1000) {
+    .dealer-right {
+      padding-left: 40px;
+    }
+  }
+
+  @include breakpoint($mxw992) {
+    flex-direction: column;
+
+    .dealer-left,
+    .dealer-right {
+      width: 100%;
+    }
+
+    .dealer-right {
+      padding: 20px 20px 40px;
+    }
+  }
+}
+
+.dealer-header {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+
+  .header-in {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .language {
+    display: flex;
+    align-items: center;
+  }
+
+  @include breakpoint($mxw1280) {
+    .language {
+      height: 60px;
+    }
+  }
+}
+
+.dealer-banner {
+  .dealer-left img {
+    width: 100%;
+  }
+}
+
+.know-more {
+  //display: flex;
+  color: $c-white;
+  width: 360px;
+
+  &.form-container {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+
+    .form-group {
+      margin-bottom: 15px;
+
+      .bootstrap-select .btn-default {
+        background: none;
+        border-color: $c-white;
+        color: $c-white;
+        padding: 15px 20px;
+        height: auto;
+
+        &:focus {
+          outline: 0 !important;
+        }
+      }
+
+      @include breakpoint($mxw1000) {
+        .bootstrap-select .btn-default {
+          padding: 12px 20px;
+        }
+
+        .bootstrap-select .dropdown-toggle:after {
+          bottom: 7px;
+        }
+      }
+    }
+  }
+
+  .input-box {
+    border: 1px solid $c-white;
+    background-color: transparent;
+    padding: 15px 20px;
+    width: 100%;
+
+    &::placeholder {
+      color: $c-white;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $c-white;
+    }
+    &.date {
+      background-image: url("../images/svg/date-icon.svg");
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      background-position: 96% center;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .btn:focus {
+    outline: 0;
+  }
+
+  @include breakpoint($mxw1000) {
+    width: 330px;
+    margin-top: 30px;
+
+    .MB30,
+    .MB15 {
+      margin-bottom: 10px;
+    }
+
+    .input-box {
+      padding: 12px 20px;
+    }
+  }
+
+  @include breakpoint($mxw992) {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.map-section.dealer {
+  h4 {
+    margin-top: 0;
+    line-height: 1;
+  }
+
+  .map-info {
+    padding-left: 50px;
+
+    hr {
+      margin: 25px 0;
+    }
+
+    li p {
+      span {
+        flex: 0 0 145px;
+        font-weight: bold;
+      }
+
+      strong {
+        font-family: $font-light;
+      }
+    }
+
+    .hours {
+      display: flex;
+
+      span {
+        flex: 0 0 145px;
+        font-weight: bold;
+      }
+
+      strong {
+        font-family: $font-light;
+        width: 75px;
+        display: inline-block;
+      }
+
+      ul li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .marker-link {
+    position: relative;
+
+    .share-box {
+      position: absolute;
+      top: 10px;
+      right: 0px;
+
+      @include breakpoint($mxw768) {
+        top: 5px;
+      }
+
+      &.act {
+        .shareDrop {
+          .shareList {
+            display: block;
+          }
+        }
+      }
+
+      .shareDrop {
+        cursor: pointer;
+
+        img {
+          width: 22px;
+          height: 22px;
+        }
+
+        .shareList {
+          display: none;
+          position: absolute;
+          width: 140px;
+          background: $c-gray4;
+          padding: 6px 10px;
+          right: 0px;
+          top: 30px;
+          text-align: center;
+
+          .list-inline > li {
+            margin-bottom: 0;
+          }
+
+          @include breakpoint($mxw768) {
+            width: 180px;
+            padding: 16px 10px;
+          }
+
+          ul {
+            position: relative;
+
+            li {
+              a {
+                img {
+                  width: 15px;
+
+                  @include breakpoint($mxw768) {
+                    width: 22px;
+                  }
+                }
+              }
+            }
+
+            &:after {
+              content: "\25b2";
+              padding-left: 0.5em;
+              color: $c-gray4;
+              position: absolute;
+              font-size: 11px;
+              top: -16px;
+              right: -5px;
+
+              @include breakpoint($mxw768) {
+                top: -26px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint($mxw992) {
+    .map-info {
+      padding-left: 15px;
+    }
+
+    h4 {
+      text-align: left;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .marker-link {
+      margin-top: 30px;
+    }
+  }
+
+  @include breakpoint($mxw768) {
+    margin-bottom: 60px;
+
+    .map-info {
+      li p {
+        display: flex;
+
+        span {
+          flex: none;
+          width: 90px;
+        }
+      }
+
+      .hours span {
+        flex: 0 0 90px;
+      }
+    }
+  }
+}
+
+.our-product-dealer {
+  .dorp-dwon-stop {
+    background: $c-gray;
+  }
+
+  .menu-left-box {
+    background: $c-green3;
+    padding: 40px 50px;
+    margin-left: -15px;
+    height: inherit;
+    overflow: inherit;
+
+    h4 {
+      text-align: left;
+      margin-top: 0;
+    }
+
+    .menu-trgr {
+      margin-left: 0;
+      text-transform: uppercase;
+
+      .fa-angle-down {
+        font-size: 30px;
+        color: $c-white;
+        margin-top: -5px;
+      }
+    }
+
+    .tog_cont ul {
+      padding-left: 20px;
+    }
+
+    .menu-trgr a,
+    .tog_cont ul li a {
+      color: rgba($c-white, 0.2);
+    }
+
+    .menu-trgr.act a,
+    .tog_cont ul li.active a {
+      color: $c-white;
+    }
+  }
+
+  .menu-info {
+    padding-top: 40px;
+
+    figure .img-responsive {
+      margin: 0 auto;
+    }
+
+    h3 {
+      font-size: 22px;
+      color: $c-green;
+      margin: 40px 0 0;
+    }
+
+    .menu-product-info {
+      margin-top: 10px;
+    }
+  }
+
+  .sel-prod {
+    display: none;
+  }
+
+  @include breakpoint($mxw992) {
+    .dorp-dwon-stop .flex {
+      flex-direction: column;
+    }
+
+    .menu-left-box {
+      padding: 30px 20px;
+      margin-right: -15px;
+
+      h4 {
+        margin-bottom: 20px;
+      }
+
+      .sel-prod {
+        border: 1px solid rgba($c-white, 0.3);
+        border-radius: 8px;
+        padding: 15px 20px;
+        color: $c-white;
+        font-size: 18px;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+
+        &.act::before {
+          content: "\f106";
+        }
+
+        strong {
+          display: block;
+        }
+
+        &::before {
+          position: absolute;
+          font-family: FontAwesome;
+          font-size: 30px;
+          content: "\f107";
+          right: 20px;
+          top: 10px;
+          color: $c-white;
+        }
+      }
+
+      .prod-dtl {
+        display: none;
+        border: 1px solid rgba($c-white, 0.3);
+        border-radius: 8px;
+        padding: 0 20px 20px;
+      }
+    }
+
+    .menu-info .btn-default {
+      background-image: url(../images/svg/cta-arrow.svg) !important;
+      padding-right: 50px;
+    }
+  }
+
+  @include breakpoint($mxw768) {
+    .container {
+      padding: 0;
+    }
+  }
+}
+
+.services-offered {
+  padding: 80px 0;
+
+  .swaraj-carousel h3 {
+    font-size: 20px;
+  }
+
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next {
+    top: 30%;
+  }
+}
+
+.footer.dealer {
+  text-align: center;
+  padding-bottom: 35px;
+
+  h5 {
+    font: 15px $font-bold;
+    color: $c-white;
+    margin: 0 0 20px;
+  }
+
+  ul.list-box li {
+    .follow-us {
+      justify-content: center;
+      margin-bottom: 40px;
+
+      a:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  hr {
+    margin: 35px 0 25px;
+    border-color: rgba($c-green2, 0.3);
+  }
+
+  p {
+    margin-bottom: 0;
+
+    a {
+      font-weight: bold;
+    }
+  }
+}
+a.color-white {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.color-white,
+a.color-white {
+  color: $c-white;
+}
+
+.ft29{
+  font-size: 29px;
+}
+
+.seo-tag{ 
+  padding: 60px 0;
+}

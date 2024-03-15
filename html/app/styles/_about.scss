@@ -1,0 +1,450 @@
+.common-section {
+  padding: 90px 0 50px 0;
+  @include breakpoint($mxw768) {
+    padding: 50px 0 50px 0;
+  }
+
+  &.fixsec{
+    padding-top:40px; 
+  }
+}
+
+.CTR {
+  &.MTAL {
+    @include breakpoint($mxw768) {
+      text-align: left;
+      h4 {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.about-img-box {
+  position: relative;
+  margin-top: 40px;
+  overflow: hidden;
+  @include breakpoint($mxw992) {
+    margin-top: 0;
+  }
+  .img-box-1 {
+    padding-top: 65px;
+    float: left;
+    @include breakpoint($mxw992) {
+      display: none;
+    }
+  }
+  .img-box-2 {
+    position: absolute;
+    top: 205px;
+    left: 280px;
+    z-index: 1;
+    img {
+      border: 8px solid $c-white;
+    }
+    @include breakpoint($mxw992) {
+      display: none;
+    }
+  }
+  .img-box-3 {
+    position: absolute;
+    top: 0;
+    left: 465px;
+    @include breakpoint($mxw992) {
+      position: inherit;
+      left: auto;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+  .info-box {
+    float: right;
+    margin: 290px 70px 0 0;
+    width: 425px;
+    .about-detail {
+      p {
+        display: none;
+        &:first-child {
+          display: block;
+        }
+      }
+      &.active {
+        p {
+          display: block;
+        }
+        .read-details {
+          display: none;
+        }
+      }
+    }
+    @include breakpoint($mxw1000) {
+      margin: 290px 0 0 0;
+      width: 290px;
+    }
+    @include breakpoint($mxw992) {
+      margin: 10px 0 0 0;
+      width: auto;
+      float: none;
+    }
+  }
+}
+
+.our-pride {
+  &.opt2 {
+    margin-top: 0;
+    background: url(../images/our-pride-opt2.jpg) no-repeat center center;
+    background-size: cover;
+    figure {
+      position: relative;
+    }
+    .ourpride-title {
+      margin-top: 0;
+      margin-bottom: 40px;
+      h4,
+      p {
+        color: $c-white;
+      }
+    }
+  }
+}
+
+.commitment-box {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 1px solid $c-gray4;
+  margin-top: 50px;
+  @include breakpoint($mxw992) {
+    display: block;
+  }
+  @include breakpoint($mxw768) {
+    margin-top: 10px;
+  }
+  figure {
+    width: 50%;
+    position: relative;
+    @include breakpoint($mxw992) {
+      width: 100%;
+    }
+  }
+  .commitment-info {
+    overflow: hidden;
+    padding: 30px;
+    width: 50%;
+    @include breakpoint($mxw992) {
+      width: 100%;
+    }
+  }
+}
+
+.commitment-carousel {
+  .owl-dots {
+    margin-top: 50px;
+  }
+}
+
+.the-farmer {
+  padding: 50px 0;
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next {
+    top: 35%;
+  }
+  @include breakpoint($mxw768) {
+    padding: 30px 0 30px 0;
+  }
+  .farmer-box {
+    padding: 0 70px;
+    text-align: center;
+    @include breakpoint($mxw768) {
+      text-align: left;
+      padding: 0 35px;
+      text-align: center;
+    }
+  }
+  figure {
+    margin-bottom: 20px;
+    .hover-img {
+      display: none;
+    }
+  }
+  h3 {
+    font-family: $font-bold;
+    font-size: 15px;
+    color: $c-green3;
+    @include breakpoint($mxw992) {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+  .owl-carousel .owl-item img {
+    width: auto;
+    height: 60px;
+    margin: 0 auto;
+    @include breakpoint($mxw768) {
+      margin: 0 auto;
+    }
+  }
+  .owl-dots {
+    margin-top: 50px;
+  }
+}
+
+.overview {
+  padding: 110px 0;
+  @include breakpoint($mxw768) {
+    padding: 80px 0;
+  }
+}
+
+.overview-wrapper {
+  border: 1px solid $c-gray4;
+  display: flex;
+  @include breakpoint($mxw992) {
+    display: block;
+    border: 0;
+  }
+}
+
+.overview-box {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  min-height: 755px;
+  @include breakpoint($mxw1000) {
+    min-height: 627px;
+  }
+  @include breakpoint($mxw992) {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 1px solid $c-gray4;
+    min-height: inherit;
+  }
+  h3 {
+    font-size: 30px;
+    color: $c-green3;
+    margin-top: 0;
+    @include breakpoint($mxw1000) {
+      font-size: 22px;
+    }
+  }
+  h4 {
+    font-size: 20px;
+    text-transform: none;
+    text-align: left;
+    margin-top: 20px;
+    @include breakpoint($mxw1000) {
+      font-size: 18px;
+      margin-top: 0;
+      height: 40px;
+      overflow: hidden;
+    }
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+  .overview-info {
+    padding: 30px;
+    min-height: 377px;
+    position: relative;
+    @include breakpoint($mxw1000) {
+      padding: 15px 30px;
+      min-height: 307px;
+    }
+    @include breakpoint($mxw992) {
+      min-height: inherit;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 25px solid white;
+      top: -25px;
+      left: 50%;
+      margin-left: -25px;
+      @include breakpoint($mxw992) {
+        display: none;
+      }
+    }
+    .description {
+      min-height: 150px;
+      @include breakpoint($mxw992) {
+        min-height: inherit;
+        height: 66px;
+        overflow: hidden;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &:nth-child(2) {
+    flex-direction: column-reverse;
+    @include breakpoint($mxw992) {
+      flex-direction: column;
+    }
+    .overview-info {
+      &::before {
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 25px solid white;
+        border-bottom: 0;
+        top: auto;
+        bottom: -25px;
+        @include breakpoint($mxw992) {
+          /*border-top: 0;
+                border-bottom: 25px solid white;
+                top: -25px;
+                bottom: auto;*/
+          display: none;
+        }
+      }
+    }
+  }
+  .btn-default {
+    padding: 5px 60px 5px 30px;
+    font-size: 14px;
+  }
+}
+
+.resize {
+  width: 100%;
+  height: auto;
+}
+
+.strong-base {
+  display: flex;
+  align-items: center;
+  background: $c-gray3;
+  margin-top: 45px;
+  @include breakpoint($mxw992) {
+    margin: 45px 0 0 0;
+  }
+  @include breakpoint($mxw768) {
+    display: block;
+    margin: 25px 0 0 0;
+  }
+  .imgbox {
+    width: 50%;
+    @include breakpoint($mxw768) {
+      width: 100%;
+    }
+  }
+  .imgcontain {
+    width: 50%;
+    @include breakpoint($mxw768) {
+      width: 100%;
+    }
+    .tesimonial-box {
+      @include breakpoint($mxw1000) {
+        width: auto;
+      }
+    }
+  }
+}
+
+.key-leader {
+  padding: 30px 0;
+  @include breakpoint($mxw768) {
+    padding-top: 10px;
+  }
+  h5 {
+    font-family: $font-bold;
+    color: $c-green3;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+    @include breakpoint($mxw768) {
+      text-align: left;
+      font-size: 22px;
+    }
+  }
+}
+
+.leader-box {
+  background: $c-gray;
+  margin-bottom: 30px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .leader-info {
+    padding: 15px 30px 10px 30px;
+    @include breakpoint($mxw1000) {
+      padding: 15px;
+    }
+    h5 {
+      font-family: $font-bold;
+      color: $c-green4;
+      font-size: 20px;
+      margin: 0 0 10px 0;
+      text-align: left;
+      @include breakpoint($mxw992) {
+        font-size: 16px;
+      }
+      a {
+        color: $c-green4;
+      }
+    }
+  }
+}
+
+.close-video {
+  &.close-btn {
+    height: 55px;
+    padding: 0;
+  }
+}
+
+.leader-poup {
+  padding: 50px;
+  background: $c-white;
+  @include breakpoint($mxw768) {
+    padding: 30px;
+  }
+  h5 {
+    font-family: $font-bold;
+    color: $c-green4;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    text-align: left;
+    @include breakpoint($mxw992) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.leader-info {
+  @include breakpoint($mxw768) {
+    .FL.MT5,
+    .FR.sos-icon {
+      float: none;
+    }
+  }
+}
+
+.sos-icon {
+  font-family: $font-bold;
+  @include breakpoint($mxw768) {
+    margin-top: 20px;
+  }
+  a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $c-green2;
+    color: $c-green2;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 1.9;
+    display: inline-block;
+    i {
+      font-size: 14px;
+    }
+  }
+}

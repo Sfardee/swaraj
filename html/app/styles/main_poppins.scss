@@ -1,0 +1,962 @@
+// @import "_var";
+@import "_varPoppins";
+@import "_mixins";
+@import "_icomoon";
+@import "_navsticky";
+// bower:scss
+
+@import "bower_components/compass-breakpoint/stylesheets/_breakpoint.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+@import "bower_components/sass-flex-mixin/_flex.scss";
+@include font-face(Poppins-Bold, "../fonts/Poppins-Bold");
+@include font-face(Poppins-Light, "../fonts/Poppins-Light");
+@include font-face(icomoon, "../fonts/icomoon");
+// endbower
+// -----------------------------------
+//              TYPOGRAPHY
+// -----------------------------------
+//icon-fonts end
+
+/*     Float containers fix
+=============================== */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+a {
+    text-decoration: none;
+    color: $c-green2;
+    transition: color 0.5s linear;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $c-green2;
+}
+
+a:focus {
+    text-decoration: none;
+    color: $c-green2;
+    outline: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+
+    &.list {
+        margin-left: 30px;
+
+        li {
+            list-style: inherit;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+b,
+strong {
+    font-weight: 100;
+    font-family: $font-bold;
+}
+
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+.ohidden {
+    overflow: hidden;
+}
+
+.FL {
+    float: left;
+}
+
+.FR {
+    float: right;
+}
+
+.flex {
+    display: flex;
+}
+
+.stretch {
+    flex-flow: stretch;
+}
+
+.CTR {
+    text-align: center;
+}
+
+.TAR {
+    text-align: right;
+}
+
+.uline {
+    text-decoration: underline;
+}
+
+.UC {
+    text-transform: uppercase;
+}
+
+.tCap {
+    text-transform: capitalize !important;
+}
+
+:focus {
+    outline: 0;
+}
+
+.PR {
+    position: relative;
+}
+
+.PA0 {
+    padding: 0;
+}
+
+.PA5 {
+    padding: 5px;
+}
+
+.PA7 {
+    padding: 7px;
+}
+
+.PA10 {
+    padding: 10px;
+}
+
+.PA12 {
+    padding: 12px;
+}
+
+.PA15 {
+    padding: 15px;
+}
+
+.PA20 {
+    padding: 20px;
+}
+
+.PT3 {
+    padding-top: 3px;
+}
+
+.PT5 {
+    padding-top: 5px;
+}
+
+.PT7 {
+    padding-top: 7px;
+}
+
+.PT8 {
+    padding-top: 8px;
+}
+
+.PT10 {
+    padding-top: 10px;
+}
+
+.PT15 {
+    padding-top: 15px;
+}
+
+.PT20 {
+    padding-top: 20px;
+}
+
+.PT25 {
+    padding-top: 25px;
+}
+
+.PT30 {
+    padding-top: 30px;
+}
+
+.PB5 {
+    padding-bottom: 5px;
+}
+
+.PB7 {
+    padding-bottom: 7px;
+}
+
+.PB10 {
+    padding-bottom: 10px;
+}
+
+.PB15 {
+    padding-bottom: 15px;
+}
+
+.PB20 {
+    padding-bottom: 20px;
+}
+
+.PB30 {
+    padding-bottom: 30px;
+}
+
+.PB25 {
+    padding-bottom: 25px;
+}
+
+.PL5 {
+    padding-left: 5px;
+}
+
+.PL10 {
+    padding-left: 10px;
+}
+
+.PL15 {
+    padding-left: 15px;
+}
+
+.PL20 {
+    padding-left: 20px;
+}
+
+.PL25 {
+    padding-left: 25px;
+}
+
+.PR5 {
+    padding-right: 5px;
+}
+
+.PR10 {
+    padding-right: 10px;
+}
+
+.PR15 {
+    padding-right: 15px;
+}
+
+.PR20 {
+    padding-right: 20px;
+}
+
+.PL50 {
+    padding-left: 50px;
+}
+
+.PR50 {
+    padding-right: 50px;
+}
+
+.p0 {
+    padding: 0px !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.MR5 {
+    margin-right: 5px;
+}
+
+.MR7 {
+    margin-right: 7px;
+}
+
+.MR10 {
+    margin-right: 10px;
+}
+
+.MR15 {
+    margin-right: 15px;
+}
+
+.MR20 {
+    margin-right: 20px;
+}
+
+.MR25 {
+    margin-right: 25px;
+}
+
+.MR30 {
+    margin-right: 30px;
+}
+
+.MR0 {
+    margin-right: 0 !important;
+}
+
+.ML2 {
+    margin-left: 2px;
+}
+
+.ML5 {
+    margin-left: 5px;
+}
+
+.ML7 {
+    margin-left: 7px;
+}
+
+.ML10 {
+    margin-left: 10px;
+}
+
+.ML15 {
+    margin-left: 15px;
+}
+
+.ML20 {
+    margin-left: 20px;
+}
+
+.ML30 {
+    margin-left: 30px;
+}
+
+.MT3 {
+    margin-top: 3px;
+}
+
+.MT5 {
+    margin-top: 5px;
+}
+
+.MT7 {
+    margin-top: 7px;
+}
+
+.MT10 {
+    margin-top: 10px;
+}
+
+.MT12 {
+    margin-top: 12px;
+}
+
+.MT15 {
+    margin-top: 15px;
+}
+
+.MT20 {
+    margin-top: 20px;
+}
+
+.MT25 {
+    margin-top: 25px;
+}
+
+.MT30 {
+    margin-top: 30px;
+}
+
+.MT35 {
+    margin-top: 35px;
+}
+
+.MT40 {
+    margin-top: 40px;
+}
+
+.MT45 {
+    margin-top: 45px;
+}
+
+.MT50 {
+    margin-top: 50px;
+}
+
+.MT70 {
+    margin-top: 70px;
+}
+
+.MB5 {
+    margin-bottom: 5px;
+}
+
+.MB10 {
+    margin-bottom: 10px;
+}
+
+.MB15 {
+    margin-bottom: 15px;
+}
+
+.MB20 {
+    margin-bottom: 20px;
+}
+
+.MB30 {
+    margin-bottom: 30px;
+}
+
+body .no-margin-top {
+    margin-top: 0px;
+}
+
+body {
+    font-family: $font-light;
+    color: $c-body;
+    font-size: 15px;
+    letter-spacing: -.3px;
+
+    @include breakpoint($mxw992) {
+        font-size: 15px;
+    }
+}
+
+@import "_header";
+@import "_hero";
+@import "_home";
+@import "_map";
+@import "_listing";
+@import "_proDetails";
+@import "_search";
+@import "_media";
+@import "_contact";
+@import "_about";
+@import "_milestone";
+@import "_dealer";
+
+h1 {
+    font-family: $font-bold;
+    font-size: 61px;
+    color: $c-white;
+}
+
+h4 {
+    font-family: $font-bold;
+    font-size: 45px;
+    color: $c-green2;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint($mxw992) {
+        font-size: 25px;
+    }
+
+    @include breakpoint($mxw768) {
+        font-size: 30px;
+    }
+}
+
+h3 {
+    font-family: $font-bold;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+
+/* The Radio box */
+
+.inp-cont {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:last-child {
+        margin-left: 30px;
+    }
+
+    &:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked~.checkmark {
+            background-color: $c-green2;
+        }
+
+        &:checked~.checkmark:after {
+            display: block;
+        }
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border-radius: 50%;
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        &:after {
+            top: 6px;
+            left: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+    }
+}
+
+.dropdown {
+    &.transparent-bg {
+        .btn {
+            background: transparent;
+            color: $c-white;
+            font-size: 14px;
+            border-radius: 0;
+            padding: 7px 15px;
+
+            @include breakpoint($mxw768) {
+                color: $c-black;
+                background: $c-gray3;
+            }
+
+            .fa-angle-down {
+                vertical-align: bottom;
+                font-size: 18px;
+            }
+        }
+
+        &.open {
+            .btn {
+                background: $c-white;
+                color: $c-black;
+
+                .fa-angle-down:before {
+                    content: "\f106";
+                }
+
+                @include breakpoint($mxw768) {
+                    background: $c-gray3;
+                }
+            }
+        }
+
+        .dropdown-menu {
+            margin: 0;
+            border-radius: 0;
+            border: 0;
+            box-shadow: none;
+
+            @include breakpoint($mxw768) {
+                background: $c-gray3;
+            }
+        }
+    }
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+.article {
+    .flex-row {
+        align-items: inherit;
+        justify-content: center;
+
+        @include breakpoint($mxw768) {
+            display: block;
+        }
+    }
+}
+
+.flex-stretch {
+    display: flex;
+    align-items: stretch;
+}
+
+.pager li>a.btn-default {
+    padding: 16px 60px 16px 30px;
+    border-radius: 27px;
+    border: 0;
+}
+
+.btn-default {
+    font-size: 15px;
+    color: $c-green2;
+    padding: 16px 60px 16px 30px;
+    border-radius: 27px;
+    border: 0;
+    background: $c-white url(../images/svg/cta-arrow.svg) no-repeat 90% center;
+    background-size: 15px 15px;
+    transition: all 0.3s linear;
+    text-transform: uppercase;
+
+    &:hover {
+        background: $c-white url(../images/svg/cta-arrow.svg) no-repeat 93% center;
+        background-size: 15px 15px;
+    }
+
+    &.green {
+        background: $c-green2 url(../images/svg/cta-arrow-white.svg) no-repeat 90% center;
+        color: $c-white;
+        background-size: 15px 15px;
+
+        &:hover {
+            background: $c-green2 url(../images/svg/cta-arrow-white.svg) no-repeat 93% center;
+            background-size: 15px 15px;
+            color: $c-white;
+        }
+    }
+
+    &.border {
+        border: solid 1px rgba($c-green, 0.6);
+
+        &:hover {
+            color: $c-green2;
+        }
+
+        &:focus {
+            color: $c-green2;
+            outline: none;
+        }
+    }
+
+    &.btn-sm {
+        background: none;
+        padding: 5px 22px;
+        font-size: 14px;
+        height: auto;
+        text-transform: none;
+        font-weight: bold;
+
+        &.green {
+            background: $c-green2;
+        }
+    }
+
+    &.no-arrow {
+        background-image: none;
+        padding: 16px 30px;
+
+        &:hover {
+            background-image: none;
+        }
+    }
+
+    &.watch {
+        background: $c-white url(../images/play-green.png) no-repeat 92% center;
+
+        @include breakpoint($mxw1000) {
+            padding: 16px 50px 16px 20px;
+        }
+
+        @include breakpoint($mxw768) {
+            padding: 10px 40px 10px 20px;
+            background-size: 20px;
+            font-size: 13px;
+        }
+    }
+
+    &.gratitude {
+        background: transparent url(../images/gratitude.png) no-repeat 92% center;
+        color: $c-white;
+        border: 1px solid $c-white;
+
+        @include breakpoint($mxw1000) {
+            padding: 16px 50px 16px 20px;
+        }
+
+        @include breakpoint($mxw768) {
+            padding: 10px 40px 10px 20px;
+            background-size: 20px;
+            font-size: 13px;
+        }
+    }
+}
+
+body .bootstrap-select.btn-group .dropdown-menu.inner {
+    height: 170px;
+}
+
+.owl-dots {
+    margin: 15px 0;
+    text-align: center;
+
+    .owl-dot {
+        display: inline-block;
+        margin: 0 5px;
+        margin-bottom: 15px;
+        width: 16px;
+        height: 16px;
+        transition: all 0.5s linear;
+
+        @include breakpoint($mxw768) {
+            margin: 0 5px;
+        }
+
+        span {
+            width: 8px;
+            height: 8px;
+            display: block;
+            margin: 3px;
+            background: rgba($c-white, 0.4);
+            border-radius: 50%;
+            transition: all 0.5s linear;
+
+            @include breakpoint($mxw768) {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        &.active {
+            border: 1px solid $c-white;
+            border-radius: 50%;
+
+            span {
+                background-color: $c-white;
+            }
+        }
+    }
+
+    .green & {
+        .owl-dot {
+            margin-bottom: 0;
+
+            span {
+                background: $c-green2;
+            }
+
+            &.active {
+                border: 1px solid $c-green2;
+
+                span {
+                    background-color: $c-green2;
+                }
+            }
+        }
+    }
+}
+
+.footer-svg {
+    position: absolute;
+    left: -340px;
+    top: 10px;
+    opacity: 0.05;
+    height: 600px;
+
+    @include breakpoint($mxw768) {
+        //display: none;
+        top: auto;
+        height: 540px;
+        bottom: -300px;
+    }
+
+    .st0 {
+        stroke: $c-white;
+    }
+}
+
+.footer {
+    background: $c-green3;
+    padding: 60px 0;
+    color: rgba($c-white, 0.6);
+    position: relative;
+    overflow: hidden;
+
+    @include breakpoint($mxw768) {
+        padding: 40px 0 80px 0;
+    }
+
+    a {
+        color: rgba($c-white, 0.6);
+    }
+
+    ul.list-box {
+        &.active {
+            @include breakpoint($mxw768) {
+                li {
+                    display: block;
+
+                    h3 {
+                        &:before {
+                            font-family: "FontAwesome";
+                            content: "\f106";
+                            font-size: 1.7rem;
+                            vertical-align: 0;
+                            position: absolute;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        li {
+            margin-bottom: 20px;
+
+            @include breakpoint($mxw992) {
+                margin-bottom: 10px;
+            }
+
+            @include breakpoint($mxw768) {
+                display: none;
+
+                &:first-child {
+                    display: block;
+                    padding-bottom: 10px;
+                }
+
+                a {
+                    color: $c-white;
+                }
+            }
+
+            h3 {
+                font-size: 15px;
+                color: $c-white;
+
+                @include breakpoint($mxw768) {
+                    font-size: 14px;
+                    color: rgba($c-white, 0.3);
+                    position: relative;
+                    margin: 0;
+
+                    &:before {
+                        font-family: "FontAwesome";
+                        content: "\f107";
+                        font-size: 1.7rem;
+                        vertical-align: 0;
+                        position: absolute;
+                        right: 0;
+                    }
+                }
+            }
+
+            .follow-us {
+                display: flex;
+                margin-bottom: 50px;
+                margin-top: 0px;
+
+                a {
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid $c-green2;
+                    color: $c-green2;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    text-align: center;
+                    line-height: 1.9;
+
+                    i {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &.download-app {
+                .icons-box {
+                    display: flex;
+                    border-right: none;
+                    margin-top: 5px;
+                    width: 252px;
+
+                    a {
+                        width: 50%;
+                        text-align: center;
+                        border: 1px solid $c-white;
+                        height: 45px;
+                        font-size: 30px;
+                        line-height: 1.5;
+                        color: $c-white;
+                    }
+                }
+            }
+        }
+    }
+
+    .app-icon {
+        margin-top: 20px;
+
+        a {
+            margin: 0 10px 0 0;
+
+            i {
+                color: $c-white;
+                font-size: 23px;
+            }
+        }
+    }
+}
+
+.follow-us {
+    display: flex;
+    margin-bottom: 0px;
+    margin-top: 30px;
+
+    span {
+        padding: 4px 10px 0 0;
+    }
+
+    a {
+        width: 30px;
+        height: 30px;
+        border: 1px solid $c-green2;
+        color: $c-green2;
+        border-radius: 50%;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 1.9;
+
+        i {
+            font-size: 14px;
+        }
+
+        .x-twitter {
+            img {
+                width: 14px;
+            }
+        }
+    }
+}
+
+.page-not-found {
+    padding: 30px 0;
+}
+
+
+/* ViewPort calculate */
+
+@function get-vw($target) {
+    $vw-context: 1440 * 0.01 * 1px;
+    @return $target / $vw-context * 1vw;
+}

@@ -1,0 +1,314 @@
+.listing-tab {
+
+    .flexrow {
+        display: flex;
+        justify-content: center;
+
+        .tabsnav {
+            padding: 0 30px;
+
+            @include breakpoint($mxw768) {
+                height: auto;
+                font-size: 18px;
+                padding: 20px 25px;
+
+                a {
+                    font-size: 18px;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+// .searchTab{
+
+
+// }
+
+.search-contentTab {
+    padding: 60px 0;
+
+    @include breakpoint($mxw768) {
+        padding: 60px 0 0;
+    }
+
+    .search-container {
+        margin-top: 0px;
+    }
+}
+
+.search-result-product {
+    padding: 55px 0;
+    border-bottom: solid 1px rgba($c-green, 0.3);
+
+    &.no-border {
+        border: 0px;
+    }
+
+    @include breakpoint($mxw768) {
+        border: 0px;
+    }
+
+    h5 {
+        font-size: 30px;
+        font-family: $font-bold;
+        color: $c-green3;
+        text-align: center;
+
+        small {
+            font-size: 14px;
+        }
+
+        @include breakpoint($mxw768) {
+            text-align: left;
+        }
+    }
+
+    .no-result {
+        text-align: center;
+        font: 45px $font-light;
+        color: #535353;
+        margin: 40px 0 80px;
+
+        figure {
+            margin-bottom: 30px;
+        }
+    }
+
+}
+
+.searchPro {
+    &.similarPro {
+        padding: 20px 0 0;
+    }
+
+    h5 {
+        &.card-title {
+            font-size: 20px;
+            color: $c-green4;
+            padding-top: 20px;
+
+            @include breakpoint($mxw768) {
+                text-align: center;
+            }
+        }
+    }
+
+    .similarPro-carousel {
+        margin-top: 20px;
+
+        .home-card {
+            padding: 45px 30px;
+            min-height: 344px;
+        }
+
+        .owl-dots {
+            margin: 50px 0 15px 0;
+        }
+
+        .owl-nav .owl-prev,
+        .owl-nav .owl-next {
+            top: 30%;
+        }
+    }
+}
+
+.search-card {
+    &.home-card {
+        &.white {
+            background: inherit;
+            padding: 30px 0;
+        }
+
+        .card-info-box {
+            .card-title {
+                text-align: left;
+                min-height: auto;
+                color: $c-green;
+                height: inherit;
+            }
+
+            .card-tags {
+                color: $c-green5;
+                font-size: 16px;
+            }
+
+            .card-date {
+                margin-bottom: 15px;
+            }
+
+            .card-description {
+                min-height: auto;
+                margin-bottom: 25px;
+                line-height: 1.7;
+                height: auto;
+            }
+
+            hr {
+                border-color: $c-green;
+                margin: 5px 0;
+            }
+        }
+
+        .btn-default {
+            padding: 7px 42px 7px 15px;
+        }
+    }
+
+}
+
+.faqTitle {
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: solid 1px rgba($c-green, 0.3);
+
+    @include breakpoint($mxw768) {
+        border: 0px;
+    }
+
+    .swaraj-carousel {
+        margin-top: 80px;
+
+        a {
+            color: $c-black;
+        }
+
+        @include breakpoint($mxw769) {
+            margin-top: 50px;
+
+            .owl-item {
+                img {
+                    height: 80px;
+                }
+            }
+
+            .owl-nav .owl-prev,
+            .owl-nav .owl-next {
+                top: 20%;
+            }
+
+        }
+
+
+        p {
+            font-size: 15px;
+
+            @include breakpoint($mxw768) {
+                text-align: center;
+                font-size: 20px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    h5 {
+        font-size: 30px;
+        color: $c-green3;
+        font-family: $font-bold;
+        padding-bottom: 5px;
+
+        @include breakpoint($mxw768) {
+            text-align: left;
+            font-size: 22px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+
+        @include breakpoint($mxw768) {
+            text-align: left;
+            font-size: 15px;
+        }
+    }
+}
+
+.search-contentTab {
+    .spec-list-box {
+        margin-top: 90px;
+
+        @include breakpoint($mxw768) {
+            margin-top: 0px;
+
+            ul li {
+                padding: 10px 25px;
+
+                &.active {
+                    a {
+                        font-family: $font-bold;
+                    }
+
+                }
+
+                a {
+                    text-transform: none;
+                    font-family: $font-light;
+                    font-size: 22px;
+                }
+            }
+
+
+        }
+
+        .tab-content {
+            &.accordion {
+                margin-top: 60px;
+
+                @include breakpoint($mxw768) {
+                    margin-top: 20px;
+                    margin-bottom: 60px;
+                }
+
+                .tab-pane {
+                    padding: 0px;
+                    background: inherit;
+
+                    h6 {
+                        font-size: 14px;
+                        color: $c-green3;
+                        font-weight: bold;
+                        cursor: pointer;
+
+                        @include breakpoint($mxw768) {
+                            font-size: 15px;
+                            line-height: 1.5;
+                            padding-right: 30px;
+                        }
+                    }
+
+                    .mob-cont {
+                        color: $c-gray5;
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+
+                    .mob-trgr {
+                        background: url('../images/svg/plus-icon.svg') right center;
+                        background-repeat: no-repeat;
+                        background-size: 10px 10px;
+
+                        &.act {
+                            background: url('../images/svg/minus.svg') right center;
+                            background-repeat: no-repeat;
+                            background-size: 10px 10px;
+                        }
+                    }
+
+                    .grey {
+                        background: $c-gray;
+                        padding: 20px 30px;
+                    }
+
+                    .white {
+                        background: $c-white;
+                        padding: 20px 30px;
+                    }
+                }
+            }
+
+        }
+    }
+}

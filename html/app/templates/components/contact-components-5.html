@@ -1,0 +1,72 @@
+<section class="tell-us-box located-bx">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h5>located at</h5>
+                <div class="row flex-row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="about-bx">
+                            <p class="svg">
+                                <img src="images/svg/gps-icon.svg" alt="">
+                            </p>
+                            <h6>Connect with nearest<br>
+                                    SWARAJ representative</h6>
+                            <p class="para">
+                                    We are always near you standing next to
+                                    you in every point of your journey
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        
+                        <div class="form-container">
+                                <h5 class="locate-m"><a href="#"><img src="images/svg/gps-icon-s.svg" alt=""> Locate me</a></h5>
+                                <div class="form-group">
+                                    <select class="selectpicker" name="" id="" title="State">
+                                        <option value="">Maharashtra</option>
+                                        <option value="">Gujrat</option>
+                                        <option value="">MP</option>
+                                    </select>
+                                    
+                                </div>
+
+                                <div class="form-group">
+                                    <select class="selectpicker" name="" id="" title="City">
+                                        <option value="">Mumbai</option>
+                                        <option value="">Pune</option>
+                                        <option value="">Navi Mumbai</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input id="district" minlength="2" maxlength="50" pattern="[A-za-z][A-Za-z0-9 '.-]+" required="" name="" type="text" class="form-control"  placeholder="District*">
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control" maxlength="6" 
+                                    id="pincode" type="text" 
+                                    name="pincode" 
+                                    onkeypress="return isNumberKey(event)"
+                                    pattern="^(\d{6})$" placeholder="Pincode" class="text-box" 
+                                    oninvalid="setCustomValidity('Please enter 6 digits pincode')" 
+                                    oninput="setCustomValidity('')">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control"  placeholder="Tehsil">
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center next-btn visible-xs">
+                <a href="javascript:;">next</a>
+            </p>
+            
+        </div>
+    </div>
+</section>

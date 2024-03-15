@@ -1,0 +1,104 @@
+.header-box {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    height: 120px;
+    //transition: all .5s ease-in-out;
+}
+
+.animate-strip {
+    -moz-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -o-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -moz-transition-duration: 0.7s;
+    -o-transition-duration: 0.7s;
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.7s;
+}
+
+.animate-strip.scroll {
+    height: 4em;
+}
+
+.header-box {
+    top: 0;
+    z-index: 3;
+}
+
+//.header-box.animate-strip {
+//  -moz-transition-property: height, background;
+//  -o-transition-property: height,  background;
+//  -webkit-transition-property: height,  background;
+//  transition-property: height,top,  background; }
+
+.header-box.animate-strip.scroll {
+    position: fixed;
+    top: 0;
+    background: url(../images/nav-bg.jpg) no-repeat center center;
+    background-size: cover;
+    position: fixed;
+    height: 75px;
+    -moz-transition-property: height, top, background;
+    -o-transition-property: height, top, background;
+    -webkit-transition-property: height, top, background;
+    transition-property: height, top, background;
+
+
+    .toll-free,
+    .top-menu {
+        display: none;
+    }
+
+    .logo-box {
+        margin-top: 0;
+    }
+
+    .main-menu {
+        margin-top: 30px;
+    }
+
+    .white-logo {
+        display: block;
+    }
+
+    .green-logo {
+        display: none;
+    }
+}
+
+.header-box.animate-strip {
+    //top: -4em;
+    // background: #e31837; 
+}
+
+.header-box.animate-strip.hidden2 {
+    //top: -8em !important;
+    display: block !important;
+    visibility: visible !important;
+
+    -moz-transition-property: height, background;
+    -o-transition-property: height, background;
+    -webkit-transition-property: height, background;
+    transition-property: height, background;
+}
+
+.header-box.animate-strips.scroll.hidden2 {
+    //top: -4em; 
+
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .header-box.animate-strip {
+        top: 0;
+        background: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header-box.animate-strip {
+        top: 0;
+        background: none;
+    }
+}

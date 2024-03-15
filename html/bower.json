@@ -1,0 +1,41 @@
+{
+  "name": "kotak",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.1",
+    "bourbon": "~4.2.6",
+    "compass-breakpoint": "~2.6.1",
+    "font-awesome": "fontawesome#~4.5.0",
+    "owl.carousel": "OwlCarousel2#~2.0.0-beta.3",
+    "fancyBox": "~2.1.5",
+    "youtubeBackground": "youtube-background-video#~1.0.4",
+    "typeahead.js": "^0.11.1",
+    "Swiper": "swiper#^3.3.0",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "masonry": "^4.0.0",
+    "imagesloaded": "^4.1.0",
+    "jquery_lazyload": "jquery.lazyload#^1.9.7",
+    "waypoints": "^4.0.1",
+    "sass-flex-mixin": "^1.0.2",
+    "bootstrap-select": "^1.12.2",
+    "lazysizes": "^2.0.7",
+    "nanoscroller": "^0.8.7",
+    "morris.js": "morrisjs#^0.5.1",
+    "jquery-ui": "^1.12.1"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "~3.4.2",
+    "mocha": "~2.3.4",
+    "animate.css": "^3.5.1"
+  }
+}

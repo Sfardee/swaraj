@@ -1,0 +1,94 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin margin($dir, $val) {
+    @if $dir==T {
+        margin-top: $val;
+    }
+    @else if $dir==R {
+        margin-right: $val;
+    }
+    @else if $dir==B {
+        margin-bottom: $val;
+    }
+    @else if $dir==L {
+        margin-left: $val;
+    }
+}
+
+//background retina
+@mixin background-image-retina($file, $type, $width, $height) {
+    background-image: url('../images/' + $file + '.' + $type);
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        & {
+            background-image: url('../images/' + $file + '@2x.' + $type);
+            -webkit-background-size: $width $height;
+            -moz-background-size: $width $height;
+            -o-background-size: $width $height;
+            background-size: $width $height;
+        }
+    }
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+// note: woff2 extension is removed.
+@mixin font-face($name,
+$path,
+$weight: null,
+$style: null,
+$exts: eot woff ttf svg) {
+    $src: null;
+    $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_"));
+    $formats: ( otf: "opentype", ttf: "truetype");
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+@mixin css3-prefix($property,
+$value) {
+    -webkit-#{$property}: #{$value};
+    -khtml-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+// center vertically and/or horizontally an absolute positioned element
+@mixin center($xy:xy) {
+    @if $xy==xy {
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        @include css3-prefix('transform',
+        translateX(-50%) translateY(-50%));
+    }
+    @else if $xy==x {
+        left: 50%;
+        right: auto;
+        @include css3-prefix('transform',
+        translateX(-50%));
+    }
+    @else if $xy==y {
+        top: 50%;
+        bottom: auto;
+        @include css3-prefix('transform',
+        translateY(-50%));
+    }
+}

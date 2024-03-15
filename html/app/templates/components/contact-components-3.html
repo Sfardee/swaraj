@@ -1,0 +1,48 @@
+<section class="tell-us-box yourself-bx">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="row flex-row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="about-bx">
+                            <p class="svg">
+                                <img src="images/svg/yourself-icon.svg" alt="">
+                            </p>
+                            <h6>Tell us about  YOURSELF</h6>
+                            <p class="para">
+                                All your data will be safe and will not be<br>
+                                shared with anyone.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-container">
+                                <div class="form-group">
+                                    <input id="name" type="text" minlength="2" maxlength="50" pattern="[A-za-z][A-Za-z '.]+" required="" class="form-control" placeholder="Name*" onchange="this.checkValidity();">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text"  id="mobile_number" minlength="6" maxlength="13" pattern="^(?!0+$)\d{6,}$" placeholder="Mobile Number*" class="form-control" required="" oninvalid="setCustomValidity('Will accept numbers only, minimum 6 digits. Cannot be all Zeros')" oninput="setCustomValidity('')">
+                                </div>
+
+                                <div class="form-group">
+                                    <input id="email" type="email" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="" placeholder="Email ID*">
+                                </div>
+
+                                <div class="form-group">
+                                    <input id="company_name" minlength="2" maxlength="50" pattern="[A-za-z][A-Za-z '.]+" required="" type="text" class="form-control" id="" placeholder="Company Name*" onchange="this.checkValidity();">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center next-btn visible-xs">
+                    <a href="javascript:;">next</a>
+                </p>
+            </div>
+
+            
+        </div>
+    </div>
+</section>

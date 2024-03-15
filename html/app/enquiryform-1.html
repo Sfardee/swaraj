@@ -1,0 +1,350 @@
+<!-- Start: Header -->
+<!doctype html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Swaraj</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/owl.carousel/dist/assets/owl.carousel.css" type="text/css" media="screen">
+    
+    
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:css styles/jquery-ui.min.css -->
+    <link rel="stylesheet" href="styles/jquery-ui.min.css">
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main1.css">
+    <!-- endbuild -->
+
+     <!-- build:css styles/select2.min.css -->
+     <link rel="stylesheet" href="styles/select2.min.css">
+     <!-- endbuild -->
+
+     
+
+    <!-- build:css styles/animate.css -->
+    <link rel="stylesheet" href="styles/animate.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modernizr.js -->
+    <!-- bower:js -->
+    <script src="scripts/modernizr.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="dealer-header">
+    <div class="container">
+      <div class="header-in">
+        <div class="logo-box">
+          <a href="" class="green-logo"><img src="images/joshkaraaz-logo.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+<!--end-->
+
+<div class="dealer-banner">
+  <div class="dealer-left">
+    <div class="dealer-carousel owl-carousel">
+      <figure>
+        <img src="images/dealer-banner-enq.jpg" class="img-responsive" alt="">
+      </figure>
+      <figure>
+        <img src="images/dealer-banner-enq.jpg" class="img-responsive" alt="">
+      </figure>
+      <figure>
+        <img src="images/dealer-banner-enq.jpg" class="img-responsive" alt="">
+      </figure>
+    </div>
+  </div>
+  <div class="dealer-right">
+    <div class="know-more form-container">
+      <h3>तो देर किस बात की?</h3>
+      <p class="MB30">तुरंत अपनी जानकारी भरें और हम जल्द ही आप से संपर्क करेंगे।</p>
+      <form>
+        <div class="MB15">
+          <input type="text" name="name" minlength="2" maxlength="50" placeholder="Name / नाम *"
+            pattern="[A-za-z][A-Za-z '.]+" class="input-box" required=""
+            oninvalid="setCustomValidity('Will Accept Alphabets Only')" oninput="setCustomValidity('')">
+        </div>
+        <div class="MB15">
+          <input type="text" name="phone_number" minlength="6" maxlength="13" pattern="^(?!0+$)\d{6,}$"
+            placeholder="Phone Number / फ़ोन नंबर *" class="input-box" required=""
+            oninvalid="setCustomValidity('Will accept numbers only, minimum 6 digits. Cannot be all Zeros')"
+            oninput="setCustomValidity('')">
+        </div>
+        <!-- <div class="MB15"><input type="text" class="input-box" minlength="2" maxlength="50"
+              pattern="[A-za-z][A-Za-z '.]+" placeholder="Location (State) *" required>
+          </div> -->
+
+        <div class="form-group">
+            <select id="products" class="js-example-basic-multiple"  multiple name="" id="" 
+            data-max-options="3" required>
+
+            <option value="45">Swaraj 724 XM ORCHARD NT</option>
+            <option value="45">Swaraj 724 XM ORCHARD </option>
+            <option value="717">717</option>
+            <option value="724XM">724XM</option>
+            <option value="724XM ORCH">724XM ORCH</option>
+            <option value="724XM ORCH NT">724XM ORCH NT</option>
+
+            <option value="825XM">825XM</option>
+            <option value="834XM">834XM</option>
+            <option value="735FE">735FE</option>
+            <option value="735XM">735XM</option>
+            <option value="735XT">735XT</option>
+            <option value="843XM">843XM</option>
+            <option value="843XM - OSM">843XM - OSM</option>
+            <option value="744FE">744FE</option>
+            <option value="744FE Potato Xpert">744FE Potato Xpert</option>
+            <option value="744XM">744XM</option>
+            <option value="841XM">841XM</option>
+            <option value="855FE">855FE</option>
+            <option value="855XM">855XM</option>
+            <option value="960FE">960FE</option>
+          </select>
+
+
+
+        </div>
+        
+        <div class="form-group">
+
+            <div>
+              
+              
+
+          <select class="state"  id="state" name="state" disabled required="">
+            <option></option>
+            <option value="Assam">Assam</option>
+            <option value="Goa">Goa</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="National Capital Territory of Delhi">National Capital Territory of Delhi</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Andaman and Nicobar">Andaman and Nicobar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+            <option value="Daman and Diu">Daman and Diu</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+          </select>
+            </div>
+
+        </div>
+
+        <div class="MB15">
+          <input type="text" name="district" maxlength="60" placeholder="District / जिला *" required=""
+            pattern="[A-za-z][A-Za-z0-9 '.-]+"  oninvalid="setCustomValidity('Please enter the district')"
+            oninput="setCustomValidity('')" class="input-box">
+        </div>
+
+        <div class="form-group">
+            <div>
+          <select class="js-example-basic-single" id="" name="" placeholder="City / शहर" required="">
+            <option rel="Goa" value="" selected="">City / शहर</option>
+            <option rel="Goa" value="North Goa">North Goa</option>
+            <option rel="Goa" value="South Goa">South Goa</option>
+            <option rel="Goa" value="Other">Other</option>
+          </select>
+          </div>
+        </div>
+
+<!--        
+        <div class="MB30">
+          <input type="text" name="tehsil" placeholder="Tehsil / तहसील" pattern="[A-Za-z0-9 '.-]+" class="input-box">
+        </div>
+        <div class="MB30">
+          <input type="text" name="village" placeholder="Village / गाँव" pattern="[A-Za-z0-9 '.-]+" class="input-box">
+        </div>
+        <div class="MB30">
+          <input type="text" name="pincode" pattern="^(\d{6})$" placeholder="Pin code / पिन कोड" class="input-box"
+            oninvalid="setCustomValidity('Will accept numbers only, minimum 6 digits')" oninput="setCustomValidity('')">
+        </div> -->
+
+        <div class="MB30">
+          <!-- <input type="text" autocomplete="off" id="datepickerEnquiry" class="date input-box" id="" onkeypress="return false;"
+              placeholder="Expected Date of Delivery*" required> -->
+
+              <input type="text" name="datepicker" id="datepickerEnquiry1" class="date input-box" required placeholder="Expected Date of Delivery*" oninput="setCustomValidity(' ')">
+      </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" required=""> I accept <a href="#" class="color-white">terms & conditions</a>
+          </label>
+        </div>
+        <div class="MB30 MT30">
+          <button type="submit" value="Submit" class="btn btn-default">Submit / जमा करें</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section class="seo-tag">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 CTR">
+        <h4>SWARAJ PURPOSE</h4>
+
+        <p class="MT50">Established in 1974, Swaraj Tractors is India’s first indigenous tractor brand. A rapidly
+          growing brand with a wide range of tractors from 15 HP to 65 HP, Swaraj stands firmly among the top tractor
+          brands in India. Select from our range: 717 | 724 | 825 | 834 | 735 | 841 | 843 | 744 | 742 | 855 | 960 | 963.
+          Book now to get the best offers and services in store.
+        </p>
+
+        <div class="MT50">
+          <a href="https://www.swarajtractors.com/products" target="_blank" class="btn btn-default green">View Products</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Start: Footer -->
+<footer class="footer dealer">
+  <div class="container">
+    <h5>FOLLOW US</h5>
+    <ul class="list-box ">
+      <li>
+        <div class="follow-us">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-google-plus"></i></a>
+        </div>
+      </li>
+    </ul>
+    <p>More details at <a href="https://www.swarajtractors.com/">https://www.swarajtractors.com/</a></p>
+    <hr>
+    <p>Copyright 2015 Mahindra & Mahindra Ltd., Swaraj Division.</p>
+  </div>
+</footer>
+
+<!-- bower:js -->
+
+<!-- build:js scripts/jquery.js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/jquery-ui.min.js -->
+<script src="scripts/jquery-ui.min.js"></script>
+<!-- endbuild -->
+
+
+
+
+
+
+
+<!-- build:js scripts/waypoints.js -->
+<script src="../bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/datepicker.js -->
+<script src="scripts/bootstrap-datepicker.min.js"></script>
+<!-- endbuild -->
+
+
+<!-- build:js scripts/jquery.sticky-header.min.js -->
+<script src="scripts/jquery.sticky-header.min.js"></script>
+<!-- endbuild -->
+
+
+
+<!-- build:js scripts/owl.carousel.js -->
+<script src="../bower_components/owl.carousel/dist/owl.carousel.js"></script>
+<!-- endbuild -->
+
+
+
+
+<!-- build:js scripts/vivus.js -->
+<script src="../bower_components/vivus/dist/vivus.js"></script>
+<!-- endbuild -->
+
+
+
+<!-- build:js scripts/jquery.countup.js -->
+<script src="scripts/jquery.countup.js"></script>
+<!-- endbuild -->
+
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/select2.min.js -->
+<script src="scripts/select2.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/map.js -->
+<script src="scripts/map.js"></script>
+<!-- endbuild -->
+
+<!-- endbower -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCpYV0nYEBTDUx9zKc0W4lPDlCEtNus7Q&callback=LoadMap"
+type="text/javascript"></script>
+
+
+</body>
+
+</html>
+<!--end-->
+
+
+
+
+<!-- build:js scripts/selectbox.js -->
+<script src="scripts/selectbox.js"></script>
+<!-- endbuild -->

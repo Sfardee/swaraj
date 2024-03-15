@@ -1,0 +1,143 @@
+<section class="connect-box">
+    <div class="container">
+        <div class="row">
+            <h4 class="CTR">How Can I Help You?</h4>
+            <div class="col-md-4 col-md-offset-4">
+                <div class="form-container new-form-enquery">
+
+                    <form>
+                        <p><strong>Enquiry for</strong></p>
+                        <div class="radio-btn-container">
+                            <div class="form-group">
+                                <label class="radio-inline inp-cont">
+                                    Tractor
+                                    <input checked="checked" type="radio" name="selectService" value="tractor-feild">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-inline inp-cont">
+                                    Service/Parts
+                                    <input type="radio" name="selectService" value="service-feild">
+
+                                    <span class="checkmark"></span>
+                                </label>
+
+                                <label class="radio-inline inp-cont">
+                                    Farm Machinery
+                                    <input type="radio" name="selectService" value="farm-feild">
+
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-inline inp-cont">
+                                    Harvesters
+                                    <input type="radio" name="selectService" value="harvesters-feild">
+
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="selectService">
+                            <div class="form-group" id="harvesters-feild" style="display: none;">
+                                <select id="" class="selectpicker" name="" title="Harvester Model" multiple
+                                    data-max-options="3">
+                                    <optgroup label="20-30HP">
+                                        <option>724XM</option>
+                                        <option>724XM ORCH</option>
+                                        <option>724XM ORCH NT</option>
+                                        <option>825XM</option>
+                                    </optgroup>
+                                    <optgroup label="30-40HP">
+                                        <option>724XM</option>
+                                        <option>724XM2</option>
+                                    </optgroup>
+
+                                </select>
+                            </div>
+                            <div class="form-group" id="tractor-feild">
+                                <select id="" class="selectpicker" name="" title="Tractor Model" multiple
+                                    data-max-options="3">
+                                    <optgroup label="20-30HP">
+                                        <option>724XM</option>
+                                        <option>724XM ORCH</option>
+                                        <option>724XM ORCH NT</option>
+                                        <option>825XM</option>
+                                    </optgroup>
+                                    <optgroup label="30-40HP">
+                                        <option>724XM</option>
+                                        <option>724XM2</option>
+                                    </optgroup>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="name" type="text" minlength="2" maxlength="50" pattern="[A-za-z][A-Za-z '.]+"
+                                required="" class="form-control" placeholder="Name*" onchange="this.checkValidity();">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="mobile_number" minlength="6" maxlength="13" pattern="^[6789]\d{9}$"
+                                placeholder="Mobile Number*" class="form-control" required=""
+                                oninvalid="setCustomValidity('Please enter a valid 10 digit mobile number.')"
+                                oninput="setCustomValidity('')">
+
+                        </div>
+
+                        <div class="form-group">
+                            <!-- <input id="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                class="form-control" id="" placeholder="Email ID"> -->
+
+                                <input type="email" id="email" placeholder="Email ID" class="form-control" pattern="^[^.]+(?!\.)(?!.*\.$)(?!.*?\.\.)[a-zA-Z0-9._%+-]+[^.]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+                                
+                        </div>
+
+                        <div class="form-group">
+                            <select class="selectpicker" required="" name="" id="state" title="State*">
+                                <option value="">Maharashtra</option>
+                                <option value="">Gujrat</option>
+                                <option value="">MP</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="selectpicker" required="" name="" id="district" title="District*">
+                                <option value="">Mumbai</option>
+                                <option value="">Pune</option>
+                                <option value="">Navi Mumbai</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="selectpicker" required="" name="" id="tehsil" title="Tehsil*">
+                                <option value="">Mumbai</option>
+                                <option value="">Pune</option>
+                                <option value="">Navi Mumbai</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Type your message" name="" id="" cols="30" rows="7"
+                                spellcheck="false"></textarea>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" required=""> I accept <a href="#">terms
+                                    &amp; conditions</a>
+                            </label>
+                        </div>
+
+
+
+                        <div class="text-right MT20">
+                            <button type="submit" id="formSubmit" class="btn btn-default green"><strong>Submit</strong></button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

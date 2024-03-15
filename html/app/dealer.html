@@ -1,0 +1,536 @@
+<!-- Start: Header -->
+<!doctype html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Swaraj</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/bootstrap-select/dist/css/bootstrap-select.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../bower_components/owl.carousel/dist/assets/owl.carousel.css" type="text/css" media="screen">
+    
+    
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/bootstrap-new.css -->
+    <link rel="stylesheet" href="styles/bootstrap-new.css">
+    <link rel="stylesheet" href="styles/bootstrap-datepicker3.standalone.min.css">
+    <!-- endbuild -->
+
+    <!-- build:css styles/main_poppins.css -->
+    <link rel="stylesheet" href="styles/main_poppins.css">
+    <!-- endbuild -->
+
+    <!-- build:css styles/animate.css -->
+    <link rel="stylesheet" href="styles/animate.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modernizr.js -->
+    <!-- bower:js -->
+    <script src="scripts/modernizr.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js does not work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="dealer-header">
+  <div class="container">
+    <div class="header-in">
+      <div class="logo-box">
+        <a href="#" class="green-logo"><img src="images/joshkaraaz-logo.png" alt=""></a>
+      </div>
+      <div class="language">
+        <span class="g-logoLang"><img src="images/g-logo.png" alt=""></span>
+        <!-- Code provided by Google -->
+        <div id="google_translate_element"></div>
+        <!-- <div id="google_translate_elementMobile"></div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,mr,hi,pa',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+</script>
+
+<!--end-->
+
+<div class="dealer-banner">
+  <div class="dealer-left">
+    <div class="dealer-carousel owl-carousel">
+      <figure>
+        <img src="images/dealer-banner.jpg" class="img-responsive" alt="">
+      </figure>
+      <figure>
+        <img src="images/dealer-banner.jpg" class="img-responsive" alt="">
+      </figure>
+      <figure>
+        <img src="images/dealer-banner.jpg" class="img-responsive" alt="">
+      </figure>
+    </div>
+  </div>
+  <div class="dealer-right">
+    <div class="know-more form-container">
+      <h3>Know more</h3>
+      <p class="MB30">Enter your details and we will get back to you shortly</p>
+      <form>
+        <div class="MB15"><input id="name" type="text" minlength="2" maxlength="50" pattern="[A-za-z][A-Za-z '.]+"
+            required class="input-box" placeholder="Name*"></div>
+        <div class="MB15">
+          <input type="text" id="mobile_number" minlength="6" maxlength="13" pattern="^(?!0+$)\d{6,}$"
+            placeholder="Phone Number*" class="input-box" required
+            oninvalid="setCustomValidity('Will accept numbers only, minimum 6 digits. Cannot be all Zeros')"
+            oninput="setCustomValidity('')">
+        </div>
+        <!-- <div class="MB15"><input type="text" class="input-box" minlength="2" maxlength="50"
+            pattern="[A-za-z][A-Za-z '.]+" placeholder="Location (State) *" required>
+        </div> -->
+        <div class="form-group">
+          <select class="selectpicker" name="" id="" title="Location (State) *" required>
+            <option value="">Maharashtra</option>
+            <option value="">Gujrat</option>
+            <option value="">MP</option>
+          </select>
+        </div>
+        <div class="MB15"><input type="text" class="input-box" placeholder="District/Tehsil"></div>
+        <div class="MB30"><textarea class="input-box" placeholder="Message (optional)"></textarea></div>
+        <div><input type="submit" class="btn btn-default" value="Submit"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section class="map-section dealer">
+  <div class="container">
+    <h4 class="visible-sm visible-xs">Know Your Dealer</h4>
+    <div class="row">
+      <div class="col-md-5 map">
+        <div id="map">
+        </div>
+      </div>
+      <div class="col-md-7 map-info">
+        <div class="hidden-sm hidden-xs">
+          <h4>Know Your Dealer</h4>
+          <hr>
+        </div>
+        <div class="marker-link">
+          <h3>Manikant Automotives</h3>
+          <div class="share-box">
+            <span class="shareDrop"><img src="images/svg/share-icon.svg" alt="">
+              <div class="shareList">
+                <ul class="list-inline">
+                  <li>
+                    <a href="https://facebook.com" target="_blank"><img src="images/svg/fb-icon.svg" alt=""></a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com" target="_blank"><img src="images/svg/twitter-icon.svg" alt=""></a>
+                  </li>
+                  <li>
+                    <a href="https://web.whatsapp.com/" target="_blank"><img src="images/svg/whts-icon.svg" alt=""></a>
+                  </li>
+                  <li>
+                    <a href="http://gmail.com" target="_blank"><img src="images/svg/gm-icon.svg" alt=""></a>
+                  </li>
+                </ul>
+              </div>
+            </span>
+          </div>
+          <ul class="map-list">
+            <li>
+              <p><span>Contact </span> Mr. P. Sai Kiran</p>
+            </li>
+            <li>
+              <p> <span>Email Id </span> saimanikantaautomotive@gmail.com</p>
+            </li>
+            <li>
+              <p> <span>Number</span>+91 73966 65678</p>
+            </li>
+            <li>
+              <p> <span>Address</span>
+                <strong>S.NO 2/2, Prathipadu Road, Main Road, Vadlamooru, Peddapuram, East Godavari,
+                  Andhra Pradesh.
+                  Pin Code- 533437</strong>
+              </p>
+            </li>
+            <li>
+              <div class="hours"> <span>Operating Hours</span>
+                <ul>
+                  <li><strong>Mon-Sat</strong>9:00 am - 6:00 pm</li>
+                  <!-- <li><strong>Tue</strong>9:00 am - 4:00 pm</li>
+                  <li><strong>Wed</strong>9:00 am - 4:00 pm</li>
+                  <li><strong>Thu</strong>9:00 am - 4:00 pm</li>
+                  <li><strong>Fri</strong>9:00 am - 4:00 pm</li>
+                  <li><strong>Sat</strong>9:00 am - 2:00 pm</li> -->
+                  <li><strong>Sun</strong>Closed</li>
+                </ul>
+              </div>
+
+            </li>
+          </ul>
+          <div class="MT25">
+            <a href="#" class="btn green btn-default">DIRECTION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="our-product-dealer">
+  <div class="container">
+    <div class="dorp-dwon-stop">
+      <div class="flex">
+        <div class="col-md-5 ">
+          <div class="menu-left-box">
+            <h4>OUR PRODUCTS</h4>
+            <div class="sel-prod">
+              <strong>11.18 kW (15 HP)</strong><span>735 fe</span>
+            </div>
+            <div class="prod-dtl">
+              <h2 class="menu-trgr"><a href="#">11.18 kW (15 HP)</a> <span class="fa fa-angle-down"></span></h2>
+              <div class="tog_cont menutabsbox">
+                <ul>
+                  <li class="active"><a href="#menutabs-1" data-catg="11.18 kW (15 HP)">735 fe</a></li>
+                  <li><a href="#menutabs-2" data-catg="11.18 kW (15 HP)">735 xm</a></li>
+                  <li><a href="#menutabs-3" data-catg="11.18 kW (15 HP)">735 fe</a></li>
+                  <li><a href="#menutabs-4" data-catg="11.18 kW (15 HP)">735 xt</a></li>
+                </ul>
+              </div>
+              <h2 class="menu-trgr"><a href="#">14.91-22.37 kW (20-30 HP)</a> <span class="fa fa-angle-down"></span>
+              </h2>
+              <div class="tog_cont menutabsbox">
+                <ul>
+                  <li><a href="#menutabs-1" data-catg="14.91-22.37 kW (20-30 HP)">735 fe</a></li>
+                  <li><a href="#menutabs-2" data-catg="14.91-22.37 kW (20-30 HP)">735 xm</a></li>
+                  <li><a href="#menutabs-3" data-catg="14.91-22.37 kW (20-30 HP)">735 fe</a></li>
+                  <li><a href="#menutabs-4" data-catg="14.91-22.37 kW (20-30 HP)">735 xt</a></li>
+                </ul>
+              </div>
+              <h2 class="menu-trgr"><a href="#">22.37-29.82 kW (30-40 HP)</a> <span class="fa fa-angle-down"></span>
+              </h2>
+              <div class="tog_cont menutabsbox">
+                <ul>
+                  <li><a href="#menutabs-1">735 fe</a></li>
+                  <li><a href="#menutabs-2">735 xm</a></li>
+                  <li><a href="#menutabs-3">735 fe</a></li>
+                  <li><a href="#menutabs-4">735 xt</a></li>
+                </ul>
+              </div>
+              <h2 class="menu-trgr"><a href="#">29.82-37.28 kW (40-50 HP)</a> <span class="fa fa-angle-down"></span>
+              </h2>
+              <div class="tog_cont menutabsbox">
+                <ul>
+                  <li><a href="#menutabs-1">735 fe</a></li>
+                  <li><a href="#menutabs-2">735 xm</a></li>
+                  <li><a href="#menutabs-3">735 fe</a></li>
+                  <li><a href="#menutabs-4">735 xt</a></li>
+                </ul>
+              </div>
+              <h2 class="menu-trgr"><a href="#">37.28-44.74 kW (50-60 HP)</a> <span class="fa fa-angle-down"></span>
+              </h2>
+              <div class="tog_cont menutabsbox">
+                <ul>
+                  <li><a href="#menutabs-1">735 fe</a></li>
+                  <li><a href="#menutabs-2">735 xm</a></li>
+                  <li><a href="#menutabs-3">735 fe</a></li>
+                  <li><a href="#menutabs-4">735 xt</a></li>
+                </ul>
+              </div>
+              <h2 class="menu-trgr"><a href="#">44.74-48.47 kW (60-65 HP)</a> <span class="fa fa-angle-down"></span>
+              </h2>
+              <div class="tog_cont menutabsbox">
+                <ul>
+                  <li><a href="#menutabs-1">735 fe</a></li>
+                  <li><a href="#menutabs-2">735 xm</a></li>
+                  <li><a href="#menutabs-3">735 fe</a></li>
+                  <li><a href="#menutabs-4">735 xt</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="tab_container">
+            <div id="menutabs-1" class="tab_content_box">
+              <div class="menu-info">
+                <div class="row">
+                  <div class="col-md-8 col-md-push-2">
+                    <figure><img src="images/tractor-1.png" alt="" class="img-responsive"></figure>
+                  </div>
+                </div>
+                <h3>14.91-22.37 kW (20-30 HP) - 735 FE</h3>
+                <div class="row menu-product-info">
+                  <div class="col-md-4 col-sm-4">
+                    <h5>Key Feature</h5>
+                    <p>No. Of Cylinder : 2</p>
+                    <p>Horsepower : 25 HP</p>
+                    <p>Engine : 1824 CC</p>
+                    <p>Brakes : Dry Disk brake</p>
+                    <p>PTO HP : 22.5 HP</p>
+                  </div>
+                  <div class="col-md-8 col-sm-8 MT40">
+                    <p>Swaraj 717 is the latest affordable & best-in-class tractor that helps redefine a farmer’s life
+                      with solid performance and easy maintenance.</p>
+                    <p class="MT25"><a href="#" class="btn btn-default outerline">View Details</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="menutabs-2" class="tab_content_box">
+              <div class="menu-info">
+                <div class="row">
+                  <div class="col-md-8 col-md-push-2">
+                    <figure><img src="images/product-tractor-1.png" alt="" class="img-responsive"></figure>
+                  </div>
+                </div>
+                <h3>14.91-22.37 kW (20-30 HP) - 735 FE</h3>
+                <div class="row menu-product-info">
+                  <div class="col-md-4">
+                    <h5>Key Feature</h5>
+                    <p>Horsepower : 25 HP</p>
+                    <p>Engine : 1824 CC</p>
+                    <p>Brakes : Dry Disk brake</p>
+                    <p>PTO HP : 22.5 HP</p>
+                  </div>
+                  <div class="col-md-8 col-sm-8 MT40">
+                    <p>Swaraj 717 is the latest affordable & best-in-class tractor that helps redefine a farmer’s life
+                      with solid performance and easy maintenance.</p>
+                    <p class="MT25"><a href="#" class="btn btn-default outerline">View Details</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="menutabs-3" class="tab_content_box">
+              <div class="menu-info">
+                <div class="row">
+                  <div class="col-md-8 col-md-push-2">
+                    <figure><img src="images/tractor-1.png" alt="" class="img-responsive"></figure>
+                  </div>
+                </div>
+                <h3>14.91-22.37 kW (20-30 HP) - 735 FE</h3>
+                <div class="row menu-product-info">
+                  <div class="col-md-4 col-sm-4">
+                    <h5>Key Feature</h5>
+                    <p>No. Of Cylinder : 2</p>
+                    <p>Horsepower : 25 HP</p>
+                    <p>Engine : 1824 CC</p>
+                    <p>Brakes : Dry Disk brake</p>
+                    <p>PTO HP : 22.5 HP</p>
+                  </div>
+                  <div class="col-md-8 col-sm-8 MT40">
+                    <p>Swaraj 717 is the latest affordable & best-in-class tractor that helps redefine a farmer’s life
+                      with solid performance and easy maintenance.</p>
+                    <p class="MT25"><a href="#" class="btn btn-default outerline">View Details</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="menutabs-4" class="tab_content_box">
+              <div class="menu-info">
+                <div class="row">
+                  <div class="col-md-8 col-md-push-2">
+                    <figure><img src="images/product-tractor-1.png" alt="" class="img-responsive"></figure>
+                  </div>
+                </div>
+                <h3>14.91-22.37 kW (20-30 HP) - 735 FE</h3>
+                <div class="row menu-product-info">
+                  <div class="col-md-4">
+                    <h5>Key Feature</h5>
+                    <p>Horsepower : 25 HP</p>
+                    <p>Engine : 1824 CC</p>
+                    <p>Brakes : Dry Disk brake</p>
+                    <p>PTO HP : 22.5 HP</p>
+                  </div>
+                  <div class="col-md-8 col-sm-8 MT40">
+                    <p>Swaraj 717 is the latest affordable & best-in-class tractor that helps redefine a farmer’s life
+                      with solid performance and easy maintenance.</p>
+                    <p class="MT25"><a href="#" class="btn btn-default outerline">View Details</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services-offered">
+  <div class="container">
+    <h4 class="CTR">Services Offered</h4>
+    <div class="swaraj-carousel owl-carousel green">
+      <div>
+        <div class="CTR">
+          <figure><img src="images/svg/service-point.svg" alt="" class="normal-img"> <img
+              src="images/svg/service-point-hover.svg" alt="" class="hover-img"></figure>
+          <h3>24 hour<br>helpline</h3>
+        </div>
+      </div>
+      <div>
+        <div class="CTR">
+          <figure><img src="images/svg/happy-customer.svg" alt="" class="normal-img"> <img
+              src="images/svg/happy-customer-hover.svg" alt="" class="hover-img"></figure>
+          <h3>Tractor clean up<br>
+            services</h3>
+        </div>
+      </div>
+      <div>
+        <div class="CTR">
+          <figure> <img src="images/svg/dealer-hover.svg" alt="" class="normal-img"><img src="images/svg/dealer.svg"
+              alt="" class="hover-img"></figure>
+          <h3>Test drives and<br>
+            demos</h3>
+        </div>
+      </div>
+      <div>
+        <div class="CTR">
+          <figure><img src="images/svg/dedicated-employees.svg" alt="" class="normal-img"> <img
+              src="images/svg/dedicated-employees-hover.svg" alt="" class="hover-img"></figure>
+          <h3>Maintainence<br>
+            Schemes</h3>
+        </div>
+      </div>
+      <div>
+        <div class="CTR">
+          <figure><img src="images/svg/happy-customer.svg" alt="" class="normal-img"> <img
+              src="images/svg/happy-customer-hover.svg" alt="" class="hover-img"></figure>
+          <h3>24 hour<br>helpline</h3>
+        </div>
+      </div>
+      <div>
+        <div class="CTR">
+          <figure><img src="images/svg/dealer.svg" alt="" class="normal-img"> <img src="images/svg/dealer-hover.svg"
+              alt="" class="hover-img"></figure>
+          <h3>Tractor clean up<br>
+            services</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Start: Footer -->
+<footer class="footer dealer">
+  <div class="container">
+    <h5>FOLLOW US</h5>
+    <ul class="list-box ">
+      <li>
+        <div class="follow-us">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-google-plus"></i></a>
+        </div>
+      </li>
+    </ul>
+    <p>More details at <a href="https://www.swarajtractors.com/">https://www.swarajtractors.com/</a></p>
+    <hr>
+    <p>Copyright 2015 Mahindra & Mahindra Ltd., Swaraj Division.</p>
+  </div>
+</footer>
+
+<!-- bower:js -->
+
+<!-- build:js scripts/jquery.js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<!-- endbuild -->
+
+
+
+<!-- build:js scripts/bootstrap.js -->
+<script src="../bower_components/moment/min/moment.min.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="../bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+<script src="../bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/waypoints.js -->
+<script src="../bower_components/waypoints/lib/jquery.waypoints.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/datepicker.js -->
+<script src="scripts/bootstrap-datepicker.min.js"></script>
+<!-- endbuild -->
+
+
+<!-- build:js scripts/jquery.sticky-header.min.js -->
+<script src="scripts/jquery.sticky-header.min.js"></script>
+<!-- endbuild -->
+
+
+
+<!-- build:js scripts/owl.carousel.js -->
+<script src="../bower_components/owl.carousel/dist/owl.carousel.js"></script>
+<!-- endbuild -->
+
+
+
+
+<!-- build:js scripts/vivus.js -->
+<script src="../bower_components/vivus/dist/vivus.js"></script>
+<!-- endbuild -->
+
+
+
+<!-- build:js scripts/jquery.countup.js -->
+<script src="scripts/jquery.countup.js"></script>
+<!-- endbuild -->
+
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/map.js -->
+<script src="scripts/map.js"></script>
+<!-- endbuild -->
+
+<!-- endbower -->
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCpYV0nYEBTDUx9zKc0W4lPDlCEtNus7Q&callback=LoadMap"
+type="text/javascript"></script>
+
+
+</body>
+
+</html>
+<!--end-->
